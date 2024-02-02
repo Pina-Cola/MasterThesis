@@ -41,7 +41,7 @@
 	colorlinks=true,
 	linkcolor=black,
 	filecolor=black,      
-	urlcolor=blue,
+	urlcolor=RedViolet,
 	citecolor=black
 }
 %----------------------------------------
@@ -103,8 +103,13 @@
 	}
 	\begin{mdframed}[]\relax%
 		\label{#2}}{\end{mdframed}}
-% Second bullet point
-\renewcommand{\labelitemii}{$\textcolor{Black}{\circ}$}
+% Design
+%\sectionfont{\color{RedViolet}}
+%\subsectionfont{\color{RedViolet}}
+\renewcommand{\labelitemi}{$\textcolor{RedViolet}{\bullet}$}
+\renewcommand{\labelitemii}{$\textcolor{RedViolet}{\cdot}$}
+\renewcommand{\labelitemiii}{$\textcolor{RedViolet}{\diamond}$}
+\renewcommand{\labelitemiv}{$\textcolor{RedViolet}{\ast}$}
 
 
 %----------------------------------------------------------------------------
@@ -125,7 +130,8 @@
 	\vspace{1.5cm}
 	{\huge\bfseries  Multimedia Processing: Exploring Real-Time Colour Correction with JIT \par}
 	\vspace{2cm}
-	{\Large\itshape Pina Kolling\par}
+	{\Large Pina Kolling\par}
+	ens21pkg@cs.umu.se \par
 	\vfill
 	Supervised by\par
 	Dr. Cem \textsc{Okulmus} \par 
