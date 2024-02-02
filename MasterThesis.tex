@@ -1,0 +1,204 @@
+\documentclass[12pt,a4paper]{article}
+%----------------------------------------
+% German language
+% \usepackage[ngerman]{babel}
+%----------------------------------------
+% Input in UTF8 accepted
+\usepackage[utf8]{inputenc}
+%----------------------------------------
+% Math-packages
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amssymb}
+%----------------------------------------
+% Design choices (?)
+%\usepackage{scrlayer-scrpage}
+%\pagestyle{scrheadings}
+% \clearscrheadfoot
+%----------------------------------------
+% Footnotes in tables
+\usepackage{tablefootnote}
+%----------------------------------------
+%----------------------------------------
+% no parindent
+\setlength{\parindent}{0em}
+%----------------------------------------
+% different gap between paragraphs
+\setlength{\parskip}{1.3ex}
+%----------------------------------------
+% spacing between lines
+\usepackage[onehalfspacing]{setspace}
+%----------------------------------------
+% Hurenkinder und Schusterjungen vermeiden
+\clubpenalty = 10000
+\widowpenalty = 10000
+\displaywidowpenalty = 10000
+%----------------------------------------
+% Hyperref package
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black,
+	filecolor=black,      
+	urlcolor=blue,
+	citecolor=black
+}
+%----------------------------------------
+% Geometry package
+\usepackage{geometry}
+\geometry{
+	paper=a4paper, % Change to letterpaper for US letter
+	top=3cm, % Top margin
+	bottom=3cm, % Bottom margin
+	left=2cm, % Left margin
+	right=3cm, % Right margin
+	%showframe, % Uncomment to show how the type block is set on the page
+}
+%----------------------------------------
+% References
+\usepackage[backend=biber, maxbibnames=99]{biblatex}
+\addbibresource{references.bib}
+%----------------------------------------
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+%----------------------------------------
+\usepackage[nottoc]{tocbibind}
+%----------------------------------------
+\usepackage[onehalfspacing]{setspace}
+%----------------------------------------
+% formats text "better"
+\usepackage{microtype}
+%----------------------------------------
+% "better" tables
+\usepackage{booktabs}
+% for big tables
+\usepackage{adjustbox}
+
+%----------------------------------------------------------------------------
+%----------------------------------------------------------------------------
+
+\begin{document}
+	
+\pagenumbering{roman}
+
+
+\begin{titlepage}
+	\centering
+	{\scshape\LARGE Ume\aa University \par}
+	and \par
+	{\scshape\LARGE Codemill \par}
+	\vspace{1cm}
+	{\scshape\Large Master Thesis \par }
+	\vspace{1.5cm}
+	{\huge\bfseries  Multimedia Processing: Exploring Real-Time Colour Correction with JIT \par}
+	\vspace{2cm}
+	{\Large\itshape Pina Kolling\par}
+	\vfill
+	Supervised by\par
+	Dr. Cem \textsc{Okulmus} \par 
+	and \par 
+	Urban \textsc{Söderberg} 
+	
+	\vfill
+	
+	% Bottom of the page
+	{\large \today \par}
+\end{titlepage}
+
+%---------------------------------------------------------------------------------------------------
+\begin{abstract}
+	abstract-text
+\end{abstract}
+%---------------------------------------------------------------------------------------------------
+
+
+
+
+\setcounter{page}{1}
+
+%\setstretch{0.6}
+
+\newgeometry{
+	top=2.5cm, % Top margin
+	left=2cm, % Left margin
+	right=3cm % Right margin
+}
+
+\begin{spacing}{0.45}
+	
+	
+	
+	\tableofcontents
+	
+\end{spacing}
+
+\newgeometry{
+	top=3cm, % Top margin
+	left=2cm, % Left margin
+	right=3cm % Right margin
+}
+
+
+%\setstretch{1.5}
+
+
+
+
+
+\newpage
+
+\pagenumbering{arabic}
+
+\setcounter{page}{1} 
+%
+
+%
+%
+%
+%
+%=======================================================================================================
+%
+%
+%
+%
+
+
+
+
+
+	
+	\begin{doublespace}
+		\tableofcontents
+	\end{doublespace}
+
+
+	\newpage
+	
+	
+	
+	
+	
+	%-------------------------------------------------------------------------------------------
+	\section{Introduction} \label{sec:1}
+	
+	
+	
+	
+	%-------------------------------------------------------------------------------------------	
+	
+	
+	
+	\newpage
+	\addcontentsline{toc}{section}{References}
+	\begin{spacing}{0.9}
+		\printbibliography
+	\end{spacing}
+	
+	
+	
+	
+	
+	
+	
+	
+\end{document}
