@@ -47,7 +47,7 @@
 }
 %----------------------------------------
 % References
-\usepackage[backend=biber, maxbibnames=99]{biblatex}
+\usepackage[backend=biber, maxbibnames=99, sortcites=true]{biblatex}
 \addbibresource{references.bib}
 %----------------------------------------
 \usepackage{graphicx}
@@ -114,6 +114,7 @@
 \usepackage{tikz}
 \usepackage{tikzpagenodes}
 %----------------------------------------
+%----------------------------------------
 % Hyperref package
 \usepackage{hyperref}
 \hypersetup{
@@ -149,7 +150,7 @@
 	\vspace{1cm}
 	{\scshape\Large Master Thesis \par }
 	\vspace{1.5cm}
-	{\huge\bfseries Multimedia Processing: Exploring Real-Time Colour Correction with JIT \par}
+	{\huge\bfseries Multimedia Processing: Exploring Real-Time Colour Correction and Grading with JIT \par}
 	\vspace{2cm}
 	{\Large Pina Kolling\par}
 	% \texttt{ens21pkg@cs.umu.se} \par
@@ -230,11 +231,36 @@
 %
 %
 %=======================================================================================================
-% CHAPTER 1: INTRODUCTION
+% CHAPTER: INTRODUCTION
 %=======================================================================================================
 \newpage
 \section{Introduction} \label{section:introduction}
 
+
+The popularity of streaming is growing, with an increasing number of people using online streaming platforms for their entertainment and approximately 1.8 billion subscriptions to video streaming services.~\cite{nielsen, stats}
+%
+With this increased popularity, the demand for user-driven real-time visual customization in the web browser for streamed videos has increased, too.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%-------------------------------------------------------------------------------------------------------
+\subsection{Motivation} 
+% Provide context, highlight the problem space, and explain the motivation behind the project.
 
 This thesis revolves around the implementation of video colour correction using Just-In-Time (JIT) techniques. The goal is to explore the feasibility of implementing the video grading process with JIT, with the focus on real-time colour correction. This project lies in the area of multimedia processing, video editing and real-time computing.
 
@@ -251,24 +277,27 @@ The infrastructure of the system is visualized and explained in Chapter \ref{sec
 
 Test \cite{frida} and \cite{codemill}
 
+% The necessity for such on-the-fly adjustments arises from the inherent diversity in the way various devices interpret and display colours. Each device, ranging from monitors and TVs to smartphones and tablets, possesses unique characteristics that can significantly influence the perceived colour palette. Real-time colour correction at the user's end becomes imperative to ensure a consistent and personalized viewing experience across a myriad of devices.
 
+%Moreover, with the exponential growth in the number of individuals engaging in streaming activities, the need for adaptable and user-controlled colour correction mechanisms becomes paramount. As more users embrace streaming platforms for content consumption, the challenge of catering to diverse device configurations intensifies. Real-time colour correction emerges as a solution that not only addresses the variability in device displays but also empowers users to tailor the visual aesthetics according to their preferences. This introduction sets the stage for a deeper exploration into the technological and user experience considerations driving the integration of real-time colour correction in the dynamic landscape of streaming.
 
+%Certainly, there are several reasons why real-time colour correction by the user in streaming might be desirable:
 
+%1. **Device Variability:** As mentioned earlier, different devices have distinct display characteristics. Users may prefer to adjust colours to compensate for variations in brightness, contrast, or colour rendering among devices.
 
+%2. **Personal Preferences:** Everyone perceives colours differently, and personal preferences for visual aesthetics vary. Real-time colour correction empowers users to customize the viewing experience according to their individual tastes.
 
+%3. **Environmental Conditions:** Lighting conditions in the viewing environment can impact how colours appear on the screen. Real-time colour correction allows users to adapt to different lighting situations, ensuring optimal visibility and comfort.
 
+%4. **Accessibility Considerations:** Users with visual impairments or specific color perception needs may benefit from real-time colour correction to enhance visibility and distinguishability of on-screen elements.
 
+%5. **Content Variety:** Streaming platforms offer a diverse range of content with varying visual styles. Real-time colour correction enables users to fine-tune colours based on the specific content they are watching, ensuring an immersive and tailored experience.
 
+%6. **Cultural Differences:** Cultural preferences and associations with colours can vary globally. Real-time colour correction accommodates diverse cultural perspectives, allowing users to align the visual presentation with their cultural preferences.
 
+%7. **Technological Advancements:** With advancements in display technologies, users may have access to devices with features like high dynamic range (HDR) or wide color gamuts. Real-time colour correction enables users to optimize viewing for these advanced display capabilities.
 
-
-
-
-%-------------------------------------------------------------------------------------------------------
-\subsection{Background and Motivation} 
-% Provide context, highlight the problem space, and explain the motivation behind the project.
-
-
+%These factors collectively contribute to the growing importance and demand for real-time colour correction capabilities in streaming, reflecting the desire for a more personalized and adaptable visual experience.
 
 
 
@@ -326,6 +355,19 @@ The aim is to contribute insights into the technological and scientific aspects 
 
 
 
+
+
+
+
+%-------------------------------------------------------------------------------------------------------
+\subsection{Related Work} 
+
+\cite{frida} (?)
+
+
+
+
+
 %
 %
 %
@@ -336,7 +378,33 @@ The aim is to contribute insights into the technological and scientific aspects 
 %
 %
 %=======================================================================================================
-% CHAPTER 3: SYSTEM REQUIREMENTS AND SPECIFICATIONS
+% CHAPTER: Theroteical Background
+%=======================================================================================================
+\newpage
+\section{Theoretical Background} \label{section:theoreticalbackground}
+
+
+
+%-------------------------------------------------------------------------------------------------------
+\subsection{Colour Correction and Colour Grading}
+
+
+
+
+
+
+
+%
+%
+%
+%
+%=======================================================================================================
+%
+%
+%
+%
+%=======================================================================================================
+% CHAPTER: SYSTEM REQUIREMENTS AND SPECIFICATIONS
 %=======================================================================================================
 \newpage
 \section{System Requirements and Specifications} \label{section:requirements}
@@ -375,7 +443,7 @@ The aim is to contribute insights into the technological and scientific aspects 
 %
 %
 %=======================================================================================================
-% CHAPTER 4: DESIGN AND IMPLEMENTATION
+% CHAPTER: DESIGN AND IMPLEMENTATION
 %=======================================================================================================
 \newpage
 \section{Design and Implementation} \label{section:design-implementation}
@@ -471,7 +539,7 @@ Execution of the code:
 %
 %
 %=======================================================================================================
-% CHAPTER 5: RESULTS AND EVALUATION
+% CHAPTER: RESULTS AND EVALUATION
 %=======================================================================================================
 \newpage
 \section{Results and Evaluation} \label{section:results}
@@ -500,7 +568,7 @@ Execution of the code:
 %
 %
 %=======================================================================================================
-% CHAPTER 6: CONCLUSION AND FUTURE WORK
+% CHAPTER: CONCLUSION AND FUTURE WORK
 %=======================================================================================================
 \newpage
 \section{Conclusion} \label{section:conclusion}
