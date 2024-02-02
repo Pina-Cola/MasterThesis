@@ -35,23 +35,13 @@
 \widowpenalty = 10000
 \displaywidowpenalty = 10000
 %----------------------------------------
-% Hyperref package
-\usepackage{hyperref}
-\hypersetup{
-	colorlinks=true,
-	linkcolor=black,
-	filecolor=black,      
-	urlcolor=RedViolet,
-	citecolor=black
-}
-%----------------------------------------
 % Geometry package
 \usepackage{geometry}
 \geometry{
 	paper=a4paper, % Change to letterpaper for US letter
 	top=3cm, % Top margin
 	bottom=3cm, % Bottom margin
-	left=2cm, % Left margin
+	left=3cm, % Left margin
 	right=3cm, % Right margin
 	%showframe, % Uncomment to show how the type block is set on the page
 }
@@ -123,6 +113,16 @@
 \usepackage{dashrule}
 \usepackage{tikz}
 \usepackage{tikzpagenodes}
+%----------------------------------------
+% Hyperref package
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black,
+	filecolor=black,      
+	urlcolor=RedViolet,
+	citecolor=black
+}
 
 
 %----------------------------------------------------------------------------
@@ -134,6 +134,7 @@
 
 
 \begin{titlepage}	
+	\begin{center}
 	\centering
 	\vspace*{-4em}
 	\begin{tabularx}{\linewidth}{@{}lXr@{}}
@@ -141,16 +142,14 @@
 		& &\makecell{\includegraphics[height=0.7cm]{codemill.png}}\\
 	\end{tabularx}\\%
 	\vfill
-	%
-	%\hspace*{-4em}\vspace*{-6em}\includegraphics[width=0.3\textwidth]{codemill.png} \hfill \includegraphics[width=0.1\textwidth]{umu.png} \par
-	%\vspace*{6em}
 	{\scshape\LARGE Ume\aa \  University \par}
-	and \par
+	and \par 
+	\vspace*{-0.8em}
 	{\scshape\LARGE Codemill \par}
 	\vspace{1cm}
 	{\scshape\Large Master Thesis \par }
 	\vspace{1.5cm}
-	{\huge\bfseries  Multimedia Processing: Exploring Real-Time Colour Correction with JIT \par}
+	{\huge\bfseries Multimedia Processing: Exploring Real-Time Colour Correction with JIT \par}
 	\vspace{2cm}
 	{\Large Pina Kolling\par}
 	% \texttt{ens21pkg@cs.umu.se} \par
@@ -164,6 +163,7 @@
 	
 	% Bottom of the page
 	{\large \today \par}
+\end{center}
 \end{titlepage}
 
 %---------------------------------------------------------------------------------------------------
@@ -236,7 +236,7 @@
 \section{Introduction} \label{section:introduction}
 
 
-The proposed master thesis revolves around the implementation of video colour correction using Just-In-Time (JIT) techniques. The goal is to explore the feasibility of implementing the video grading process with JIT, with the focus on real-time colour correction. This project lies in the area of multimedia processing, video editing and real-time computing.
+This thesis revolves around the implementation of video colour correction using Just-In-Time (JIT) techniques. The goal is to explore the feasibility of implementing the video grading process with JIT, with the focus on real-time colour correction. This project lies in the area of multimedia processing, video editing and real-time computing.
 
 \begin{CountingDefinition}[JIT]{def:JIT}
 	
@@ -247,6 +247,10 @@ The proposed master thesis revolves around the implementation of video colour co
 The demand for efficient and dynamic video processing tools is increasing and with this, the ability to perform on-the-fly colour correction becomes increasingly valuable. 
 
 The infrastructure of the system is visualized and explained in Chapter \ref{section:design-implementation}.
+
+
+Test \cite{frida} and \cite{codemill}
+
 
 
 
@@ -265,6 +269,16 @@ The infrastructure of the system is visualized and explained in Chapter \ref{sec
 % Provide context, highlight the problem space, and explain the motivation behind the project.
 
 
+
+
+
+
+
+
+
+%-------------------------------------------------------------------------------------------------------
+\subsection{Codemill\textsuperscript{TM}} 
+% Provide context, highlight the problem space, and explain the motivation behind the project.
 
 
 
@@ -327,6 +341,15 @@ The aim is to contribute insights into the technological and scientific aspects 
 \newpage
 \section{System Requirements and Specifications} \label{section:requirements}
 
+
+%-------------------------------------------------------------------------------------------------------
+\subsection{Accurate Video}
+% Identify and describe the requirements from the end-user perspective.
+
+
+%-------------------------------------------------------------------------------------------------------
+\subsection{WebRTC}
+% Identify and describe the requirements from the end-user perspective.
 
 
 %-------------------------------------------------------------------------------------------------------
