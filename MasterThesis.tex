@@ -72,6 +72,9 @@
 %----------------------------------------
 % "better" tables
 \usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{makecell}
 % for big tables
 \usepackage{adjustbox}
 %----------------------------------------
@@ -116,9 +119,10 @@
 % Position figures, etc.
 \usepackage{float}
 %----------------------------------------
-% Lines and dotted lines
+% Lines and dotted lines and other designs
 \usepackage{dashrule}
 \usepackage{tikz}
+\usepackage{tikzpagenodes}
 
 
 %----------------------------------------------------------------------------
@@ -129,8 +133,17 @@
 \pagenumbering{roman}
 
 
-\begin{titlepage}
+\begin{titlepage}	
 	\centering
+	\vspace*{-4em}
+	\begin{tabularx}{\linewidth}{@{}lXr@{}}
+		\makecell{\hspace*{2em}\includegraphics[height=1.5cm]{umu.png}}
+		& &\makecell{\includegraphics[height=0.7cm]{codemill.png}}\\
+	\end{tabularx}\\%
+	\vfill
+	%
+	%\hspace*{-4em}\vspace*{-6em}\includegraphics[width=0.3\textwidth]{codemill.png} \hfill \includegraphics[width=0.1\textwidth]{umu.png} \par
+	%\vspace*{6em}
 	{\scshape\LARGE Ume\aa \  University \par}
 	and \par
 	{\scshape\LARGE Codemill \par}
@@ -392,9 +405,29 @@ The connection from the Python backend to the Melt framework can use Melt's capa
 
 
 
+
+
+
+
 %-------------------------------------------------------------------------------------------------------
 \subsection{Technology}
 % Discuss the technologies and tools chosen for the implementation.
+Execution of the code:
+\begin{CountingDefinition}[Setting up the code]{def:codesetup}
+	\vspace*{-0.2em}
+	\begin{itemize}
+		\item Generate ssh key (\texttt{ssh-keygen}) and add to GitLab
+		\item Clone git repositories (jit-webrtc and accurate-player-3-core)
+		\item Install node.js and set path variables for npm (and yarn)
+		\item Install and run docker
+		\item Execute jit-webrtc code with command from README with the command \texttt{docker/main/main.sh --threads 16 --port 8080 \$VIDEOFILE}
+		\item Execute accurate player code (run \texttt{npm install --force}, \texttt{npm install yarn} and then npm start, resolve errors, fix dependenciy problems with \texttt{npm audit fix --force} (potentially twice))
+	\end{itemize}
+	
+\end{CountingDefinition}
+
+
+
 
 
 %-------------------------------------------------------------------------------------------------------
