@@ -21,6 +21,7 @@
 %----------------------------------------
 %----------------------------------------
 % no parindent
+\usepackage{parskip}
 \setlength{\parindent}{0em}
 %----------------------------------------
 % different gap between paragraphs
@@ -73,6 +74,38 @@
 \usepackage{booktabs}
 % for big tables
 \usepackage{adjustbox}
+%----------------------------------------
+%Colours:
+\usepackage[dvipsnames, table]{xcolor}
+%----------------------------------------
+% Definition Box
+\usepackage[framemethod=TikZ]{mdframed}
+\mdfdefinestyle{enviStyle}{
+	innertopmargin = 10pt,
+	linewidth      = 1pt,
+	frametitlerule = true,
+	roundcorner    = 2pt%
+}
+\usepackage{sectsty}
+\newenvironment{CountingDefinition}[2][]{%
+	\ifstrempty{#1}%
+	{\mdfsetup{%
+			frametitle={{\strut ~}}}
+	}%
+	{\mdfsetup{%
+			frametitle={{\strut ~#1}}}%
+	}%
+	\mdfsetup{
+		nobreak                   = true,
+		linecolor                 = RedViolet,
+		frametitlebackgroundcolor = RedViolet!50,
+		style                     = enviStyle
+	}
+	\begin{mdframed}[]\relax%
+		\label{#2}}{\end{mdframed}}
+% Second bullet point
+\renewcommand{\labelitemii}{$\textcolor{Black}{\circ}$}
+
 
 %----------------------------------------------------------------------------
 %----------------------------------------------------------------------------
@@ -84,7 +117,7 @@
 
 \begin{titlepage}
 	\centering
-	{\scshape\LARGE Ume\aa University \par}
+	{\scshape\LARGE Ume\aa \  University \par}
 	and \par
 	{\scshape\LARGE Codemill \par}
 	\vspace{1cm}
@@ -106,42 +139,40 @@
 \end{titlepage}
 
 %---------------------------------------------------------------------------------------------------
+%\hline
 \begin{abstract}
-	abstract-text
+	\noindent Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
 \end{abstract}
+%\hline
 %---------------------------------------------------------------------------------------------------
 
-
+\newpage
 
 
 \setcounter{page}{1}
 
 %\setstretch{0.6}
 
-\newgeometry{
-	top=2.5cm, % Top margin
-	left=2cm, % Left margin
-	right=3cm % Right margin
-}
+%\newgeometry{
+%	top=2.5cm, % Top margin
+%	left=2cm, % Left margin
+%	right=3cm % Right margin
+%}
 
-\begin{spacing}{0.45}
-	
-	
-	
+%\begin{spacing}{0.7}
+		
 	\tableofcontents
 	
-\end{spacing}
+%\end{spacing}
 
-\newgeometry{
-	top=3cm, % Top margin
-	left=2cm, % Left margin
-	right=3cm % Right margin
-}
+%\newgeometry{
+%	top=3cm, % Top margin
+%	left=2cm, % Left margin
+%	right=3cm % Right margin
+%}
 
 
 %\setstretch{1.5}
-
-
 
 
 
@@ -161,28 +192,174 @@
 %
 %
 %
+%=======================================================================================================
+% CHAPTER 1: INTRODUCTION
+%=======================================================================================================
+\newpage
+\section{Introduction} \label{section:introduction}
+
+
+%-------------------------------------------------------------------------------------------------------
+\subsection{Background and Motivation} 
+% Provide context, highlight the problem space, and explain the motivation behind the project.
+
+
+%-------------------------------------------------------------------------------------------------------
+\subsection{Research Questions}
+% Formulate specific research questions that your thesis aims to answer.
+
+
+%-------------------------------------------------------------------------------------------------------
+\subsection{Structure}
+% Outline the structure of the thesis, briefly describing each chapter's content.
 
 
 
 
 
-	
-	\begin{doublespace}
-		\tableofcontents
-	\end{doublespace}
+
+%
+%
+%
+%
+%=======================================================================================================
+%
+%
+%
+%
+%=======================================================================================================
+% CHAPTER 3: SYSTEM REQUIREMENTS AND SPECIFICATIONS
+%=======================================================================================================
+\newpage
+\section{System Requirements and Specifications} \label{section:requirements}
 
 
-	\newpage
-	
-	
-	
-	
-	
-	%-------------------------------------------------------------------------------------------
-	\section{Introduction} \label{sec:1}
-	
-	
-	
+
+%-------------------------------------------------------------------------------------------------------
+\subsection{User Requirements}
+% Identify and describe the requirements from the end-user perspective.
+
+
+%-------------------------------------------------------------------------------------------------------
+\subsection{Technical Requirements}
+% Detail the technical requirements for the system.
+
+
+
+
+
+%
+%
+%
+%
+%=======================================================================================================
+%
+%
+%
+%
+%=======================================================================================================
+% CHAPTER 4: DESIGN AND IMPLEMENTATION
+%=======================================================================================================
+\newpage
+\section{Design and Implementation} \label{section:design-implementation}
+
+
+%-------------------------------------------------------------------------------------------------------
+\subsection{Architecture Design}
+% Describe the overall architecture of the system.
+
+
+%-------------------------------------------------------------------------------------------------------
+\subsection{Technology}
+% Discuss the technologies and tools chosen for the implementation.
+
+
+%-------------------------------------------------------------------------------------------------------
+\subsection{Implementation Details}
+% Provide a detailed account of the implementation process.
+
+
+
+
+
+%
+%
+%
+%
+%=======================================================================================================
+%
+%
+%
+%
+%=======================================================================================================
+% CHAPTER 5: RESULTS AND EVALUATION
+%=======================================================================================================
+\newpage
+\section{Results and Evaluation} \label{section:results}
+
+
+%-------------------------------------------------------------------------------------------------------
+\subsection{Testing}
+% Discuss the testing methodologies and present validation results.
+
+
+%-------------------------------------------------------------------------------------------------------
+\subsection{Evaluation and Comparison}
+% Evaluate the system's performance against defined criteria.
+
+
+
+
+
+%
+%
+%
+%
+%=======================================================================================================
+%
+%
+%
+%
+%=======================================================================================================
+% CHAPTER 6: CONCLUSION AND FUTURE WORK
+%=======================================================================================================
+\newpage
+\section{Conclusion} \label{section:conclusion}
+
+
+%-------------------------------------------------------------------------------------------------------
+\subsection{Summary}
+% Summarize the key findings and outcomes of the research.
+
+
+%-------------------------------------------------------------------------------------------------------
+\subsection{Contributions and Limitations}
+% Highlight your contributions to the field.
+% Discuss any limitations encountered during the research.
+
+
+%-------------------------------------------------------------------------------------------------------
+\subsection{Future Work}
+% Suggest possible extensions or improvements to your work.
+
+
+
+
+
+%
+%
+%
+%
+%=======================================================================================================
+%
+%
+%
+%
+%=======================================================================================================
+% REFERENCES
+%=======================================================================================================
+%\chapter*{References}
+% Include a list of all references cited in the thesis.
 	
 	%-------------------------------------------------------------------------------------------	
 	
