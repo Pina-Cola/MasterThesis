@@ -125,7 +125,7 @@
 	citecolor=black
 }
 % To include the README files:
-\usepackage{markdown}
+%\usepackage{markdown}
 
 %----------------------------------------------------------------------------
 %----------------------------------------------------------------------------
@@ -260,7 +260,7 @@ With this increased popularity, the demand for user-driven real-time visual cust
 
 
 %-------------------------------------------------------------------------------------------------------
-\subsection{Motivation} 
+\subsection{Motivation} \label{subsection:motivation}
 % Provide context, highlight the problem space, and explain the motivation behind the project.
 
 This thesis revolves around the implementation of video colour correction using Just-In-Time (JIT) techniques. The goal is to explore the feasibility of implementing the video grading process with JIT, with the focus on real-time colour correction. This project lies in the area of multimedia processing, video editing and real-time computing.
@@ -273,7 +273,7 @@ This thesis revolves around the implementation of video colour correction using 
 
 The demand for efficient and dynamic video processing tools is increasing and with this, the ability to perform on-the-fly colour correction becomes increasingly valuable. 
 
-The infrastructure of the system is visualized and explained in Chapter \ref{section:design-implementation}.
+The infrastructure of the system is visualized and explained in Chapter~\ref{section:design-implementation}.
 
 
 The colouring of a video can evoke different emotions and set an overall tone to the perception of the content. For instance, cool colours like blue can convey cold weather, while warm colors like yellow can create a feeling of warmth and sunlight. 
@@ -314,7 +314,7 @@ The colouring of a video is a powerful tool that can significantly impact the co
 
 
 %-------------------------------------------------------------------------------------------------------
-\subsection{Research Questions}
+\subsection{Research Questions} \label{subsection:researchquestions}
 % Formulate specific research questions that your thesis aims to answer.
 
 The project aims to address the feasibility (and potentially effectiveness) of implementing video colour correction using JIT in the context of real-time video streaming. The following question is relevant:
@@ -340,7 +340,7 @@ The aim is to contribute insights into the technological and scientific aspects 
 
 
 %-------------------------------------------------------------------------------------------------------
-\subsection{Codemill} 
+\subsection{Codemill} \label{subsection:codemill}
 % Provide context, highlight the problem space, and explain the motivation behind the project.
 
 Codemill was founded in 2008 in Ume\aa \ (Sweden).~\cite{codemill_old, codemill_now, codemill_linkedin} 
@@ -364,7 +364,7 @@ Codemill is an IT-Consulting company that focussed on the production and distrib
 
 
 %-------------------------------------------------------------------------------------------------------
-\subsection{Structure}
+\subsection{Structure} \label{subsection:structure}
 % Outline the structure of the thesis, briefly describing each chapter's content.
 
 
@@ -377,7 +377,7 @@ Codemill is an IT-Consulting company that focussed on the production and distrib
 
 
 %-------------------------------------------------------------------------------------------------------
-\subsection{Related Work} 
+\subsection{Related Work} \label{subsection:relatedwork}
 
 \cite{frida} (?)
 
@@ -403,7 +403,7 @@ Codemill is an IT-Consulting company that focussed on the production and distrib
 
 
 %-------------------------------------------------------------------------------------------------------
-\subsection{Colour Correction and Colour Grading}
+\subsection{Colour Correction and Colour Grading} \label{subsection:colourcorrectionandcolourgrading}
 
 
 
@@ -416,7 +416,7 @@ Codemill is an IT-Consulting company that focussed on the production and distrib
 
 
 %-------------------------------------------------------------------------------------------------------
-\subsection{Colour Theory}
+\subsection{Colour Theory} \label{subsection:colourhteory}
 
 
 
@@ -429,8 +429,18 @@ Codemill is an IT-Consulting company that focussed on the production and distrib
 
 
 %-------------------------------------------------------------------------------------------------------
-\subsection{Effects of different colours}
+\subsection{Effects of different colours} \label{subsection:effectsofdifferentcolours}
 
+
+
+
+
+
+
+%-------------------------------------------------------------------------------------------------------
+\subsection{Video Transcoding} \label{subsection:videotranscoding}
+
+Transcoding is the conversion of one digital data format into another.~\cite{transcoding}
 
 
 
@@ -448,7 +458,7 @@ Codemill is an IT-Consulting company that focussed on the production and distrib
 % CHAPTER: SYSTEM REQUIREMENTS AND SPECIFICATIONS
 %=======================================================================================================
 \newpage
-\section{System Requirements and Specifications} \label{section:requirements}
+\section{System Requirements and Specifications} \label{section:systemrequirementsandspecifications}
 
 %Define the overall goals and objectives of your project.
 %Specify the functional and non-functional requirements of the system. This includes what the system is expected to do, its features, and any constraints it must adhere to.
@@ -458,12 +468,12 @@ Codemill is an IT-Consulting company that focussed on the production and distrib
 
 
 %-------------------------------------------------------------------------------------------------------
-\subsection{User Requirements}
+\subsection{User Requirements} \label{subsection:userrequirements}
 % Identify and describe the requirements from the end-user perspective.
 
 
 %-------------------------------------------------------------------------------------------------------
-\subsection{Technical Requirements}
+\subsection{Technical Requirements} \label{subsection:technicalrequirements}
 % Detail the technical requirements for the system.
 
 Seems not to run on Windows.
@@ -485,7 +495,7 @@ Seems not to run on Windows.
 % CHAPTER: DESIGN AND IMPLEMENTATION
 %=======================================================================================================
 \newpage
-\section{Design and Implementation} \label{section:design-implementation}
+\section{Design and Implementation} \label{section:designandimplementation}
 
 
 
@@ -494,7 +504,7 @@ Seems not to run on Windows.
 
 
 %-------------------------------------------------------------------------------------------------------
-\subsection{Architecture Design}
+\subsection{Architecture Design} \label{subsection:architecturedesign}
 % Describe the overall architecture of the system.
 
 %Provide an overview of the system architecture and design. This could include high-level diagrams, such as system flowcharts or architecture diagrams, to illustrate the structure of the software.
@@ -556,16 +566,16 @@ The connection from the Python backend to the Melt framework can use Melt's capa
 
 
 %-------------------------------------------------------------------------------------------------------
-\subsection{WebRTC}
+\subsection{WebRTC} \label{subsection:webrtc}
 % Explain WebRTC
 
 
 
 %-------------------------------------------------------------------------------------------------------
-\subsection{JIT-WebRTC}
+\subsection{JIT-WebRTC} \label{subsection:jit-webrtc}
 % Describe the backend
 
-JIT-WebRTC is a live transcoder with a WebRTC output that is run in a docker container. \cite{RM_Backend}
+JIT-WebRTC is a live transcoder with a WebRTC output that is run in a docker container.~\cite{RM_Backend} Transcoding is the conversion of one digital data format into another.~\cite{transcoding}
 
 
 %# jit-webrtc
@@ -665,7 +675,7 @@ JIT-WebRTC is a live transcoder with a WebRTC output that is run in a docker con
 
 
 %-------------------------------------------------------------------------------------------------------
-\subsection{Technology}
+\subsection{Technology} \label{subsection:technology}
 % Discuss the technologies and tools chosen for the implementation.
 
 TODO: Rather in appendix or not at all
@@ -690,7 +700,7 @@ Execution of the code:
 
 
 %-------------------------------------------------------------------------------------------------------
-\subsection{Implementation Details}
+\subsection{Implementation Details} \label{subsection:implementationdetails}
 % Provide a detailed account of the implementation process.
 
 
@@ -714,12 +724,12 @@ Execution of the code:
 
 
 %-------------------------------------------------------------------------------------------------------
-\subsection{Testing}
+\subsection{Testing} \label{subsection:testing}
 % Discuss the testing methodologies and present validation results.
 
 
 %-------------------------------------------------------------------------------------------------------
-\subsection{Evaluation and Comparison}
+\subsection{Evaluation and Comparison} \label{subsection:evaluationandcomparison}
 % Evaluate the system's performance against defined criteria.
 
 
@@ -743,18 +753,18 @@ Execution of the code:
 
 
 %-------------------------------------------------------------------------------------------------------
-\subsection{Summary}
+\subsection{Summary} \label{subsection:summary}
 % Summarize the key findings and outcomes of the research.
 
 
 %-------------------------------------------------------------------------------------------------------
-\subsection{Contributions and Limitations}
+\subsection{Contributions and Limitations} \label{subsection:contributionsandlimitations}
 % Highlight your contributions to the field.
 % Discuss any limitations encountered during the research.
 
 
 %-------------------------------------------------------------------------------------------------------
-\subsection{Future Work}
+\subsection{Future Work} \label{subsection:futurework}
 % Suggest possible extensions or improvements to your work.
 
 
@@ -786,8 +796,28 @@ Execution of the code:
 		\printbibliography
 	\end{spacing}
 	
+
+
+\appendix
+
+\newpage
+
+\section{README} \label{appendix:readme}
+
+
+\subsection{Accurate-Player-3} \label{appendix:readmeaccurateplayer}
+
+\cite{RM_Frontend}
+
+
+
+
+\subsection{JIT-WebRTC} \label{appendix:readmejitwebrtc}
+
+\cite{RM_Backend}
+%\markdownInput{assets/markdown_files/README_BE.md}
 	
-	
+
 	
 	
 	
