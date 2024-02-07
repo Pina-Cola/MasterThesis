@@ -74,7 +74,8 @@ We can test changes locally without the need of publishing changes to nexus npm 
 
 ### Using npm pack
 
-Run `npm pack` inside the appropriate package (e.g. packages/core) to create a local archive `codemill-accurate-player-core-x.y.z.tgz`. Install it where needed by running `npm install path/to/*.tgz`.
+Run `npm pack` inside the appropriate package (e.g. packages/core) to create a local archive `codemill-accurate-player-core-x.y.z.tgz`. 
+Install it where needed by running `npm install path/to/*.tgz`.
 
 ## Release
 

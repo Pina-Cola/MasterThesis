@@ -53,7 +53,8 @@ For more information on each component see:
 
 ## Development
 
-For development and quick testing without the session service, on can either start JIT as a docker, or run JIT directly on your computer. The latter has some problems if you're on an Apple ARM.
+For development and quick testing without the session service, on can either start JIT as a docker, or run JIT directly on your computer. 
+The latter has some problems if you're on an Apple ARM.
 
 Run the docker:
 
@@ -65,7 +66,9 @@ To run JIT directly, see [`jit/README.md`](jit/README.md).
 
 ### Open Docker IPs
 
-Your Docker container will get an IP in the style of 172.17.0.\*. Using e.g. Docker CE on Linux this IP will be reachable from outside the container. However, on Docker Desktop for Mac, this IP will not be opened. This will cause problems. There is a service that can fix this. You **install and activate it once** by doing this:
+Your Docker container will get an IP in the style of 172.17.0.\*. Using e.g. Docker CE on Linux this IP will be reachable from outside the container. 
+However, on Docker Desktop for Mac, this IP will not be opened. 
+This will cause problems. There is a service that can fix this. You **install and activate it once** by doing this:
 
 ```
 # Install via Homebrew
