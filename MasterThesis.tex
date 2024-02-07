@@ -275,6 +275,9 @@ The demand for efficient and dynamic video processing tools is increasing and wi
 The infrastructure of the system is visualized and explained in Chapter \ref{section:design-implementation}.
 
 
+The colouring of a video can evoke different emotions and set an overall tone to the perception of the content. For instance, cool colours like blue can convey cold weather, while warm colors like yellow can create a feeling of warmth and sunlight. 
+The colouring of a video is a powerful tool that can significantly impact the conveyed mood and atmosphere. (TODO sources, TODO image that shows difference)
+
 
 
 % The necessity for such on-the-fly adjustments arises from the inherent diversity in the way various devices interpret and display colours. Each device, ranging from monitors and TVs to smartphones and tablets, possesses unique characteristics that can significantly influence the perceived colour palette. Real-time colour correction at the user's end becomes imperative to ensure a consistent and personalized viewing experience across a myriad of devices.
@@ -305,21 +308,6 @@ The infrastructure of the system is visualized and explained in Chapter \ref{sec
 
 
 
-%-------------------------------------------------------------------------------------------------------
-\subsection{Codemill} 
-% Provide context, highlight the problem space, and explain the motivation behind the project.
-
-Codemill was founded in 2008 in Ume\aa \ (Sweden).~\cite{codemill_old, codemill_now, codemill_linkedin} 
-As of February 2024, they employ over 60 employees.~\cite{codemill} 
-Codemill is an IT-Consulting company that focussed on the production and distribution of broadcast media. Their accurate video player that is described in Section~\ref{subsection_accuratevideo}, is part of this thesis and a cloud native software that is being used by the world's leading studios, broadcasters and media service providers.~\cite{codemill_linkedin, codemill_avp} 
-
-
-
-
-
-% Test \cite{frida} and 
-
-
 
 
 
@@ -343,6 +331,27 @@ After answering this research question, the following questions might occur and 
 \end{itemize}
 
 The aim is to contribute insights into the technological and scientific aspects of real-time video processing, exploring the possibilities and potential applications introduced by using JIT to implement colour grading. 
+
+
+
+
+
+
+
+%-------------------------------------------------------------------------------------------------------
+\subsection{Codemill} 
+% Provide context, highlight the problem space, and explain the motivation behind the project.
+
+Codemill was founded in 2008 in Ume\aa \ (Sweden).~\cite{codemill_old, codemill_now, codemill_linkedin} 
+As of February 2024, they employ over 60 employees.~\cite{codemill} 
+Codemill is an IT-Consulting company that focussed on the production and distribution of broadcast media. Their accurate video player that is described in Section~\ref{subsection_accuratevideo}, is part of this thesis and a cloud native software that is being used by the world's leading studios, broadcasters and media service providers.~\cite{codemill_linkedin, codemill_avp} 
+
+
+
+
+
+% Test \cite{frida} and 
+
 
 
 
@@ -401,6 +410,30 @@ The aim is to contribute insights into the technological and scientific aspects 
 
 
 
+
+
+
+
+%-------------------------------------------------------------------------------------------------------
+\subsection{Colour Theory}
+
+
+
+
+
+
+
+
+
+
+
+%-------------------------------------------------------------------------------------------------------
+\subsection{Effects of different colours}
+
+
+
+
+
 %
 %
 %
@@ -416,15 +449,11 @@ The aim is to contribute insights into the technological and scientific aspects 
 \newpage
 \section{System Requirements and Specifications} \label{section:requirements}
 
+%Define the overall goals and objectives of your project.
+%Specify the functional and non-functional requirements of the system. This includes what the system is expected to do, its features, and any constraints it must adhere to.
+%Outline any specific hardware or software requirements necessary for the project.
+%Detail the methodologies or approaches you'll use for system development.
 
-%-------------------------------------------------------------------------------------------------------
-\subsection{Accurate Video} \label{subsection_accuratevideo}
-% Identify and describe the requirements from the end-user perspective.
-
-
-%-------------------------------------------------------------------------------------------------------
-\subsection{WebRTC}
-% Identify and describe the requirements from the end-user perspective.
 
 
 %-------------------------------------------------------------------------------------------------------
@@ -435,6 +464,8 @@ The aim is to contribute insights into the technological and scientific aspects 
 %-------------------------------------------------------------------------------------------------------
 \subsection{Technical Requirements}
 % Detail the technical requirements for the system.
+
+Seems not to run on Windows.
 
 
 
@@ -464,6 +495,16 @@ The aim is to contribute insights into the technological and scientific aspects 
 %-------------------------------------------------------------------------------------------------------
 \subsection{Architecture Design}
 % Describe the overall architecture of the system.
+
+%Provide an overview of the system architecture and design. This could include high-level diagrams, such as system flowcharts or architecture diagrams, to illustrate the structure of the software.
+%Introduce the existing codebase and its components. Briefly describe the major modules or sections of the code.
+%Explain the design decisions made during the development process. Discuss the rationale behind the chosen architecture, programming languages, and frameworks.
+%Present any relevant design patterns or paradigms applied in the codebase.
+%Provide a detailed description of how the existing code works. This involves explaining the functionality of key modules or sections, the flow of data, and how different components interact.
+%If applicable, discuss any algorithms or data structures implemented in the codebase.
+%Highlight any challenges or considerations encountered during the implementation phase and how they were addressed.
+%Include code snippets, illustrations, or diagrams to enhance the understanding of your codebase.
+
 
 \begin{figure}[H]
 	\centering
@@ -506,10 +547,127 @@ The connection from the Python backend to the Melt framework can use Melt's capa
 
 
 
+%-------------------------------------------------------------------------------------------------------
+\subsection{Accurate Video} \label{subsection_accuratevideo}
+% Describe the frontend
+
+
+%-------------------------------------------------------------------------------------------------------
+\subsection{WebRTC}
+% Explain WebRTC
+
+
+
+%-------------------------------------------------------------------------------------------------------
+\subsection{JIT-WebRTC}
+% Describe the backend
+
+JIT-WebRTC is a live transcoder with a WebRTC output that is run in a docker container.
+
+
+%# jit-webrtc
+%
+%Live Transcoder with WebRTC output
+%
+%## Design 
+%
+%The system consists of four "moving parts": three on the backend (`melt`, `main.py` and `session-service`)
+%and one on the frontend (website with a JavaScript/WebRTC client).
+%
+%```
+%+---------+      +---------+      +---------+
+%|         | init |         | init |         |
+%|         |<-----| session |<-----|         |
+%+------+   AVI    |         |      |         |      |         |
+%|      |--------->|         |      +---------+      |         |
+%|      | metadata |         |         video         |         |
+%| melt |--------->| main.py |---------------------->| browser |
+%|      | control  |         |         audio         |         |
+%|      |<---------|         |---------------------->|         |
+%+------+          |         |        metadata       |         |
+%|         |---------------------->|         |
+%|         |        control        |         |
+%|         |<----------------------|         |
+%+---------+                       +---------+
+%```
+%
+%`melt` is used to decode input files and perform rendering.
+%It is the command line interface (CLI) for the [MLT framework](https://mltframework.org/),
+%a popular framework for many free software non-linear editors (NLEs).
+%
+%Control commands are sent from the browser to `main.py` via a WebRTC data channel,
+%and then from `main.py` to `melt` via a stdout/stdin.
+%`melt` in turn sends an AVI stream with rendered video and audio to `main.py` %via a named pipe,
+%and status messages and metadata is sent to `main.py` via another named pipe.
+%
+%`main.py` will extract audio and video from the incoming AVI stream and %encode them for sending to the browser via WebRTC.
+%It has the ability to extract specific channels from the rendered audio, to %be rendered to an stereo stream for WebRTC.
+%It does not appear to be possible to encode surround sound for WebRTC, despite WebRTC using the Opus codec which is surround capable.
+%This may be a limitation in `aiortc`, in WebRTC or in the browser, or all three.
+%
+%The JavaScript client receives metadata from `main.py` and sends commands and ping replies in return over the control channel.
+%It also receives and plays audio and video.
+%
+%`main.py` and `melt` is started once for each JIT session, and media is presented to it on startup. 
+%`session` is a Java-based service that presents a REST api that can be used to start a new JIT session given a description of 
+%the media to use. It also has support for managing a full ASG cluster on AWS, and distribute new JIT sessions on the instances in 
+%the ASG.
+%
+%For more information on each component see:
+%* [`melt`](https://github.com/sirf/mlt.git)
+%* [`main.py`](jit/README.md)
+%* [`session`](session/README.md)
+%
+%## Development
+%
+%For development and quick testing without the session service, on can either start JIT as a docker, or run JIT directly on your computer. The latter has some problems if you're on an Apple ARM.
+%
+%Run the docker:
+%
+%`docker/main/main.sh --threads 16 --port 8080 $VIDEOFILE`
+%
+%Where `$VIDEOFILE` is either a local path or a URL. `threads` and `port` are both optional, with current default values set to 72 threads and port 8080.
+%
+%To run JIT directly, see [`jit/README.md`](jit/README.md).
+%
+%### Open Docker IPs
+%
+%Your Docker container will get an IP in the style of 172.17.0.\*. Using e.g. Docker CE on Linux this IP will be reachable from outside the container. However, on Docker Desktop for Mac, this IP will not be opened. This will cause problems. There is a service that can fix this. You **install and activate it once** by doing this:
+%
+%```
+%# Install via Homebrew
+%brew install chipmk/tap/docker-mac-net-connect
+%
+%# Run the service and register it to launch at boot
+%sudo brew services start chipmk/tap/docker-mac-net-connect
+%```
+%
+%
+%## Deployment
+%
+%Currently the only way supported for deployment is by using EC2 instances on AWS. An AMI is created by CI on release, containing a 
+%local instance of the `session-service`, together with `main.py`, `melt` and anything else needed to start JIT processes on the EC2 
+%instance. For more information about what the AMI contains, and how configuration can be fed to it see [`ami/README.md`](ami/README.md).
+%
+%### Terraform
+%
+%Terraform modules are supplied that simplify setup of either single EC2 instances or a full ASG cluster of instances, including 
+%`session-service` running as an orchestrator on ECS. See [`terraform/README.md`](terraform/README.md) for more information on 
+%available modules, their parameters and outputs.
+%
+
+
+
+
+
 
 %-------------------------------------------------------------------------------------------------------
 \subsection{Technology}
 % Discuss the technologies and tools chosen for the implementation.
+
+TODO: Rather in appendix or not at all
+
+
 Execution of the code:
 \begin{CountingDefinition}[Setting up the code]{def:codesetup}
 	\vspace*{-0.2em}
