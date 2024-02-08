@@ -40,7 +40,7 @@
 \geometry{
 	paper=a4paper, % Change to letterpaper for US letter
 	top=3cm, % Top margin
-	bottom=4cm, % Bottom margin
+	bottom=3cm, % Bottom margin
 	left=3cm, % Left margin
 	right=3cm, % Right margin
 	%showframe, % Uncomment to show how the type block is set on the page
@@ -194,11 +194,12 @@
 
 %\setstretch{0.6}
 
-%\newgeometry{
-%	top=2.5cm, % Top margin
-%	left=2cm, % Left margin
-%	right=3cm % Right margin
-%}
+\newgeometry{
+	top=2cm, % Top margin
+	left=3cm, % Left margin
+	right=3cm, % Right margin
+	bottom = 2cm
+}
 
 \begin{spacing}{1}
 		
@@ -206,11 +207,12 @@
 	
 \end{spacing}
 
-%\newgeometry{
-%	top=3cm, % Top margin
-%	left=2cm, % Left margin
-%	right=3cm % Right margin
-%}
+\newgeometry{
+	top=3cm, % Top margin
+	left=3cm, % Left margin
+	right=3cm, % Right margin
+	bottom = 3cm
+}
 
 
 %\setstretch{1.5}
@@ -494,7 +496,7 @@ WebRTC supports various video codecs, and h.264 is popular due to its efficiency
 
 %-------------------------------------------------------------------------------------------------------
 \subsection{JIT} \label{subsection:jit}
-
+%
 \begin{CountingDefinition}[JIT]{def:JIT}
 	
 	JIT (Just-In-Time), in the context of video files for streaming, refers to a dynamic software solution employed for real-time video transformation on a server. It is used for on-the-fly conversion of video files, optimizing them for streaming. The process includes the transformation of a video file, potentially one with non-web-friendly formats, into a more suitable format for the playback in web browsers.
@@ -522,34 +524,14 @@ It is a container format, which means that it can contain multiple streams of au
 %-------------------------------------------------------------------------------------------------------
 \subsection{Named Pipe} \label{subsection:namedpipe}
 
-A named pipe, also known as a FIFO (First In, First Out), is a type of interprocess communication (IPC) mechanism used in Unix-like operating systems. It provides a way for two or more processes to communicate with each other, passing data between them. Here are some key characteristics of named pipes:
+A named pipe is a type of interprocess communication (IPC) mechanism. It provides a way for processes to pass data to each other and it is bidirectional. 
+Named pipes follow a First-In-First-Out (FIFO) structure: The first data written into the pipe is the first data to be read. This maintains a sequential order for data transmission.
+A traditional pipe is \textit{unnamed} and terminates when its process terminates. A named pipe can last beyond the life of the process, as long as the system is running.~\cite{namedpipe}
 
 
-A traditional pipe is "unnamed" and lasts only as long as the process. A named pipe, however, can last as long as the system is up, beyond the life of the process. It can be deleted if no longer used.
 
 
-FIFO Structure:
 
-Named pipes follow a FIFO structure, meaning that the first data written into the pipe is the first data to be read. It maintains a sequential order for data transmission.
-Named vs. Unnamed Pipes:
-
-Unlike unnamed pipes, which are created using the pipe system call and exist only within the context of the parent-child relationship between processes, named pipes have a persistent existence. They are associated with a filesystem entry, usually represented as a file.
-Filesystem Entry:
-
-Named pipes are created as special files in the filesystem. These files have a name associated with them and are stored in a directory, just like regular files. The naming allows unrelated processes to access the same named pipe for communication.
-Communication between Unrelated Processes:
-
-Named pipes enable communication between unrelated processes. Processes that are not parent and child can communicate by opening the same named pipe file.
-Bidirectional Communication:
-
-Named pipes support bidirectional communication. Once a named pipe is created, processes can open it for reading and writing, allowing data to flow in both directions.
-Blocking and Non-blocking Operations:
-
-Operations on named pipes can be blocking or non-blocking. When a process attempts to read from an empty pipe, it may block until data is available. Similarly, when writing to a full pipe, a process may block until there is space.
-Lifecycle and Persistence:
-
-Named pipes exist beyond the lifetime of the processes that create them. They are removed from the filesystem only when explicitly deleted or when the system is restarted.
-Named pipes are widely used in Unix-like systems for various purposes, such as communication between different applications or components of a system. They provide a simple and efficient means of passing data between processes in a way that is independent of their relationship in the process hierarchy.
 
 
 
@@ -765,10 +747,8 @@ Data written to \texttt{stdout} by the Python code can be captured or redirected
 \end{figure}
 
 
-Melt sends an AVI stream with the rendered video and audio to the \texttt{main.py}.
-AVI is a file format that can contain audio and video information to allow synchronized playback of audio and video components. 
-It is a container format, which means that it can contain multiple streams of audio and video data, along with other multimedia data such as subtitles.~\cite{avi} AVI was further described in Section~\ref{subsection:avi}.
-
+Melt sends an AVI stream with the rendered video and audio to the \texttt{main.py} via a named pipe and status messages and metadata via another named pipe.
+AVI is a file format that can contain audio and video information to allow synchronized playback of audio and video components.~\cite{avi} AVI was further described in Section~\ref{subsection:avi} and named pipes in Section~\ref{subsection:namedpipe}.
 
 \begin{figure}[H]
 	\centering
@@ -776,17 +756,28 @@ It is a container format, which means that it can contain multiple streams of au
 \end{figure}
 
 
-%via a named pipe,
-%and status messages and metadata is sent to `main.py` via another named pipe.
-%
-%`main.py` will extract audio and video from the incoming AVI stream and %encode them for sending to the browser via WebRTC.
+Then the audio and video from the incoming AVI stream is extracted by the \texttt{main.py} script to then encode it for sending it to the browser with WebRTC. 
+
+TODO: Is is encoded into h-264 here?
+
 %It has the ability to extract specific channels from the rendered audio, to %be rendered to an stereo stream for WebRTC.
 %It does not appear to be possible to encode surround sound for WebRTC, despite WebRTC using the Opus codec which is surround capable.
 %This may be a limitation in `aiortc`, in WebRTC or in the browser, or all three.
 %
-%The JavaScript client receives metadata from `main.py` and sends commands and ping replies in return over the control channel.
-%It also receives and plays audio and video.
-%
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{IM_wrtc.png}
+\end{figure}
+
+Then the JavaScript client of the browser receives the video and audio and plays it. In addition to this, it
+receives metadata from the \texttt{main.py} script and sends commands and ping responses over the control channel.
+
+
+
+
+
+
 %`main.py` and `melt` is started once for each JIT session, and media is presented to it on startup. 
 %`session` is a Java-based service that presents a REST api that can be used to start a new JIT session given a description of 
 %the media to use. It also has support for managing a full ASG cluster on AWS, and distribute new JIT sessions on the instances in 
@@ -977,9 +968,9 @@ Execution of the code:
 
 The README-file of the Accurate-Player-3 code was referenced as \cite{RM_Frontend} and is included for transparency in the following.
 
-\includegraphics[page=1, width=0.91\textwidth]{FE.pdf}
+\includegraphics[page=1, width=0.9\textwidth]{FE.pdf}
 
-\includegraphics[page=2, width=0.91\textwidth]{FE.pdf}
+\includegraphics[page=2, width=0.9\textwidth]{FE.pdf}
 
 
 
@@ -988,9 +979,9 @@ The README-file of the Accurate-Player-3 code was referenced as \cite{RM_Fronten
 
 The README-file of the JIT-WebRTC code was referenced as \cite{RM_Backend} and is included for transparency in the following.
 
-\includegraphics[page=1, width=0.91\textwidth]{BE.pdf}
+\includegraphics[page=1, width=0.9\textwidth]{BE.pdf}
 
-\includegraphics[page=2, width=0.91\textwidth]{BE.pdf}
+\includegraphics[page=2, width=0.9\textwidth]{BE.pdf}
 	
 
 
