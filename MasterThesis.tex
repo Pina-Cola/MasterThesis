@@ -40,7 +40,7 @@
 \geometry{
 	paper=a4paper, % Change to letterpaper for US letter
 	top=3cm, % Top margin
-	bottom=3cm, % Bottom margin
+	bottom=4cm, % Bottom margin
 	left=3cm, % Left margin
 	right=3cm, % Right margin
 	%showframe, % Uncomment to show how the type block is set on the page
@@ -405,6 +405,8 @@ Codemill is an IT-Consulting company that focussed on the production and distrib
 \newpage
 \section{Theoretical Background} \label{section:theoreticalbackground}
 
+TODO: split up in theoretical background for technical things and \textit{colour theory}?
+
 
 
 %-------------------------------------------------------------------------------------------------------
@@ -485,6 +487,69 @@ WebRTC supports various video codecs, and h.264 is popular due to its efficiency
 
 
 
+
+
+
+
+
+%-------------------------------------------------------------------------------------------------------
+\subsection{JIT} \label{subsection:jit}
+
+\begin{CountingDefinition}[JIT]{def:JIT}
+	
+	JIT (Just-In-Time), in the context of video files for streaming, refers to a dynamic software solution employed for real-time video transformation on a server. It is used for on-the-fly conversion of video files, optimizing them for streaming. The process includes the transformation of a video file, potentially one with non-web-friendly formats, into a more suitable format for the playback in web browsers.
+	
+\end{CountingDefinition}
+
+
+
+
+
+
+%-------------------------------------------------------------------------------------------------------
+\subsection{Audio Video Interleave} \label{subsection:avi}
+
+Audio Video Interleave (AVI) is a file format that can contain audio and video information to allow synchronized playback of audio and video components. 
+It is a container format, which means that it can contain multiple streams of audio and video data, along with other multimedia data such as subtitles.~\cite{avi}
+
+
+
+
+
+
+
+
+%-------------------------------------------------------------------------------------------------------
+\subsection{Named pipi} \label{subsection:namedpipe}
+
+A named pipe, also known as a FIFO (First In, First Out), is a type of interprocess communication (IPC) mechanism used in Unix-like operating systems. It provides a way for two or more processes to communicate with each other, passing data between them. Here are some key characteristics of named pipes:
+
+
+A traditional pipe is "unnamed" and lasts only as long as the process. A named pipe, however, can last as long as the system is up, beyond the life of the process. It can be deleted if no longer used.
+
+
+FIFO Structure:
+
+Named pipes follow a FIFO structure, meaning that the first data written into the pipe is the first data to be read. It maintains a sequential order for data transmission.
+Named vs. Unnamed Pipes:
+
+Unlike unnamed pipes, which are created using the pipe system call and exist only within the context of the parent-child relationship between processes, named pipes have a persistent existence. They are associated with a filesystem entry, usually represented as a file.
+Filesystem Entry:
+
+Named pipes are created as special files in the filesystem. These files have a name associated with them and are stored in a directory, just like regular files. The naming allows unrelated processes to access the same named pipe for communication.
+Communication between Unrelated Processes:
+
+Named pipes enable communication between unrelated processes. Processes that are not parent and child can communicate by opening the same named pipe file.
+Bidirectional Communication:
+
+Named pipes support bidirectional communication. Once a named pipe is created, processes can open it for reading and writing, allowing data to flow in both directions.
+Blocking and Non-blocking Operations:
+
+Operations on named pipes can be blocking or non-blocking. When a process attempts to read from an empty pipe, it may block until data is available. Similarly, when writing to a full pipe, a process may block until there is space.
+Lifecycle and Persistence:
+
+Named pipes exist beyond the lifetime of the processes that create them. They are removed from the filesystem only when explicitly deleted or when the system is restarted.
+Named pipes are widely used in Unix-like systems for various purposes, such as communication between different applications or components of a system. They provide a simple and efficient means of passing data between processes in a way that is independent of their relationship in the process hierarchy.
 
 
 
@@ -575,14 +640,6 @@ The WebRTC connection serves as a direct communication channel between the brows
 
 
 
-
-\begin{CountingDefinition}[Melt framework]{def:melt}
-	
-	The Melt framework (MLT) is a multimedia framework that is commonly used for video editing and playback. It provides a set of tools, libraries, and services for handling multimedia content, including video and audio. 
-	
-	
-\end{CountingDefinition}
-
 The connection from the Python backend to the Melt framework can use Melt's capabilities for video editing, processing, transcoding, rendering or playback. The system includes real-time communication via WebRTC, where Melt is involved in handling and manipulating video content.
 
 
@@ -624,7 +681,9 @@ The connection from the Python backend to the Melt framework can use Melt's capa
 \subsection{JIT-WebRTC} \label{subsection:jit-webrtc}
 % Describe the backend
 
-JIT-WebRTC is a live transcoder with a WebRTC output that is run in a docker container.~\cite{RM_Backend} As described in Section~\ref{subsection:videotranscoding}, transcoding is the conversion of one digital data format into another.~\cite{transcoding}
+The following description of the system is based on the code base and the information from the \texttt{README} file~\cite{RM_Backend}.
+
+JIT-WebRTC is a live transcoder with a WebRTC output that is run in a docker container. As described in Section~\ref{subsection:videotranscoding}, transcoding is the conversion of one digital data format into another.~\cite{transcoding}
 
 %# jit-webrtc
 %
@@ -639,6 +698,11 @@ The backend consists of three components that will be described in the following
 \end{itemize}
 
 The system's frontend was described in Section \ref{subsection:accuratevideo}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{IM3.png}
+\end{figure}
 
 %## Design 
 %
@@ -662,13 +726,57 @@ The system's frontend was described in Section \ref{subsection:accuratevideo}
 %                  +---------+                       +---------+
 %```
 %
-%`melt` is used to decode input files and perform rendering.
-%It is the command line interface (CLI) for the [MLT framework](https://mltframework.org/),
-%a popular framework for many free software non-linear editors (NLEs).
-%
-%Control commands are sent from the browser to `main.py` via a WebRTC data channel,
-%and then from `main.py` to `melt` via a stdout/stdin.
-%`melt` in turn sends an AVI stream with rendered video and audio to `main.py` %via a named pipe,
+
+
+
+%---------------------------------
+\subsubsection{Melt}
+
+\begin{CountingDefinition}[Melt framework]{def:melt}
+	
+	The Melt framework (MLT/Melt) is a multimedia framework that is commonly used for video editing and playback. It provides a set of tools, libraries, and services for handling multimedia content, including video and audio.~\cite{melt} 
+		
+\end{CountingDefinition}
+
+TODO
+
+\begin{itemize}
+	\item \texttt{melt.c} file
+	\item Melt is used to decode input files and perform rendering
+	\item It is the command line interface (CLI) for the MLT framework.
+\end{itemize}
+
+
+
+
+
+%---------------------------------
+\subsubsection{Data flow}
+
+
+Control commands are sent from the browser to \texttt{main.py} with a WebRTC data channel.
+
+From the \texttt{main.py}, the control commands get sent to Melt via \texttt{stdout} (standard output) and \texttt{stdin} (standard input). These are the default input and output channels, that allow the Python script communication with other components.
+Data written to \texttt{stdout} by the Python code can be captured or redirected and data from an external source can be read from \texttt{stdin} by the Python script. \cite{python}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{IM_control.png}
+\end{figure}
+
+
+Melt sends an AVI stream with the rendered video and audio to the \texttt{main.py}.
+AVI is a file format that can contain audio and video information to allow synchronized playback of audio and video components. 
+It is a container format, which means that it can contain multiple streams of audio and video data, along with other multimedia data such as subtitles.~\cite{avi} AVI was further described in Section~\ref{subsection:avi}.
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{IM_avi.png}
+\end{figure}
+
+
+%via a named pipe,
 %and status messages and metadata is sent to `main.py` via another named pipe.
 %
 %`main.py` will extract audio and video from the incoming AVI stream and %encode them for sending to the browser via WebRTC.
