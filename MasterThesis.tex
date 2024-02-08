@@ -179,7 +179,7 @@
 {\color{RedViolet}\dotfill}
 
 \begin{abstract}
-	\noindent Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+	\noindent Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. TODO
 \end{abstract}
 {\color{RedViolet}\dotfill}
 
@@ -200,7 +200,7 @@
 %	right=3cm % Right margin
 %}
 
-\begin{spacing}{1.2}
+\begin{spacing}{1}
 		
 	\tableofcontents
 	
@@ -264,6 +264,8 @@ With this increased popularity, the demand for user-driven real-time visual cust
 %-------------------------------------------------------------------------------------------------------
 \subsection{Motivation} \label{subsection:motivation}
 % Provide context, highlight the problem space, and explain the motivation behind the project.
+TODO: umstrukturieren und mehr auf farben beziehen
+
 
 This thesis revolves around the implementation of video colour correction using Just-In-Time (JIT) techniques. The goal is to explore the feasibility of implementing the video grading process with JIT, with the focus on real-time colour correction. This project lies in the area of multimedia processing, video editing and real-time computing.
 
@@ -318,6 +320,7 @@ The colouring of a video is a powerful tool that can significantly impact the co
 %-------------------------------------------------------------------------------------------------------
 \subsection{Research Questions} \label{subsection:researchquestions}
 % Formulate specific research questions that your thesis aims to answer.
+TODO
 
 The project aims to address the feasibility (and potentially effectiveness) of implementing video colour correction using JIT in the context of real-time video streaming. The following question is relevant:
 
@@ -447,6 +450,46 @@ Transcoding is the conversion of one digital data format into another.~\cite{tra
 
 
 
+
+
+
+%-------------------------------------------------------------------------------------------------------
+\subsection{Video Compression with h.264} \label{subsection:videocompressionwithh264}
+% Explain WebRTC
+
+\begin{CountingDefinition}[h.264]{def:h264}
+	
+	h.264 refers to a video compression standard. In the context of real-time communication, h.264 is one of the video codecs that can be used to compress and decompress video streams.
+	
+\end{CountingDefinition}
+
+
+
+
+
+
+
+%-------------------------------------------------------------------------------------------------------
+\subsection{WebRTC} \label{subsection:webrtc}
+% Explain WebRTC
+
+\begin{CountingDefinition}[WebRTC]{def:WebRTC}
+	
+	Web Real-Time Communication (WebRTC), is a free, open-source project that provides web browsers and mobile applications with real-time communication. It enables direct communication between browsers or applications, allowing for peer-to-peer communication without the need for intermediary servers in certain scenarios.
+	
+\end{CountingDefinition}
+
+WebRTC supports various video codecs, and h.264 is popular due to its efficiency in compressing video data while maintaining good quality. It is widely used for video conferencing, streaming, and other real-time communication applications. The video streams exchanged between the browser and the backend are encoded and decoded using h.264.
+
+
+
+
+
+
+
+
+
+
 %
 %
 %
@@ -518,6 +561,7 @@ Seems not to run on Windows.
 %Highlight any challenges or considerations encountered during the implementation phase and how they were addressed.
 %Include code snippets, illustrations, or diagrams to enhance the understanding of your codebase.
 
+TODO: Überarbeiten, kurz einleiten und in entsprechende Chapter verschieben
 
 \begin{figure}[H]
 	\centering
@@ -525,23 +569,11 @@ Seems not to run on Windows.
 \end{figure}
 
 
-\begin{CountingDefinition}[WebRTC]{def:WebRTC}
-	
-	Web Real-Time Communication (WebRTC), is a free, open-source project that provides web browsers and mobile applications with real-time communication. It enables direct communication between browsers or applications, allowing for peer-to-peer communication without the need for intermediary servers in certain scenarios.
-	
-\end{CountingDefinition}
-
-
 The WebRTC connection serves as a direct communication channel between the browser and the backend, enabling real-time data exchange, involving audio, video, or other data streams. 
 
 
-\begin{CountingDefinition}[h.264]{def:h264}
-	
-	h.264 refers to a video compression standard. In the context of real-time communication, h.264 is one of the video codecs that can be used to compress and decompress video streams.
-	
-\end{CountingDefinition}
 
-WebRTC supports various video codecs, and h.264 is popular due to its efficiency in compressing video data while maintaining good quality. It is widely used for video conferencing, streaming, and other real-time communication applications. The video streams exchanged between the browser and the backend are encoded and decoded using h.264.
+
 
 
 \begin{CountingDefinition}[Melt framework]{def:melt}
@@ -560,16 +592,31 @@ The connection from the Python backend to the Melt framework can use Melt's capa
 
 
 
+
+
+
+
+
+
 %-------------------------------------------------------------------------------------------------------
-\subsection{Accurate Video} \label{subsection_accuratevideo}
+\subsection{Accurate Video} \label{subsection:accuratevideo}
 % Describe the frontend
 
 \cite{RM_Frontend}
 
 
-%-------------------------------------------------------------------------------------------------------
-\subsection{WebRTC} \label{subsection:webrtc}
-% Explain WebRTC
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -577,22 +624,31 @@ The connection from the Python backend to the Melt framework can use Melt's capa
 \subsection{JIT-WebRTC} \label{subsection:jit-webrtc}
 % Describe the backend
 
-JIT-WebRTC is a live transcoder with a WebRTC output that is run in a docker container.~\cite{RM_Backend} Transcoding is the conversion of one digital data format into another.~\cite{transcoding}
-
+JIT-WebRTC is a live transcoder with a WebRTC output that is run in a docker container.~\cite{RM_Backend} As described in Section~\ref{subsection:videotranscoding}, transcoding is the conversion of one digital data format into another.~\cite{transcoding}
 
 %# jit-webrtc
 %
 %Live Transcoder with WebRTC output
 %
+
+The backend consists of three components that will be described in the following:
+\begin{itemize}
+	\item Melt
+	\item \texttt{main.py}
+	\item Session service
+\end{itemize}
+
+The system's frontend was described in Section \ref{subsection:accuratevideo}
+
 %## Design 
 %
 %The system consists of four "moving parts": three on the backend (`melt`, `main.py` and `session-service`)
 %and one on the frontend (website with a JavaScript/WebRTC client).
 %
 %```
-%+---------+      +---------+      +---------+
-%|         | init |         | init |         |
-%|         |<-----| session |<-----|         |
+%                  +---------+      +---------+      +---------+
+%                  |         | init |         | init |         |
+%                  |         |<-----| session |<-----|         |
 %+------+   AVI    |         |      |         |      |         |
 %|      |--------->|         |      +---------+      |         |
 %|      | metadata |         |         video         |         |
@@ -600,10 +656,10 @@ JIT-WebRTC is a live transcoder with a WebRTC output that is run in a docker con
 %|      | control  |         |         audio         |         |
 %|      |<---------|         |---------------------->|         |
 %+------+          |         |        metadata       |         |
-%|         |---------------------->|         |
-%|         |        control        |         |
-%|         |<----------------------|         |
-%+---------+                       +---------+
+%                  |         |---------------------->|         |
+%                  |         |        control        |         |
+%                  |         |<----------------------|         |
+%                  +---------+                       +---------+
 %```
 %
 %`melt` is used to decode input files and perform rendering.
@@ -796,7 +852,7 @@ Execution of the code:
 	
 	\newpage
 	\addcontentsline{toc}{section}{References}
-	\begin{spacing}{1.2}
+	\begin{spacing}{1}
 		\printbibliography
 	\end{spacing}
 	
@@ -813,9 +869,9 @@ Execution of the code:
 
 The README-file of the Accurate-Player-3 code was referenced as \cite{RM_Frontend} and is included for transparency in the following.
 
-\includegraphics[page=1, width=0.95\textwidth]{FE.pdf}
+\includegraphics[page=1, width=0.91\textwidth]{FE.pdf}
 
-\includegraphics[page=2, width=0.95\textwidth]{FE.pdf}
+\includegraphics[page=2, width=0.91\textwidth]{FE.pdf}
 
 
 
@@ -824,9 +880,9 @@ The README-file of the Accurate-Player-3 code was referenced as \cite{RM_Fronten
 
 The README-file of the JIT-WebRTC code was referenced as \cite{RM_Backend} and is included for transparency in the following.
 
-\includegraphics[page=1, width=1\textwidth]{BE.pdf}
+\includegraphics[page=1, width=0.91\textwidth]{BE.pdf}
 
-\includegraphics[page=2, width=1\textwidth]{BE.pdf}
+\includegraphics[page=2, width=0.91\textwidth]{BE.pdf}
 	
 
 
