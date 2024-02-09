@@ -392,6 +392,7 @@ Codemill is an IT-Consulting company that focussed on the production and distrib
 
 
 
+
 %
 %
 %
@@ -402,13 +403,10 @@ Codemill is an IT-Consulting company that focussed on the production and distrib
 %
 %
 %=======================================================================================================
-% CHAPTER: Theroteical Background
+% CHAPTER: Theroteical Background on Colour
 %=======================================================================================================
 \newpage
-\section{Theoretical Background} \label{section:theoreticalbackground}
-
-TODO: split up in theoretical background for technical things and \textit{colour theory}?
-
+\section{Theoretical Foundations of Color} \label{section:theoreticalfoundationsofcolour}
 
 
 %-------------------------------------------------------------------------------------------------------
@@ -441,6 +439,31 @@ TODO: split up in theoretical background for technical things and \textit{colour
 \subsection{Effects of different colours} \label{subsection:effectsofdifferentcolours}
 
 
+
+
+
+
+
+
+
+
+
+
+
+%
+%
+%
+%
+%=======================================================================================================
+%
+%
+%
+%
+%=======================================================================================================
+% CHAPTER: Technical Background
+%=======================================================================================================
+\newpage
+\section{Technical Background} \label{section:technicalbackground}
 
 
 
@@ -532,6 +555,15 @@ A traditional pipe is \textit{unnamed} and terminates when its process terminate
 
 
 
+
+
+
+
+%-------------------------------------------------------------------------------------------------------
+\subsection{REST} \label{subsection:restapi}
+
+
+Representational State Transfer (REST) is an architectural style for designing networked applications. A REST Application Programming Interface (API) exposes a set of endpoints (URLs) that allow communication between different software systems over the internet and it uses the hypertext transfer protocol (HTTP) methods.~\cite{IEEE_Rest, webservice, Nodejs_Rest}
 
 
 
@@ -735,8 +767,8 @@ TODO
 %---------------------------------
 \subsubsection{Data flow}
 
-
-Control commands are sent from the browser to \texttt{main.py} with a WebRTC data channel.
+The user initiates a session through the browser, which then initiates the \texttt{main.py} script.
+Control commands are then sent from the browser to \texttt{main.py} with a WebRTC data channel.
 
 From the \texttt{main.py}, the control commands get sent to Melt via \texttt{stdout} (standard output) and \texttt{stdin} (standard input). These are the default input and output channels, that allow the Python script communication with other components.
 Data written to \texttt{stdout} by the Python code can be captured or redirected and data from an external source can be read from \texttt{stdin} by the Python script. \cite{python}
@@ -779,11 +811,29 @@ receives metadata from the \texttt{main.py} script and sends commands and ping r
 	\includegraphics[width=0.5\textwidth]{IM_wrtc_control.png}
 \end{figure}
 
-
+Melt and the \texttt{main.py} script are started once for each JIT session with a parameter that presents the media from the start on.
 
 %`main.py` and `melt` is started once for each JIT session, and media is presented to it on startup. 
-%`session` is a Java-based service that presents a REST api that can be used to start a new JIT session given a description of 
-%the media to use. It also has support for managing a full ASG cluster on AWS, and distribute new JIT sessions on the instances in 
+
+\subsubsection{Session}
+
+\texttt{Session} is a java-based service, designed to support machine-to-machine interaction between the browser and the backend (\texttt{main.py} and Melt). Web services allow different applications, that often run on different platforms and are written in different programming languages, to communicate with each other.~\cite{webservice}
+
+The \texttt{Session} service exposes a REST API (described in Section~\ref{subsection:restapi}) for initiating a JIT session with specified media details. 
+
+% Additionally, it leverages AWS, specifically utilizing the Auto Scaling Group (ASG) feature to manage a cluster of instances dynamically, ensuring scalability and efficient distribution of JIT sessions across the instances in the cluster.
+
+% AWS
+%2. **AWS (Amazon Web Services):**
+%- **Definition:** AWS is a cloud computing platform provided by Amazon. It offers a wide range of services, including computing power, storage, databases, machine learning, and more, allowing businesses to scale and grow without the need for significant upfront investments in physical infrastructure.
+
+% ASG cluster
+%3. **ASG Cluster (Auto Scaling Group):**
+%- **Definition:** An Auto Scaling Group is an AWS service that automatically adjusts the number of compute instances (e.g., virtual machines) in response to changes in demand or other specified conditions. It helps ensure that the desired number of instances are available to handle varying workloads.
+
+
+
+%`session` is a Java-based service that presents a REST api that can be used to start a new JIT session given a description of the media to use. It also has support for managing a full ASG cluster on AWS, and distribute new JIT sessions on the instances in 
 %the ASG.
 %
 %For more information on each component see:
@@ -791,6 +841,10 @@ receives metadata from the \texttt{main.py} script and sends commands and ping r
 %* [`main.py`](jit/README.md)
 %* [`session`](session/README.md)
 %
+
+For development and quick testing without the session service, JIT can be started in a Docker container. A Docker container is in isolated environment in which an application can be run and Docker is the platform that enables the usage of those containers.~\cite{docker}
+
+
 %## Development
 %
 %For development and quick testing without the session service, on can either start JIT as a docker, or run JIT directly on your computer. The latter has some problems if you're on an Apple ARM.
@@ -838,24 +892,7 @@ receives metadata from the \texttt{main.py} script and sends commands and ping r
 \subsection{Technology} \label{subsection:technology}
 % Discuss the technologies and tools chosen for the implementation.
 
-TODO: Rather in appendix or not at all.
 
-Was soll diese ganze subsection eigentlich? Ich denke die kann weg aber mal sehen.
-
-
-Execution of the code:
-\begin{CountingDefinition}[Setting up the code]{def:codesetup}
-	\vspace*{-0.2em}
-	\begin{itemize}
-		\item Generate ssh key (\texttt{ssh-keygen}) and add to GitLab
-		\item Clone git repositories (jit-webrtc and accurate-player-3-core)
-		\item Install node.js and set path variables for npm (and yarn)
-		\item Install and run docker
-		\item Execute jit-webrtc code with command from README with the command \texttt{docker/main/main.sh --threads 16 --port 8080 \$VIDEOFILE}
-		\item Execute accurate player code (run \texttt{npm install --force}, \texttt{npm install yarn} and then npm start, resolve errors, fix dependenciy problems with \texttt{npm audit fix --force} (potentially twice))
-	\end{itemize}
-	
-\end{CountingDefinition}
 
 
 
