@@ -266,7 +266,23 @@ With this increased popularity, the demand for user-driven real-time visual cust
 %-------------------------------------------------------------------------------------------------------
 \subsection{Motivation} \label{subsection:motivation}
 % Provide context, highlight the problem space, and explain the motivation behind the project.
-TODO: umstrukturieren und mehr auf farben beziehen
+TODO: structure and more reference to colours
+
+
+The colouring of a video can evoke different emotions and set an overall tone to the perception of the content. For instance, cool colours like blue can convey cold weather, while warm colours like yellow can create a feeling of warmth and sunlight. 
+The colouring of a video is a powerful tool that can significantly impact the conveyed mood and atmosphere. (TODO sources)
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.31\textwidth]{2_blau.jpg}
+		\hspace*{0.01\textwidth}
+		\includegraphics[width=0.31\textwidth]{2.jpg}
+		\hspace*{0.01\textwidth}
+		\includegraphics[width=0.31\textwidth]{2_gelb.jpg}
+		\label{figure:coloursblueandyellow}
+		\caption{The original photo can be seen in the middle, while the picture on the left has more blue tones and the picture on the right more yellow tones.}
+	\end{center}
+\end{figure}
 
 
 This thesis revolves around the implementation of video colour correction using Just-In-Time (JIT) techniques. The goal is to explore the feasibility of implementing the video grading process with JIT, with the focus on real-time colour correction. This project lies in the area of multimedia processing, video editing and real-time computing.
@@ -281,9 +297,6 @@ The demand for efficient and dynamic video processing tools is increasing and wi
 
 The infrastructure of the system is visualized and explained in Chapter~\ref{section:designandimplementation}.
 
-
-The colouring of a video can evoke different emotions and set an overall tone to the perception of the content. For instance, cool colours like blue can convey cold weather, while warm colours like yellow can create a feeling of warmth and sunlight. 
-The colouring of a video is a powerful tool that can significantly impact the conveyed mood and atmosphere. (TODO sources, TODO image that shows difference)
 
 
 
@@ -352,13 +365,9 @@ The aim is to contribute insights into the technological and scientific aspects 
 
 Codemill was founded in 2008 in Ume\aa \ (Sweden).~\cite{codemill_old, codemill_now, codemill_linkedin} 
 As of February 2024, they employ over 60 employees.~\cite{codemill} 
-Codemill is an IT-Consulting company that focussed on the production and distribution of broadcast media. Their accurate video player that is described in Section~\ref{subsection_accuratevideo}, is part of this thesis and a cloud native software that is being used by the world's leading studios, broadcasters and media service providers.~\cite{codemill_linkedin, codemill_avp} 
+Codemill is an IT-Consulting company that focussed on the production and distribution of broadcast media. Their accurate video player that is described in Section~\ref{subsection:accuratevideo}, is part of this thesis and a cloud native software that is being used by the world's leading studios, broadcasters and media service providers.~\cite{codemill_linkedin, codemill_avp} 
 
 
-
-
-
-% Test \cite{frida} and 
 
 
 
@@ -513,29 +522,15 @@ WebRTC supports various video codecs, and h.264 is popular due to its efficiency
 
 
 
-
-
-
-
-%-------------------------------------------------------------------------------------------------------
-\subsection{JIT} \label{subsection:jit}
-%
-\begin{CountingDefinition}[JIT]{def:JIT}
-	
-	JIT (Just-In-Time), in the context of video files for streaming, refers to a dynamic software solution employed for real-time video transformation on a server. It is used for on-the-fly conversion of video files, optimizing them for streaming. The process includes the transformation of a video file, potentially one with non-web-friendly formats, into a more suitable format for the playback in web browsers.
-	
-\end{CountingDefinition}
-
-
-
-
-
-
 %-------------------------------------------------------------------------------------------------------
 \subsection{Audio Video Interleave} \label{subsection:avi}
 
 Audio Video Interleave (AVI) is a file format that can contain audio and video information to allow synchronized playback of audio and video components. 
 It is a container format, which means that it can contain multiple streams of audio and video data, along with other multimedia data such as subtitles.~\cite{avi}
+
+
+
+
 
 
 
@@ -564,6 +559,29 @@ A traditional pipe is \textit{unnamed} and terminates when its process terminate
 
 
 Representational State Transfer (REST) is an architectural style for designing networked applications. A REST Application Programming Interface (API) exposes a set of endpoints (URLs) that allow communication between different software systems over the internet and it uses the hypertext transfer protocol (HTTP) methods.~\cite{IEEE_Rest, webservice, Nodejs_Rest}
+
+
+
+
+
+
+
+
+
+
+
+%-------------------------------------------------------------------------------------------------------
+\subsection{JIT} \label{subsection:jit}
+%
+\begin{CountingDefinition}[JIT]{def:JIT}
+	
+	JIT (Just-In-Time), in the context of video files for streaming, refers to a dynamic software solution employed for real-time video transformation on a server. It is used for on-the-fly conversion of video files, optimizing them for streaming. The process includes the transformation of a video file, potentially one with non-web-friendly formats, into a more suitable format for the playback in web browsers.
+	
+\end{CountingDefinition}
+
+
+
+
 
 
 
@@ -640,15 +658,7 @@ Seems not to run on Windows.
 %Highlight any challenges or considerations encountered during the implementation phase and how they were addressed.
 %Include code snippets, illustrations, or diagrams to enhance the understanding of your codebase.
 
-TODO: Überarbeiten, kurz einleiten und in entsprechende Chapter verschieben
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.6\textwidth]{IM2.png}
-\end{figure}
-
-
-The WebRTC connection serves as a direct communication channel between the browser and the backend, enabling real-time data exchange, involving audio, video, or other data streams. 
+TODO: Short overview/introduction of architecture and explain structure of this section?
 
 
 
@@ -673,11 +683,16 @@ The connection from the Python backend to the Melt framework can use Melt's capa
 \subsection{Accurate Video} \label{subsection:accuratevideo}
 % Describe the frontend
 
-\cite{RM_Frontend}
+
+The frontend uses Node.js as its runtime environment. Node.js enables the execution of JavaScript code outside of a web browser.~\cite{nodejs, RM_Frontend, ap3_docs}
+
+To manage project dependencies and packages, either Yarn or npm (Node Package Manager) is used. These package managers allow developers to install, update, and manage libraries and tools used in the project.~\cite{RM_Frontend, npmyarn}
 
 
-
-
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{IM_FE.png}
+\end{figure}
 
 
 
@@ -697,7 +712,7 @@ The connection from the Python backend to the Melt framework can use Melt's capa
 
 The following description of the system is based on the code base and the information from the \texttt{README} file~\cite{RM_Backend}.
 
-JIT-WebRTC is a live transcoder with a WebRTC output that is run in a docker container. As described in Section~\ref{subsection:videotranscoding}, transcoding is the conversion of one digital data format into another.~\cite{transcoding}
+JIT-WebRTC is a live transcoder with a WebRTC output. As described in Section~\ref{subsection:videotranscoding}, transcoding is the conversion of one digital data format into another.~\cite{transcoding}
 
 %# jit-webrtc
 %
@@ -788,7 +803,7 @@ AVI is a file format that can contain audio and video information to allow synch
 \end{figure}
 
 
-Then the audio and video from the incoming AVI stream is extracted by the \texttt{main.py} script to then encode it for sending it to the browser with WebRTC. 
+Then the audio and video from the incoming AVI stream is extracted by the \texttt{main.py} script to then encode it for sending it to the browser with WebRTC. The WebRTC connection serves as a direct communication channel between the browser and the backend, enabling real-time data exchange, involving audio, video, or other data streams. 
 
 TODO: Is is encoded into h-264 here?
 
@@ -843,6 +858,12 @@ The \texttt{Session} service exposes a REST API (described in Section~\ref{subse
 %
 
 For development and quick testing without the session service, JIT can be started in a Docker container. A Docker container is in isolated environment in which an application can be run and Docker is the platform that enables the usage of those containers.~\cite{docker}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{IM2.png}
+\end{figure}
 
 
 %## Development
