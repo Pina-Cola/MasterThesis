@@ -102,7 +102,7 @@
 %\sectionfont{\color{RedViolet}}
 %\subsectionfont{\color{RedViolet}}
 \renewcommand{\labelitemi}{$\textcolor{RedViolet}{\bullet}$}
-\renewcommand{\labelitemii}{$\textcolor{RedViolet}{\cdot}$}
+\renewcommand{\labelitemii}{$\textcolor{RedViolet}{\circ}$}
 \renewcommand{\labelitemiii}{$\textcolor{RedViolet}{\diamond}$}
 \renewcommand{\labelitemiv}{$\textcolor{RedViolet}{\ast}$}
 %----------------------------------------
@@ -1077,12 +1077,18 @@ The README-file of the JIT-WebRTC code was referenced as \cite{RM_Backend} and i
 			\item[-] attach-track filter[:arg] [name=value]* Attach a filter to a track
 		\end{itemize}}
 	\item Collected information about melt \url{https://superuser.com/questions/358082/command-line-video-editing-in-linux-cut-join-and-preview}
-	\item Promising sounding filters to analyse:
+	\item Promising sounding filters to look into:
 	\begin{itemize}
-		%\item BurningTV?
-		%\item autofade?
-		%\item avcolour_space and avcolor_space (FFmpeg Image Converter)
-		\item avfilter.colorbalance
+		\item \textbf{avfilter.colorbalance}
+		
+		\url{https://www.mltframework.org/plugins/FilterAvfilter-colorbalance/}
+		
+		\texttt{title: colorbalance \newline
+			media types: Video \newline
+			description: Adjust the color balance.}
+		
+		$\rightarrow$ looks promising
+		
 		\item avfilter.colorchannelmixer
 		\item avfilter.colorcontrast
 		\item avfilter.colorcorrect
@@ -1114,7 +1120,7 @@ The README-file of the JIT-WebRTC code was referenced as \cite{RM_Backend} and i
 
 
 
-\subsubsection*{OpenGL and GLSL}
+%\subsubsection*{OpenGL and GLSL}
 
 
 
