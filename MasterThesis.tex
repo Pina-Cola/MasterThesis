@@ -201,7 +201,7 @@
 	bottom = 2cm
 }
 
-\begin{spacing}{1}
+\begin{spacing}{0.95}
 		
 	\tableofcontents
 	
@@ -1043,6 +1043,82 @@ The README-file of the JIT-WebRTC code was referenced as \cite{RM_Backend} and i
 \includegraphics[page=1, width=0.9\textwidth]{BE.pdf}
 
 \includegraphics[page=2, width=0.9\textwidth]{BE.pdf}
+
+
+
+
+%------------------------------------------------------------------------
+
+\newpage
+\section{Solutions in Melt Framework?} \label{appendix:solutionsinmeltframework}
+
+
+
+
+\subsubsection*{MLT FX}
+
+\begin{itemize}
+	\item Read through MLT FX User Guide \cite{mltfx}
+	
+	
+	\item[]
+	\item Can MLT FX be used in the terminal/through commands or is it an application with UI only?
+	\item Look into \url{https://www.mltframework.org/docs/fxcut/}? on FX Cut (but this page is fro 2005)
+	
+	
+	\item[]
+	\item Apply filter?
+	\item Look into \url{https://www.mltframework.org/plugins/PluginsFilters/}?
+	\item \texttt{melt [options] [producer [name=value]* ]+
+		Options:
+		\begin{itemize}
+			\item[-] attach filter[:arg] [name=value]*       Attach a filter to the output
+			\item[-] attach-cut filter[:arg] [name=value]*   Attach a filter to a cut
+			\item[-] attach-track filter[:arg] [name=value]* Attach a filter to a track
+		\end{itemize}}
+	\item Collected information about melt \url{https://superuser.com/questions/358082/command-line-video-editing-in-linux-cut-join-and-preview}
+	\item Promising sounding filters to analyse:
+	\begin{itemize}
+		%\item BurningTV?
+		%\item autofade?
+		%\item avcolour_space and avcolor_space (FFmpeg Image Converter)
+		\item avfilter.colorbalance
+		\item avfilter.colorchannelmixer
+		\item avfilter.colorcontrast
+		\item avfilter.colorcorrect
+		\item avfilter.colorize
+		\item avfilter.colorkey
+		\item avfilter.colorlevels
+		\item avfilter.colormatrix
+		\item avfilter.colorspace
+		\item avfilter.colortemperature
+		\item avfilter.pseudocolor
+		\item avfilter.selectivecolor
+		\item[]
+		\item frei0r.coloradj\_RGB
+		\item frei0r.colordistance
+		\item frei0r.colorhalftone
+		\item frei0r.colorize
+		\item frei0r.colortap
+		\item frei0r.contrast0r
+		\item frei0r.three\_point\_balance
+		\item[]
+		\item tcolor
+	\end{itemize}
+
+
+	\item[]
+	%\item Good to know: \url{https://www.mltframework.org/doxygen/annotated.html}
+\end{itemize}
+
+
+
+
+\subsubsection*{OpenGL and GLSL}
+
+
+
+
 	
 
 
