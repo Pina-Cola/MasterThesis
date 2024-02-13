@@ -166,7 +166,9 @@
 		\end{itemize}}
 	\item Collected information about melt \url{https://superuser.com/questions/358082/command-line-video-editing-in-linux-cut-join-and-preview}
 	\item Promising sounding filters:
-	\begin{itemize}
+	
+	\newpage
+	
 		\item
 		
 		\texttt{avfilter.colorbalance}
@@ -179,19 +181,6 @@
 		
 		$\rightarrow$ looks promising
 		
-	\end{itemize}
-		
-		\newpage
-		
-		\item \texttt{avfilter.colorchannelmixer}
-		
-		\url{https://www.mltframework.org/plugins/FilterAvfilter-colorchannelmixer/}
-		
-		\texttt{title: colorchannelmixer \newline
-			media types: Video \newline
-			description: Adjust colors by mixing color channels.}
-		
-		$\rightarrow$ looks promising
 		
 		Execution of \texttt{melt https://s3.eu-central-1.amazonaws.com/accurate-player\--demo-assets/timecode/sintel-2048-timecode-stereo.mp4 \\ -filter avfilter.colorbalance av.rs=1 av.gm=1 av.bh=1}:
 		
@@ -203,12 +192,30 @@
 			\includegraphics[width=0.9\textwidth]{colourhigh.png}
 			Colours with \texttt{av.rs=1} \texttt{av.gm=1} \texttt{av.bh=1}
 		\end{minipage}
-	
+		
 		Float parameters with komma instead of dot, f.ex. $0,5$
 		
+
+	
 		\newpage
 		
-		\begin{itemize}
+		\begin{itemize}	
+		
+		\item \texttt{avfilter.colorchannelmixer}
+		
+		\url{https://www.mltframework.org/plugins/FilterAvfilter-colorchannelmixer/}
+		
+		\texttt{title: colorchannelmixer \newline
+			media types: Video \newline
+			description: Adjust colors by mixing color channels.}
+		
+		$\rightarrow$ looks promising
+		
+		
+		
+
+		
+
 		
 		\item \texttt{avfilter.colorcontrast}
 		
@@ -251,7 +258,7 @@
 		
 		%\item avfilter.pseudocolor
 		%\item avfilter.selectivecolor
-		\item[]
+		%\item[]
 		\item \texttt{frei0r.coloradj\_RGB}
 		
 		\url{https://www.mltframework.org/plugins/FilterFrei0r-coloradj_rgb/}
