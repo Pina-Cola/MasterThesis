@@ -126,6 +126,8 @@
 }
 % To include the README files:
 %\usepackage{markdown}
+% Linebreaks in \texttt:
+\usepackage[htt]{hyphenat}
 
 
 
@@ -924,6 +926,24 @@ For development and quick testing without the session service, JIT can be starte
 % Provide a detailed account of the implementation process.
 
 
+Use of \texttt{avfilter.colorchannelmixer}:
+
+\url{https://www.mltframework.org/plugins/FilterAvfilter-colorchannelmixer/}
+
+\texttt{title: colorchannelmixer \newline
+	media types: Video \newline
+	description: Adjust colors by mixing color channels.}
+
+Execution of \texttt{melt https://s3.eu-central-1.amazonaws.com/accurate-player\--demo-assets/timecode/sintel-2048-timecode-stereo.mp4 \\ -filter avfilter.colorbalance av.rs=1 av.gm=1 av.bh=1}:
+
+
+\begin{minipage}{0.5\textwidth}
+	\includegraphics[width=0.9\textwidth]{colourdefault.png}
+	Original colours
+\end{minipage}\begin{minipage}{0.5\textwidth}
+	\includegraphics[width=0.9\textwidth]{colourhigh.png}
+	Colours with \texttt{av.rs=1} \texttt{av.gm=1} \texttt{av.bh=1}
+\end{minipage}
 
 
 
