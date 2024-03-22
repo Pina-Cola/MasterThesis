@@ -292,7 +292,8 @@ With this increased popularity, the demand for user-driven real-time visual cust
 
 
 The colouring of a video can evoke different emotions and set an overall tone to the perception of the content. For instance, cool colours like blue can convey cold weather, while warm colours like yellow can create a feeling of warmth and sunlight. 
-The colouring of a video is a powerful tool that can significantly impact the conveyed mood and atmosphere. (TODO sources)
+The colouring of a video is a powerful tool that can significantly impact the conveyed mood and atmosphere.\myfootcite{colorgrading1}\textsuperscript{,} \myfootcite{colorgrading2}
+
 
 
 
@@ -405,7 +406,7 @@ The infrastructure of the system that this thesis evolves around is visualized a
 %-------------------------------------------------------------------------------------------------------
 \subsection{Related Work} \label{subsection:relatedwork}
 
-\cite{frida} (?)
+
 
 
 
@@ -445,7 +446,7 @@ The infrastructure of the system that this thesis evolves around is visualized a
 
 
 %-------------------------------------------------------------------------------------------------------
-\textbf{Colour Correction and Colour Grading} 
+\subsubsection*{Colour Correction and Colour Grading} 
 
 
 
@@ -458,7 +459,7 @@ The infrastructure of the system that this thesis evolves around is visualized a
 
 
 %-------------------------------------------------------------------------------------------------------
-\textbf{Colour Theory}
+\subsubsection*{Colour Theory}
 
 
 
@@ -471,7 +472,61 @@ The infrastructure of the system that this thesis evolves around is visualized a
 
 
 %-------------------------------------------------------------------------------------------------------
-\textbf{Effects of different colours} 
+\subsubsection*{Effects of different colours} 
+
+Different colours can convey a different understanding of a scene to the viewer or even influence the viewers emotions. 
+The different colours have distinct psychological associations, which influences how viewers perceive and interpret the content.\cite{colour}
+
+In the following, different colours with their association are listed and example pictures are shown.
+
+%\subsubsection{Red}
+
+%The color red is often associated with intense emotions such as passion, excitement, and danger. In visual media, the use of red can evoke feelings of urgency, power, and love. For example, a picture featuring a vibrant red sunset can convey a sense of warmth and romance, while a video with flashes of red light may create a feeling of tension or alarm.
+
+%\subsection{Blue}
+
+%Blue is commonly linked to feelings of calmness, tranquility, and stability. In videos and pictures, the presence of blue tones can create a sense of serenity and relaxation. For instance, a photograph of a tranquil ocean scene with shades of blue can evoke a peaceful mood, while a video featuring blue-tinted lighting may impart a sense of introspection or contemplation.
+
+%\subsection{Green}
+
+%Green is associated with nature, growth, and harmony. In visual media, the use of green can symbolize renewal, freshness, and balance. For example, a picture showcasing lush green landscapes can evoke feelings of vitality and rejuvenation, while a video featuring green foliage may convey a sense of natural beauty and harmony.
+
+%\subsection{Yellow}
+
+
+
+Yellow is often associated with happiness, optimism, and energy. When used in videos or pictures, yellow can evoke feelings of warmth, cheerfulness, and positivity. For instance, a photograph capturing a bright yellow sunrise as seen in Figure \ref{figure:yellow} can convey a sense of warmth, hope and optimism.
+
+\begin{figure}[H]
+	\begin{center}
+		\cutpic{0.3cm}{0.6\textwidth}{sunset.jpg}
+		\label{figure:yellow}
+		\caption[Picture of a sunrise in Sweden with mainly yellow tones.]{Picture of a sunrise in Sweden with mainly yellow tones.}
+	\end{center}
+\end{figure}
+
+%\subsection{Black and White}
+
+%Black and white are often used to evoke a sense of timelessness, simplicity, and sophistication. In visual media, the absence of color can draw attention to shapes, textures, and contrasts. For example, a black and white photograph of a city skyline can emphasize the architectural details and create a dramatic atmosphere, while a black and white video may evoke a sense of nostalgia or nostalgia.
+
+%\section{Conclusion}
+
+%The emotional impact of colors in videos and pictures cannot be overstated. By understanding the psychological associations of different colors, creators can effectively convey emotions, set the mood, and engage viewers on a deeper level. Whether it's the passionate reds, calming blues, or vibrant yellows, each color has the power to evoke a unique emotional response, enriching the visual experience for the audience.
+
+
+%Picture ideas:    
+
+%Red: A picture of a sunset with rich red hues, or a close-up shot of a red rose.
+
+%Blue: Capture an image of a tranquil lake with blue reflections, or a serene sky with fluffy clouds.
+
+%Green: Take a photograph of a lush forest with vibrant green foliage, or a close-up of fresh grass after rainfall.
+
+%Yellow: Capture the golden glow of a sunrise or sunset, or photograph a field of sunflowers bathed in sunlight.
+
+%Black and White: Photograph a classic cityscape with stark contrasts between buildings and shadows, or capture the simplicity of a monochrome portrait.
+
+
 
 
 
@@ -485,7 +540,7 @@ The infrastructure of the system that this thesis evolves around is visualized a
 \subsection{Technical Background} \label{subsection:technicalbackground}
 
 %-------------------------------------------------------------------------------------------------------
-\textbf{Video Transcoding} 
+\subsubsection*{Video Transcoding} 
 
 Transcoding is the conversion of one digital data format into another.~\cite{transcoding}
 
@@ -496,7 +551,7 @@ Transcoding is the conversion of one digital data format into another.~\cite{tra
 
 
 %-------------------------------------------------------------------------------------------------------
-\textbf{Video Compression with h.264} 
+\subsubsection*{Video Compression with h.264} 
 % Explain WebRTC
 
 \begin{CountingDefinition}[h.264]{def:h264}
@@ -512,7 +567,7 @@ Transcoding is the conversion of one digital data format into another.~\cite{tra
 
 
 %-------------------------------------------------------------------------------------------------------
-\textbf{WebRTC} 
+\subsubsection*{WebRTC} 
 % Explain WebRTC
 
 \begin{CountingDefinition}[WebRTC]{def:WebRTC}
@@ -529,7 +584,7 @@ WebRTC supports various video codecs, and h.264 is popular due to its efficiency
 
 
 %-------------------------------------------------------------------------------------------------------
-\textbf{Audio Video Interleave} 
+\subsubsection*{Audio Video Interleave} 
 
 Audio Video Interleave (AVI) is a file format that can contain audio and video information to allow synchronized playback of audio and video components. 
 It is a container format, which means that it can contain multiple streams of audio and video data, along with other multimedia data such as subtitles.~\cite{avi}
@@ -546,7 +601,7 @@ It is a container format, which means that it can contain multiple streams of au
 
 
 %-------------------------------------------------------------------------------------------------------
-\textbf{Named Pipe} 
+\subsubsection*{Named Pipe} 
 
 A named pipe is a type of interprocess communication (IPC) mechanism. It provides a way for processes to pass data to each other and it is bidirectional. 
 Named pipes follow a First-In-First-Out (FIFO) structure: The first data written into the pipe is the first data to be read. This maintains a sequential order for data transmission.
@@ -561,7 +616,7 @@ A traditional pipe is \textit{unnamed} and terminates when its process terminate
 
 
 %-------------------------------------------------------------------------------------------------------
-\textbf{REST} 
+\subsubsection*{REST} 
 
 
 Representational State Transfer (REST) is an architectural style for designing networked applications. A REST Application Programming Interface (API) exposes a set of endpoints (URLs) that allow communication between different software systems over the internet and it uses the hypertext transfer protocol (HTTP) methods.~\cite{IEEE_Rest, webservice, Nodejs_Rest}
@@ -577,7 +632,7 @@ Representational State Transfer (REST) is an architectural style for designing n
 
 
 %-------------------------------------------------------------------------------------------------------
-\textbf{JIT} 
+\subsubsection*{JIT} 
 %
 \begin{CountingDefinition}[JIT]{def:JIT}
 	
