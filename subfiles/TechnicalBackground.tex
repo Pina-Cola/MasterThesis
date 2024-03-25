@@ -15,39 +15,9 @@
 
 \section{Technical Background} \label{subsection:technicalbackground}
 
-%-------------------------------------------------------------------------------------------------------
-\subsubsection*{Video Transcoding} 
-
-Transcoding is the conversion of one digital data format into another.~\cite{transcoding}
 
 
 
-
-
-
-
-%-------------------------------------------------------------------------------------------------------
-\subsubsection*{Video Compression with h.264} 
-% Explain WebRTC
-
-\begin{CountingDefinition}[h.264]{def:h264}
-	
-	h.264 refers to a video compression standard. In the context of real-time communication, h.264 is one of the video codecs that can be used to compress and decompress video streams.
-	
-\end{CountingDefinition}
-
-
-
-
-
-
-
-
-
-
-
-
-\newpage
 %---------------------------------
 \subsection{Melt}
 
@@ -87,6 +57,13 @@ The \textit{Consumer} represents the endpoint of the data processing pipeline an
 	\label{fig:producer_consumer}
 \end{figure}
 
+Applying filters in the Melt framework is a technique for manipulating multimedia content, including videos. 
+Melt filters can perform a wide range of operations, including colour correction, blurring, sharpening, cropping, resizing, and many others. A list of the filters can be found on the Melt website.\myfootcite{melt_filters}
+
+To apply a filter in Melt, a filter instance has to be created and its parameters have to contain the name of the filter and, if needed, the filter parameters and values for those.
+
+Filters are processing units that manipulate the multimedia data as it flows through the pipeline. They are placed between the producer and consumer, allowing them to modify the data before it reaches the consumer. This can be seen in Figure \ref{fig:producer_filter_consumer}.
+
 
 
 \begin{figure}[H]
@@ -118,6 +95,9 @@ The \textit{Consumer} represents the endpoint of the data processing pipeline an
 \newpage
 %-------------------------------------------------------------------------------------------------------
 \subsection{Melt Filter Comparison} \label{subsection:meltfilter}
+
+
+
 
 % TODO: List and compare different filters and their results
 
@@ -155,6 +135,30 @@ Adding filter to \texttt{local\_melt.py} to execute it in the Accurate Player us
 
 
 
+
+
+
+
+%-------------------------------------------------------------------------------------------------------
+\subsubsection*{Video Transcoding} 
+
+Transcoding is the conversion of one digital data format into another.~\cite{transcoding}
+
+
+
+
+
+
+
+%-------------------------------------------------------------------------------------------------------
+\subsubsection*{Video Compression with h.264} 
+% Explain WebRTC
+
+\begin{CountingDefinition}[h.264]{def:h264}
+	
+	h.264 refers to a video compression standard. In the context of real-time communication, h.264 is one of the video codecs that can be used to compress and decompress video streams.
+	
+\end{CountingDefinition}
 
 
 
