@@ -148,26 +148,69 @@ The system's frontend was described in Section \ref{subsection:accuratevideo}
 %---------------------------------
 \subsubsection{Melt}
 
-The Melt framework (MLT/Melt) is a multimedia framework as a command-line (CLI) tool that can be used for video editing and playback. It provides a set of tools, libraries, and services for handling multimedia content, including video and audio.~\cite{melt} 
+The Melt framework (MLT/Melt) is a multimedia framework as a command-line (CLI) tool that can be used for video editing and playback. It is written in C and provides a set of tools, libraries, and services for handling multimedia content, including video and audio.~\cite{melt} 
 
 
 A variety of tasks can be performed with Melt, including the application of filters on audio or video files, and converting data between different formats. 
 
+In the following, the structure of the Melt framework will be briefly explained. For this, the documentation~\cite{melt}  as well as the actual code of the framework\myfootcite{melt_code} are taken into consideration.
 
-%In conclusion, the Melt framework is a valuable tool for anyone who works with data. Its intuitive interface and powerful features make it a versatile and indispensable asset in the data toolbox.
+\textit{Producer}, \textit{Consumer} and \textit{MLT frame objects} are fundamental components in the Melt framework.
 
-%References:
+A \textit{MLT frame object} is a data structure that is used for representing multimedia content. 
+It is a container that holds multimedia data. Each \textit{MLT frame object} contains a single uncompressed frame image and its associated audio samples. These frame objects can be processed individually, which allows the user to manipulate and transform multimedia content efficiently.
+\textit{MLT frame objects} can store the multimedia data in various formats and they support metadata annotations, which allows to attach additional information or properties to the multimedia content. This includes filters, which are discussed in Section \ref{subsection:meltfilter}.
 
-%Melt Documentation. Available online: [Insert link to Melt documentation here]
-%Smith, J. (2020). Getting Started with Data Analysis Using Melt. O'Reilly Media.
 
-% TODO: List and compare different filters and their results
+A \textit{Producer} generates or provides data -- it produces the \textit{MLT Frame objects}. 
+It reads data from files or other data sources. The \textit{Producer} serves as the starting point of the data processing pipeline in Melt. It retrieves the raw data and passes it on to other components, for example the \textit{Consumer}. This can be seen in Figure \ref{fig:producer_consumer}.
+
+A \textit{Consumer} requests \textit{MLT Frame objects} from the producer.
+It is responsible for consuming or processing the data that was produced by the \textit{Producer} or other components that are between the \textit{Producer} and \textit{Consumer}. 
+The \textit{Consumer} represents the endpoint of the data processing pipeline and produces the final output or results.
+
+
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		% Nodes
+		\node[draw, rectangle] (producer) at (0,0) {Producer};
+		\node[draw, rectangle] (consumer) at (3,0) {Consumer};
+		% Arrows
+		\draw[->,>=stealth, line width=1.2pt] (producer) -- (consumer);
+	\end{tikzpicture}
+	\caption{Producer-Consumer Relationship}
+	\label{fig:producer_consumer}
+\end{figure}
+
+
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		% Nodes
+		\node[draw, rectangle] (producer) at (0,0) {Producer};
+		\node[draw, rectangle] (filter) at (3,0) {Filter};
+		\node[draw, rectangle] (consumer) at (6,0) {Consumer};
+		% Arrows
+		\draw[->,>=stealth, line width=1.2pt] (producer) -- (filter);
+		\draw[->,>=stealth, line width=1.2pt] (filter) -- (consumer);
+	\end{tikzpicture}
+	\caption{Producer-Filter-Consumer Relationship}
+	\label{fig:producer_filter_consumer}
+\end{figure}
+
+
+
+
 
 
 \newpage
 %-------------------------------------------------------------------------------------------------------
 \subsection{Melt Filter} \label{subsection:meltfilter}
 
+% TODO: List and compare different filters and their results
 
 Use of \texttt{avfilter.colorchannelmixer}:
 
