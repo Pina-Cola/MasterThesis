@@ -135,7 +135,7 @@ Those filters were then executed locally, to compare the visual results of apply
 			\texttt{av.ar}: set red gain for alpha channel \newline 
 			\texttt{av.ag}: set green gain for alpha channel \newline 
 			\texttt{av.ab}: set blue gain for alpha channel \newline 
-			\texttt{av.aa}: set alpha gain for alpha channel \newline 
+			\texttt{av.aa}: set alpha gain for alpha channel
 		\\
 		\texttt{frei0r.coloradj\_RGB} & Simple colour adjustment & 
 			\texttt{R}: amount of red \newline 
@@ -148,38 +148,36 @@ Those filters were then executed locally, to compare the visual results of apply
 
 
 
-
-% TODO: List and compare different filters and their results
-
-Use of \texttt{avfilter.colorchannelmixer}:
-
-\url{https://www.mltframework.org/plugins/FilterAvfilter-colorchannelmixer/}
-
-\texttt{title: colorchannelmixer \newline
-	media types: Video \newline
-	description: Adjust colors by mixing color channels.}
-
-Execution of \texttt{melt https://s3.eu-central-1.amazonaws.com/accurate-player\--demo-assets/timecode/sintel-2048-timecode-stereo.mp4 \\ -filter avfilter.colorbalance av.rs=1 av.gm=1 av.bh=1}:
+%Execution of \texttt{melt https://s3.eu-central-1.amazonaws.com/accurate-player\--demo-assets/timecode/sintel-2048-timecode-stereo.mp4 \\ -filter avfilter.colorbalance av.rs=1 av.gm=1 av.bh=1}:
 
 
-\begin{minipage}{0.5\textwidth}
-	\includegraphics[width=0.9\textwidth]{colourdefault.png}
-	Original colours
-\end{minipage}\begin{minipage}{0.5\textwidth}
-	\includegraphics[width=0.9\textwidth]{colourhigh.png}
-	Colours with \texttt{av.rs=1} \texttt{av.gm=1} \texttt{av.bh=1}
-\end{minipage}
+%\begin{minipage}{0.5\textwidth}
+%	\includegraphics[width=0.9\textwidth]{colourdefault.png}
+%	Original colours
+%\end{minipage}\begin{minipage}{0.5\textwidth}
+%	\includegraphics[width=0.9\textwidth]{colourhigh.png}
+%	Colours with \texttt{av.rs=1} \texttt{av.gm=1} \texttt{av.bh=1}
+%\end{minipage}
 
-Adding filter to \texttt{local\_melt.py} to execute it in the Accurate Player using JIT:
-`
-\begin{center}
-	\includegraphics[height=0.13\textwidth]{code.png}
-	\includegraphics[height=0.13\textwidth]{codecleaner.png}
-\end{center}
+%Adding filter to \texttt{local\_melt.py} to execute it in the Accurate Player using JIT:
+%`
+%\begin{center}
+%	\includegraphics[height=0.13\textwidth]{code.png}
+%	\includegraphics[height=0.13\textwidth]{codecleaner.png}
+%\end{center}
+%
+%\begin{center}
+%	\includegraphics[width=0.8\textwidth]{ap_red.png}
+%\end{center}
 
-\begin{center}
-	\includegraphics[width=0.8\textwidth]{ap_red.png}
-\end{center}
+
+To compare the listed filters and their parameters, different values to change the red tones of the video will be tested and compared, assuming that the change of green and blue works analogous.
+
+\subsubsection*{Filter \texttt{avfilter.colorbalance}}
+
+\subsubsection*{Filter \texttt{avfilter.colorchannelmixer}}
+
+\subsubsection*{Filter \texttt{frei0r.coloradj\_RGB}}
 
 
 
@@ -187,8 +185,7 @@ Adding filter to \texttt{local\_melt.py} to execute it in the Accurate Player us
 
 
 
-
-
+\newpage
 %-------------------------------------------------------------------------------------------------------
 \subsubsection*{Video Transcoding} 
 
