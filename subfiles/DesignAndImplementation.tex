@@ -144,23 +144,68 @@ The system's frontend was described in Section \ref{subsection:accuratevideo}
 %
 
 
-
+\newpage
 %---------------------------------
 \subsubsection{Melt}
 
-\begin{CountingDefinition}[Melt framework]{def:melt}
-	
-	The Melt framework (MLT/Melt) is a multimedia framework that is commonly used for video editing and playback. It provides a set of tools, libraries, and services for handling multimedia content, including video and audio.~\cite{melt} 
-	
-\end{CountingDefinition}
+The Melt framework (MLT/Melt) is a multimedia framework as a command-line (CLI) tool that can be used for video editing and playback. It provides a set of tools, libraries, and services for handling multimedia content, including video and audio.~\cite{melt} 
 
-TODO
 
-\begin{itemize}
-	\item \texttt{melt.c} file
-	\item Melt is used to decode input files and perform rendering
-	\item It is the command line interface (CLI) for the MLT framework.
-\end{itemize}
+A variety of tasks can be performed with Melt, including the application of filters on audio or video files, and converting data between different formats. 
+
+
+%In conclusion, the Melt framework is a valuable tool for anyone who works with data. Its intuitive interface and powerful features make it a versatile and indispensable asset in the data toolbox.
+
+%References:
+
+%Melt Documentation. Available online: [Insert link to Melt documentation here]
+%Smith, J. (2020). Getting Started with Data Analysis Using Melt. O'Reilly Media.
+
+% TODO: List and compare different filters and their results
+
+
+\newpage
+%-------------------------------------------------------------------------------------------------------
+\subsection{Melt Filter} \label{subsection:meltfilter}
+
+
+Use of \texttt{avfilter.colorchannelmixer}:
+
+\url{https://www.mltframework.org/plugins/FilterAvfilter-colorchannelmixer/}
+
+\texttt{title: colorchannelmixer \newline
+	media types: Video \newline
+	description: Adjust colors by mixing color channels.}
+
+Execution of \texttt{melt https://s3.eu-central-1.amazonaws.com/accurate-player\--demo-assets/timecode/sintel-2048-timecode-stereo.mp4 \\ -filter avfilter.colorbalance av.rs=1 av.gm=1 av.bh=1}:
+
+
+\begin{minipage}{0.5\textwidth}
+	\includegraphics[width=0.9\textwidth]{colourdefault.png}
+	Original colours
+\end{minipage}\begin{minipage}{0.5\textwidth}
+	\includegraphics[width=0.9\textwidth]{colourhigh.png}
+	Colours with \texttt{av.rs=1} \texttt{av.gm=1} \texttt{av.bh=1}
+\end{minipage}
+
+Adding filter to \texttt{local\_melt.py} to execute it in the Accurate Player using JIT:
+`
+\begin{center}
+	\includegraphics[height=0.13\textwidth]{code.png}
+	\includegraphics[height=0.13\textwidth]{codecleaner.png}
+\end{center}
+
+\begin{center}
+	\includegraphics[width=0.8\textwidth]{ap_red.png}
+\end{center}
+
+
+
+
+
+
+
+
 
 
 
@@ -309,42 +354,6 @@ For development and quick testing without the session service, JIT can be starte
 
 
 
-
-
-
-%-------------------------------------------------------------------------------------------------------
-\subsection{Melt Filter} \label{subsection:meltfilter}
-
-
-Use of \texttt{avfilter.colorchannelmixer}:
-
-\url{https://www.mltframework.org/plugins/FilterAvfilter-colorchannelmixer/}
-
-\texttt{title: colorchannelmixer \newline
-	media types: Video \newline
-	description: Adjust colors by mixing color channels.}
-
-Execution of \texttt{melt https://s3.eu-central-1.amazonaws.com/accurate-player\--demo-assets/timecode/sintel-2048-timecode-stereo.mp4 \\ -filter avfilter.colorbalance av.rs=1 av.gm=1 av.bh=1}:
-
-
-\begin{minipage}{0.5\textwidth}
-	\includegraphics[width=0.9\textwidth]{colourdefault.png}
-	Original colours
-\end{minipage}\begin{minipage}{0.5\textwidth}
-	\includegraphics[width=0.9\textwidth]{colourhigh.png}
-	Colours with \texttt{av.rs=1} \texttt{av.gm=1} \texttt{av.bh=1}
-\end{minipage}
-
-Adding filter to \texttt{local\_melt.py} to execute it in the Accurate Player using JIT:
-`
-\begin{center}
-	\includegraphics[height=0.13\textwidth]{code.png}
-	\includegraphics[height=0.13\textwidth]{codecleaner.png}
-\end{center}
-
-\begin{center}
-	\includegraphics[width=0.8\textwidth]{ap_red.png}
-\end{center}
 
 
 
