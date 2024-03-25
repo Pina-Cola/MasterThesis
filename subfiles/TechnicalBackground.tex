@@ -104,11 +104,21 @@ Those filters were then executed locally, to compare the visual results of apply
 
 \begin{table}[H]
 	\footnotesize
-	\begin{tabular}{lp{4.1cm}p{4.1cm}}
+	\begin{tabular}{lp{4.3cm}p{4.6cm}}
 		\toprule
 		Name & Description & Parameters \\
 		\midrule
-		\texttt{avfilter.colorbalance} & Adjust the colour balance & \texttt{av.rs}: set red shadows \newline \texttt{av.gs}: set green shadows \\
+		\texttt{avfilter.colorbalance} & Adjust the colour balance & 
+		\texttt{av.rs}: set red shadows \newline 
+		\texttt{av.gs}: set green shadows \newline 
+		\texttt{av.bs}: set blue shadows \newline 
+		\texttt{av.rm}: set red midtones \newline 
+		\texttt{av.gm}: set green midtones \newline 
+		\texttt{av.bm}: set blue midtones \newline 
+		\texttt{av.rh}: set red highlights \newline 
+		\texttt{av.gh}: set green highlights \newline 
+		\texttt{av.bh}: set blue highlights \newline 
+		\\
 		\texttt{avfilter.colorchannelmixer} & Adjust colours by mixing color channels & \\
 		\texttt{avfilter.colorcontrast} & Adjust colour contrast between RGB components & \\
 		\texttt{frei0r.coloradj\_RGB} & Simple colour adjustment & \\
