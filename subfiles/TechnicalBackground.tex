@@ -98,30 +98,50 @@ Filters are processing units that manipulate the multimedia data as it flows thr
 
 The goal for this thesis project is to adjust the RGB values of a video with sliders. For this purpose, various Melt filters that seemed suitable were examined and compared to identify the most suitable ones for implementing this functionality. RGB colour representation was described in Section~\ref{subsection:RGB}.
 
-In the following, a selection of filters, that influence the RGB representation of the video are listed. This includes the filter name, description and possible parameters from the Melt website.\myfootcite{melt_filters}
+In the following, a selection of filters, that influence the RGB representation of the video are listed. This includes the filter name, description and possible parameters from the Melt website.\myfootcite{melt_filters} Only the relevant parameters will be listed.
 Those filters were then executed locally, to compare the visual results of applying them.
 
 
 \begin{table}[H]
 	\footnotesize
-	\begin{tabular}{lp{4.3cm}p{4.6cm}}
+	\begin{tabular}{lp{3cm}p{5.9cm}}
 		\toprule
 		Name & Description & Parameters \\
 		\midrule
 		\texttt{avfilter.colorbalance} & Adjust the colour balance & 
-		\texttt{av.rs}: set red shadows \newline 
-		\texttt{av.gs}: set green shadows \newline 
-		\texttt{av.bs}: set blue shadows \newline 
-		\texttt{av.rm}: set red midtones \newline 
-		\texttt{av.gm}: set green midtones \newline 
-		\texttt{av.bm}: set blue midtones \newline 
-		\texttt{av.rh}: set red highlights \newline 
-		\texttt{av.gh}: set green highlights \newline 
-		\texttt{av.bh}: set blue highlights \newline 
+			\texttt{av.rs}: set red shadows \newline 
+			\texttt{av.gs}: set green shadows \newline 
+			\texttt{av.bs}: set blue shadows \newline 
+			\texttt{av.rm}: set red midtones \newline 
+			\texttt{av.gm}: set green midtones \newline 
+			\texttt{av.bm}: set blue midtones \newline 
+			\texttt{av.rh}: set red highlights \newline 
+			\texttt{av.gh}: set green highlights \newline 
+			\texttt{av.bh}: set blue highlights
 		\\
-		\texttt{avfilter.colorchannelmixer} & Adjust colours by mixing color channels & \\
-		\texttt{avfilter.colorcontrast} & Adjust colour contrast between RGB components & \\
-		\texttt{frei0r.coloradj\_RGB} & Simple colour adjustment & \\
+		\texttt{avfilter.colorchannelmixer} & Adjust colours by mixing colour channels & 
+			\texttt{av.rr}: set red gain for red channel \newline 
+			\texttt{av.rg}: set green gain for red channel \newline 
+			\texttt{av.rb}: set blue gain for red channel \newline 
+			\texttt{av.ra}: set alpha gain for red channel \newline 
+			\texttt{av.gr}: set red gain for green channel \newline 
+			\texttt{av.gg}: set green gain for green channel \newline 
+			\texttt{av.gb}: set blue gain for green channel \newline 
+			\texttt{av.ga}: set alpha gain for green channel \newline 
+			\texttt{av.br}: set red gain for blue channel \newline 
+			\texttt{av.bg}: set green gain for blue channel \newline 
+			\texttt{av.bb}: set blue gain for blue channel \newline 
+			\texttt{av.ba}: set red gain for alpha channel \newline 
+			\texttt{av.ar}: set red gain for alpha channel \newline 
+			\texttt{av.ag}: set green gain for alpha channel \newline 
+			\texttt{av.ab}: set blue gain for alpha channel \newline 
+			\texttt{av.aa}: set alpha gain for alpha channel \newline 
+		\\
+		\texttt{frei0r.coloradj\_RGB} & Simple colour adjustment & 
+			\texttt{R}: amount of red \newline 
+			\texttt{G}: amount of green \newline 
+			\texttt{B}: amount of blue
+		\\
 		\bottomrule
 	\end{tabular}
 \end{table}
