@@ -288,9 +288,9 @@ For development and quick testing without the session service, JIT can be starte
 
 
 
-The goal for this thesis project is to adjust the RGB values of a video with sliders. For this purpose, various Melt filters that seemed suitable were examined and compared to identify the most suitable ones for implementing this functionality. RGB colour representation was described in Section~\ref{subsection:RGB} and the Melt framework was described in Section \ref{subsection:melt}.
+The goal for this thesis project is to adjust the RGB values of a video with sliders. For this purpose, various Melt filters that seemed suitable were examined and compared to identify the most suitable ones for implementing this functionality. RGB colour representation was described in Section~\ref{subsection:RGB} and the Melt framework was described in Section~\ref{subsection:melt}.
 
-In the following, a selection of filters, that influence the RGB representation of the video are listed. This includes the filter name, description and possible parameters from the Melt website.\cite{melt_filters} Only the relevant parameters will be listed.
+In the following, a selection of filters, that influence the RGB representation of the video are listed. This includes the filter name, description and possible parameters from the Melt website.~\cite{melt_filters} Only the relevant parameters will be listed.
 Those filters were then executed locally, to compare the visual results of applying them.
 
 
@@ -339,6 +339,7 @@ Those filters were then executed locally, to compare the visual results of apply
 		\\
 		\bottomrule
 	\end{tabular}
+	\caption[List of Melt filters that influence the colour of a video.]{List of different Melt filters that influence the colour of a video with their name, description and parameters.}
 \end{table}
 
 
@@ -433,7 +434,7 @@ To get an even result of the colour on the frame, which would be applicable for 
 		\cutpic{0.3cm}{0.45\textwidth}{rsrmrh_snow.png}
 		\cutpic{0.3cm}{0.45\textwidth}{rsrmrh_man.png}
 		\label{figure:rsrmrh1}
-		\caption[All parameters for red with the value $1$ from the filter \texttt{avfilter.colorbalance} applied.]{All parameters for red with the value $1$  from the filter \texttt{avfilter.colorbalance} applied: \texttt{av.rs=1}, \texttt{av.rm=1} and \texttt{av.rh=1}.}
+		\caption[Parameters set to $1$ for red using the \texttt{avfilter.colorbalance} filter.]{All parameters for red with the value $1$  from the filter \texttt{avfilter.colorbalance} applied: \texttt{av.rs=1}, \texttt{av.rm=1} and \texttt{av.rh=1}.}
 	\end{center}
 \end{figure}
 
@@ -446,7 +447,7 @@ This results in yellow toned pictures.
 		\cutpic{0.3cm}{0.45\textwidth}{cb_yellow.png}
 		\cutpic{0.3cm}{0.45\textwidth}{cb_yellow_man.png}
 		\label{figure:cb_yellow}
-		\caption[All parameters for red and green with the value $1$ from the filter \texttt{avfilter.colorbalance} applied.]{All parameters for red and green with the value $1$  from the filter \texttt{avfilter.colorbalance} applied: \texttt{av.rs=1}, \texttt{av.rm=1}, \texttt{av.rh=1}, \texttt{av.gs=1}, \texttt{av.gm=1} and \texttt{av.gh=1}.}
+		\caption[Red and green parameters set to $1$ with \texttt{avfilter.colorbalance}.]{All parameters for red and green with the value $1$  from the filter \texttt{avfilter.colorbalance} applied: \texttt{av.rs=1}, \texttt{av.rm=1}, \texttt{av.rh=1}, \texttt{av.gs=1}, \texttt{av.gm=1} and \texttt{av.gh=1}.}
 	\end{center}
 \end{figure}
 
@@ -484,7 +485,7 @@ The parameters of this filter take input values as float between $-2$ and $2$. I
 		\cutpic{0.32cm}{0.3\textwidth}{ar_man.png}
 		\small{
 			\texttt{av.rr=2} \hspace*{0.22\textwidth} \texttt{av.ra=2} \hspace*{0.23\textwidth} \texttt{av.ar=2}}
-		\caption[Different parameters from the filter \texttt{avfilter.colorchannelmixer} applied.]{Different parameters from the filter \texttt{avfilter.colorchannelmixer} applied: Left with \texttt{av.rr=2} for red gain on the red channel, middle with \texttt{av.ra=2} for alpha gain on the red channel and right with \texttt{av.ar=2} for red gain on the alpha channel.}
+		\caption[Different parameters from \texttt{avfilter.colorchannelmixer} applied.]{Different parameters from the filter \texttt{avfilter.colorchannelmixer} applied: Left with \texttt{av.rr=2} for red gain on the red channel, middle with \texttt{av.ra=2} for alpha gain on the red channel and right with \texttt{av.ar=2} for red gain on the alpha channel.}
 		\label{figure:rrraar}
 	\end{center}
 \end{figure}
@@ -498,7 +499,7 @@ In Figure~\ref{figure:rrbrgr}, the red gain on the red, blue and green channel i
 		\cutpic{0.3cm}{0.45\textwidth}{rrbrgr_snow.png}
 		\cutpic{0.3cm}{0.45\textwidth}{rrbrgr_man.png}
 		\label{figure:rrbrgr}
-		\caption[Red gain with the value $2$ for the red, green and blue channel from the filter \texttt{avfilter.colorchannelmixer} applied.]{Red gain with the value $2$ for the red, green and blue channel from the filter \texttt{avfilter.colorchannelmixer} applied: \texttt{av.rr=2}, \texttt{av.gr=2} and \texttt{av.br=2}.}
+		\caption[Red gain set to $2$ with \texttt{avfilter.colorchannelmixer}.]{Red gain with the value $2$ for the red, green and blue channel from the filter \texttt{avfilter.colorchannelmixer} applied: \texttt{av.rr=2}, \texttt{av.gr=2} and \texttt{av.br=2}.}
 	\end{center}
 \end{figure}
 
@@ -511,7 +512,7 @@ To evaluate if and how the overlay of different filters works, the values for th
 		\cutpic{0.3cm}{0.45\textwidth}{rrgg_snow.png}
 		\cutpic{0.3cm}{0.45\textwidth}{rrgg_man.png}
 		\label{figure:rrgg}
-		\caption[Red and green gain on the red and green channel with the value $2$ from the filter \texttt{avfilter.colorchannelmixer} applied.]{Red and green gain on the red and green channel with the value $2$ from the filter \texttt{avfilter.colorchannelmixer} applied: \texttt{av.rr=2} and \texttt{av.gg=2}.}
+		\caption[Red and green gain set to $2$ with \texttt{avfilter.colorchannelmixer}.]{Red and green gain on the red and green channel with the value $2$ from the filter \texttt{avfilter.colorchannelmixer} applied: \texttt{av.rr=2} and \texttt{av.gg=2}.}
 	\end{center}
 \end{figure}
 
@@ -532,7 +533,7 @@ The parameters of this filter take input values as float between $0$ and $1$. It
 		\cutpic{0.3cm}{0.45\textwidth}{r_snow.png}
 		\cutpic{0.3cm}{0.45\textwidth}{r_man.png}
 		\label{figure:r}
-		\caption[Red parameter with the value $1$ from the filter \texttt{frei0r.coloradj\_RGB} applied.]{Red parameter with the value $1$ from the filter \texttt{frei0r.coloradj\_RGB} applied: \texttt{R=1}.}
+		\caption[Red parameter set to $1$ with \texttt{frei0r.coloradj\_RGB}.]{Red parameter with the value $1$ from the filter \texttt{frei0r.coloradj\_RGB} applied: \texttt{R=1}.}
 	\end{center}
 \end{figure}
 
@@ -546,7 +547,7 @@ To evaluate if and how the overlay of different filters works, the values for th
 		\cutpic{0.3cm}{0.45\textwidth}{rg_snow.png}
 		\cutpic{0.3cm}{0.45\textwidth}{rg_man.png}
 		\label{figure:rg}
-		\caption[Red and green parameter with the value $1$ from the filter \texttt{frei0r.coloradj\_RGB} applied.]{Red and green parameter with the value $1$ from the filter \texttt{frei0r.coloradj\_RGB} applied: \texttt{R=1} and \texttt{G=1}.}
+		\caption[Red and green parameter set to $1$ with \texttt{frei0r.coloradj\_RGB}.]{Red and green parameter with the value $1$ from the filter \texttt{frei0r.coloradj\_RGB} applied: \texttt{R=1} and \texttt{G=1}.}
 	\end{center}
 \end{figure}
 
