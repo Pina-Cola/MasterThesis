@@ -305,9 +305,9 @@ Those filters were then executed locally, to compare the visual results of apply
 		\texttt{av.rs}: set red shadows \newline 
 		\texttt{av.gs}: set green shadows \newline 
 		\texttt{av.bs}: set blue shadows \newline 
-		\texttt{av.rm}: set red midtones \newline 
-		\texttt{av.gm}: set green midtones \newline 
-		\texttt{av.bm}: set blue midtones \newline 
+		\texttt{av.rm}: set red mid tones \newline 
+		\texttt{av.gm}: set green mid tones \newline 
+		\texttt{av.bm}: set blue mid tones \newline 
 		\texttt{av.rh}: set red highlights \newline 
 		\texttt{av.gh}: set green highlights \newline 
 		\texttt{av.bh}: set blue highlights}
@@ -368,11 +368,35 @@ Those filters were then executed locally, to compare the visual results of apply
 
 To compare the listed filters and their parameters, different values to change the red tones of the video will be tested and compared, assuming that the change of green and blue works analogous.
 
-In addition to this, it needs to be tested, if multiple parameters of the same filter can be applied simultaneously.
+In addition to this, it needs to be tested, if multiple parameters of the same filter can be applied simultaneously. For evaluating, the filters and their different parameters are all applied to the same frame of the test video file. The original frame $343$ can be seen in Figure \ref{figure:nofilter}.
+
+\begin{figure}[H]
+	\begin{center}
+		\cutpic{0.3cm}{0.7\textwidth}{nofilter.png}
+		\label{figure:nofilter}
+		\caption[Frame $343$ from the test video file without a filter.]{Frame $343$ from the test video file without a filter.}
+	\end{center}
+\end{figure}
+
+
 
 \subsubsection*{Filter \texttt{avfilter.colorbalance}}
 
-The parameters of this filter take input values as float between $-1$ and $1$.
+The parameters of this filter take input values as float between $-1$ and $1$. It has individual parameters to set the shadows, mid tones and highlights per colour. This can be seen in Figure \ref{figure:rsrmrh}.
+
+\begin{figure}[H]
+	\begin{center}
+		\cutpic{0.32cm}{0.3\textwidth}{rs.png}
+		%\hspace*{0.01\textwidth}
+		\cutpic{0.32cm}{0.3\textwidth}{rm.png}
+		%\hspace*{0.01\textwidth}
+		\cutpic{0.32cm}{0.3\textwidth}{rh.png}
+		\small{
+		\texttt{av.rs=1} \hspace*{0.22\textwidth} \texttt{av.rm=1} \hspace*{0.23\textwidth} \texttt{av.rh=1}}
+		\label{figure:rsrmrh}
+		\caption[Different parameters from the filter \texttt{avfilter.colorbalance} applied.]{Different parameters from the filter \texttt{avfilter.colorbalance} applied: Left with \texttt{av.rs=1} for red shadows, middle with \texttt{av.rm=1} for red mid tones and right with \texttt{av.rh=1} for red highlights.}
+	\end{center}
+\end{figure}
 
 
 
