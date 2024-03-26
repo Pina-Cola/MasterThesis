@@ -370,7 +370,7 @@ To compare the listed filters and their parameters, different values to change t
 
 In addition to this, it needs to be tested, if multiple parameters of the same filter can be applied simultaneously. For evaluating, the filters and their different parameters for green and red are applied to the same frame of the test video file. This should result in a yellow output. 
 
-Two frames with different colour schemes and content are used for those tests. One shows a snow landscape and the \textit{Blender Institute Production}-text and the other one shows an old man. The original frames $343$ and $3377$ can be seen in Figure \ref{figure:nofilter}.
+Two frames with different colour schemes and content are used for those tests. One shows a snow landscape and the \textit{Blender Institute Production}-text and the other one shows an old man. The original frames $343$ and $3377$ can be seen in Figure~\ref{figure:nofilter}.
 
 \begin{figure}[H]
 	\begin{center}
@@ -403,7 +403,7 @@ The filters were applied with the following CLI command:
 %--------------------------------------------------------------------------------------
 \subsubsection*{Filter \texttt{avfilter.colorbalance}}
 
-The parameters of this filter take input values as float between $-1$ and $1$. It has individual parameters to set the shadows, mid tones and highlights per colour. This can be seen in Figure \ref{figure:rs1rm1rh1}.
+The parameters of this filter take input values as float between $-1$ and $1$. It has individual parameters to set the shadows, mid tones and highlights per colour. This can be seen in Figure~\ref{figure:rs1rm1rh1}.
 
 \begin{figure}[H]
 	\begin{center}
@@ -426,7 +426,7 @@ The parameters of this filter take input values as float between $-1$ and $1$. I
 	\end{center}
 \end{figure}
 
-To get an even result of the colour on the frame, which would be applicable for the colour change with one slider. In figure \ref{figure:rsrmrh1}, the shadows, mid tones and highlights for the red value are set to $1$. 
+To get an even result of the colour on the frame, which would be applicable for the colour change with one slider. In Figure~\ref{figure:rsrmrh1}, the shadows, mid tones and highlights for the red value are set to $1$. 
 
 \begin{figure}[H]
 	\begin{center}
@@ -466,7 +466,7 @@ This results in yellow toned pictures.
 
 \subsubsection*{Filter \texttt{avfilter.colorchannelmixer}}
 
-The parameters of this filter take input values as float between $-2$ and $2$. It has individual parameters to set the red, green, blue or alpha gain for the red, green, blue or alpha channel. The application of those parameters can be seen in Figure \ref{figure:rrraar}.
+The parameters of this filter take input values as float between $-2$ and $2$. It has individual parameters to set the red, green, blue or alpha gain for the red, green, blue or alpha channel. The application of those parameters can be seen in Figure~\ref{figure:rrraar}.
 
 \begin{figure}[H]
 	\begin{center}
@@ -490,7 +490,7 @@ The parameters of this filter take input values as float between $-2$ and $2$. I
 \end{figure}
 
 
-In Figure \ref{figure:rrbrgr}, the red gain on the red, blue and green channel is applied. The parameter setting are \texttt{av.rr=2}, \texttt{av.gr=2} and \texttt{av.br=2}.
+In Figure~\ref{figure:rrbrgr}, the red gain on the red, blue and green channel is applied. The parameter setting are \texttt{av.rr=2}, \texttt{av.gr=2} and \texttt{av.br=2}.
 
 
 \begin{figure}[H]
@@ -503,7 +503,17 @@ In Figure \ref{figure:rrbrgr}, the red gain on the red, blue and green channel i
 \end{figure}
 
 
+To evaluate if and how the overlay of different filters works, the values for the green and red gain on the green and red channel are set to $2$ and applied together. The parameters that are applied are \texttt{av.rr=2} and \texttt{av.gg=2}. This results in yellow toned pictures.
 
+
+\begin{figure}[H]
+	\begin{center}
+		\cutpic{0.3cm}{0.45\textwidth}{rrgg_snow.png}
+		\cutpic{0.3cm}{0.45\textwidth}{rrgg_man.png}
+		\label{figure:rrgg}
+		\caption[Red and green gain on the red and green channel with the value $2$ from the filter \texttt{avfilter.colorchannelmixer} applied.]{Red and green gain on the red and green channel with the value $2$ from the filter \texttt{avfilter.colorchannelmixer} applied: \texttt{av.rr=2} and \texttt{av.gg=2}.}
+	\end{center}
+\end{figure}
 
 
 
@@ -514,6 +524,31 @@ In Figure \ref{figure:rrbrgr}, the red gain on the red, blue and green channel i
 %--------------------------------------------------------------------------------------
 \subsubsection*{Filter \texttt{frei0r.coloradj\_RGB}}
 
+The parameters of this filter take input values as float between $0$ and $1$. It has individual parameters to set the red, green, blue value. The application of the red parameters can be seen in Figure~\ref{figure:r}.
+
+
+\begin{figure}[H]
+	\begin{center}
+		\cutpic{0.3cm}{0.45\textwidth}{r_snow.png}
+		\cutpic{0.3cm}{0.45\textwidth}{r_man.png}
+		\label{figure:r}
+		\caption[Red parameter with the value $1$ from the filter \texttt{frei0r.coloradj\_RGB} applied.]{Red parameter with the value $1$ from the filter \texttt{frei0r.coloradj\_RGB} applied: \texttt{R=1}.}
+	\end{center}
+\end{figure}
+
+
+
+To evaluate if and how the overlay of different filters works, the values for the green and red parameter are set to $1$ and applied together. The parameters that are applied are \texttt{R=1} and \texttt{G=1}. This results in yellow toned pictures, which can be seen in Figure~\ref{figure:rg}.
+
+
+\begin{figure}[H]
+	\begin{center}
+		\cutpic{0.3cm}{0.45\textwidth}{rg_snow.png}
+		\cutpic{0.3cm}{0.45\textwidth}{rg_man.png}
+		\label{figure:rg}
+		\caption[Red and green parameter with the value $1$ from the filter \texttt{frei0r.coloradj\_RGB} applied.]{Red and green parameter with the value $1$ from the filter \texttt{frei0r.coloradj\_RGB} applied: \texttt{R=1} and \texttt{G=1}.}
+	\end{center}
+\end{figure}
 
 
 
@@ -523,9 +558,7 @@ In Figure \ref{figure:rrbrgr}, the red gain on the red, blue and green channel i
 
 
 
-
-
-
+\newpage
 %-------------------------------------------------------------------------------------------------------
 \subsection{Technology} \label{subsection:technology}
 % Discuss the technologies and tools chosen for the implementation.
