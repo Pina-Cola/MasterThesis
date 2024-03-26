@@ -290,7 +290,7 @@ For development and quick testing without the session service, JIT can be starte
 
 The goal for this thesis project is to adjust the RGB values of a video with sliders. For this purpose, various Melt filters that seemed suitable were examined and compared to identify the most suitable ones for implementing this functionality. RGB colour representation was described in Section~\ref{subsection:RGB} and the Melt framework was described in Section \ref{subsection:melt}.
 
-In the following, a selection of filters, that influence the RGB representation of the video are listed. This includes the filter name, description and possible parameters from the Melt website.\myfootcite{melt_filters} Only the relevant parameters will be listed.
+In the following, a selection of filters, that influence the RGB representation of the video are listed. This includes the filter name, description and possible parameters from the Melt website.\cite{melt_filters} Only the relevant parameters will be listed.
 Those filters were then executed locally, to compare the visual results of applying them.
 
 
@@ -368,13 +368,13 @@ Those filters were then executed locally, to compare the visual results of apply
 
 To compare the listed filters and their parameters, different values to change the red tones of the video will be tested and compared, assuming that the change of green and blue works analogous.
 
-In addition to this, it needs to be tested, if multiple parameters of the same filter can be applied simultaneously. For evaluating, the filters and their different parameters are all applied to the same frame of the test video file. The original frame $343$ can be seen in Figure \ref{figure:nofilter}.
+In addition to this, it needs to be tested, if multiple parameters of the same filter can be applied simultaneously. For evaluating, the filters and their different parameters for green and red are applied to the same frame of the test video file. This should result in a yellow output. The original frame $343$ can be seen in Figure \ref{figure:nofilter}.
 
 \begin{figure}[H]
 	\begin{center}
 		\cutpic{0.3cm}{0.7\textwidth}{nofilter.png}
-		\label{figure:nofilter}
 		\caption[Frame $343$ from the test video file without a filter.]{Frame $343$ from the test video file without a filter.}
+		\label{figure:nofilter}
 	\end{center}
 \end{figure}
 
@@ -388,7 +388,7 @@ The filters were applied with the following CLI command:
 
 \subsubsection*{Filter \texttt{avfilter.colorbalance}}
 
-The parameters of this filter take input values as float between $-1$ and $1$. It has individual parameters to set the shadows, mid tones and highlights per colour. This can be seen in Figure \ref{figure:rsrmrh}.
+The parameters of this filter take input values as float between $-1$ and $1$. It has individual parameters to set the shadows, mid tones and highlights per colour. This can be seen in Figure \ref{figure:rs1rm1rh1}.
 
 \begin{figure}[H]
 	\begin{center}
@@ -399,8 +399,30 @@ The parameters of this filter take input values as float between $-1$ and $1$. I
 		\cutpic{0.32cm}{0.3\textwidth}{rh.png}
 		\small{
 		\texttt{av.rs=1} \hspace*{0.22\textwidth} \texttt{av.rm=1} \hspace*{0.23\textwidth} \texttt{av.rh=1}}
-		\label{figure:rsrmrh}
 		\caption[Different parameters from the filter \texttt{avfilter.colorbalance} applied.]{Different parameters from the filter \texttt{avfilter.colorbalance} applied: Left with \texttt{av.rs=1} for red shadows, middle with \texttt{av.rm=1} for red mid tones and right with \texttt{av.rh=1} for red highlights.}
+			\label{figure:rs1rm1rh1}
+	\end{center}
+\end{figure}
+
+To get an even result of the colour on the frame, which would be applicable for the colour change with one slider.  In figure \ref{figure:rsrmrh1}, the shadows, mid tones and highlights for the red value are set to $1$. 
+
+\begin{figure}[H]
+	\begin{center}
+		\cutpic{0.3cm}{0.5\textwidth}{rsrmrh.png}
+		\label{figure:rsrmrh1}
+		\caption[All parameters for red with the value $1$ from the filter \texttt{avfilter.colorbalance} applied.]{All parameters for red with the value $1$  from the filter \texttt{avfilter.colorbalance} applied: \texttt{av.rs=1}, \texttt{av.rm=1} and \texttt{av.rh=1}.}
+	\end{center}
+\end{figure}
+
+To evaluate if and how the overlay of different filters works, the values for green and red shadows, mid tones and highlights are set to $1$ and applied together. The parameters that are applied are \texttt{av.rs=1}, \texttt{av.rm=1}, \texttt{av.rh=1}, \texttt{av.gs=1}, \texttt{av.gm=1} and \texttt{av.gh=1}.
+This results in a yellow toned picture.
+
+
+\begin{figure}[H]
+	\begin{center}
+		\cutpic{0.3cm}{0.5\textwidth}{cb_yellow.png}
+		\label{figure:cb_yellow}
+		\caption[All parameters for red and green with the value $1$ from the filter \texttt{avfilter.colorbalance} applied.]{All parameters for red and green with the value $1$  from the filter \texttt{avfilter.colorbalance} applied: \texttt{av.rs=1}, \texttt{av.rm=1}, \texttt{av.rh=1}, \texttt{av.gs=1}, \texttt{av.gm=1} and \texttt{av.gh=1}.}
 	\end{center}
 \end{figure}
 
