@@ -389,6 +389,18 @@ The filters were applied with the following CLI command:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+%--------------------------------------------------------------------------------------
 \subsubsection*{Filter \texttt{avfilter.colorbalance}}
 
 The parameters of this filter take input values as float between $-1$ and $1$. It has individual parameters to set the shadows, mid tones and highlights per colour. This can be seen in Figure \ref{figure:rs1rm1rh1}.
@@ -440,6 +452,18 @@ This results in yellow toned pictures.
 
 
 
+
+
+
+
+
+
+
+
+
+
+%--------------------------------------------------------------------------------------
+
 \subsubsection*{Filter \texttt{avfilter.colorchannelmixer}}
 
 The parameters of this filter take input values as float between $-2$ and $2$. It has individual parameters to set the red, green, blue or alpha gain for the red, green, blue or alpha channel. The application of those parameters can be seen in Figure \ref{figure:rrraar}.
@@ -466,11 +490,28 @@ The parameters of this filter take input values as float between $-2$ and $2$. I
 \end{figure}
 
 
+In Figure \ref{figure:rrbrgr}, the red gain on the red, blue and green channel is applied. The parameter setting are \texttt{av.rr=2}, \texttt{av.gr=2} and \texttt{av.br=2}.
+
+
+\begin{figure}[H]
+	\begin{center}
+		\cutpic{0.3cm}{0.45\textwidth}{rrbrgr_snow.png}
+		\cutpic{0.3cm}{0.45\textwidth}{rrbrgr_man.png}
+		\label{figure:rrbrgr}
+		\caption[Red gain with the value $2$ for the red, green and blue channel from the filter \texttt{avfilter.colorchannelmixer} applied.]{Red gain with the value $2$ for the red, green and blue channel from the filter \texttt{avfilter.colorchannelmixer} applied: \texttt{av.rr=2}, \texttt{av.gr=2} and \texttt{av.br=2}.}
+	\end{center}
+\end{figure}
 
 
 
 
 
+
+
+
+
+
+%--------------------------------------------------------------------------------------
 \subsubsection*{Filter \texttt{frei0r.coloradj\_RGB}}
 
 
