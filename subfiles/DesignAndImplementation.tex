@@ -378,6 +378,12 @@ In addition to this, it needs to be tested, if multiple parameters of the same f
 	\end{center}
 \end{figure}
 
+The filters were applied with the following CLI command:
+\begin{lstlisting}[language=bash, numbers=none]
+	melt -filter <filter_name> <filter_parameter> https://s3.eu-central-1.amazonaws.com/accurate-player-demo-assets/timecode/sintel-2048-timecode-stereo.mp4 -consumer xgl
+\end{lstlisting}
+
+
 
 
 \subsubsection*{Filter \texttt{avfilter.colorbalance}}
