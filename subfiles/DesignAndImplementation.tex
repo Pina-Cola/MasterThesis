@@ -368,12 +368,15 @@ Those filters were then executed locally, to compare the visual results of apply
 
 To compare the listed filters and their parameters, different values to change the red tones of the video will be tested and compared, assuming that the change of green and blue works analogous.
 
-In addition to this, it needs to be tested, if multiple parameters of the same filter can be applied simultaneously. For evaluating, the filters and their different parameters for green and red are applied to the same frame of the test video file. This should result in a yellow output. The original frame $343$ can be seen in Figure \ref{figure:nofilter}.
+In addition to this, it needs to be tested, if multiple parameters of the same filter can be applied simultaneously. For evaluating, the filters and their different parameters for green and red are applied to the same frame of the test video file. This should result in a yellow output. 
+
+Two frames with different colour schemes and content are used for those tests. One shows a snow landscape and the \textit{Blender Institute Production}-text and the other one shows an old man. The original frames $343$ and $3377$ can be seen in Figure \ref{figure:nofilter}.
 
 \begin{figure}[H]
 	\begin{center}
-		\cutpic{0.3cm}{0.7\textwidth}{nofilter.png}
-		\caption[Frame $343$ from the test video file without a filter.]{Frame $343$ from the test video file without a filter.}
+		\cutpic{0.3cm}{0.45\textwidth}{nofilter_snow.png}
+		\cutpic{0.3cm}{0.45\textwidth}{nofilter_man.png}
+		\caption[Frames $343$ and $3377$ from the test video file without a filter.]{Frames $343$ on the left and $3377$ on the right from the test video file without a filter.}
 		\label{figure:nofilter}
 	\end{center}
 \end{figure}
@@ -392,11 +395,18 @@ The parameters of this filter take input values as float between $-1$ and $1$. I
 
 \begin{figure}[H]
 	\begin{center}
-		\cutpic{0.32cm}{0.3\textwidth}{rs.png}
+		\cutpic{0.32cm}{0.3\textwidth}{rs_snow.png}
 		%\hspace*{0.01\textwidth}
-		\cutpic{0.32cm}{0.3\textwidth}{rm.png}
+		\cutpic{0.32cm}{0.3\textwidth}{rm_snow.png}
 		%\hspace*{0.01\textwidth}
-		\cutpic{0.32cm}{0.3\textwidth}{rh.png}
+		\cutpic{0.32cm}{0.3\textwidth}{rh_snow.png}
+		% \small{
+		%\texttt{av.rs=1} \hspace*{0.22\textwidth} \texttt{av.rm=1} \hspace*{0.23\textwidth} \texttt{av.rh=1}}
+		\cutpic{0.32cm}{0.3\textwidth}{rs_man.png}
+		%\hspace*{0.01\textwidth}
+		\cutpic{0.32cm}{0.3\textwidth}{rm_man.png}
+		%\hspace*{0.01\textwidth}
+		\cutpic{0.32cm}{0.3\textwidth}{rh_man.png}
 		\small{
 		\texttt{av.rs=1} \hspace*{0.22\textwidth} \texttt{av.rm=1} \hspace*{0.23\textwidth} \texttt{av.rh=1}}
 		\caption[Different parameters from the filter \texttt{avfilter.colorbalance} applied.]{Different parameters from the filter \texttt{avfilter.colorbalance} applied: Left with \texttt{av.rs=1} for red shadows, middle with \texttt{av.rm=1} for red mid tones and right with \texttt{av.rh=1} for red highlights.}
@@ -408,7 +418,7 @@ To get an even result of the colour on the frame, which would be applicable for 
 
 \begin{figure}[H]
 	\begin{center}
-		\cutpic{0.3cm}{0.5\textwidth}{rsrmrh.png}
+		\cutpic{0.3cm}{0.5\textwidth}{rsrmrh_snow.png}
 		\label{figure:rsrmrh1}
 		\caption[All parameters for red with the value $1$ from the filter \texttt{avfilter.colorbalance} applied.]{All parameters for red with the value $1$  from the filter \texttt{avfilter.colorbalance} applied: \texttt{av.rs=1}, \texttt{av.rm=1} and \texttt{av.rh=1}.}
 	\end{center}
