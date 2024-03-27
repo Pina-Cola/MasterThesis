@@ -269,11 +269,33 @@ positive associations with their products, because of its cheerful and optimisti
 
 
 RGB colour representation is a method to display colours on screens. It stands for Red, Green, and Blue. 
-Each of those colour channels (red, green, and blue) has a value ranging from 0 to 255. When all three colours are at their maximum value with $(255,255,255)$, the outcome is white. Conversely, when all three are at their minimum value with $(0,0,0)$, the result is black.
+Each of those colour channels (red, green, and blue) has a value ranging from 0 to 255. When all three colours are at their maximum value with \texttt{(255,255,255)}, the outcome is white. Conversely, when all three are at their minimum value with \texttt{(0,0,0}), the result is black.
 
 The three colours are combined in with different values to create the broad spectrum of colours.
 
-% For instance, if you mix full red (255 in the red channel), no green (0 in the green channel), and no blue (0 in the blue channel), you achieve pure red. Similarly, combining full green with no red or blue yields pure green, while full blue with no red or green produces pure blue.
+For example the colour red can be created with mixing full red (255 in the red channel), no green (0 in the green channel), and no blue (0 in the blue channel). This leads to a pure red as \texttt{(255,0,0)}.
+This red can be adjusted by varying the values in the other colour channels. By increasing the green channel while keeping the red channel high and the blue channel low, tones such as a deep maroon with \texttt{(128,64,0)} or a vibrant crimson with \texttt{(200,50,0)} can be achieved. On the other hand, by increasing blue while maintaining a high red channel, tones like scarlet \texttt{(255,40,0)} or coral \texttt{(255,100,80)} can be created. In addition to this, introducing equal amounts of green and blue alongside the high red value can transition the colour into a softer tone, such as rose \texttt{(255,100,100)}.
+
+\begin{figure}[h]
+\centering
+ \begin{minipage}{\textwidth}
+	\centering
+	
+	\bigskip
+	
+	\textcolor[RGB]{255,0,0}{\rule{1cm}{1cm}} \texttt{(255,0,0)} \hspace{0.5cm}
+	\textcolor[RGB]{128,64,0}{\rule{1cm}{1cm}} \texttt{(128,64,0)} \hspace{0.5cm}
+	\textcolor[RGB]{200,50,0}{\rule{1cm}{1cm}} \texttt{(200,50,0)} \hspace{0.5cm}
+	\textcolor[RGB]{255,40,0}{\rule{1cm}{1cm}} \texttt{(255,40,0) }\hspace{0.5cm}
+	\textcolor[RGB]{255,100,80}{\rule{1cm}{1cm}} \texttt{(255,100,80)} \hspace{0.5cm}
+	\textcolor[RGB]{255,100,100}{\rule{1cm}{1cm}} \texttt{(255,100,100)}
+\end{minipage}
+
+\caption{Different Shades of Red}
+\end{figure}
+
+
+% RGB(199, 21, 133)
 
 % By adjusting the intensity of each colour channel, it becomes possible to create millions of distinct colours. This technique is widely employed in digital imaging, web design, and various other applications to faithfully portray colours on electronic displays.
 
