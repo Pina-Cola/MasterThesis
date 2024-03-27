@@ -269,7 +269,7 @@ positive associations with their products, because of its cheerful and optimisti
 
 
 RGB colour representation is a method to display colours on screens. It stands for Red, Green, and Blue. 
-Each of those colour channels (red, green, and blue) has a value ranging from 0 to 255. When all three colours are at their maximum value with \texttt{(255,255,255)}, the outcome is white. Conversely, when all three are at their minimum value with \texttt{(0,0,0}), the result is black.
+Each of those colour channels (red, green, and blue) has a value ranging from 0 to 255. When all three colours are at their maximum value with \texttt{(255,255,255)}, the outcome is white. Conversely, when all three are at their minimum value with \texttt{(0,0,0}), the result is black.~\cite{colourRGB}
 
 The three colours are combined in with different values to create the broad spectrum of colours. The red, green and blue values use 8 bits each. This results into $16\ 777\ 216$ possible colours.
 
@@ -315,37 +315,21 @@ This red can be adjusted by varying the values in the other colour channels. By 
 Each pixel on a display consists of three sub-pixels that each display one of the colours red, green, and blue. By adjusting the intensity of each sub-pixel, a wide range of colors can be achieved. 
 The RGB value of a pixel indicates the amount of each colour. This means if for example the red pixel is set to 0, the red LED is turned off. When the red pixel is set to 255, the red LED is turned fully on.
 
+The RGB colour model is an additive colour model, which is the opposite to subtractive colour models that apply to paints and other substances where the colour reflects certain components of the light. 
+In the subtractive model, a paint filters out all colours but its own and two blended colours filter out all colours but the common colour between them. In the additive model, the colour has a brightness that is the sum of the brightness of the two mixed colours. Because of this, mixed colours appear brighter than individual colours.~\cite{colourRGB}
+
+A colour wheel that shows the additive model of RGB can be seen in Figure~\ref{figure:RGB}.
+
 
 
 \begin{figure}[H]
 	
 	\centering
 	
-\begin{tikzpicture}
-	
-	% Define the circles
-	\fill[red] (0,-2.5) circle (2cm);
-	\fill[green!80!black] (4,-2.5) circle (2cm);
-	\fill[blue] (2,1.732) circle (2cm);
-	
-	% Define the overlapping areas
-	\begin{scope}[blend mode=multiply]
-		\fill[cyan] (2,1.732) circle (2cm);
-		\fill[yellow] (4,-2.5) circle (2cm);
-		\fill[magenta] (0,-2.5) circle (2cm);
-	\end{scope}
-	
-	% Add labels
-	\node[below] at (0,-4.5) {Red};
-	\node[below] at (4,-4.5) {Green};
-	\node[below] at (2,2.732) {Blue};
-	
-	\node[above right] at (0,-2.5) {Magenta};
-	\node[above right] at (4,-2.5) {Yellow};
-	\node[above right] at (2,1.732) {Cyan};
-	
-\end{tikzpicture}
+TODO graphic
 
+	\caption[Additive colours model of RGB]{Three coloured circles showing the function of the additive colours model of RGB.}
+\label{figure:RGB}
 	
 \end{figure}
 
