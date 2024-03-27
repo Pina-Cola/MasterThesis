@@ -32,11 +32,11 @@ In the following, the structure of the Melt framework will be briefly explained.
 
 A \textit{MLT frame object} is a data structure that is used for representing multimedia content. 
 It is a container that holds multimedia data. Each \textit{MLT frame object} contains a single uncompressed frame image and its associated audio samples. These frame objects can be processed individually, which allows the user to manipulate and transform multimedia content efficiently.
-\textit{MLT frame objects} can store the multimedia data in various formats and they support metadata annotations, which allows to attach additional information or properties to the multimedia content. This includes filters, which are discussed in Section \ref{subsection:meltfilter}.
+\textit{MLT frame objects} can store the multimedia data in various formats and they support metadata annotations, which allows to attach additional information or properties to the multimedia content. This includes filters, which are discussed in Section~\ref{subsection:meltfilter}.
 
 
 A \textit{Producer} generates or provides data -- it produces the \textit{MLT Frame objects}. 
-It reads data from files or other data sources. The \textit{Producer} serves as the starting point of the data processing pipeline in Melt. It retrieves the raw data and passes it on to other components, for example the \textit{Consumer}. This can be seen in Figure \ref{fig:producer_consumer}.
+It reads data from files or other data sources. The \textit{Producer} serves as the starting point of the data processing pipeline in Melt. It retrieves the raw data and passes it on to other components, for example the \textit{Consumer}. This can be seen in Figure~\ref{fig:producer_consumer}.
 
 A \textit{Consumer} requests \textit{MLT Frame objects} from the producer.
 It is responsible for consuming or processing the data that was produced by the \textit{Producer} or other components that are between the \textit{Producer} and \textit{Consumer}. 
@@ -58,11 +58,11 @@ The \textit{Consumer} represents the endpoint of the data processing pipeline an
 \end{figure}
 
 Applying filters in the Melt framework is a technique for manipulating multimedia content, including videos. 
-Melt filters can perform a wide range of operations, including colour correction, blurring, sharpening, cropping, resizing, and many others. A list of the filters can be found on the Melt website.\myfootcite{melt_filters}
+Melt filters can perform a wide range of operations, including colour correction, blurring, sharpening, cropping, resizing, and many others. A list of the filters can be found on the Melt website.~\cite{melt_filters}
 
 To apply a filter in Melt, a filter instance has to be created and its parameters have to contain the name of the filter and, if needed, the filter parameters and values for those.
 
-Filters are processing units that manipulate the multimedia data as it flows through the pipeline. They are placed between the producer and consumer, allowing them to modify the data before it reaches the consumer. This can be seen in Figure \ref{fig:producer_filter_consumer}.
+Filters are processing units that manipulate the multimedia data as it flows through the pipeline. They are placed between the producer and consumer, allowing them to modify the data before it reaches the consumer. This can be seen in Figure~\ref{fig:producer_filter_consumer}.
 
 
 

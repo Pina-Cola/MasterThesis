@@ -96,7 +96,7 @@ To manage project dependencies and packages, either Yarn or npm (Node Package Ma
 \subsection{JIT-WebRTC} \label{subsection:jit-webrtc}
 % Describe the backend
 
-The following description of the system is based on the code base and the information from the \texttt{README} file~\cite{RM_Backend}.
+The following description of the system is based on the code base and the information from the \texttt{README} file.~\cite{RM_Backend}
 
 JIT-WebRTC is a live transcoder with a WebRTC output. As described in Section~\ref{subsection:technicalbackground}, transcoding is the conversion of one digital data format into another.~\cite{transcoding}
 
@@ -112,7 +112,7 @@ The backend consists of three components that will be described in the following
 	\item Session service
 \end{itemize}
 
-The system's frontend was described in Section \ref{subsection:accuratevideo}
+The system's frontend was described in Section~\ref{subsection:accuratevideo}.
 
 \begin{figure}[H]
 	\centering
@@ -154,7 +154,7 @@ The user initiates a session through the browser, which then initiates the \text
 Control commands are then sent from the browser to \texttt{main.py} with a WebRTC data channel.
 
 From the \texttt{main.py}, the control commands get sent to Melt via \texttt{stdout} (standard output) and \texttt{stdin} (standard input). These are the default input and output channels, that allow the Python script communication with other components.
-Data written to \texttt{stdout} by the Python code can be captured or redirected and data from an external source can be read from \texttt{stdin} by the Python script. \cite{python}
+Data written to \texttt{stdout} by the Python code can be captured or redirected and data from an external source can be read from \texttt{stdin} by the Python script.~\cite{python}
 
 \begin{figure}[H]
 	\centering
