@@ -271,7 +271,9 @@ positive associations with their products, because of its cheerful and optimisti
 RGB colour representation is a method to display colours on screens. It stands for Red, Green, and Blue. 
 Each of those colour channels (red, green, and blue) has a value ranging from 0 to 255. When all three colours are at their maximum value with \texttt{(255,255,255)}, the outcome is white. Conversely, when all three are at their minimum value with \texttt{(0,0,0}), the result is black.
 
-The three colours are combined in with different values to create the broad spectrum of colours.
+The three colours are combined in with different values to create the broad spectrum of colours. The red, green and blue values use 8 bits each. This results into $16\ 777\ 216$ possible colours.
+
+
 
 For example the colour red can be created with mixing full red (255 in the red channel), no green (0 in the green channel), and no blue (0 in the blue channel). This leads to a pure red as \texttt{(255,0,0)}.
 This red can be adjusted by varying the values in the other colour channels. By decreasing the red value, tones such as a dark maroon with \texttt{(130,0,0)} can be achieved and with a higher red and green value a vibrant crimson with \texttt{(200,50,10)} can be achieved. On the other hand, by increasing blue while maintaining a high red channel, tones like scarlet \texttt{(255,40,0)} or coral \texttt{(255,120,80)} can be created. In addition to this, introducing equal amounts of green and blue alongside the high red value can transition the colour into a softer tone, such as rose \texttt{(255,150,150)}. The described colours can be seen in Figure~\ref{figure:RGBred}.
@@ -309,13 +311,45 @@ This red can be adjusted by varying the values in the other colour channels. By 
 \end{figure}
 
 
-% RGB(199, 21, 133)
 
-% By adjusting the intensity of each colour channel, it becomes possible to create millions of distinct colours. This technique is widely employed in digital imaging, web design, and various other applications to faithfully portray colours on electronic displays.
+Each pixel on a display consists of three sub-pixels that each display one of the colours red, green, and blue. By adjusting the intensity of each sub-pixel, a wide range of colors can be achieved. 
+The RGB value of a pixel indicates the amount of each colour. This means if for example the red pixel is set to 0, the red LED is turned off. When the red pixel is set to 255, the red LED is turned fully on.
 
-% and examples!
 
-% https://www.w3schools.com/colors/colors_rgb.asp
+
+\begin{figure}[H]
+	
+	\centering
+	
+\begin{tikzpicture}
+	
+	% Define the circles
+	\fill[red] (0,-2.5) circle (2cm);
+	\fill[green!80!black] (4,-2.5) circle (2cm);
+	\fill[blue] (2,1.732) circle (2cm);
+	
+	% Define the overlapping areas
+	\begin{scope}[blend mode=multiply]
+		\fill[cyan] (2,1.732) circle (2cm);
+		\fill[yellow] (4,-2.5) circle (2cm);
+		\fill[magenta] (0,-2.5) circle (2cm);
+	\end{scope}
+	
+	% Add labels
+	\node[below] at (0,-4.5) {Red};
+	\node[below] at (4,-4.5) {Green};
+	\node[below] at (2,2.732) {Blue};
+	
+	\node[above right] at (0,-2.5) {Magenta};
+	\node[above right] at (4,-2.5) {Yellow};
+	\node[above right] at (2,1.732) {Cyan};
+	
+\end{tikzpicture}
+
+	
+\end{figure}
+
+
 
 % Poynton, Charles A. "Digital Video and HDTV: Algorithms and Interfaces." Morgan Kaufmann Publishers, 2012.
 
