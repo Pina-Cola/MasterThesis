@@ -554,6 +554,41 @@ To evaluate if and how the overlay of different filters works, the values for th
 
 
 
+\subsubsection*{Evaluation}
+
+%the filters are compared regarding the result of the application of one flter and for this the vibrance and intensity is the important factor and regarding the mixing of colours and here vibrance and intensity are the important aspects as well
+%the av.colorbalance filter has the most vibrent and intense results and it has the option to adapt the shadows, mid tones and highlights inidvidually and that opens nice options for more adjustment of the results in the backend and future work for adjustment on the user side
+%but on the downside to tone the whole frame red, 3 instead of 1 parameter have to be applied but in usage of this with jit there was no noticable performance difference and to really know this, tests would have to be performed and the implementations of the filters to be checked
+
+
+The Melt filters \texttt{av.colorbalance}, \texttt{av.colorchannelmixer} and \texttt{frei0r.coloradj\_RGB} are compared regarding the colour vibrance and intensity of the result. This regards the colour intensity of a single colour value change (red, green and blue) and mixed colurs.
+
+% For the comparison of the result of the single colour filter application, the following parameters per filter are chosen:
+
+In the following, the results of the change of a single colour for each of the filters can be seen:
+
+\begin{figure}[H]
+	\begin{tabular}{ccc}
+		
+		\texttt{av.colorbalance} & \texttt{av.colorchannelmixer} & \texttt{frei0r.coloradj\_RGB} \\
+		
+		\scriptsize{\texttt{av.rs=1} \texttt{av.rm=1} \texttt{av.rh=1}} & \scriptsize{\texttt{av.rr=2}} & \scriptsize{\texttt{R=1}} \\
+		
+		\cutpic{0.3cm}{0.3\textwidth}{rsrmrh_snow.png} & \cutpic{0.3cm}{0.3\textwidth}{rr_snow.png} & \cutpic{0.3cm}{0.3\textwidth}{r_snow.png} \\
+		
+		\cutpic{0.3cm}{0.3\textwidth}{rsrmrh_man.png} & \cutpic{0.3cm}{0.3\textwidth}{rr_man.png} & \cutpic{0.3cm}{0.3\textwidth}{r_man.png} \\
+		
+		
+	\end{tabular}
+\end{figure}
+
+
+
+
+
+
+
+
 
 
 
