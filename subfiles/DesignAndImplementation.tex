@@ -618,9 +618,10 @@ In the above shown cases cases, the results of the \texttt{av.colorchannelmixer}
 
 
 The \texttt{av.colorbalance} filter leads to the most vibrant and intense results of the above listed selection of filters. Additionally it has the option to adapt the shadows, mid tones and highlights individually, which creates the option for more (pre)adjustment of the results in the backend and introducing more sliders or options for the user for adjustment as future work.
+But on the downside, to tone the whole frame, three instead of one parameter have to be applied -- for the shadows, mid tones and highlights.
+When applying this with and without JIT, no performance difference was noticeable but for a accurate evaluation of this, performance tests would have to be performed and the implementations of the filters would need to be examined.
 
-
-%but on the downside to tone the whole frame red, 3 instead of 1 parameter have to be applied but in usage of this with jit there was no noticable performance difference and to really know this, tests would have to be performed and the implementations of the filters to be checked
+Examining and evaluating the different options of the Melt filters is an interesting option for future work or for Codemill to implement. For this thesis project, the filter \texttt{av.colorbalance} will be used, because it results look the most vibrant.
 
 
 
