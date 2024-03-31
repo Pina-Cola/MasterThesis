@@ -86,43 +86,89 @@ Filters are processing units that manipulate the multimedia data as it flows thr
 
 \subsubsection*{Usage of the Melt framework}
 
-TODO add Filter
 
 TODO write small introduction
 
 
 \begin{description}[font=\normalfont\color{RedViolet!80!black}, style=nextline]
 	
-	\item[Initialise the factory] if (mlt\_factory\_init(NULL))
+	\item[Initialise the factory] 
+	
+	Beschreibung
+	
+	\begin{lstlisting}[language=C, numbers=none]
+		if (mlt_factory_init(NULL)) \end{lstlisting}
 	
 	\item[Create a profile] Beschreibung
 	
+	\begin{lstlisting}[language=C, numbers=none]
+		mlt_profile profile = mlt_profile_init(NULL); \end{lstlisting}
+	
 	\item[Create a consumer] Beschreibung
+	
+	\begin{lstlisting}[language=C, numbers=none]
+		mlt_consumer hello = mlt_factory_consumer(profile, NULL, NULL); \end{lstlisting}
 	
 	\item[Create a producer] Beschreibung
 	
+	\begin{lstlisting}[language=C, numbers=none]
+	 mlt_producer world = mlt_factory_producer(profile, NULL, argv[1]); \end{lstlisting}
+	
 	\item[Create a filter] Beschreibung
-	mlt\_filter filter = mlt\_factory\_filter( "greyscale", NULL );
+	
+	\begin{lstlisting}[language=C, numbers=none]
+	mlt_filter filter = mlt_factory_filter( "greyscale", NULL ); \end{lstlisting}
+	
 	
 	\item[Connect elements] Beschreibung
 	// Connect the filter to the producer and consumer to filter
-	mlt\_filter\_connect( filter, mlt\_producer\_service( producer ), 0 );
+	
+	\begin{lstlisting}[language=C, numbers=none]
+		mlt_filter_connect( filter, mlt_producer_service( producer ), 0 ); \end{lstlisting}
+	
+	\begin{lstlisting}[language=C, numbers=none]
+		mlt_consumer_connect( consumer, mlt_filter_service( filter ) ); \end{lstlisting}
+	
 	
 	or 
 	
 	Connect producer to consumer
 	
+	\begin{lstlisting}[language=C, numbers=none]
+		 mlt_consumer_connect(hello, mlt_producer_service(world)); \end{lstlisting}
+	
 	\item[Start consumer] Beschreibung
 	
-	\item[Wait for consumer to terminate] Beschreibung
+	\begin{lstlisting}[language=C, numbers=none]
+		mlt_consumer_start(hello);	\end{lstlisting}
+	
+	\item[Wait for consumer to terminate???] Beschreibung
+	
+	\begin{lstlisting}[language=C, numbers=none]
+		while (!mlt_consumer_is_stopped(hello)) {
+			sleep(1);
+	} \end{lstlisting}
 	
 	\item[Close the consumer] Beschreibung
 	
+	\begin{lstlisting}[language=C, numbers=none]
+	 mlt_consumer_close(hello); \end{lstlisting}
+	
 	\item[Close the producer] Beschreibung
+	
+	\begin{lstlisting}[language=C, numbers=none]
+		mlt_producer_close(world); \end{lstlisting}
 	
 	\item[Close the profile] Beschreibung
 	
+	\begin{lstlisting}[language=C, numbers=none]
+		mlt_profile_close(profile); \end{lstlisting}
+	
 	\item[Close the factory] Beschreibung
+	
+	\begin{lstlisting}[language=C, numbers=none]
+		mlt_factory_close();
+	 \end{lstlisting}
 	
 	
 \end{description}
