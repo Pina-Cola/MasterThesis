@@ -86,8 +86,46 @@ Filters are processing units that manipulate the multimedia data as it flows thr
 
 \subsubsection*{Usage of the Melt framework}
 
+TODO add Filter
+
+TODO write small introduction
 
 
+\begin{description}[font=\normalfont\color{RedViolet!80!black}, style=nextline]
+	
+	\item[Initialise the factory] if (mlt\_factory\_init(NULL))
+	
+	\item[Create a profile] Beschreibung
+	
+	\item[Create a consumer] Beschreibung
+	
+	\item[Create a producer] Beschreibung
+	
+	\item[Create a filter] Beschreibung
+	mlt\_filter filter = mlt\_factory\_filter( "greyscale", NULL );
+	
+	\item[Connect elements] Beschreibung
+	// Connect the filter to the producer and consumer to filter
+	mlt\_filter\_connect( filter, mlt\_producer\_service( producer ), 0 );
+	
+	or 
+	
+	Connect producer to consumer
+	
+	\item[Start consumer] Beschreibung
+	
+	\item[Wait for consumer to terminate] Beschreibung
+	
+	\item[Close the consumer] Beschreibung
+	
+	\item[Close the producer] Beschreibung
+	
+	\item[Close the profile] Beschreibung
+	
+	\item[Close the factory] Beschreibung
+	
+	
+\end{description}
 
 
 
