@@ -98,7 +98,7 @@ To manage project dependencies and packages, either Yarn or npm (Node Package Ma
 
 The following description of the system is based on the code base and the information from the \texttt{README} file.~\cite{RM_Backend}
 
-JIT-WebRTC is a live transcoder with a WebRTC output. As described in Section~\ref{subsection:technicalbackground}, transcoding is the conversion of one digital data format into another.~\cite{transcoding}
+JIT-WebRTC is a live transcoder with a WebRTC output. As described in Section~\ref{subsection_OverviewVideoStreamingComponents}, transcoding is the conversion of one digital data format into another.~\cite{transcoding}
 
 %# jit-webrtc
 %
@@ -165,7 +165,7 @@ Data written to \texttt{stdout} by the Python code can be captured or redirected
 
 
 Melt sends an AVI stream with the rendered video and audio to the \texttt{main.py} via a named pipe and status messages and metadata via another named pipe.
-AVI is a file format that can contain audio and video information to allow synchronized playback of audio and video components.~\cite{avi} AVI was further described in Section~\ref{subsection:technicalbackground} and named pipes in Section~\ref{subsection:technicalbackground}.
+AVI is a file format that can contain audio and video information to allow synchronized playback of audio and video components.~\cite{avi} AVI and names pipes were further described in Section~\ref{subsection_OverviewVideoStreamingComponents}.
 
 \begin{figure}[H]
 	\centering
@@ -207,7 +207,7 @@ Melt and the \texttt{main.py} script are started once for each JIT session with 
 
 \texttt{Session} is a java-based service, designed to support machine-to-machine interaction between the browser and the backend (\texttt{main.py} and Melt). Web services allow different applications, that often run on different platforms and are written in different programming languages, to communicate with each other.~\cite{webservice}
 
-The \texttt{Session} service exposes a REST API (described in Section~\ref{subsection:technicalbackground}) for initiating a JIT session with specified media details. 
+The \texttt{Session} service exposes a REST API (described in Section~\ref{subsection_OverviewVideoStreamingComponents}) for initiating a JIT session with specified media details. 
 
 % Additionally, it leverages AWS, specifically utilizing the Auto Scaling Group (ASG) feature to manage a cluster of instances dynamically, ensuring scalability and efficient distribution of JIT sessions across the instances in the cluster.
 
