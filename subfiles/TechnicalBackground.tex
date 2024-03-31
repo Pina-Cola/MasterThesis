@@ -87,48 +87,81 @@ Filters are processing units that manipulate the multimedia data as it flows thr
 \subsubsection*{Usage of the Melt framework}
 
 
-TODO write small introduction
+In this Section, the usage of the Melt framework is explained with code examples and the explanation of those. This is based on the implemented code for this project, the code of the Melt framework and the Melt documentation.~\cite{melt}
 
+TODO documentation seems to be wrong partially - figure this out
 
 \begin{description}[font=\normalfont\color{RedViolet!80!black}, style=nextline]
 	
+	%-----------------------------------------------
 	\item[Initialise the factory] 
 	
-	Beschreibung
+	This command initializes the Melt factory, to set up the environment for creating and managing multimedia objects.
 	
 	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily]
 	mlt_factory_init(NULL); \end{lstlisting}
 	
-	\item[Create a profile] Beschreibung
+	
+	%-----------------------------------------------	
+	\item[Create a profile] 
+	
+	This line creates a multimedia profile. Profiles in Melt define the output video properties.
 	
 	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily]
 	mlt_profile profile = mlt_profile_init(NULL); \end{lstlisting}
 	
-	\item[Create a consumer] Beschreibung
+	
+	%-----------------------------------------------	
+	\item[Create a consumer] TODO
+	
+	This line creates a consumer object, that processes the data.
 	
 	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily]
 	mlt_consumer consumer = mlt_factory_consumer(profile, NULL, NULL); \end{lstlisting}
 	
-	\item[Create a producer] Beschreibung
+	
+	%-----------------------------------------------	
+	\item[Create a producer] TODO
+	
+	In this command, a producer object is created. The producer object generates or provides the data.
 	
 	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily]
 	 mlt_producer producer = mlt_factory_producer(profile, NULL, argv[1]); \end{lstlisting}
 	
-	\item[Create a filter] Beschreibung
+	
+	
+	%-----------------------------------------------
+	\item[Create a filter] 
+	
+	In this command, a filter is created. The name of the filter is given as an argument in form of a String.
+	
+	IDK my code is different than the example in the docs wtf...
 	
 	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily]
-	mlt_filter filter = mlt_factory_filter( "greyscale", NULL ); \end{lstlisting}
+	mlt_filter filter = mlt_factory_filter(profile, "<filter_name>", NULL ); \end{lstlisting}
 
 
+
+	%-----------------------------------------------
 	\item[Create a filter properties] Beschreibung
+	
+	TODO
+	
+	parameter name as string, then value for parameter as string too
 
 	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily]
 	mlt_properties filter_properties = mlt_filter_properties(filter);
 	mlt_properties_set(filter_properties, <parameter>, <value>) \end{lstlisting}
 	
 	
+	
+	
+	%-----------------------------------------------
 	\item[Connect elements] Beschreibung
-	// Connect the filter to the producer and consumer to filter
+	
+	TODO
+	
+	Connect the filter to the producer and consumer to filter
 	
 	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily]
 	mlt_filter_connect( filter, mlt_producer_service( producer ), 0 ); \end{lstlisting}
@@ -144,12 +177,22 @@ TODO write small introduction
 	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily]
 	mlt_consumer_connect(consumer, mlt_producer_service(producer)); \end{lstlisting}
 	
+	
+	
+	%-----------------------------------------------
 	\item[Start consumer] Beschreibung
+	
+	TODO
 	
 	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily]
 	mlt_consumer_start(consumer);	\end{lstlisting}
 	
+	
+	
+	%-----------------------------------------------
 	\item[Wait for consumer to terminate???] Beschreibung
+	
+	TODO
 	
 	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily]
 	while (!mlt_consumer_is_stopped(consumer)) 
@@ -157,22 +200,45 @@ TODO write small introduction
 		sleep(1);
 	} \end{lstlisting}
 	
+	
+	
+	
+	%-----------------------------------------------
 	\item[Close the consumer] Beschreibung
+	
+	TODO
 	
 	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily]
 	 mlt_consumer_close(consumer); \end{lstlisting}
 	
+	
+	
+	
+	%-----------------------------------------------
 	\item[Close the producer] Beschreibung
+	
+	TODO
 	
 	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily]
 	mlt_producer_close(producer); \end{lstlisting}
 	
+	
+	
+	
+	%-----------------------------------------------
 	\item[Close the profile] Beschreibung
+	
+	TODO
 	
 	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily]
 	mlt_profile_close(profile); \end{lstlisting}
 	
+	
+	
+	%-----------------------------------------------
 	\item[Close the factory] Beschreibung
+	
+	TODO
 	
 	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily]
 	mlt_factory_close();
