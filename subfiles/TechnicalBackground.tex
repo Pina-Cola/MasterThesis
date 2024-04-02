@@ -99,16 +99,28 @@ TODO documentation seems to be wrong partially - figure this out
 	This command initializes the Melt factory, to set up the environment for creating and managing multimedia objects.
 	
 	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily]
-	mlt_factory_init(NULL); \end{lstlisting}
+	mlt_factory_init(const char * directory); \end{lstlisting}
+
+	The function takes a directory path as an optional parameter. In this directory, custom modules can bes stored, which can then override the default settings and the \texttt{MLT\_REPOSITORY} environment variable. 
+	
+
+
+	%-----------------------------------------------	
+	\item[Create a producer] TODO
+
+	In this command, a producer object is created. The producer object generates or provides the data.
+
+	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily]
+	mlt_producer producer = mlt_factory_producer(profile, NULL, argv[1]); \end{lstlisting}
 	
 	
 	%-----------------------------------------------	
-	\item[Create a profile] 
+	\item[Create properties] 
 	
-	This line creates a multimedia profile. Profiles in Melt define the output video properties.
+	This line creates a property object to define the output video properties.
 	
 	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily]
-	mlt_profile profile = mlt_profile_init(NULL); \end{lstlisting}
+	mlt_properties properties = MLT_PRODUCER_PROPERTIES(producer); \end{lstlisting}
 	
 	
 	%-----------------------------------------------	
@@ -120,13 +132,7 @@ TODO documentation seems to be wrong partially - figure this out
 	mlt_consumer consumer = mlt_factory_consumer(profile, NULL, NULL); \end{lstlisting}
 	
 	
-	%-----------------------------------------------	
-	\item[Create a producer] TODO
-	
-	In this command, a producer object is created. The producer object generates or provides the data.
-	
-	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily]
-	 mlt_producer producer = mlt_factory_producer(profile, NULL, argv[1]); \end{lstlisting}
+
 	
 	
 	
