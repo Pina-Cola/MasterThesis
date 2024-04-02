@@ -126,8 +126,8 @@ The in the following described code structure refers to the creation of the nece
 	\begin{lstlisting}[language=C, numbers=none, basicstyle=\footnotesize\ttfamily, belowskip=0pt, aboveskip=9pt]
 	mlt_producer producer 
 			= mlt_factory_producer(mlt_profile profile,
-												const char* service,
-												const void* resource); \end{lstlisting}
+															const char* service,
+															const void* resource); \end{lstlisting}
 																						  
 	The function \texttt{mlt\_factory\_producer()} creates a producer based on the profile, service and resources, which are the parameters of this function.
 
@@ -140,7 +140,8 @@ The in the following described code structure refers to the creation of the nece
 	This line retrieves the properties that are associated with a as parameter given producer in a property object.
 	
 	\begin{lstlisting}[language=C, numbers=none, basicstyle=\footnotesize\ttfamily, belowskip=0pt, aboveskip=9pt]
-	mlt_properties properties = MLT_PRODUCER_PROPERTIES(producer); \end{lstlisting}
+	mlt_properties properties 
+			= MLT_PRODUCER_PROPERTIES(producer); \end{lstlisting}
 	
 	The macro \texttt{MLT\_PRODUCER\_SERVICE} internally accesses the properties of the producer.
 	
@@ -152,9 +153,10 @@ The in the following described code structure refers to the creation of the nece
 	This line creates a consumer object, that processes the data.
 	
 	\begin{lstlisting}[language=C, numbers=none, basicstyle=\footnotesize\ttfamily, belowskip=0pt, aboveskip=9pt]
-	mlt_consumer consumer = mlt_factory_consumer(mlt_profile profile, 
-																			const char* service, 
-																			const void* input); \end{lstlisting}
+	mlt_consumer consumer 
+			= mlt_factory_consumer(mlt_profile profile, 
+															const char* service, 
+															const void* input); \end{lstlisting}
 																
 	The function \texttt{mlt\_factory\_consumer()} creates a consumer object, basedon the as parameter provided profile, service and optional input. If the service object is not specified, it defaults to \texttt{MLT\_CONSUMER}.
 											
@@ -170,8 +172,8 @@ The in the following described code structure refers to the creation of the nece
 	
 	\begin{lstlisting}[language=C, numbers=none, basicstyle=\footnotesize\ttfamily, belowskip=0pt, aboveskip=9pt]
 	mlt_filter filter = mlt_factory_filter(mlt_profile profile, 
-															const char* service, 
-															const void* input); \end{lstlisting}
+																					const char* service, 
+																					const void* input); \end{lstlisting}
 														
 	The \texttt{mlt\_factory\_filter()} function retrieves a filter based on the parameters. Those are the profile, the name of the filter as service and an optional argument of the filter.
 
@@ -183,14 +185,15 @@ The in the following described code structure refers to the creation of the nece
 	This code creates a property object and sets the filter properties.
 
 	\begin{lstlisting}[language=C, numbers=none, basicstyle=\footnotesize\ttfamily, belowskip=0pt, aboveskip=9pt]
-	mlt_properties filter_properties = mlt_filter_properties(filter); \end{lstlisting}
+	mlt_properties filter_properties 
+			= mlt_filter_properties(filter); \end{lstlisting}
 
 	The function \texttt{mlt\_filter\_properties()} retrieves the properties of a filter. The filter is given as a parameter.
 
 	\begin{lstlisting}[language=C, numbers=none, basicstyle=\footnotesize\ttfamily, belowskip=0pt, aboveskip=9pt]
 	mlt_properties_set(mlt_properties self,
-								const char* name,
-								const char* value); \end{lstlisting}
+											const char* name,
+											const char* value); \end{lstlisting}
 
 	The function \texttt{mlt\_properties\_set()} assigns a new value to a property, in this case to a filter. The parameters are the filter properties, that were retrieved in the previous step, and the filter parameters and associated values as strings.
 	
@@ -203,12 +206,15 @@ The in the following described code structure refers to the creation of the nece
 	Connect the filter to the producer and consumer to filter, if a filter is applied.
 	
 	\begin{lstlisting}[language=C, numbers=none, basicstyle=\footnotesize\ttfamily, belowskip=0pt, aboveskip=9pt]
-	mlt_filter_connect( mlt_filter self, mlt_service producer , int index ); \end{lstlisting}
+	mlt_filter_connect( mlt_filter self, 
+											mlt_service producer , 
+											int index ); \end{lstlisting}
 
 	The function \texttt{mlt\_filter\_connect} takes the filter and the producer as parameters and connects them.
 	
 	\begin{lstlisting}[language=C, numbers=none, basicstyle=\footnotesize\ttfamily, belowskip=0pt, aboveskip=9pt]
-	mlt_consumer_connect( mlt_consumer self, mlt_service producer ); \end{lstlisting}
+	mlt_consumer_connect( mlt_consumer self, 
+												mlt_service producer ); \end{lstlisting}
 
 	The function \texttt{mlt\_filter\_connect} takes the consumer and the filter as parameters and connects them.
 	
@@ -216,7 +222,8 @@ The in the following described code structure refers to the creation of the nece
 	If no filter is applied, the producer is being connected to the consumer directly.
 	
 	\begin{lstlisting}[language=C, numbers=none, basicstyle=\footnotesize\ttfamily, belowskip=0pt, aboveskip=9pt]
-	mlt_consumer_connect(mlt_consumer self, mlt_service producer); \end{lstlisting}
+	mlt_consumer_connect(mlt_consumer self, 
+												mlt_service producer); \end{lstlisting}
 	
 	The function \texttt{mlt\_filter\_connect} takes the consumer and the producer as parameters and connects them.
 	
