@@ -89,7 +89,8 @@ Filters are processing units that manipulate the multimedia data as it flows thr
 
 In this Section, the usage of the Melt framework is explained with code examples and the explanation of those. This is based on the implemented code for this project, the code of the Melt framework and the Melt documentation.~\cite{melt}
 
-TODO documentation seems to be wrong partially - figure this out
+The in the following described code structure refers to the creation of the necessary melt components to apply a filter.
+
 
 \begin{description}[font=\normalfont\color{RedViolet!80!black}, style=nextline]
 	
@@ -98,20 +99,38 @@ TODO documentation seems to be wrong partially - figure this out
 	
 	This command initializes the Melt factory, to set up the environment for creating and managing multimedia objects.
 	
-	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily]
+	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily, belowskip=0pt, aboveskip=9pt]
 	mlt_factory_init(const char * directory); \end{lstlisting}
 
 	The function takes a directory path as an optional parameter. In this directory, custom modules can bes stored, which can then override the default settings and the \texttt{MLT\_REPOSITORY} environment variable. 
 	
+	
+	%-----------------------------------------------	
+	\item[Create a profile]
+	
+	In this line, a multimedia profile is created to define the video properties.
+	
+	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily, belowskip=0pt, aboveskip=9pt]
+		mlt_profile profile = mlt_service_profile(mlt_service self); \end{lstlisting}
+	
+	The function \texttt{mlt\_service\_profile()} retrieves the profile that is associated with a given service. It takes a service as a parameter and returns its profile.
+	
+	
 
 
 	%-----------------------------------------------	
-	\item[Create a producer] TODO
+	\item[Create a producer] 
 
 	In this command, a producer object is created. The producer object generates or provides the data.
 
-	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily]
-	mlt_producer producer = mlt_factory_producer(profile, NULL, argv[1]); \end{lstlisting}
+	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily, belowskip=0pt, aboveskip=9pt]
+	mlt_producer producer = mlt_factory_producer(mlt_profile profile,
+																							  const char* service,
+																							  const void* resource); \end{lstlisting}
+																						  
+	The function \texttt{mlt\_factory\_producer()} creates a producer based on the profile, service and optional resources, which are the parameters of this function.
+
+
 	
 	
 	%-----------------------------------------------	
@@ -119,7 +138,7 @@ TODO documentation seems to be wrong partially - figure this out
 	
 	This line creates a property object to define the output video properties.
 	
-	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily]
+	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily, belowskip=0pt, aboveskip=9pt]
 	mlt_properties properties = MLT_PRODUCER_PROPERTIES(producer); \end{lstlisting}
 	
 	
@@ -128,7 +147,7 @@ TODO documentation seems to be wrong partially - figure this out
 	
 	This line creates a consumer object, that processes the data.
 	
-	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily]
+	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily, belowskip=0pt, aboveskip=9pt]
 	mlt_consumer consumer = mlt_factory_consumer(profile, NULL, NULL); \end{lstlisting}
 	
 	
@@ -143,7 +162,7 @@ TODO documentation seems to be wrong partially - figure this out
 	
 	IDK my code is different than the example in the docs wtf...
 	
-	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily]
+	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily, belowskip=0pt, aboveskip=9pt]
 	mlt_filter filter = mlt_factory_filter(profile, "<filter_name>", NULL ); \end{lstlisting}
 
 
@@ -155,7 +174,7 @@ TODO documentation seems to be wrong partially - figure this out
 	
 	parameter name as string, then value for parameter as string too
 
-	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily]
+	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily, belowskip=0pt, aboveskip=9pt]
 	mlt_properties filter_properties = mlt_filter_properties(filter);
 	mlt_properties_set(filter_properties, <parameter>, <value>) \end{lstlisting}
 	
@@ -169,10 +188,10 @@ TODO documentation seems to be wrong partially - figure this out
 	
 	Connect the filter to the producer and consumer to filter
 	
-	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily]
+	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily, belowskip=0pt, aboveskip=9pt]
 	mlt_filter_connect( filter, mlt_producer_service( producer ), 0 ); \end{lstlisting}
 	
-	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily]
+	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily, belowskip=0pt, aboveskip=9pt]
 	mlt_consumer_connect( consumer, mlt_filter_service( filter ) ); \end{lstlisting}
 	
 	
@@ -180,7 +199,7 @@ TODO documentation seems to be wrong partially - figure this out
 	
 	Connect producer to consumer
 	
-	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily]
+	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily, belowskip=0pt, aboveskip=9pt]
 	mlt_consumer_connect(consumer, mlt_producer_service(producer)); \end{lstlisting}
 	
 	
@@ -190,7 +209,7 @@ TODO documentation seems to be wrong partially - figure this out
 	
 	TODO
 	
-	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily]
+	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily, belowskip=0pt, aboveskip=9pt]
 	mlt_consumer_start(consumer);	\end{lstlisting}
 	
 	
@@ -200,7 +219,7 @@ TODO documentation seems to be wrong partially - figure this out
 	
 	TODO
 	
-	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily]
+	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily, belowskip=0pt, aboveskip=9pt]
 	while (!mlt_consumer_is_stopped(consumer)) 
 	{
 		sleep(1);
@@ -214,7 +233,7 @@ TODO documentation seems to be wrong partially - figure this out
 	
 	TODO
 	
-	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily]
+	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily, belowskip=0pt, aboveskip=9pt]
 	 mlt_consumer_close(consumer); \end{lstlisting}
 	
 	
@@ -225,7 +244,7 @@ TODO documentation seems to be wrong partially - figure this out
 	
 	TODO
 	
-	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily]
+	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily, belowskip=0pt, aboveskip=9pt]
 	mlt_producer_close(producer); \end{lstlisting}
 	
 	
@@ -236,7 +255,7 @@ TODO documentation seems to be wrong partially - figure this out
 	
 	TODO
 	
-	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily]
+	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily, belowskip=0pt, aboveskip=9pt]
 	mlt_profile_close(profile); \end{lstlisting}
 	
 	
@@ -246,7 +265,7 @@ TODO documentation seems to be wrong partially - figure this out
 	
 	TODO
 	
-	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily]
+	\begin{lstlisting}[language=C, numbers=none, basicstyle=\scriptsize\ttfamily, belowskip=0pt, aboveskip=9pt]
 	mlt_factory_close();
 	\end{lstlisting}
 	
