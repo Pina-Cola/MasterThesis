@@ -24,7 +24,8 @@
 \newpage
 \section{Design and Implementation} \label{section:designandimplementation}
 
-
+In this Chapter, the system architecture and the implementation is explained. First a brief overview over the architecture is given in Section~\ref{subsection:architecturedesign} and then the frontend and backend are described in more detail in Section~\ref{subsection:accuratevideo} and Section~\ref{subsection:jit-webrtc}.
+For the application of a Melt filter, different filters were compared to select the most suitable option in Section~\ref{subsection:meltfilter}.
 
 
 
@@ -43,20 +44,24 @@
 %Highlight any challenges or considerations encountered during the implementation phase and how they were addressed.
 %Include code snippets, illustrations, or diagrams to enhance the understanding of your codebase.
 
-TODO: Short overview/introduction of architecture and explain structure of this section?
+The system consists of four components: the frontend (browser), Melt, \texttt{main.py}, and a session service. The frontend is described in Section~\ref{subsection:accuratevideo} and the backend (Melt, \texttt{main.py} and session service) will be described in more detail in Section~\ref{subsection:jit-webrtc}.
+
+
+The Python backend communicates with the Melt framework to use its video editing, processing and transcoding functionalities. The Melt framework was described in Section~\ref{subsection:melt}. Real-time communication is implemented through WebRTC, with Melt used for the manipulation of the video content. 
+The frontend, running on Node.js, executes JavaScript code. 
+The system architecture can be seen in Figure~\ref{figure:SA}.
 
 
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{IM3.png}
+	\caption[System architecture]{Architecture of the system that consists out of four parts.}
+	\label{figure:SA}
+\end{figure}
 
 
-The connection from the Python backend to the Melt framework can use Melt's capabilities for video editing, processing, transcoding, rendering or playback. The system includes real-time communication via WebRTC, where Melt is involved in handling and manipulating video content.
-
-
-
-
-
-
-
+For development and quick testing without the session service, the backend can be started in a Docker container. This has been done for the implementation for this project.
 
 
 
