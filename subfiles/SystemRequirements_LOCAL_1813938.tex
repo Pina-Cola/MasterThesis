@@ -1,0 +1,108 @@
+\documentclass[../MasterThesis.tex]{subfiles}
+\graphicspath{ {./assets/images/} }
+
+
+%----------------------------------------------------------------------------
+%----------------------------------------------------------------------------
+
+\begin{document}
+	
+	
+	
+
+%
+%
+%
+%
+%=======================================================================================================
+%
+%
+%
+%
+%=======================================================================================================
+% CHAPTER: SYSTEM REQUIREMENTS AND SPECIFICATIONS
+%=======================================================================================================
+\newpage
+\section{System Requirements and Specifications} \label{section:systemrequirementsandspecifications}
+
+%Define the overall goals and objectives of your project.
+%Specify the functional and non-functional requirements of the system. This includes what the system is expected to do, its features, and any constraints it must adhere to.
+%Outline any specific hardware or software requirements necessary for the project.
+%Detail the methodologies or approaches you'll use for system development.
+
+
+
+%-------------------------------------------------------------------------------------------------------
+\subsection{User Requirements} \label{subsection:userrequirements}
+% Identify and describe the requirements from the end-user perspective.
+
+
+
+
+%Who are the primary users of the system?
+%What are the main tasks or activities that users will perform using the system?
+%What are the goals and objectives of the users when interacting with the system?
+%What are the characteristics of the users, such as technical expertise, age, education level, etc.?
+%What are the environmental considerations, such as the location and conditions in which the system will be used?
+%Are there any regulatory or legal requirements that need to be considered regarding user interaction?
+%What are the usability expectations or preferences of the users regarding interface design, navigation, etc.?
+%Are there any accessibility requirements that need to be addressed for users with disabilities?
+%Are there any cultural or language considerations that need to be accommodated for the users?
+
+
+
+
+
+
+
+
+
+
+
+
+%-------------------------------------------------------------------------------------------------------
+\subsection{Technical Requirements} \label{subsection:technicalrequirements}
+% Detail the technical requirements for the system.
+
+
+TODO Introduction to Section (?)
+
+TODO Answer questions
+
+\begin{itemize}
+
+\item What are the hardware requirements for running the system, such as processor, memory, storage, etc.?
+
+The system should be capable of running frontend development tools such as Yarn and executing applications within Docker containers.
+While implementing, it was observed that the system should have a minimum of 16GB RAM to ensure smooth execution of the development environment and Docker containers.
+
+
+
+\item What are the software requirements, including operating system compatibility, third-party libraries or frameworks, etc.?
+
+While testing it seemed to not run on Windows. Because of this, a Linux system (Ubuntu 22.04) was used. Regarding the documentation in the README file, the Mac operating system should be able to run the code after making adjustments.
+
+
+% \item Are there any performance requirements, such as response time, throughput, scalability, etc.?
+
+\item What are the security requirements for protecting the system and its data from unauthorized access or breaches?
+
+The Docker containers use a \textit{you snooze you lose} approach, where the container terminates automatically if there are no incoming requests within a certain time frame. 
+
+In addition to this, the system adheres to standard security practices.
+
+
+
+
+\item What are the data management requirements, including data storage, retrieval, backup, and retention policies?
+
+\item Are there any legal or compliance requirements related to data privacy, intellectual property, etc.?
+
+\item What are the maintenance and support requirements for the system, including updates, patches, user support, etc.?
+	
+\end{itemize}	
+	
+	
+	
+	
+\end{document}
