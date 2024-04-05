@@ -295,59 +295,27 @@ WebRTC supports various video codecs, including h.264, which is used for video c
 
 
 
+%-------------------------------------------------------------------------------------------------------
+%\subsubsection*{Named Pipe} 
 
-
-
-
-
-
+%A named pipe is a type of interprocess communication (IPC) mechanism. It provides a way for processes to pass data to each other and it is bidirectional. 
+%Named pipes follow a First-In-First-Out (FIFO) structure: The first data written into the pipe is the first data to be read. This maintains a sequential order for data transmission.
+%A traditional pipe is \textit{unnamed} and terminates when its process terminates. A named pipe can last beyond the life of the process, as long as the system is running.~\cite{namedpipe}
 
 
 
 
 
 %-------------------------------------------------------------------------------------------------------
-\subsubsection*{Named Pipe} 
+%\subsubsection*{REST} 
 
-A named pipe is a type of interprocess communication (IPC) mechanism. It provides a way for processes to pass data to each other and it is bidirectional. 
-Named pipes follow a First-In-First-Out (FIFO) structure: The first data written into the pipe is the first data to be read. This maintains a sequential order for data transmission.
-A traditional pipe is \textit{unnamed} and terminates when its process terminates. A named pipe can last beyond the life of the process, as long as the system is running.~\cite{namedpipe}
 
+Representational State Transfer (REST) is an architecture for network applications. A REST Application Programming Interface (API) exposes a set of endpoints (URLs) that allow communication between different software systems over the internet with hypertext transfer protocol (HTTP) methods.~\cite{IEEE_Rest, webservice, Nodejs_Rest}
 
 
 
-
-
-
-
-
-%-------------------------------------------------------------------------------------------------------
-\subsubsection*{REST} 
-
-
-Representational State Transfer (REST) is an architectural style for designing networked applications. A REST Application Programming Interface (API) exposes a set of endpoints (URLs) that allow communication between different software systems over the internet and it uses the hypertext transfer protocol (HTTP) methods.~\cite{IEEE_Rest, webservice, Nodejs_Rest}
-
-
-
-
-
-
-
-
-
-
-
-%-------------------------------------------------------------------------------------------------------
-\subsubsection*{JIT} 
-%
-\begin{CountingDefinition}[JIT]{def:JIT}
 	
-	JIT (Just-In-Time), in the context of video files for streaming, refers to a dynamic software solution employed for real-time video transformation on a server. It is used for on-the-fly conversion of video files, optimizing them for streaming. The process includes the transformation of a video file, potentially one with non-web-friendly formats, into a more suitable format for the playback in web browsers.
-	
-\end{CountingDefinition}
-
-
-
+Just-In-Time (JIT), in the context of video streaming, refers to a dynamic software solution employed for real-time video transformation. It is used for on-the-fly conversion of video files, optimizing them for streaming. The process includes the transformation of a video file, potentially one with non-web-friendly formats, into a more suitable format for the playback in web browsers.~\cite{JIT_IEEE}
 
 
 
