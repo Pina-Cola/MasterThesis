@@ -681,14 +681,60 @@ The optional parameter \texttt{-v} (verbose) provides additional information or 
 
 
 
-\newpage
+% \newpage
 %-------------------------------------------------------------------------------------------------------
 \subsection{Implementation} \label{subsection:implementation}
 % Discuss the technologies and tools chosen for the implementation.
 
 
-
 \subsubsection*{Frontend}
+%
+%
+\begin{minipage}{0.48\textwidth}
+In the frontend, input sliders for the user sided adjustment of the RGB values were added below the already existing slider for the quality adjustment. This is located in the overlay windows in the top right corner. The sliders were coloured according to their associated functions in red, green and blue. This cam be seen in Figure~\ref{figure:sliders}.
+
+The HTML code for the red slider can be seen below. The other sliders for green and blue work analogical. The input range is set between $-100$ and $100$, to divide it later by $100$ to achieve a float 
+
+
+
+
+\end{minipage}\begin{minipage}{0.04\textwidth}
+\ 
+\end{minipage}\begin{minipage}{0.48\textwidth}
+\begin{figure}[H]
+	\begin{center}
+		\cutpic{0.3cm}{0.9\textwidth}{sliders.png}
+		\caption[Sliders for RGB colour adjustment.]{Sliders for RGB colour adjustment.}
+		\label{figure:sliders}
+	\end{center}
+\end{figure}
+\hfill
+\end{minipage}
+
+\vspace*{-1.3em}
+value between $-1$ and $1$ for the filter parameter. The default value is set to $0$. The input value from the slider then gets read out in a TypeScript file.  
+
+
+\begin{lstlisting}[language=html, numbers=none]
+	<p>
+		<label for="red-slider">Red</label><br />
+		Low
+		<input
+			type="range"
+			min="-100"
+			max="100"
+			value="0"
+			class="slider"
+			id="red-slider"
+		/>
+		High
+	</p>
+\end{lstlisting}
+
+
+
+
+
 
 
 \subsubsection*{Proto Buffer}
