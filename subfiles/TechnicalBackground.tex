@@ -355,12 +355,60 @@ Web services enable machine-to-machine (M2M) interaction. This is the communicat
 
 Protocol buffers are developed by Google. They compress data for sending it faster over a network. The protocol buffer provides an efficient binary data format. The structure of this format is defined in a \texttt{.proto} file. Those files are used to generate code for reading and writing to the protocol buffer. Because of the compression, it is useful for sending data in networks.~\cite{protobuffer}
 
-\begin{itemize}
-	\item proto2
-	\item messages contain fields?
-	\item datatypes
-	\item enum thingy
-\end{itemize}
+In this project, Protocol Buffers version 2 (proto2) was used. In the first line of the \texttt{.proto} file, the syntax is defined with the proto version that is being used. This can be seen for proto2 in the following:
+
+\begin{lstlisting}[style=protobufStyle, numbers=none]
+	syntax = "proto2";
+\end{lstlisting}
+
+Data structures are defined using message declarations. Messages can contain fields for the data, each with a unique identifier and a specified data type. The data types for proto2 can be seen in Table~\ref{table:proto2_data_types}.~\cite{proto2_doc}
+
+
+TODO 
+
+
+\begin{table}[H]
+	\centering
+
+	\begin{tabular}{ll}
+		\toprule
+		\textbf{Data Type} & \textbf{Description} \\
+		\midrule
+		double & Double-precision floating-point number \\
+		float & Single-precision floating-point number \\
+		int32 & Signed 32-bit integer \\
+		int64 & Signed 64-bit integer \\
+		uint32 & Unsigned 32-bit integer \\
+		uint64 & Unsigned 64-bit integer \\
+		sint32 & Signed 32-bit integer (efficient for encoding negative numbers) \\
+		sint64 & Signed 64-bit integer (efficient for encoding negative numbers) \\
+		fixed32 & Unsigned 32-bit integer (always four bytes) \\
+		fixed64 & Unsigned 64-bit integer (always eight bytes) \\
+		sfixed32 & Signed 32-bit integer (always four bytes) \\
+		sfixed64 & Signed 64-bit integer (always eight bytes) \\
+		bool & Boolean value (true or false) \\
+		string & Variable-length text string  \\
+		bytes & Variable-length sequence of bytes \\
+		\bottomrule
+	\end{tabular}
+	
+	
+	
+	\caption{Data types for fields in Protocol Buffers (proto2)}
+	\label{table:proto2_data_types}
+\end{table}
+
+
+%Common data types supported for fields include integers (int32, int64), floating-point numbers (float, double), strings, booleans, and byte arrays.
+
+
+%\textbf{Enum Definition:}
+%\begin{itemize}
+%	\item Additionally, proto2 supports the definition of enumeration types (enums).
+%	\item Enums allow for the declaration of a set of named constants, each associated with a unique integer value.
+%	\item Enums are useful for representing a fixed set of options or states within a message definition.
+%\end{itemize}
+
 
 
 	

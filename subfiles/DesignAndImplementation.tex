@@ -740,6 +740,26 @@ value between $-1$ and $1$ for the filter parameter. The default value is set to
 \subsubsection*{Proto Buffer}
 
 
+\begin{lstlisting}[style=protobufStyle, numbers=none]
+syntax = "proto2";
+
+message JitControl {
+	...
+	optional float red_value = 4;  
+	optional float green_value = 5; 
+	optional float blue_value = 6; 
+}
+
+enum ControlType {
+	...
+	RED_VALUE = 7;
+	GREEN_VALUE = 8;
+	BLUE_VALUE = 9;
+}
+
+\end{lstlisting}
+
+
 
 
 

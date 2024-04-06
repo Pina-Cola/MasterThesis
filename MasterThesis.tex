@@ -168,7 +168,20 @@
 \definecolor{codegray}{RGB}{142, 45, 142}    % RedViolet shade of gray
 \definecolor{codepurple}{RGB}{142, 45, 87}   % RedViolet shade of purple
 \definecolor{backcolour}{RGB}{255, 235, 240} % Very light RedViolet background color
-
+% Settings for protobuf style
+\lstdefinestyle{protobufStyle}{
+	% language=protobuf,
+	keywordstyle=\color{blue},
+	commentstyle=\color{green},
+	stringstyle=\color{red},
+	numbers=left,
+	numberstyle=\tiny,
+	numbersep=5pt,
+	breaklines=true,
+	showstringspaces=false,
+	basicstyle=\small\ttfamily,
+	morekeywords={message, string, int32, repeated, float, enum},
+}
 % Settings for lstlisting
 \lstdefinestyle{mystyle}{
 	backgroundcolor=\color{backcolour},   
