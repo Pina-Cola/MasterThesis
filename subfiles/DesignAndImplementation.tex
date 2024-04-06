@@ -781,11 +781,145 @@ and blue. They are then transmitted to the backend with the proto2 data format. 
 
 
 
-
-
 \subsubsection*{Application of the Melt filter}
 
+{\tiny\begin{lstlisting}[language=c, numbers=none]
+static JitStatus jit_status = JIT_STATUS__INIT;
+	
+float red_value;
+float green_value;
+float blue_value;
+	
+	
+	
+static void jit_action( mlt_producer producer, char *value )
+{
+	mlt_properties properties = MLT_PRODUCER_PROPERTIES( producer );
+	mlt_multitrack multitrack = mlt_properties_get_data( properties, "multitrack", NULL );
+	mlt_consumer consumer = mlt_properties_get_data( properties, "transport_consumer", NULL );
+	mlt_properties jack = mlt_properties_get_data( MLT_CONSUMER_PROPERTIES( consumer ), "jack_filter", NULL );
+		
+	mlt_producer service = mlt_producer_service( producer );
+		
+	mlt_filter filter = mlt_factory_filter(service, "avfilter.colorbalance", NULL);
+		
+		
+		
+		
+	JitControl *const jit_control = (JitControl*) value;
+	switch (jit_control->type) {
+		
+		...
+			
+		case CONTROL_TYPE__RED_VALUE:
+		red_value = jit_control->red_value;
+		{
+			mlt_properties filter_props_red = mlt_filter_properties(filter);
+				
+			if (blue_value >= 0.0 && blue_value <= 1.0) {
+				char blue_value_str[20]; 
+				snprintf(blue_value_str, sizeof(blue_value_str), "%.2f", blue_value);
+				mlt_properties_set(filter_props_red, "av.bs", blue_value_str);
+				mlt_properties_set(filter_props_red, "av.bm", blue_value_str);
+				mlt_properties_set(filter_props_red, "av.hs", blue_value_str);
+			}
+				
+			if (red_value >= 0.0 && red_value <= 1.0) {
+				char red_value_str[20]; 
+				snprintf(red_value_str, sizeof(red_value_str), "%.2f", red_value);
+				mlt_properties_set(filter_props_red, "av.rs", red_value_str);
+				mlt_properties_set(filter_props_red, "av.rm", red_value_str);
+				mlt_properties_set(filter_props_red, "av.rh", red_value_str);
+			}
 
+			if (green_value >= 0.0 && green_value <= 1.0) {
+				char green_value_str[20]; 
+				snprintf(green_value_str, sizeof(green_value_str), "%.2f", green_value);
+				mlt_properties_set(filter_props_red, "av.gs", green_value_str);
+				mlt_properties_set(filter_props_red, "av.gm", green_value_str);
+				mlt_properties_set(filter_props_red, "av.gh", green_value_str);
+			} 
+			}
+
+			mlt_filter_connect(filter, service, 0);
+			mlt_consumer_connect(consumer, mlt_filter_service(filter));
+			break;
+			
+			case CONTROL_TYPE__GREEN_VALUE:
+			green_value = jit_control->green_value;
+			{
+				mlt_properties filter_props_green = mlt_filter_properties(filter);
+				
+				if (blue_value >= 0.0 && blue_value <= 1.0) {
+					char blue_value_str[20]; 
+					snprintf(blue_value_str, sizeof(blue_value_str), "%.2f", blue_value);
+					mlt_properties_set(filter_props_green, "av.bs", blue_value_str);
+					mlt_properties_set(filter_props_green, "av.bm", blue_value_str);
+					mlt_properties_set(filter_props_green, "av.hs", blue_value_str);
+				}
+				
+				if (red_value >= 0.0 && red_value <= 1.0) {
+					char red_value_str[20]; 
+					snprintf(red_value_str, sizeof(red_value_str), "%.2f", red_value);
+					mlt_properties_set(filter_props_green, "av.rs", red_value_str);
+					mlt_properties_set(filter_props_green, "av.rm", red_value_str);
+					mlt_properties_set(filter_props_green, "av.rh", red_value_str);
+				}
+				
+				if (green_value >= 0.0 && green_value <= 1.0) {
+					char green_value_str[20]; 
+					snprintf(green_value_str, sizeof(green_value_str), "%.2f", green_value);
+					mlt_properties_set(filter_props_green, "av.gs", green_value_str);
+					mlt_properties_set(filter_props_green, "av.gm", green_value_str);
+					mlt_properties_set(filter_props_green, "av.gh", green_value_str);
+				}
+			}
+			
+				mlt_filter_connect(filter, service, 0);
+				mlt_consumer_connect(consumer, mlt_filter_service(filter));
+				break;
+			
+			case CONTROL_TYPE__BLUE_VALUE:
+				blue_value = jit_control->blue_value;
+				{
+				mlt_properties filter_props_blue = mlt_filter_properties(filter);
+				
+				if (blue_value >= 0.0 && blue_value <= 1.0) {
+					char blue_value_str[20]; 
+					snprintf(blue_value_str, sizeof(blue_value_str), "%.2f", blue_value);
+					mlt_properties_set(filter_props_blue, "av.bs", blue_value_str);
+					mlt_properties_set(filter_props_blue, "av.bm", blue_value_str);
+					mlt_properties_set(filter_props_blue, "av.hs", blue_value_str);
+				}
+				
+				if (red_value >= 0.0 && red_value <= 1.0) {
+					char red_value_str[20]; 
+					snprintf(red_value_str, sizeof(red_value_str), "%.2f", red_value);
+					mlt_properties_set(filter_props_blue, "av.rs", red_value_str);
+					mlt_properties_set(filter_props_blue, "av.rm", red_value_str);
+					mlt_properties_set(filter_props_blue, "av.rh", red_value_str);
+				}
+				
+				if (green_value >= 0.0 && green_value <= 1.0) {
+					char green_value_str[20]; 
+					snprintf(green_value_str, sizeof(green_value_str), "%.2f", green_value);
+					mlt_properties_set(filter_props_blue, "av.gs", green_value_str);
+					mlt_properties_set(filter_props_blue, "av.gm", green_value_str);
+					mlt_properties_set(filter_props_blue, "av.gh", green_value_str);
+				}
+				}
+			
+				mlt_filter_connect(filter, service, 0);
+				mlt_consumer_connect(consumer, mlt_filter_service(filter));
+				break;  
+				
+		default:
+			break;
+	}
+	mlt_properties_set_int( MLT_CONSUMER_PROPERTIES( consumer ), "refresh", 1 );
+}
+
+\end{lstlisting}}
 
 	
 	
