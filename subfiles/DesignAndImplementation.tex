@@ -739,25 +739,41 @@ value between $-1$ and $1$ for the filter parameter. The default value is set to
 
 \subsubsection*{Proto Buffer}
 
-
+For the data transfer between frontend and backend for the colour grading, fields and enums were added to the \texttt{.proto} file. Proto buffers are explained in Section~\ref{subsection:protocolbuffer}. The 
+%
+\begin{minipage}{0.54\textwidth}
+\vspace*{-0.2em}
 \begin{lstlisting}[style=protobufStyle, numbers=none]
 syntax = "proto2";
-
+	
 message JitControl {
 	...
 	optional float red_value = 4;  
 	optional float green_value = 5; 
 	optional float blue_value = 6; 
 }
-
+	
 enum ControlType {
 	...
 	RED_VALUE = 7;
 	GREEN_VALUE = 8;
 	BLUE_VALUE = 9;
 }
-
 \end{lstlisting}
+\hfill
+\end{minipage}\begin{minipage}{0.04\textwidth}
+	\ 
+\end{minipage}\begin{minipage}{0.42\textwidth}
+\vspace*{0.7em}
+values that were retrieved by the previously described sliders for the RGB value are transferred with this data structure.
+In the code, the message \texttt{JitControl} and the enum \texttt{ControlType} can be seen. 
+In the message, three optional fields for the red, green and blue value are defined as \texttt{red\_value}, \texttt{green\_value} and \texttt{blue\_value} to represent the RGB colour values. 
+In the enum, the three constants (\texttt{RED\_VALUE}, \texttt{GREEN\_VALUE}, and \texttt{BLUE\_VALUE}) were added. 
+Through the sliders in the frontend, users can manipulate these values for red, green
+
+\end{minipage}
+
+and blue. They are then transmitted to the backend with the proto2 data format. The application of the Melt filters with the retrieved values is described in the following part.
 
 
 
@@ -765,7 +781,9 @@ enum ControlType {
 
 
 
-\subsubsection*{JitSomething file}
+
+
+\subsubsection*{Application of the Melt filter}
 
 
 
