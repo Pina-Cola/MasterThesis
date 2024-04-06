@@ -590,22 +590,40 @@ In the following, the results of the application of two mixed colours for each o
 	
 \end{figure}
 
-In Figure~\ref{figure:yellowcomp} can be seen, that the colour of the \texttt{av.colorbalance} is the most intense and vibrant again. This leads to a broader colour range and more options for personalisation.
+In Figure~\ref{figure:yellowcomp} can be seen, that the colour of the \texttt{avfilter.colorbalance} is the most intense and vibrant again. This leads to a broader colour range and more options for personalisation.
 
-In the above shown cases cases, the results of the \texttt{av.colorchannelmixer} filter have more depth and look more dynamic, because the colour gain was only executed on the corresponding colour channels. This might be an aspect, that lets the user achieve more aesthetically pleasing results but the overall intensity of the colours is lower. In addition to this, the expected behaviour of a slider for the RGB colour change might not be to only change the colour intensity on one colour channel. Based on this, the filter \texttt{av.colorbalance} seems to deliver the most fitting results in those criteria.
-
-
+In the above shown cases cases, the results of the \texttt{avfilter.colorchannelmixer} filter have more depth and look more dynamic, because the colour gain was only executed on the corresponding colour channels. This might be an aspect, that lets the user achieve more aesthetically pleasing results but the overall intensity of the colours is lower. In addition to this, the expected behaviour of a slider for the RGB colour change might not be to only change the colour intensity on one colour channel. Based on this, the filter \texttt{avfilter.colorbalance} seems to deliver the most fitting results in those criteria.
 
 
-The \texttt{av.colorbalance} filter leads to the most vibrant and intense results of the above listed selection of filters. Additionally it has the option to adapt the shadows, mid tones and highlights individually, which creates the option for more (pre)adjustment of the results in the backend and introducing more sliders or options for the user for adjustment as future work.
+
+
+The \texttt{avfilter.colorbalance} filter leads to the most vibrant and intense results of the above listed selection of filters. Additionally it has the option to adapt the shadows, mid tones and highlights individually, which creates the option for more (pre)adjustment of the results in the backend and introducing more sliders or options for the user for adjustment as future work.
 But on the downside, to tone the whole frame, three instead of one parameter have to be applied -- for the shadows, mid tones and highlights.
 When applying this with and without JIT, no performance difference was noticeable but for a accurate evaluation of this, performance tests would have to be performed and the implementations of the filters would need to be examined.
 
-Examining and evaluating the different options of the Melt filters is an interesting option for future work or for Codemill to implement. For this thesis project, the filter \texttt{av.colorbalance} will be used, because it results look the most vibrant.
+Examining and evaluating the different options of the Melt filters is an interesting option for future work or for Codemill to implement. For this thesis project, the filter \texttt{avfilter.colorbalance} will be used, because it results look the most vibrant.
+
+In Figure~\ref{figure:septopus}, the 7 colour combinations of the subtractive colour model can be seen as the application of the filter \texttt{avfilter.colorbalance}. for this, the RGB values were either set to \texttt{1.0} or \texttt{0}, which are the minimum and maximum values of this filter. 
 
 
 
+\begin{figure}[H]
+	\begin{center}
+		\cutpic{0.3cm}{0.8\textwidth}{septopus.png}
+		\label{figure:septopus}
+		\caption[Base colours with the application of the filter \texttt{avfilter.colorbalance}.]{Base colours of the subtractive colour model with the application of the filter \texttt{avfilter.colorbalance}.}
+	\end{center}
+\end{figure}
 
+The original frame is frame 3447 from the test video file and can be seen in Figure~\ref{figure:septo_nofilter}.
+
+\begin{figure}[H]
+	\begin{center}
+		\cutpic{0.3cm}{0.4\textwidth}{septopus_nofilter.png}
+		\label{figure:septo_nofilter}
+		\caption[Frame 3447 of the test video file without a filter.]{Frame 3447 of the test video file without a filter.}
+	\end{center}
+\end{figure}
 
 
 
