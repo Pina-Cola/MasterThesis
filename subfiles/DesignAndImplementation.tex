@@ -260,7 +260,7 @@ For development and quick testing without the session service, JIT can be starte
 
 
 
-\newpage
+% \newpage
 %-------------------------------------------------------------------------------------------------------
 \subsection{Melt Filter Comparison} \label{subsection:meltfilter}
 
@@ -270,6 +270,7 @@ The goal for this thesis project is to adjust the RGB values of a video with sli
 
 In the following, a selection of filters, that influence the RGB representation of the video are listed. This includes the filter name, description and possible parameters from the Melt website.~\cite{melt_filters} Only the relevant parameters will be listed.
 Those filters were then executed locally, to compare the visual results of applying them.
+The Melt filters \texttt{avfilter.colorbalance}, \texttt{avfilter\-.colorchannelmixer} and \texttt{frei0r\-.coloradj\_RGB} are listed with their description and parameters in Table~\ref{table:filter}.
 
 
 \begin{table}[H]
@@ -318,6 +319,7 @@ Those filters were then executed locally, to compare the visual results of apply
 		\bottomrule
 	\end{tabular}
 	\caption[List of Melt filters that influence the colour of a video.]{List of different Melt filters that influence the colour of a video with their name, description and parameters.}
+	\label{table:filter}
 \end{table}
 
 
@@ -538,7 +540,7 @@ To evaluate if and how the overlay of different filters works, the values for th
 
 
 
-The Melt filters \texttt{av.colorbalance}, \texttt{av.colorchannelmixer} and \texttt{frei0r.coloradj\_RGB} are compared regarding the colour vibrance and intensity of the result. This regards the colour intensity of a single colour value change (red, green and blue) and mixed colurs.
+The Melt filters \texttt{avfilter.colorbalance}, \texttt{avfilter\-.colorchannelmixer} and \texttt{frei\-0r\-.coloradj\_RGB} are compared regarding the colour vibrance and intensity of the result. This regards the colour intensity of a single colour value change (red, green and blue) and mixed colurs.
 
 % For the comparison of the result of the single colour filter application, the following parameters per filter are chosen:
 
@@ -548,7 +550,7 @@ In the following, the results of the change of a single colour (red) for each of
 	\centering
 	\begin{tabular}{c|c|c}
 		
-		\texttt{av.colorbalance} & \texttt{av.colorchannelmixer} & \texttt{frei0r.coloradj\_RGB} \\
+		\footnotesize{\texttt{avfilter.colorbalance}} & \footnotesize{\texttt{avfilter.colorchannelmixer}} & \footnotesize{\texttt{frei0r.coloradj\_RGB}} \\
 		
 		\scriptsize{\texttt{av.rs=1} \texttt{av.rm=1} \texttt{av.rh=1}} & \scriptsize{\texttt{av.rr=2}} & \scriptsize{\texttt{R=1}} \\
 		
@@ -563,7 +565,7 @@ In the following, the results of the change of a single colour (red) for each of
 
 \end{figure}
 
-In Figure~\ref{figure:redcomp} can be seen, that the colour of the \texttt{av.colorbalance} is the most intense and vibrant. This leads to a broader colour range and more options for personalisation.
+In Figure~\ref{figure:redcomp} can be seen, that the colour of the \texttt{avfilter.colorbalance} is the most intense and vibrant. This leads to a broader colour range and more options for personalisation.
 
 
 
@@ -574,7 +576,7 @@ In the following, the results of the application of two mixed colours for each o
 	\centering
 	\begin{tabular}{c|c|c}
 		
-		\texttt{av.colorbalance} & \texttt{av.colorchannelmixer} & \texttt{frei0r.coloradj\_RGB} \\
+		\footnotesize{\texttt{avfilter.colorbalance}} & \footnotesize{\texttt{avfilter.colorchannelmixer}} & \footnotesize{\texttt{frei0r.coloradj\_RGB}} \\
 		
 		\scriptsize{\texttt{av.rs=1} \texttt{av.rm=1} \texttt{av.rh=1}} & \scriptsize{\texttt{av.rr=2}}  & \scriptsize{\texttt{R=1}} \\
 		\scriptsize{\texttt{av.gs=1} \texttt{av.gm=1} \texttt{av.gh=1}} & \scriptsize{\texttt{av.gg=2}}  & \scriptsize{\texttt{G=1}} \\
