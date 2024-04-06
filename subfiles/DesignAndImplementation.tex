@@ -632,6 +632,55 @@ The original frame is frame 3447 from the test video file and can be seen in Fig
 
 
 
+
+
+
+
+
+
+% \newpage
+%-------------------------------------------------------------------------------------------------------
+\subsection{Running the code} \label{subsection:runninghtecode}
+% Discuss the technologies and tools chosen for the implementation.
+
+The codebase for this project consists of two directories -- \texttt{accurate-player-3-core} and \texttt{jit-webrtc}.
+
+
+The files for the frontend code are in a directory that is called \texttt{accurate-player-3-core}. To execute the frontend, navigate to the directory \texttt{demo} in \texttt{packages} and execute \texttt{yarn start} with the parameter for the backend in the CLI:
+\begin{lstlisting}[language=bash, numbers=none]
+ ~/accurate-player-3-core/packages/demo$ JIT_BACKEND=http://localhost:8080 yarn start
+\end{lstlisting}
+
+For updating dependecies during development, the following command should be executed and running in addition: 
+\begin{lstlisting}[language=bash, numbers=none]
+	~/accurate-player-3-core/packages/jit$ yarn start
+\end{lstlisting}
+
+
+To run the backend, the folder \texttt{jit-webrtc} needs to be accessed in the CLI to start the script \texttt{main.sh}, that starts the backend in a docker container and pulls the needed dependencies:
+\begin{lstlisting}[language=bash, numbers=none]
+ ~/jit-webrtc$ docker/main/main.sh -v --threads 16 --port 8080  https://s3.eu-central-1.amazonaws.com/accurate-player-demo-assets/timecode/sintel-2048-timecode-stereo.mp4
+\end{lstlisting}
+
+The optional parameter \texttt{-v} (verbose) provides additional information or detailed output when executing the code. The threads and the port are set with the parameters \texttt{--threads} and \texttt{--port} and then the link to the test video file is added. This is the file that will then be played in the Accurate Player.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \newpage
 %-------------------------------------------------------------------------------------------------------
 \subsection{Implementation} \label{subsection:implementation}
@@ -639,8 +688,13 @@ The original frame is frame 3447 from the test video file and can be seen in Fig
 
 
 
+\subsubsection*{Frontend}
 
 
+\subsubsection*{Proto Buffer}
+
+
+\subsubsection*{JitSomething file}
 
 
 
