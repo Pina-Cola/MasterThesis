@@ -272,6 +272,7 @@ The in the following described code structure refers to the creation of the nece
 \subsection{Overview of Video Streaming Components}
 \label{subsection_OverviewVideoStreamingComponents}
 
+In this Section, an overview over video streaming components, that are relevant for this thesis project, is given.
 
 Transcoding is the conversion of one digital data format into another.~\cite{transcoding}
 
@@ -331,20 +332,21 @@ This Section introduces additional components that are relevant for the system's
 Docker provides an isolated environment where applications can run. It's a platform that enables the usage of these isolated environments, that are called Docker containers.~\cite{docker}
 
 
-Node.js enables the execution of JavaScript code outside of a web browser.~\cite{nodejs, RM_Frontend, ap3_docs}
+Node.js enables the execution of JavaScript code outside of a web browser.
+Its enables developers to use JavaScript both on the client and server sides of web applications. 
+Node.js has an open-source community that contributes to its evolution. This community-driven development model has led to a big selection of modules and libraries.~\cite{nodejs, RM_Frontend, ap3_docs}
+
+
+To manage project dependencies and packages for Node.js, tools like Yarn or npm (Node Package Manager) can be used. These package managers allow developers to install, update, and manage libraries and tools used in the project, by providing a centralized repository of libraries and tools.~\cite{RM_Frontend, npmyarn}
 
 
 
-To manage project dependencies and packages, tools like Yarn or npm (Node Package Manager) can be used. These package managers allow developers to install, update, and manage libraries and tools used in the project.~\cite{RM_Frontend, npmyarn}
+Web services are software systems for communication between different applications over a network. 
+They allow data exchange and function calling across platforms and programming languages. 
+Java-based web services are commonly used in modern software development, due to the robustness and scalability of the Java platform for building distributed systems over the web.
+Web services enable machine-to-machine (M2M) interaction. This is the communication and data exchange between devices or systems.~\cite{webservice}
 
 
-
-TODO
-
-% Additionally, the \texttt{Session} service, built on Java, plays a crucial role in supporting machine-to-machine interaction between the browser and backend components such as \texttt{main.py} and Melt. By leveraging web services, \texttt{Session} enables seamless communication between applications running on different platforms and written in different programming languages.
-
-	
-\texttt{Session} is a java-based service, designed to support machine-to-machine interaction between the browser and the backend (\texttt{main.py} and Melt). Web services allow different applications, that often run on different platforms and are written in different programming languages, to communicate with each other.~\cite{webservice}	
 	
 	
 \end{document}
