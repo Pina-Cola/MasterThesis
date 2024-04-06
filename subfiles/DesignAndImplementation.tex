@@ -44,7 +44,8 @@ For the application of a Melt filter, different filters were compared to select 
 %Highlight any challenges or considerations encountered during the implementation phase and how they were addressed.
 %Include code snippets, illustrations, or diagrams to enhance the understanding of your codebase.
 
-The system consists of four components: the frontend (browser), Melt, \texttt{main.py}, and a session service. The frontend is described in Section~\ref{subsection:accuratevideo} and the backend (Melt, \texttt{main.py} and session service) will be described in more detail in Section~\ref{subsection:jit-webrtc}.
+The system consists of four components: the frontend (browser), Melt, \texttt{main.py}, and a session service. The frontend is described in Section~\ref{subsection:accuratevideo} and the backend (Melt, \texttt{main.py} and session service) will be described in more detail in Section~\ref{subsection:jit-webrtc}. 
+In those Sections, the functionality of the system before the implementation of the colour grading is described. The implementation is described in Section~\ref{subsection:implementation}.
 
 
 The Python backend communicates with the Melt framework to use its video editing, processing and transcoding functionalities. The Melt framework was described in Section~\ref{subsection:melt}. Real-time communication is implemented through WebRTC, with Melt used for the manipulation of the video content. 
@@ -74,22 +75,49 @@ For development and quick testing without the session service, the backend can b
 % Describe the frontend
 
 
-The frontend uses Node.js as its runtime environment. Node.js enables the execution of JavaScript code outside of a web browser.~\cite{nodejs, RM_Frontend, ap3_docs}
-
-To manage project dependencies and packages, either Yarn or npm (Node Package Manager) is used. These package managers allow developers to install, update, and manage libraries and tools used in the project.~\cite{RM_Frontend, npmyarn}
+The frontend uses Node.js as its runtime environment with yarn to manage project dependencies and packages. It is developed using HyperText Markup Language (HTML), Cascading Style Sheets (CSS), and JavaScript (JS) to create the user interface.
 
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\textwidth]{IM_FE.png}
 	\caption{Accurate Video in the system architecture}
+	\label{figure:AS_frontend}
 \end{figure}
 
 
+\hypersetup{urlcolor=black}
+The User Interface when playing a video in the Accurate Player at \url{http://localhost:5000/controls/jit/index.html} can be seen in Figure~\ref{figure:AV_before}. 
+First, a yellow field can be seen. After clicking this, a loading screen is show and then the video can be started with clicking in the play button.
 
 
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.32\textwidth]{AV1_before.png} \ 
+		\includegraphics[width=0.32\textwidth]{AV2_before.png} \ 
+		\includegraphics[width=0.32\textwidth]{AV3_before.png}
+		%\cutpic{0.0cm}{0.3\textwidth}{AV2_before.png}
+		%\cutpic{0.0cm}{0.3\textwidth}{AV3_before.png}
+		\caption[Screenshots of the frontend.]{Screenshots of the Accurate Player when playing a video.}
+		\label{figure:AV_before}
+	\end{center}
+\end{figure}
 
 
+In addition to this, multiple control fields can be seen. Permanently fixed in the top left corner is a windows, that contains a slider to adjust the quality of the video in real time. In this project, the sliders for the RGB colour grading will be added there. This is described in Section~\ref{subsection:implementation}.
+On the top left corner, two icons to expand further menus can be found. This includes one menu for muting the audio and disabling the subtitles and a menu with further settings, inlcuding the time format.
+Those control fields are shown in Figure~\ref{figure:AV_details_before}.
+
+
+\begin{figure}[H]
+	\begin{center}
+		\cutpic{0.3cm}{0.3\textwidth}{qualityslider.png}
+		\cutpic{0.3cm}{0.3\textwidth}{AV_settings.png}
+		\cutpic{0.3cm}{0.3\textwidth}{AV_settings2.png}
+		\caption[Screenshots of the frontend.]{Screenshots of the frontend.}
+		\label{figure:AV_details_before}
+	\end{center}
+\end{figure}
 
 
 
@@ -637,9 +665,11 @@ Examining and evaluating the different options of the Melt filters is an interes
 
 
 
+
+
 \newpage
 %-------------------------------------------------------------------------------------------------------
-\subsection{Technology} \label{subsection:technology}
+\subsection{Implementation} \label{subsection:implementation}
 % Discuss the technologies and tools chosen for the implementation.
 
 
