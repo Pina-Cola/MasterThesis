@@ -361,10 +361,13 @@ In this project, Protocol Buffers version 2 (proto2) was used. In the first line
 	syntax = "proto2";
 \end{lstlisting}
 
+\begin{description}[font=\normalfont\color{RedViolet!80!black}, style=nextline]
+	
+
+%---------------------------------------------------------------------------------------------------------
+\item[Messages and Fields] 
+
 Data structures are defined using message declarations. Messages can contain fields for the data, each with a unique identifier and a specified data type. The data types for proto2 can be seen in Table~\ref{table:proto2_data_types}.~\cite{proto2_doc}
-
-
-TODO 
 
 
 \begin{table}[H]
@@ -380,37 +383,63 @@ TODO
 		int64 & Signed 64-bit integer \\
 		uint32 & Unsigned 32-bit integer \\
 		uint64 & Unsigned 64-bit integer \\
-		sint32 & Signed 32-bit integer (efficient for encoding negative numbers) \\
-		sint64 & Signed 64-bit integer (efficient for encoding negative numbers) \\
-		fixed32 & Unsigned 32-bit integer (always four bytes) \\
-		fixed64 & Unsigned 64-bit integer (always eight bytes) \\
-		sfixed32 & Signed 32-bit integer (always four bytes) \\
-		sfixed64 & Signed 64-bit integer (always eight bytes) \\
+		sint32 & Signed 32-bit integer (suitable for negative numbers) \\
+		sint64 & Signed 64-bit integer (suitable for negative numbers) \\
+		fixed32 & Unsigned 32-bit integer (four bytes) \\
+		fixed64 & Unsigned 64-bit integer (eight bytes) \\
+		sfixed32 & Signed 32-bit integer (four bytes) \\
+		sfixed64 & Signed 64-bit integer (eight bytes) \\
 		bool & Boolean value (true or false) \\
 		string & Variable-length text string  \\
 		bytes & Variable-length sequence of bytes \\
 		\bottomrule
 	\end{tabular}
-	
-	
-	
-	\caption{Data types for fields in Protocol Buffers (proto2)}
+	\caption{Data types for fields in Protocol Buffers (proto2).~\cite{proto2_doc}}
 	\label{table:proto2_data_types}
 \end{table}
 
+In the following, an example message is shown and described.
+The example message represents a person's information, including their name, age, and email address. This is defined as follows:
 
-%Common data types supported for fields include integers (int32, int64), floating-point numbers (float, double), strings, booleans, and byte arrays.
+\begin{lstlisting}[style=protobufStyle, numbers=none]
+	message Person {
+		required string name = 1;
+		required int32 age = 2;
+		optional string email = 3;
+	}
+\end{lstlisting}
+
+Person is the name of the message and name, age, and email are the fields of the message with the data types \texttt{string} and \texttt{int32}.
+The keywords \texttt{required} and \texttt{optional} define whether the field is mandatory or optional.
+The numbers $1$, $2$ and $3$ are the fields unique identifiers.
 
 
-%\textbf{Enum Definition:}
-%\begin{itemize}
-%	\item Additionally, proto2 supports the definition of enumeration types (enums).
-%	\item Enums allow for the declaration of a set of named constants, each associated with a unique integer value.
-%	\item Enums are useful for representing a fixed set of options or states within a message definition.
-%\end{itemize}
+%---------------------------------------------------------------------------------------------------------
+\item[Enums] 
+
+Proto2 supports the definition of enumeration types as enum.
+Enums allow for the declaration of a set of named constants, each associated with a unique integer value.
+This can be used for representing a fixed set of options or states within a message definition.~\cite{protobuffer, proto2_doc}
+
+In the following, an example enum is shown and described. 
+It represents the gender of a person and is defined as follows:
+
+\begin{lstlisting}[style=protobufStyle, numbers=none]
+	enum Gender {
+		UNKNOWN = 0;
+		MALE = 1;
+		FEMALE = 2;
+		DIVERSE = 3;
+	}
+\end{lstlisting}
+
+Gender is the name of the enum and UNKNOWN, MALE, and FEMALE are the enum constants with the associated integer values $1$, $2$ and $3$.
+It allows to represent the gender options unknown, male, or female, providing a way to represent a fixed set of options or states.
 
 
 
-	
+\end{description}
+
+
 	
 \end{document}
