@@ -686,7 +686,9 @@ The optional parameter \texttt{-v} (verbose) provides additional information or 
 \subsection{Implementation} \label{subsection:implementation}
 % Discuss the technologies and tools chosen for the implementation.
 
+TODO
 
+%-----------------------------------------------------------------------------------------------------------
 \subsubsection*{Frontend}
 %
 \vspace*{-1em}
@@ -736,7 +738,7 @@ value between $-1$ and $1$ for the filter parameter. The default value is set to
 
 
 
-
+%-----------------------------------------------------------------------------------------------------------
 \subsubsection*{Proto Buffer}
 
 For the data transfer between frontend and backend for the colour grading, fields and enums were added to the \texttt{.proto} file. Proto buffers are explained in Section~\ref{subsection:protocolbuffer}. The 
@@ -773,7 +775,7 @@ Through the sliders in the frontend, users can manipulate these values for red, 
 
 \end{minipage}
 
-and blue. They are then transmitted to the backend with the proto2 data format. The application of the Melt filters with the retrieved values is described in the following part.
+and blue. The input values of those sliders are read out and assigned to the enum \texttt{JITAction} in the frontend. They are then transmitted to the backend with the proto2 data format. The application of the Melt filters with the retrieved values is described in the following part.
 
 
 
@@ -781,41 +783,56 @@ and blue. They are then transmitted to the backend with the proto2 data format. 
 
 
 
+
+
+
+
+%-----------------------------------------------------------------------------------------------------------
 \subsubsection*{Application of the Melt filter}
 
-{\tiny\begin{lstlisting}[language=c, numbers=none]
-static JitStatus jit_status = JIT_STATUS__INIT;
-	
-float red_value;
-float green_value;
-float blue_value;
-	
-	
-	
-static void jit_action( mlt_producer producer, char *value )
+
+\begin{minipage}{0.60\textwidth}
+	The application of the Melt filter is implemented in the \texttt{jit.c} file. To be bale to apply multiple values for the three different colour channels at once, the command needs to be sent to Melt with all of the 
+\end{minipage}\begin{minipage}{0.04\textwidth}
+	\ 
+\end{minipage}\begin{minipage}{0.36\textwidth}
+	{\tiny\begin{lstlisting}[language=c, numbers=none]
+		float red_value;
+		float green_value;
+		float blue_value; \end{lstlisting}}
+	\vfill
+\end{minipage}
+
+according parameters set, else the other parameters will be overwritten with the default value $0$. To be able to achieve mixed colour results, including for example yellow, the previous values need to be sent to the Melt framework together with the changed value. This is implemented with initializing global variables for each of the colours, that are set to the current value in each call. This can be seen in the code snippet above.
+
+The appilcation of the Melt filter with the current input values from the sliders is implemented in the function \texttt{jit\_action()}, that has a Melt producer as a parameter. In the following code, the beginning of the function can be seen. The Melt properties, consumer and producer are retrieved and set. Then the filter \texttt{avfilter.colorbalance} is set. The comparison of the different filter options can be seen in Section~\ref{subsection:meltfilter}.
+
+
+\begin{lstlisting}[language=c, numbers=none]	
+static void jit_action(mlt_producer producer, char *value)
 {
-	mlt_properties properties = MLT_PRODUCER_PROPERTIES( producer );
-	mlt_multitrack multitrack = mlt_properties_get_data( properties, "multitrack", NULL );
-	mlt_consumer consumer = mlt_properties_get_data( properties, "transport_consumer", NULL );
-	mlt_properties jack = mlt_properties_get_data( MLT_CONSUMER_PROPERTIES( consumer ), "jack_filter", NULL );
+	mlt_properties properties = MLT_PRODUCER_PROPERTIES(producer);
+	mlt_consumer consumer = mlt_properties_get_data(properties, 
+		"transport_consumer", NULL);
+	...	
+	mlt_producer service = mlt_producer_service(producer);
+	mlt_filter filter = mlt_factory_filter(service, 
+		"avfilter.colorbalance", NULL);	
+\end{lstlisting}
+
+
+
+\begin{lstlisting}[language=c, numbers=none]		
+JitControl *const jit_control = (JitControl*) value;
+switch (jit_control->type) {
 		
-	mlt_producer service = mlt_producer_service( producer );
-		
-	mlt_filter filter = mlt_factory_filter(service, "avfilter.colorbalance", NULL);
-		
-		
-		
-		
-	JitControl *const jit_control = (JitControl*) value;
-	switch (jit_control->type) {
-		
-		...
+	...
 			
-		case CONTROL_TYPE__RED_VALUE:
+	case CONTROL_TYPE__RED_VALUE:
 		red_value = jit_control->red_value;
 		{
 			mlt_properties filter_props_red = mlt_filter_properties(filter);
-				
+					
 			if (blue_value >= 0.0 && blue_value <= 1.0) {
 				char blue_value_str[20]; 
 				snprintf(blue_value_str, sizeof(blue_value_str), "%.2f", blue_value);
@@ -823,7 +840,7 @@ static void jit_action( mlt_producer producer, char *value )
 				mlt_properties_set(filter_props_red, "av.bm", blue_value_str);
 				mlt_properties_set(filter_props_red, "av.hs", blue_value_str);
 			}
-				
+					
 			if (red_value >= 0.0 && red_value <= 1.0) {
 				char red_value_str[20]; 
 				snprintf(red_value_str, sizeof(red_value_str), "%.2f", red_value);
@@ -831,7 +848,7 @@ static void jit_action( mlt_producer producer, char *value )
 				mlt_properties_set(filter_props_red, "av.rm", red_value_str);
 				mlt_properties_set(filter_props_red, "av.rh", red_value_str);
 			}
-
+	
 			if (green_value >= 0.0 && green_value <= 1.0) {
 				char green_value_str[20]; 
 				snprintf(green_value_str, sizeof(green_value_str), "%.2f", green_value);
@@ -839,87 +856,99 @@ static void jit_action( mlt_producer producer, char *value )
 				mlt_properties_set(filter_props_red, "av.gm", green_value_str);
 				mlt_properties_set(filter_props_red, "av.gh", green_value_str);
 			} 
-			}
+		}
 
-			mlt_filter_connect(filter, service, 0);
-			mlt_consumer_connect(consumer, mlt_filter_service(filter));
-			break;
+		mlt_filter_connect(filter, service, 0);
+		mlt_consumer_connect(consumer, mlt_filter_service(filter));
+		break;
 			
-			case CONTROL_TYPE__GREEN_VALUE:
-			green_value = jit_control->green_value;
-			{
-				mlt_properties filter_props_green = mlt_filter_properties(filter);
+\end{lstlisting}
+
+
+\begin{lstlisting}[language=c, numbers=none]
+	case CONTROL_TYPE__GREEN_VALUE:
+	green_value = jit_control->green_value;
+	{
+		mlt_properties filter_props_green = mlt_filter_properties(filter);
 				
-				if (blue_value >= 0.0 && blue_value <= 1.0) {
-					char blue_value_str[20]; 
-					snprintf(blue_value_str, sizeof(blue_value_str), "%.2f", blue_value);
-					mlt_properties_set(filter_props_green, "av.bs", blue_value_str);
-					mlt_properties_set(filter_props_green, "av.bm", blue_value_str);
-					mlt_properties_set(filter_props_green, "av.hs", blue_value_str);
-				}
+		if (blue_value >= 0.0 && blue_value <= 1.0) {
+			char blue_value_str[20]; 
+			snprintf(blue_value_str, sizeof(blue_value_str), "%.2f", blue_value);
+			mlt_properties_set(filter_props_green, "av.bs", blue_value_str);
+			mlt_properties_set(filter_props_green, "av.bm", blue_value_str);
+			mlt_properties_set(filter_props_green, "av.hs", blue_value_str);
+		}
 				
-				if (red_value >= 0.0 && red_value <= 1.0) {
-					char red_value_str[20]; 
-					snprintf(red_value_str, sizeof(red_value_str), "%.2f", red_value);
-					mlt_properties_set(filter_props_green, "av.rs", red_value_str);
-					mlt_properties_set(filter_props_green, "av.rm", red_value_str);
-					mlt_properties_set(filter_props_green, "av.rh", red_value_str);
-				}
+		if (red_value >= 0.0 && red_value <= 1.0) {
+			char red_value_str[20]; 
+			snprintf(red_value_str, sizeof(red_value_str), "%.2f", red_value);
+			mlt_properties_set(filter_props_green, "av.rs", red_value_str);
+			mlt_properties_set(filter_props_green, "av.rm", red_value_str);
+			mlt_properties_set(filter_props_green, "av.rh", red_value_str);
+		}
 				
-				if (green_value >= 0.0 && green_value <= 1.0) {
-					char green_value_str[20]; 
-					snprintf(green_value_str, sizeof(green_value_str), "%.2f", green_value);
-					mlt_properties_set(filter_props_green, "av.gs", green_value_str);
-					mlt_properties_set(filter_props_green, "av.gm", green_value_str);
-					mlt_properties_set(filter_props_green, "av.gh", green_value_str);
-				}
+		if (green_value >= 0.0 && green_value <= 1.0) {
+			char green_value_str[20]; 
+			snprintf(green_value_str, sizeof(green_value_str), "%.2f", green_value);
+			mlt_properties_set(filter_props_green, "av.gs", green_value_str);
+			mlt_properties_set(filter_props_green, "av.gm", green_value_str);
+			mlt_properties_set(filter_props_green, "av.gh", green_value_str);
+		}
+	}
+			
+		mlt_filter_connect(filter, service, 0);
+		mlt_consumer_connect(consumer, mlt_filter_service(filter));
+		break;
+
+\end{lstlisting}
+
+
+\begin{lstlisting}[language=c, numbers=none]	
+	case CONTROL_TYPE__BLUE_VALUE:
+		blue_value = jit_control->blue_value;
+		{
+			mlt_properties filter_props_blue = mlt_filter_properties(filter);
+				
+			if (blue_value >= 0.0 && blue_value <= 1.0) {
+				char blue_value_str[20]; 
+				snprintf(blue_value_str, sizeof(blue_value_str), "%.2f", blue_value);
+				mlt_properties_set(filter_props_blue, "av.bs", blue_value_str);
+				mlt_properties_set(filter_props_blue, "av.bm", blue_value_str);
+				mlt_properties_set(filter_props_blue, "av.hs", blue_value_str);
 			}
+				
+			if (red_value >= 0.0 && red_value <= 1.0) {
+				char red_value_str[20]; 
+				snprintf(red_value_str, sizeof(red_value_str), "%.2f", red_value);
+				mlt_properties_set(filter_props_blue, "av.rs", red_value_str);
+				mlt_properties_set(filter_props_blue, "av.rm", red_value_str);
+				mlt_properties_set(filter_props_blue, "av.rh", red_value_str);
+			}
+				
+			if (green_value >= 0.0 && green_value <= 1.0) {
+				char green_value_str[20]; 
+				snprintf(green_value_str, sizeof(green_value_str), "%.2f", green_value);
+				mlt_properties_set(filter_props_blue, "av.gs", green_value_str);
+				mlt_properties_set(filter_props_blue, "av.gm", green_value_str);
+				mlt_properties_set(filter_props_blue, "av.gh", green_value_str);
+			}
+		}
 			
-				mlt_filter_connect(filter, service, 0);
-				mlt_consumer_connect(consumer, mlt_filter_service(filter));
-				break;
-			
-			case CONTROL_TYPE__BLUE_VALUE:
-				blue_value = jit_control->blue_value;
-				{
-				mlt_properties filter_props_blue = mlt_filter_properties(filter);
-				
-				if (blue_value >= 0.0 && blue_value <= 1.0) {
-					char blue_value_str[20]; 
-					snprintf(blue_value_str, sizeof(blue_value_str), "%.2f", blue_value);
-					mlt_properties_set(filter_props_blue, "av.bs", blue_value_str);
-					mlt_properties_set(filter_props_blue, "av.bm", blue_value_str);
-					mlt_properties_set(filter_props_blue, "av.hs", blue_value_str);
-				}
-				
-				if (red_value >= 0.0 && red_value <= 1.0) {
-					char red_value_str[20]; 
-					snprintf(red_value_str, sizeof(red_value_str), "%.2f", red_value);
-					mlt_properties_set(filter_props_blue, "av.rs", red_value_str);
-					mlt_properties_set(filter_props_blue, "av.rm", red_value_str);
-					mlt_properties_set(filter_props_blue, "av.rh", red_value_str);
-				}
-				
-				if (green_value >= 0.0 && green_value <= 1.0) {
-					char green_value_str[20]; 
-					snprintf(green_value_str, sizeof(green_value_str), "%.2f", green_value);
-					mlt_properties_set(filter_props_blue, "av.gs", green_value_str);
-					mlt_properties_set(filter_props_blue, "av.gm", green_value_str);
-					mlt_properties_set(filter_props_blue, "av.gh", green_value_str);
-				}
-				}
-			
-				mlt_filter_connect(filter, service, 0);
-				mlt_consumer_connect(consumer, mlt_filter_service(filter));
-				break;  
-				
+		mlt_filter_connect(filter, service, 0);
+		mlt_consumer_connect(consumer, mlt_filter_service(filter));
+		break;  
+
+\end{lstlisting}
+
+
+\begin{lstlisting}[language=c, numbers=none]		
 		default:
 			break;
 	}
-	mlt_properties_set_int( MLT_CONSUMER_PROPERTIES( consumer ), "refresh", 1 );
+	mlt_properties_set_int(MLT_CONSUMER_PROPERTIES(consumer), "refresh", 1);
 }
 
-\end{lstlisting}}
+\end{lstlisting}
 
 	
 	
