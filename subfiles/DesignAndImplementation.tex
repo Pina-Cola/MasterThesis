@@ -605,7 +605,7 @@ When applying this with and without JIT, no performance difference was noticeabl
 
 Examining and evaluating the different options of the Melt filters is an interesting option for future work or for Codemill to implement. For this thesis project, the filter \texttt{avfilter.colorbalance} will be used, because it results look the most vibrant.
 
-In Figure~\ref{figure:septopus}, the 7 colour combinations of the subtractive colour model can be seen as the application of the filter \texttt{avfilter.colorbalance}. for this, the RGB values were either set to \texttt{1.0} or \texttt{0}, which are the minimum and maximum values of this filter. 
+In Figure~\ref{figure:septopus}, the 7 colour combinations of the subtractive colour model can be seen as the application of the filter \texttt{avfilter.colorbalance}. for this, the RGB values were either set to $1.0$ or $0$, which are the maximum and default values of this filter. 
 
 
 
@@ -686,7 +686,7 @@ The optional parameter \texttt{-v} (verbose) provides additional information or 
 \subsection{Implementation} \label{subsection:implementation}
 % Discuss the technologies and tools chosen for the implementation.
 
-TODO introduction for this section
+In this Section, the implementation is described. This is separated into three parts, that are described individually: Frontend, proto buffer and the application of the filter in the backend.
 
 %-----------------------------------------------------------------------------------------------------------
 \subsubsection*{Frontend}
