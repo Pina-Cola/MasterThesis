@@ -851,6 +851,7 @@ The comparison of the different filters can be seen in Section~\ref{subsection:m
 		}	
 \end{lstlisting}
 
+The previous values for the green and red values were saved in the variables, that were declared outside of the function. In the following, the values are set analogical to the above described red value. This is neccessary to not overwrite the previously adjusted colour values.
 	
 \begin{lstlisting}[language=c, numbers=none, columns=fullflexible]
 		if (green_value >= -1.0 && green_value <= 1.0) {
@@ -870,12 +871,16 @@ The comparison of the different filters can be seen in Section~\ref{subsection:m
 	}
 \end{lstlisting}
 
+In the following code snippet, the filter and the producer get connected and then the consumer and the filter get connected aswell.
+
 
 \begin{lstlisting}[language=c, numbers=none, columns=fullflexible]
 	mlt_filter_connect(filter, service, 0);
 	mlt_consumer_connect(consumer, mlt_filter_service(filter));
 	break;			
 \end{lstlisting}
+
+This case shows the code that is executed, when the slider for the red value is changed in the frontend and the red value is applied to the video output in real time with the Melt framework.
 
 The implementation of the switch case for the green value can be seen in the following:
 
