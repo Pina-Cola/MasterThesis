@@ -808,21 +808,17 @@ according parameters set, else the other parameters will be overwritten with the
 The appilcation of the Melt filter with the current input values from the sliders is implemented in the function \texttt{jit\_action()}, that has a Melt producer as a parameter. In the following code, the beginning of the function can be seen. The Melt properties, consumer and producer are retrieved and set. Then the filter \texttt{avfilter.colorbalance} is set. The comparison of the different filter options can be seen in Section~\ref{subsection:meltfilter}.
 
 
-\begin{lstlisting}[language=c, numbers=none]	
-static void jit_action(mlt_producer producer, char *value)
-{
-	mlt_properties properties = MLT_PRODUCER_PROPERTIES(producer);
-	mlt_consumer consumer = mlt_properties_get_data(properties, 
-		"transport_consumer", NULL);
-	...	
-	mlt_producer service = mlt_producer_service(producer);
-	mlt_filter filter = mlt_factory_filter(service, 
-		"avfilter.colorbalance", NULL);	
+\begin{lstlisting}[language=c, numbers=none, columns=fullflexible]	
+mlt_properties properties = MLT_PRODUCER_PROPERTIES(producer);
+mlt_consumer consumer = mlt_properties_get_data(properties, "transport_consumer", NULL);
+...	
+mlt_producer service = mlt_producer_service(producer);
+mlt_filter filter = mlt_factory_filter(service, "avfilter.colorbalance", NULL);	
 \end{lstlisting}
 
 
 
-\begin{lstlisting}[language=c, numbers=none]		
+\begin{lstlisting}[language=c, numbers=none, columns=fullflexible]		
 JitControl *const jit_control = (JitControl*) value;
 switch (jit_control->type) {
 		
@@ -865,7 +861,7 @@ switch (jit_control->type) {
 \end{lstlisting}
 
 
-\begin{lstlisting}[language=c, numbers=none]
+\begin{lstlisting}[language=c, numbers=none, columns=fullflexible]
 	case CONTROL_TYPE__GREEN_VALUE:
 	green_value = jit_control->green_value;
 	{
@@ -903,7 +899,7 @@ switch (jit_control->type) {
 \end{lstlisting}
 
 
-\begin{lstlisting}[language=c, numbers=none]	
+\begin{lstlisting}[language=c, numbers=none, columns=fullflexible]	
 	case CONTROL_TYPE__BLUE_VALUE:
 		blue_value = jit_control->blue_value;
 		{
@@ -941,7 +937,7 @@ switch (jit_control->type) {
 \end{lstlisting}
 
 
-\begin{lstlisting}[language=c, numbers=none]		
+\begin{lstlisting}[language=c, numbers=none, columns=fullflexible]		
 		default:
 			break;
 	}
