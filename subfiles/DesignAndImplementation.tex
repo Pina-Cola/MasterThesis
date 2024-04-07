@@ -686,7 +686,7 @@ The optional parameter \texttt{-v} (verbose) provides additional information or 
 \subsection{Implementation} \label{subsection:implementation}
 % Discuss the technologies and tools chosen for the implementation.
 
-TODO
+TODO introduction for this section
 
 %-----------------------------------------------------------------------------------------------------------
 \subsubsection*{Frontend}
@@ -817,134 +817,139 @@ mlt_filter filter = mlt_factory_filter(service, "avfilter.colorbalance", NULL);
 \end{lstlisting}
 
 
+In the following, a pointer \texttt{jit\_control} is declared, that casts a value into the type \texttt{JitControl}.
+Then, a switch statement is started, based on the value of \texttt{jit\_control}.
+The \texttt{->} operator is used to access the type field of the \texttt{jit\_control} structure and depending on the value, the execution will jump to the corresponding case within the switch statement.
 
 \begin{lstlisting}[language=c, numbers=none, columns=fullflexible]		
 JitControl *const jit_control = (JitControl*) value;
-switch (jit_control->type) {
-		
-	...
-			
-	case CONTROL_TYPE__RED_VALUE:
-		red_value = jit_control->red_value;
-		{
-			mlt_properties filter_props_red = mlt_filter_properties(filter);
-					
-			if (blue_value >= 0.0 && blue_value <= 1.0) {
-				char blue_value_str[20]; 
-				snprintf(blue_value_str, sizeof(blue_value_str), "%.2f", blue_value);
-				mlt_properties_set(filter_props_red, "av.bs", blue_value_str);
-				mlt_properties_set(filter_props_red, "av.bm", blue_value_str);
-				mlt_properties_set(filter_props_red, "av.hs", blue_value_str);
-			}
-					
-			if (red_value >= 0.0 && red_value <= 1.0) {
-				char red_value_str[20]; 
-				snprintf(red_value_str, sizeof(red_value_str), "%.2f", red_value);
-				mlt_properties_set(filter_props_red, "av.rs", red_value_str);
-				mlt_properties_set(filter_props_red, "av.rm", red_value_str);
-				mlt_properties_set(filter_props_red, "av.rh", red_value_str);
-			}
-	
-			if (green_value >= 0.0 && green_value <= 1.0) {
-				char green_value_str[20]; 
-				snprintf(green_value_str, sizeof(green_value_str), "%.2f", green_value);
-				mlt_properties_set(filter_props_red, "av.gs", green_value_str);
-				mlt_properties_set(filter_props_red, "av.gm", green_value_str);
-				mlt_properties_set(filter_props_red, "av.gh", green_value_str);
-			} 
-		}
+switch (jit_control->type) { ...
+\end{lstlisting}
 
-		mlt_filter_connect(filter, service, 0);
-		mlt_consumer_connect(consumer, mlt_filter_service(filter));
-		break;
-			
+Three cases were implemented -- one for each colour value (red, green, blue). In the following, the switch case for the adjustment of the red value is explained in more detail. The other cases work analogical.
+
+In the following code, the case for the red value can be seen. First, the red value that was retrieved from the slider in the frontend is assigned to the variable \texttt{red\_value}. Then, an \texttt{mlt\_properties} object is created for setting the filter parameters later on. 
+
+\begin{lstlisting}[language=c, numbers=none, columns=fullflexible]			
+case CONTROL_TYPE__RED_VALUE:
+	red_value = jit_control->red_value;
+	{
+		mlt_properties filter_props_red = mlt_filter_properties(filter);
+\end{lstlisting}
+
+In the first if statement of this case, the red value is added to the filter properties. For this, it gets checked if the value is in the input range of the filter parameter. Then, a string containing the value is created, because the function \texttt{mlt\_properties\_set} requires the value for the filter parameter in string format. After this, the filter properties are set to this value. Three parameters per colour have to be set, because the chosen filter has the possibility of adjusting the shadows, mid tones and highlights individually. 
+The comparison of the different filters can be seen in Section~\ref{subsection:meltfilter} and the described code can be seen below.
+
+
+\begin{lstlisting}[language=c, numbers=none, columns=fullflexible]
+		if (red_value >= -1.0 && red_value <= 1.0) {
+			char red_value_str[20]; 
+			snprintf(red_value_str, sizeof(red_value_str), "%.2f", red_value);
+			mlt_properties_set(filter_props_red, "av.rs", red_value_str);
+			mlt_properties_set(filter_props_red, "av.rm", red_value_str);
+			mlt_properties_set(filter_props_red, "av.rh", red_value_str);
+		}	
+\end{lstlisting}
+
+	
+\begin{lstlisting}[language=c, numbers=none, columns=fullflexible]
+		if (green_value >= -1.0 && green_value <= 1.0) {
+			char green_value_str[20]; 
+			snprintf(green_value_str, sizeof(green_value_str), "%.2f", green_value);
+			mlt_properties_set(filter_props_red, "av.gs", green_value_str);
+			mlt_properties_set(filter_props_red, "av.gm", green_value_str);	
+			mlt_properties_set(filter_props_red, "av.gh", green_value_str);
+		} 			
+		if (blue_value >= -1.0 && blue_value <= 1.0) {
+			char blue_value_str[20]; 
+			snprintf(blue_value_str, sizeof(blue_value_str), "%.2f", blue_value);
+			mlt_properties_set(filter_props_red, "av.bs", blue_value_str);
+			mlt_properties_set(filter_props_red, "av.bm", blue_value_str);	
+			mlt_properties_set(filter_props_red, "av.hs", blue_value_str);
+		}					
+	}
 \end{lstlisting}
 
 
 \begin{lstlisting}[language=c, numbers=none, columns=fullflexible]
-	case CONTROL_TYPE__GREEN_VALUE:
-	green_value = jit_control->green_value;
-	{
-		mlt_properties filter_props_green = mlt_filter_properties(filter);
-				
-		if (blue_value >= 0.0 && blue_value <= 1.0) {
-			char blue_value_str[20]; 
-			snprintf(blue_value_str, sizeof(blue_value_str), "%.2f", blue_value);
-			mlt_properties_set(filter_props_green, "av.bs", blue_value_str);
-			mlt_properties_set(filter_props_green, "av.bm", blue_value_str);
-			mlt_properties_set(filter_props_green, "av.hs", blue_value_str);
-		}
-				
-		if (red_value >= 0.0 && red_value <= 1.0) {
-			char red_value_str[20]; 
-			snprintf(red_value_str, sizeof(red_value_str), "%.2f", red_value);
-			mlt_properties_set(filter_props_green, "av.rs", red_value_str);
-			mlt_properties_set(filter_props_green, "av.rm", red_value_str);
-			mlt_properties_set(filter_props_green, "av.rh", red_value_str);
-		}
-				
-		if (green_value >= 0.0 && green_value <= 1.0) {
-			char green_value_str[20]; 
-			snprintf(green_value_str, sizeof(green_value_str), "%.2f", green_value);
-			mlt_properties_set(filter_props_green, "av.gs", green_value_str);
-			mlt_properties_set(filter_props_green, "av.gm", green_value_str);
-			mlt_properties_set(filter_props_green, "av.gh", green_value_str);
-		}
-	}
-			
-		mlt_filter_connect(filter, service, 0);
-		mlt_consumer_connect(consumer, mlt_filter_service(filter));
-		break;
+	mlt_filter_connect(filter, service, 0);
+	mlt_consumer_connect(consumer, mlt_filter_service(filter));
+	break;			
+\end{lstlisting}
+
+The implementation of the switch case for the green value can be seen in the following:
+
+\begin{lstlisting}[language=c, numbers=none, columns=fullflexible]
+case CONTROL_TYPE__GREEN_VALUE:
+green_value = jit_control->green_value;
+{
+	mlt_properties filter_props_green = mlt_filter_properties(filter);
+	
+	if (red_value >= -1.0 && red_value <= 1.0) {
+		char red_value_str[20]; 
+		snprintf(red_value_str, sizeof(red_value_str), "%.2f", red_value);
+		mlt_properties_set(filter_props_green, "av.rs", red_value_str);
+		mlt_properties_set(filter_props_green, "av.rm", red_value_str);
+		mlt_properties_set(filter_props_green, "av.rh", red_value_str);
+	}	
+	if (green_value >= -1.0 && green_value <= 1.0) {
+		char green_value_str[20]; 
+		snprintf(green_value_str, sizeof(green_value_str), "%.2f", green_value);
+		mlt_properties_set(filter_props_green, "av.gs", green_value_str);
+		mlt_properties_set(filter_props_green, "av.gm", green_value_str);
+		mlt_properties_set(filter_props_green, "av.gh", green_value_str);
+	}		
+	if (blue_value >= -1.0 && blue_value <= 1.0) {
+		char blue_value_str[20]; 
+		snprintf(blue_value_str, sizeof(blue_value_str), "%.2f", blue_value);
+		mlt_properties_set(filter_props_green, "av.bs", blue_value_str);
+		mlt_properties_set(filter_props_green, "av.bm", blue_value_str);
+		mlt_properties_set(filter_props_green, "av.hs", blue_value_str);
+	}		
+}	
+	mlt_filter_connect(filter, service, 0);
+	mlt_consumer_connect(consumer, mlt_filter_service(filter));
+	break;
 
 \end{lstlisting}
 
+The implementation of the switch case for the blue value can be seen in the following:
 
 \begin{lstlisting}[language=c, numbers=none, columns=fullflexible]	
-	case CONTROL_TYPE__BLUE_VALUE:
-		blue_value = jit_control->blue_value;
-		{
-			mlt_properties filter_props_blue = mlt_filter_properties(filter);
-				
-			if (blue_value >= 0.0 && blue_value <= 1.0) {
-				char blue_value_str[20]; 
-				snprintf(blue_value_str, sizeof(blue_value_str), "%.2f", blue_value);
-				mlt_properties_set(filter_props_blue, "av.bs", blue_value_str);
-				mlt_properties_set(filter_props_blue, "av.bm", blue_value_str);
-				mlt_properties_set(filter_props_blue, "av.hs", blue_value_str);
-			}
-				
-			if (red_value >= 0.0 && red_value <= 1.0) {
-				char red_value_str[20]; 
-				snprintf(red_value_str, sizeof(red_value_str), "%.2f", red_value);
-				mlt_properties_set(filter_props_blue, "av.rs", red_value_str);
-				mlt_properties_set(filter_props_blue, "av.rm", red_value_str);
-				mlt_properties_set(filter_props_blue, "av.rh", red_value_str);
-			}
-				
-			if (green_value >= 0.0 && green_value <= 1.0) {
-				char green_value_str[20]; 
-				snprintf(green_value_str, sizeof(green_value_str), "%.2f", green_value);
-				mlt_properties_set(filter_props_blue, "av.gs", green_value_str);
-				mlt_properties_set(filter_props_blue, "av.gm", green_value_str);
-				mlt_properties_set(filter_props_blue, "av.gh", green_value_str);
-			}
-		}
-			
-		mlt_filter_connect(filter, service, 0);
-		mlt_consumer_connect(consumer, mlt_filter_service(filter));
-		break;  
-
-\end{lstlisting}
-
-
-\begin{lstlisting}[language=c, numbers=none, columns=fullflexible]		
-		default:
-			break;
+case CONTROL_TYPE__BLUE_VALUE:
+	blue_value = jit_control->blue_value;
+	{
+		mlt_properties filter_props_blue = mlt_filter_properties(filter);
+		
+		if (red_value >= -1.0 && red_value <= 1.0) {
+			char red_value_str[20]; 
+			snprintf(red_value_str, sizeof(red_value_str), "%.2f", red_value);
+			mlt_properties_set(filter_props_blue, "av.rs", red_value_str);
+			mlt_properties_set(filter_props_blue, "av.rm", red_value_str);
+			mlt_properties_set(filter_props_blue, "av.rh", red_value_str);
+		}	
+		if (green_value >= -1.0 && green_value <= 1.0) {
+			char green_value_str[20]; 
+			snprintf(green_value_str, sizeof(green_value_str), "%.2f", green_value);
+			mlt_properties_set(filter_props_blue, "av.gs", green_value_str);
+			mlt_properties_set(filter_props_blue, "av.gm", green_value_str);
+			mlt_properties_set(filter_props_blue, "av.gh", green_value_str);
+		}	
+		if (blue_value >= -1.0 && blue_value <= 1.0) {
+			char blue_value_str[20]; 
+			snprintf(blue_value_str, sizeof(blue_value_str), "%.2f", blue_value);
+			mlt_properties_set(filter_props_blue, "av.bs", blue_value_str);
+			mlt_properties_set(filter_props_blue, "av.bm", blue_value_str);
+			mlt_properties_set(filter_props_blue, "av.hs", blue_value_str);
+		}	
 	}
-	mlt_properties_set_int(MLT_CONSUMER_PROPERTIES(consumer), "refresh", 1);
-}
+	mlt_filter_connect(filter, service, 0);
+	mlt_consumer_connect(consumer, mlt_filter_service(filter));
+	break;  
 
 \end{lstlisting}
+
+
 
 	
 	
