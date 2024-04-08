@@ -24,16 +24,98 @@
 \section{Experimental Evaluation and Discussion} \label{section:experimentalevaluationanddiscussion}
 
 
+
+
+
+\subsection{Comparison of Video Colour Grading Results} \label{subsection:ComparisonVideoColourGradingResults}
+
+
+In this Section, the results of video colour grading using the locally installed Melt framework and the in Section~\ref{subsection:implementation} described implementation with JIT compared. 
+Those tests were run on the same computer to ensure consistency and screenshots of the output from both setups were taken for visual inspection. 
+
+
+To evaluate the difference in the filter application between the locally installed Melt framework and the described implementation using JIT, the colours of the images have been subtracted from each other in GIMP. 
+This method subtracts the colour values of corresponding pixels from two images to show any differences. When the colour values of identical pixels are subtracted, the resulting image appears grey, indicating no differences.
+
+In the Figures below, two different results of colour subtraction can be seen. Figure~\ref{figure:greyresult_unit} shows the subtraction of an image from itself. This results in a uniformly grey image, because the images are identical. Figure~\ref{figure:greyresult_blurry} shows the subtractions of two separate screenshots of the same frame. Small distortions can be seen, which is caused by slightly different scaling or other inconsistencies in the screenshot process. Those small differences have to be considered in the comparison, because the images can not be expected to be exactly the same, when extracting them from different sources.
+
+
+\begin{minipage}{0.48\textwidth}
+	
+	\begin{figure}[H]
+		\begin{center}
+			\cutpic{0.3cm}{1\textwidth}{SameVsSame.png}
+			\label{figure:greyresult_unit}
+			\caption[Colour subtraction of the same file from itself.]{Colour subtraction of the same file from itself results in a uniformly grey image.}
+		\end{center}
+	\end{figure}
+\end{minipage}\begin{minipage}{0.04\textwidth}
+	\ 
+\end{minipage}\begin{minipage}{0.48\textwidth}
+	
+	\begin{figure}[H]
+		\begin{center}
+			\cutpic{0.3cm}{1\textwidth}{SimVsSim.png}
+			\label{figure:greyresult_blurry}
+			\caption[Colour subtraction of the same frame but a different screenshot.]{Colour subtraction of the same frame but a different screenshot, which results in slight distortions.}
+		\end{center}
+	\end{figure}
+\end{minipage}
+
+For the evaluations, a comparison between the locally installed Melt version and the Accurate Player sliders with the red value on maximum was tested. The 
+
+
+\begin{minipage}{0.48\textwidth}
+	
+	\begin{figure}[H]
+		\begin{center}
+			\cutpic{0.3cm}{1\textwidth}{red_Melt.png}
+			\label{figure:redMelt}
+			\caption[Frame 343 after the application of the maximum value for red in the Melt framework.]{Frame 343 after the application of the maximum value for red in the Melt framework.}
+		\end{center}
+	\end{figure}
+\end{minipage}\begin{minipage}{0.04\textwidth}
+	\ 
+\end{minipage}\begin{minipage}{0.48\textwidth}
+	
+	\begin{figure}[H]
+		\begin{center}
+			\cutpic{0.3cm}{1\textwidth}{red_AP.png}
+			\label{figure:redAP}
+			\caption[Frame 343 after the application of the maximum value for red in the Accurate Player.]{Frame 343 after the application of the maximum value for red in the Accurate Player.}
+		\end{center}
+	\end{figure}
+\end{minipage}
+
+
+
+
+% It is noted that while the colour grading results are expected to be consistent across both implementations, discrepancies in the appearance of the video output have been observed. 
+% One potential factor contributing to these discrepancies could be variations in the video player used within the Melt framework, although this remains uncertain. The following screenshots illustrate the differences observed between the two setups.
+
+
+
 %-------------------------------------------------------------------------------------------------------
-\subsection{Testing} \label{subsection:testing}
+\subsubsection{Testing} 
 % Discuss the testing methodologies and present validation results.
 
 
 %-------------------------------------------------------------------------------------------------------
-\subsection{Evaluation and Comparison} \label{subsection:evaluationandcomparison}
+\subsubsection{Evaluation and Comparison}
 % Evaluate the system's performance against defined criteria.
 
 
+
+
+
+%-------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------
+%\subsubsection{Testing}
+% Discuss the testing methodologies and present validation results.
+
+%-------------------------------------------------------------------------------------------------------
+%\subsubsection{Evaluation and Comparison} 
+% Evaluate the system's performance against defined criteria.
 	
 	
 	
