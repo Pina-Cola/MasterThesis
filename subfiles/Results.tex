@@ -72,14 +72,14 @@ In the Figures~\ref{figure:greyresult_unit} and \ref{figure:greyresult_blurry}, 
 \end{minipage}
 
 \vspace*{2em}
-For the evaluation, a comparison between the locally installed Melt version and the Accurate Player sliders with the red value on maximum was tested. The filter was applied to frame 343 and the results of the locally installed Melt framework can be seen in Figure~\ref{figure:redMelt} and in the AccuratePlayer frontend in Figure~\ref{figure:redAP}. In this Figures it can be seen, that the red tone of the two frames differs.
+For the evaluation, a comparison between the locally installed Melt version and the Accurate Player sliders with the red value on maximum was tested. The filter was applied to frame 343 and the results of the locally installed Melt framework can be seen in Figure~\ref{figure:redMelt} and in the Accurate Player frontend in Figure~\ref{figure:redAP}. In this Figures it can be seen, that the red tone of the two frames differs. In Figure~\ref{figure:redAP}, the colours seem more dark or saturated.
 
 
 \begin{minipage}{0.48\textwidth}
 	
 	\begin{figure}[H]
 		\begin{center}
-			\cutpic{0.3cm}{0.9\textwidth}{red_Melt.png}
+			\cutpic{0.3cm}{0.99\textwidth}{red_Melt.png}
 			\caption[Frame 343 after the application of the maximum value for red in the Melt framework.]{Frame 343 after the application of the maximum value for red in the Melt framework.}
 			\label{figure:redMelt}
 		\end{center}
@@ -90,7 +90,7 @@ For the evaluation, a comparison between the locally installed Melt version and 
 	
 	\begin{figure}[H]
 		\begin{center}
-			\cutpic{0.3cm}{0.9\textwidth}{red_AP.png}
+			\cutpic{0.3cm}{0.99\textwidth}{red_AP.png}
 			\caption[Frame 343 after the application of the maximum value for red in the Accurate Player.]{Frame 343 after the application of the maximum value for red in the Accurate Player.}
 			\label{figure:redAP}
 		\end{center}
@@ -103,22 +103,24 @@ Considering the visual difference in the frame extractions from the two differen
 
 \begin{figure}[H]
 	\begin{center}
-		\cutpic{0.3cm}{0.45\textwidth}{filterVSfilter.png}
+		\cutpic{0.3cm}{0.65\textwidth}{filterVSfilter.png}
 		\caption[Subtraction of the two different frames (Melt framework and Accurate Player).]{Subtraction of the same frame with filter application locally and in the Accurate Player.}
 		\label{figure:filterVSfilter}
 	\end{center}
 \end{figure}
 
-
-To evaluate, if the difference is caused by the application of the filter or by other aspects, including video compression or difference in video players, the frame is compared without a filter applied to it. For this, frame 343 of the original video file is compared to the same frame extraction of the locally installed Melt framework and the Accurate Player without the application of the filter.
+To evaluate, if the difference is caused by the application of the filter or by other aspects, for example video compression or difference in video players, the frames are compared without the filter applied to them. For this, frame 343 of the original video file is compared to the same frame extraction of the locally installed Melt framework and the Accurate Player without the application of the filter. The frame from the original video file can be seen in Figure~\ref{figure:nofilterO}.
 
 \begin{figure}[H]
 	\begin{center}
-		\cutpic{0.3cm}{0.99\textwidth}{nofilter_org.png}
+		\cutpic{0.3cm}{0.65\textwidth}{nofilter_org.png}
 		\caption[Frame 343 without filter application in the original video file.]{Frame 343 without filter application in the original video file.}
 		\label{figure:nofilterO}
 	\end{center}
 \end{figure}
+
+
+In Figure~\ref{figure:nofilterMelt}, the extraction of frame 343 without a filter from the locally installed Melt framework can be seen and in comparison in Figure~\ref{figure:nofilterAP}, the frame extraction from the Accurate Player without a filter can be seen. Figure~\ref{figure:nofilterAP} seems to be a more saturated.
 
 
 \begin{minipage}{0.48\textwidth}
@@ -141,13 +143,8 @@ To evaluate, if the difference is caused by the application of the filter or by 
 	\end{figure}
 \end{minipage}
 
-
-
-
-
-
-
-
+\vspace*{2em}
+In Figure~\ref{figure:oVSmelt}, the subtraction of the original frame and the Meltframework frame extraction are visualized using GIMP. In Figure~\ref{figure:oVSap} in comparison, the subtraction was done with the original frame and the Accurate Player extraction. Figure~\ref{figure:oVSap} shows the expected result, for a same output, while it is visible in Figure~\ref{figure:oVSmelt}, that the output from the locally installed Melt framework and the original video frame differs, too.
 
 
 \begin{minipage}{0.48\textwidth}
