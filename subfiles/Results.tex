@@ -24,54 +24,64 @@
 \section{Experimental Evaluation and Discussion} \label{section:experimentalevaluationanddiscussion}
 
 
-
+TODO introduction for this chapter
 
 
 \subsection{Comparison of Video Colour Grading Results} \label{subsection:ComparisonVideoColourGradingResults}
 
 
 In this Section, the results of video colour grading using the locally installed Melt framework and the in Section~\ref{subsection:implementation} described implementation with JIT compared. 
-Those tests were run on the same computer to ensure consistency and screenshots of the output from both setups were taken for visual inspection. 
+Those tests were run on the same computer to ensure consistency and the frames were extracted with taking screenshots of the output from both approaches. These extracted frames are then visually inspected. 
 
 
-To evaluate the difference in the filter application between the locally installed Melt framework and the described implementation using JIT, the colours of the images have been subtracted from each other in GIMP. 
-This method subtracts the colour values of corresponding pixels from two images to show any differences. When the colour values of identical pixels are subtracted, the resulting image appears grey, indicating no differences.
+%-------------------------------------------------------------------------------------------------------
+\subsubsection*{Testing} 
+% Discuss the testing methodologies and present validation results.
 
-In the Figures below, two different results of colour subtraction can be seen. Figure~\ref{figure:greyresult_unit} shows the subtraction of an image from itself. This results in a uniformly grey image, because the images are identical. Figure~\ref{figure:greyresult_blurry} shows the subtractions of two separate screenshots of the same frame. Small distortions can be seen, which is caused by slightly different scaling or other inconsistencies in the screenshot process. Those small differences have to be considered in the comparison, because the images can not be expected to be exactly the same, when extracting them from different sources.
+
+To evaluate the difference in the filter application between the locally installed Melt framework and the described implementation using JIT, the colours of the images have been subtracted from each other using GNU Image Manipulation Program (GIMP). 
+This method subtracts the colour values of corresponding pixels from two images to show any differences and it is called \textit{grain effect} in GIMP. It is a visual representation of the colour subtraction process, where subtracting identical pixels from each other results in a grey image, indicating no differences.
+
+
+
+
+
+
+In the Figures~\ref{figure:greyresult_unit} and \ref{figure:greyresult_blurry}, two different results of colour subtraction can be seen. Figure~\ref{figure:greyresult_unit} shows the subtraction of an image from itself. This results in a uniformly grey image, because the images are identical. Figure~\ref{figure:greyresult_blurry} shows the subtractions of two separate screenshots of the same frame. Small distortions can be seen, which is caused by slightly different scaling or other inconsistencies in the screenshot process. Those small differences have to be considered in the comparison, because the images can not be expected to be exactly the same, when extracting them from different sources.
 
 
 \begin{minipage}{0.48\textwidth}
 	
 	\begin{figure}[H]
 		\begin{center}
-			\cutpic{0.3cm}{1\textwidth}{SameVsSame.png}
-			\label{figure:greyresult_unit}
+			\cutpic{0.3cm}{0.9\textwidth}{SameVsSame.png}
 			\caption[Colour subtraction of the same file from itself.]{Colour subtraction of the same file from itself results in a uniformly grey image.}
+			\label{figure:greyresult_unit}
 		\end{center}
 	\end{figure}
 \end{minipage}\begin{minipage}{0.04\textwidth}
 	\ 
-\end{minipage}\begin{minipage}{0.48\textwidth}
-	
+\end{minipage}\begin{minipage}{0.48\textwidth}	
 	\begin{figure}[H]
 		\begin{center}
-			\cutpic{0.3cm}{1\textwidth}{SimVsSim.png}
-			\label{figure:greyresult_blurry}
+			\cutpic{0.3cm}{0.9\textwidth}{SimVsSim.png}
 			\caption[Colour subtraction of the same frame but a different screenshot.]{Colour subtraction of the same frame but a different screenshot, which results in slight distortions.}
+			\label{figure:greyresult_blurry}
 		\end{center}
 	\end{figure}
 \end{minipage}
 
-For the evaluations, a comparison between the locally installed Melt version and the Accurate Player sliders with the red value on maximum was tested. The 
+\vspace*{2em}
+For the evaluation, a comparison between the locally installed Melt version and the Accurate Player sliders with the red value on maximum was tested. The filter was applied to frame 343 and the results of the locally installed Melt framework can be seen in Figure~\ref{figure:redMelt} and in the AccuratePlayer frontend in Figure~\ref{figure:redAP}. In this Figures it can be seen, that the red tone of the two frames differs.
 
 
 \begin{minipage}{0.48\textwidth}
 	
 	\begin{figure}[H]
 		\begin{center}
-			\cutpic{0.3cm}{1\textwidth}{red_Melt.png}
-			\label{figure:redMelt}
+			\cutpic{0.3cm}{0.9\textwidth}{red_Melt.png}
 			\caption[Frame 343 after the application of the maximum value for red in the Melt framework.]{Frame 343 after the application of the maximum value for red in the Melt framework.}
+			\label{figure:redMelt}
 		\end{center}
 	\end{figure}
 \end{minipage}\begin{minipage}{0.04\textwidth}
@@ -80,13 +90,59 @@ For the evaluations, a comparison between the locally installed Melt version and
 	
 	\begin{figure}[H]
 		\begin{center}
-			\cutpic{0.3cm}{1\textwidth}{red_AP.png}
-			\label{figure:redAP}
+			\cutpic{0.3cm}{0.9\textwidth}{red_AP.png}
 			\caption[Frame 343 after the application of the maximum value for red in the Accurate Player.]{Frame 343 after the application of the maximum value for red in the Accurate Player.}
+			\label{figure:redAP}
 		\end{center}
 	\end{figure}
 \end{minipage}
 
+\vspace*{2em}
+Considering the visual difference in the frame extractions from the two different approaches to apply the filter, the subtraction of those two frames shows more differences than the expected distortions, that were described above. The result of the subtraction can be seen in Figure~\ref{figure:filterVSfilter}, which shows the difference in the two compared frame extractions.
+
+
+\begin{figure}[H]
+	\begin{center}
+		\cutpic{0.3cm}{0.45\textwidth}{filterVSfilter.png}
+		\caption[Subtraction of the two different frames.]{Subtraction of the same frame with filter application locally and in the Accurate Player.}
+		\label{figure:filterVSfilter}
+	\end{center}
+\end{figure}
+
+
+To evaluate, if the difference is caused by the application of the filter or by other aspects, including video compression or difference in video players, the frame is compared without a filter applied to it. For this, frame 343 of the original video file, the locally installed Melt framework and the Accurate Player are extracted and compared without the application of the filter.
+
+\begin{minipage}{0.31\textwidth}
+	\begin{figure}[H]
+	\begin{center}
+		\cutpic{0.3cm}{0.99\textwidth}{nofilter_org.png}
+		\caption[Frame 343 without filter application in the original video file.]{Frame 343 without filter application in the original video file.}
+		\label{figure:nofilterO}
+	\end{center}
+\end{figure}
+\end{minipage}\begin{minipage}{0.03\textwidth}
+\ 
+\end{minipage}\begin{minipage}{0.31\textwidth}
+
+\begin{figure}[H]
+	\begin{center}
+		\cutpic{0.3cm}{0.99\textwidth}{nofilter_melt.png}
+		\caption[Frame 343 without filter application in the Melt framework.]{Frame 343 without filter application in the Melt framework.}
+		\label{figure:nofilterMelt}
+	\end{center}
+\end{figure}
+\end{minipage}\begin{minipage}{0.03\textwidth}
+\ 
+\end{minipage}\begin{minipage}{0.31\textwidth}
+
+\begin{figure}[H]
+	\begin{center}
+		\cutpic{0.3cm}{0.99\textwidth}{nofilter_ap.png}
+		\caption[Frame 343 without filter application in the Accurate Player.]{Frame 343 without filter application in the Accurate Player.}
+		\label{figure:nofilterAP}
+	\end{center}
+\end{figure}
+\end{minipage}
 
 
 
@@ -95,13 +151,9 @@ For the evaluations, a comparison between the locally installed Melt version and
 
 
 
-%-------------------------------------------------------------------------------------------------------
-\subsubsection{Testing} 
-% Discuss the testing methodologies and present validation results.
-
 
 %-------------------------------------------------------------------------------------------------------
-\subsubsection{Evaluation and Comparison}
+\subsubsection*{Evaluation and Comparison}
 % Evaluate the system's performance against defined criteria.
 
 
