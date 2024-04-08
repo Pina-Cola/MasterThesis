@@ -24,7 +24,7 @@
 \section{Experimental Evaluation and Discussion} \label{section:experimentalevaluationanddiscussion}
 
 
-TODO introduction for this chapter
+TODO introduction for this chapter 
 
 
 \subsection{Comparison of Video Colour Grading Results} \label{subsection:ComparisonVideoColourGradingResults}
@@ -35,12 +35,12 @@ Those tests were run on the same computer to ensure consistency and the frames w
 
 
 %-------------------------------------------------------------------------------------------------------
-\subsubsection*{Testing} 
+% \subsubsection*{Testing} 
 % Discuss the testing methodologies and present validation results.
 
 
 To evaluate the difference in the filter application between the locally installed Melt framework and the described implementation using JIT, the colours of the images have been subtracted from each other using GNU Image Manipulation Program (GIMP). 
-This method subtracts the colour values of corresponding pixels from two images to show any differences and it is called \textit{grain effect} in GIMP. It is a visual representation of the colour subtraction process, where subtracting identical pixels from each other results in a grey image, indicating no differences.
+This method subtracts the colour values of corresponding pixels from two images to show any differences and it is called \textit{grain extract} in GIMP. It is a visual representation of the colour subtraction process, where subtracting identical pixels from each other results in a grey image, indicating no differences.~\cite{gimp}
 
 
 
@@ -54,7 +54,7 @@ In the Figures~\ref{figure:greyresult_unit} and \ref{figure:greyresult_blurry}, 
 	
 	\begin{figure}[H]
 		\begin{center}
-			\cutpic{0.3cm}{0.9\textwidth}{SameVsSame.png}
+			\cutpic{0.3cm}{0.99\textwidth}{SameVsSame.png}
 			\caption[Colour subtraction of the same file from itself.]{Colour subtraction of the same file from itself results in a uniformly grey image.}
 			\label{figure:greyresult_unit}
 		\end{center}
@@ -64,7 +64,7 @@ In the Figures~\ref{figure:greyresult_unit} and \ref{figure:greyresult_blurry}, 
 \end{minipage}\begin{minipage}{0.48\textwidth}	
 	\begin{figure}[H]
 		\begin{center}
-			\cutpic{0.3cm}{0.9\textwidth}{SimVsSim.png}
+			\cutpic{0.3cm}{0.99\textwidth}{SimVsSim.png}
 			\caption[Colour subtraction of the same frame but a different screenshot.]{Colour subtraction of the same frame but a different screenshot, which results in slight distortions.}
 			\label{figure:greyresult_blurry}
 		\end{center}
@@ -178,9 +178,12 @@ In Figure~\ref{figure:oVSmelt}, the subtraction of the original frame and the Me
 
 
 %-------------------------------------------------------------------------------------------------------
-\subsubsection*{Evaluation and Comparison}
+% \subsubsection*{Evaluation and Comparison}
 % Evaluate the system's performance against defined criteria.
 
+The extracted frames from the different approaches display significant differences, even when no filters were applied. 
+These differences of the video file without filters make it difficult to evaluate additional data regarding the application of filters using this method. The cause for the different display of the video frames by the Melt video player remains unclear. 
+% It is worth noting that the Melt video player is recognized for encountering occasional technical issues.
 
 
 
