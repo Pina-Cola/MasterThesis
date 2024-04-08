@@ -104,45 +104,73 @@ Considering the visual difference in the frame extractions from the two differen
 \begin{figure}[H]
 	\begin{center}
 		\cutpic{0.3cm}{0.45\textwidth}{filterVSfilter.png}
-		\caption[Subtraction of the two different frames.]{Subtraction of the same frame with filter application locally and in the Accurate Player.}
+		\caption[Subtraction of the two different frames (Melt framework and Accurate Player).]{Subtraction of the same frame with filter application locally and in the Accurate Player.}
 		\label{figure:filterVSfilter}
 	\end{center}
 \end{figure}
 
 
-To evaluate, if the difference is caused by the application of the filter or by other aspects, including video compression or difference in video players, the frame is compared without a filter applied to it. For this, frame 343 of the original video file, the locally installed Melt framework and the Accurate Player are extracted and compared without the application of the filter.
+To evaluate, if the difference is caused by the application of the filter or by other aspects, including video compression or difference in video players, the frame is compared without a filter applied to it. For this, frame 343 of the original video file is compared to the same frame extraction of the locally installed Melt framework and the Accurate Player without the application of the filter.
 
-\begin{minipage}{0.31\textwidth}
-	\begin{figure}[H]
+\begin{figure}[H]
 	\begin{center}
 		\cutpic{0.3cm}{0.99\textwidth}{nofilter_org.png}
 		\caption[Frame 343 without filter application in the original video file.]{Frame 343 without filter application in the original video file.}
 		\label{figure:nofilterO}
 	\end{center}
 \end{figure}
-\end{minipage}\begin{minipage}{0.03\textwidth}
-\ 
-\end{minipage}\begin{minipage}{0.31\textwidth}
 
-\begin{figure}[H]
-	\begin{center}
-		\cutpic{0.3cm}{0.99\textwidth}{nofilter_melt.png}
-		\caption[Frame 343 without filter application in the Melt framework.]{Frame 343 without filter application in the Melt framework.}
-		\label{figure:nofilterMelt}
-	\end{center}
-\end{figure}
-\end{minipage}\begin{minipage}{0.03\textwidth}
-\ 
-\end{minipage}\begin{minipage}{0.31\textwidth}
 
-\begin{figure}[H]
-	\begin{center}
-		\cutpic{0.3cm}{0.99\textwidth}{nofilter_ap.png}
-		\caption[Frame 343 without filter application in the Accurate Player.]{Frame 343 without filter application in the Accurate Player.}
-		\label{figure:nofilterAP}
-	\end{center}
-\end{figure}
+\begin{minipage}{0.48\textwidth}
+	\begin{figure}[H]
+		\begin{center}
+			\cutpic{0.3cm}{0.99\textwidth}{nofilter_melt.png}
+			\caption[Frame 343 without filter application in the Melt framework.]{Frame 343 without filter application in the Melt framework.}
+			\label{figure:nofilterMelt}
+		\end{center}
+	\end{figure}
+\end{minipage}\begin{minipage}{0.04\textwidth}
+	\ 
+\end{minipage}\begin{minipage}{0.48\textwidth}
+	\begin{figure}[H]
+		\begin{center}
+			\cutpic{0.3cm}{0.99\textwidth}{nofilter_ap.png}
+			\caption[Frame 343 without filter application in the Accurate Player.]{Frame 343 without filter application in the Accurate Player.}
+			\label{figure:nofilterAP}
+		\end{center}
+	\end{figure}
 \end{minipage}
+
+
+
+
+
+
+
+
+
+
+\begin{minipage}{0.48\textwidth}
+	\begin{figure}[H]
+		\begin{center}
+			\cutpic{0.3cm}{0.99\textwidth}{oVSmelt.png}
+			\caption[Subtraction of the two different frames (original video and Melt framework).]{Subtraction of the original frame and the frame, extracted from Melt.}
+			\label{figure:oVSmelt}
+		\end{center}
+	\end{figure}
+\end{minipage}\begin{minipage}{0.04\textwidth}
+	\ 
+\end{minipage}\begin{minipage}{0.48\textwidth}
+	\begin{figure}[H]
+		\begin{center}
+			\cutpic{0.3cm}{0.99\textwidth}{oVSap.png}
+			\caption[Subtraction of the two different frames (original video and Accurate Player).]{Subtraction of the original frame and the frame, extracted from the Accurate Player.}
+			\label{figure:oVSap}
+		\end{center}
+	\end{figure}
+\end{minipage}
+
+
 
 
 
