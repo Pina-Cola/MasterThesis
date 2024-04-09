@@ -25,27 +25,12 @@
 % \section{Experimental Evaluation and Discussion} \label{section:experimentalevaluationanddiscussion}
 
 
-TODO introduction for this chapter 
+In this Chapter, the results of the user sided colour grading with JIT are compared to the results of the colour grading with the Melt framework and KDEN Live, which uses the Melt framework as a backend. For the comparison, frames of the original video file, the frames created by the JIT implementation and the Melt framework or KDEN Live are compared with and without the application of filters.
 
 
-\subsection{Comparison with the Melt Framework} \label{section:comparisonMelt}
-
-
-In this Section, the results of video colour grading using the locally installed Melt framework and the in Section~\ref{subsection:implementation} described implementation with JIT compared. 
-Those tests were run on the same computer to ensure consistency and the frames were extracted with taking screenshots of the output from both approaches. These extracted frames are then visually inspected. 
-
-
-%-------------------------------------------------------------------------------------------------------
-% \subsubsection*{Testing} 
-% Discuss the testing methodologies and present validation results.
-
-
-To evaluate the difference in the filter application between the locally installed Melt framework and the described implementation using JIT, the colours of the images have been subtracted from each other using GNU Image Manipulation Program (GIMP). 
+To evaluate the difference in the frames and the filter application between the tested components, the frames are extracted. Those tests were run on the same computer to ensure consistency and the frames were extracted with taking screenshots of the output or pre-existing frame extraction functions.
+Then the colours of the images have been subtracted from each other using GNU Image Manipulation Program (GIMP). 
 This method subtracts the colour values of corresponding pixels from two images to show any differences and it is called \textit{grain extract} in GIMP. It is a visual representation of the colour subtraction process, where subtracting identical pixels from each other results in a grey image, indicating no differences.~\cite{gimp}
-
-
-
-
 
 
 In the Figures~\ref{figure:greyresult_unit} and \ref{figure:greyresult_blurry}, two different results of colour subtraction can be seen. Figure~\ref{figure:greyresult_unit} shows the subtraction of an image from itself. This results in a uniformly grey image, because the images are identical. Figure~\ref{figure:greyresult_blurry} shows the subtractions of two separate screenshots of the same frame. Small distortions can be seen, which is caused by slightly different scaling or other inconsistencies in the screenshot process. Those small differences have to be considered in the comparison, because the images can not be expected to be exactly the same, when extracting them from different sources.
@@ -72,7 +57,23 @@ In the Figures~\ref{figure:greyresult_unit} and \ref{figure:greyresult_blurry}, 
 	\end{figure}
 \end{minipage}
 
-\vspace*{2em}
+
+
+\subsection{Comparison with the Melt Framework} \label{section:comparisonMelt}
+
+
+In this Section, the results of video colour grading using the locally installed Melt framework and the in Section~\ref{subsection:implementation} described implementation with JIT compared. 
+Those tests were run on the same computer to ensure consistency and the frames were extracted with taking screenshots of the output from both approaches. These extracted frames are then visually inspected. 
+
+
+%-------------------------------------------------------------------------------------------------------
+% \subsubsection*{Testing} 
+% Discuss the testing methodologies and present validation results.
+
+
+
+
+% \vspace*{2em}
 For the evaluation, a comparison between the locally installed Melt version and the Accurate Player sliders with the red value on maximum was tested. The filter was applied to frame 343 and the results of the locally installed Melt framework can be seen in Figure~\ref{figure:redMelt} and in the Accurate Player frontend in Figure~\ref{figure:redAP}. In this Figures it can be seen, that the red tone of the two frames differs. In Figure~\ref{figure:redAP}, the colours seem more dark or saturated.
 
 
