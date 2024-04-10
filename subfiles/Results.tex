@@ -40,7 +40,7 @@ In the Figures~\ref{figure:greyresult_unit} and \ref{figure:greyresult_blurry}, 
 	
 	\begin{figure}[H]
 		\begin{center}
-			\cutpic{0.3cm}{0.99\textwidth}{SameVsSame.png}
+			\cutpic{0cm}{0.99\textwidth}{SameVsSame.png}
 			\caption[Colour subtraction of the same file from itself.]{Colour subtraction of the same file from itself results in a uniformly grey image.}
 			\label{figure:greyresult_unit}
 		\end{center}
@@ -50,12 +50,20 @@ In the Figures~\ref{figure:greyresult_unit} and \ref{figure:greyresult_blurry}, 
 \end{minipage}\begin{minipage}{0.48\textwidth}	
 	\begin{figure}[H]
 		\begin{center}
-			\cutpic{0.3cm}{0.99\textwidth}{SimVsSim.png}
+			\cutpic{0cm}{0.99\textwidth}{SimVsSim.png}
 			\caption[Colour subtraction of the same frame but a different screenshot.]{Colour subtraction of the same frame but a different screenshot, which results in slight distortions.}
 			\label{figure:greyresult_blurry}
 		\end{center}
 	\end{figure}
 \end{minipage}
+
+
+
+
+
+
+
+
 
 
 
@@ -200,12 +208,72 @@ These differences of the video file without filters make it difficult to evaluat
 \subsection{Comparison with KDEN Live} \label{section:comparisonKDENLive}
 
 
+% \vspace*{-1em}
+\begin{minipage}{0.48\textwidth}
+	
+	In this Section, the results of video colour grading using KDEN Live and the in Section~\ref{subsection:implementation} described implementation with JIT compared. In Figure~\ref{figure:kdenlive_effects}, the list of categories for the effects can be seen. This includes the \textit{Color and Image correction} option, which will be examined in the following. The aim is to find the options for the RGB colour adjustment and compare the results. With those results it can probably be seen, if KDEN Live uses the \texttt{avfilter.colorbalance} filter or a different filter for the adjustment of the RGB values. For the comparison of
+	
+	
+\end{minipage}\begin{minipage}{0.04\textwidth}
+	\ 
+\end{minipage}\begin{minipage}{0.48\textwidth}
+	\begin{figure}[H]
+		\begin{center}
+			\cutpic{0.3cm}{0.9\textwidth}{kdenlive_effects.png}
+			\caption[List of effect menus in KDEN Live.]{List of effect menus in KDEN Live.}
+			\label{figure:kdenlive_effects}
+		\end{center}
+	\end{figure}
+	\hfill
+\end{minipage}
+
+\vspace*{-0.8em}
+
+the filter applications, the usage of the \texttt{avfilter.colorbalance} filter in KDEN Live would have apositive effect on the evaluation process and results. To compare different filters is a difficult task, because it cannot be evaluated if the reults are the
+
+\vspace*{-0.6em}
+\begin{minipage}{0.48\textwidth}
+	
+	\begin{figure}[H]
+	\begin{center}
+		\cutpic{0.3cm}{0.9\textwidth}{kdenlive_effekte.png}
+		\caption[List of colour effects in KDEN Live.]{List of colour effects in KDEN Live.}
+		\label{figure:kdenlive_effekte}
+	\end{center}
+	\end{figure}
+	\hfill
+	
+	
+\end{minipage}\begin{minipage}{0.04\textwidth}
+	\ 
+\end{minipage}\begin{minipage}{0.48\textwidth}
+
+same but criteria considering the expected or more useful outcome have to be considered, which does not lay in the field of computer science.
+
+In the effect category \textit{Color and Image correction}, different effects can be found. The list of effects in this category can be seen in in Figure~\ref{figure:kdenlive_effekte}. Those effect options were examined and \textit{RGB adjustment} seems to be the only effect, that is adjusting the colour of the produced video with RGB values. For example \textit{3 point balance} adjusts the values for black, gray and white.
+
+\end{minipage}
+
+In Figure~\ref{figure:kdenlive_rgb}, the RGB colour sliders of the effect \textit{RGB adjustment} can be seen. The following different actions can be chosen: Change gamma, add constant, multiply. For each of those actions, a comparison through colour subtraction with the \textit{grain extract} in GIMP with the application of the \texttt{avfilter.colorbalance} is done.
+The frames were extracted from the Accurate Player through taking screenshots of the output and in KDEN Live, the \textit{extract frame} function was used. These extracted frames are then visually inspected. 
 
 
+\begin{figure}[H]
+	\begin{center}
+		\cutpic{0.2cm}{0.55\textwidth}{kdenlive_rgb.png}
+		\caption[RGB colour adjustment in KDEN Live.]{RGB colour adjustment in KDEN Live.}
+		\label{figure:kdenlive_rgb}
+	\end{center}
+\end{figure}
 
 
+TODO other parameters description
 
+\subsubsection*{Change gamma}
 
+\subsubsection*{Add constant}
+
+\subsubsection*{Multiply}
 
 
 
