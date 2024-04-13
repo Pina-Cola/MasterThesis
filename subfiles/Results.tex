@@ -40,7 +40,7 @@ In the Figures~\ref{figure:greyresult_unit} and \ref{figure:greyresult_blurry}, 
 	
 	\begin{figure}[H]
 		\begin{center}
-			\cutpic{0cm}{0.99\textwidth}{SameVsSame.png}
+			\cutpic{0cm}{0.99\textwidth}{sameVSsame.png}
 			\caption[Colour subtraction of the same file from itself.]{Colour subtraction of the same file from itself results in a uniformly grey image.}
 			\label{figure:greyresult_unit}
 		\end{center}
@@ -50,7 +50,7 @@ In the Figures~\ref{figure:greyresult_unit} and \ref{figure:greyresult_blurry}, 
 \end{minipage}\begin{minipage}{0.48\textwidth}	
 	\begin{figure}[H]
 		\begin{center}
-			\cutpic{0cm}{0.99\textwidth}{SimVsSim.png}
+			\cutpic{0cm}{0.99\textwidth}{simVSsim.png}
 			\caption[Colour subtraction of the same frame but a different screenshot.]{Colour subtraction of the same frame but a different screenshot, which results in slight distortions.}
 			\label{figure:greyresult_blurry}
 		\end{center}
@@ -114,7 +114,8 @@ Considering the visual difference in the frame extractions from the two differen
 \begin{figure}[H]
 	\begin{center}
 		\cutpic{0.3cm}{0.65\textwidth}{filterVSfilter.png}
-		\caption[Subtraction of the two different frames (Melt and Accurate Player).]{Subtraction of the same frame with filter application locally and in the Accurate Player.}
+		\caption[Subtraction of the two different frames (Accurate Player - Melt).]{Subtraction of the same frame with filter application: Local Melt frame is subtracted from the frame of the Accurate Player.}
+		% JIT - Melt
 		\label{figure:filterVSfilter}
 	\end{center}
 \end{figure}
@@ -161,7 +162,8 @@ In Figure~\ref{figure:oVSmelt}, the subtraction of the original frame and the Me
 	\begin{figure}[H]
 		\begin{center}
 			\cutpic{0.3cm}{0.99\textwidth}{oVSmelt.png}
-			\caption[Subtraction of the two frames (original video and Melt).]{Subtraction of the original frame and the frame, extracted from Melt.}
+			\caption[Subtraction of the Melt frame from the original frame.]{Subtraction of the Melt frame from the original frame.}
+			% O - Melt
 			\label{figure:oVSmelt}
 		\end{center}
 	\end{figure}
@@ -171,7 +173,8 @@ In Figure~\ref{figure:oVSmelt}, the subtraction of the original frame and the Me
 	\begin{figure}[H]
 		\begin{center}
 			\cutpic{0.3cm}{0.99\textwidth}{oVSap.png}
-			\caption[Subtraction of the two frames (original video and Accurate Player).]{Subtraction of the original frame and the frame, extracted from the Accurate Player.}
+			\caption[Subtraction of Accurate Player frame from the original frame.]{Subtraction of Accurate Player frame from the original frame.}
+			% O - JIT
 			\label{figure:oVSap}
 		\end{center}
 	\end{figure}
@@ -298,7 +301,8 @@ TODO other parameters description
 \begin{figure}[H]
 	\begin{center}
 		\cutpic{0.3cm}{0.65\textwidth}{gamma_gimp.png}
-		\caption[Subtraction of the two frames (KDEN Live (\textit{change gamma}) and Accurate Player).]{Subtraction of the two frames fromKDEN Live (with the action \textit{change gamma}) and Accurate Player.}
+		\caption[Subtraction of the two frames (KDEN Live (\textit{change gamma}) - Accurate Player).]{Subtraction of the two frames: Accurate Player frame is subtracted from the KDEN Live frame extraction (with the action \textit{change gamma}).}
+		% KDENLive - JIT
 		\label{figure:gammagimp}
 	\end{center}
 \end{figure}
@@ -335,7 +339,8 @@ TODO other parameters description
 \begin{figure}[H]
 	\begin{center}
 		\cutpic{0.3cm}{0.65\textwidth}{addconstant_gimp.png}
-		\caption[Subtraction of the two frames (KDEN Live (\textit{add constant}) and Accurate Player).]{Subtraction of the two frames from KDEN Live (with the action \textit{change gamma}) and Accurate Player.}
+		\caption[Subtraction of the two frames (KDEN Live (\textit{add constant}) - Accurate Player).]{Subtraction of the two frames: Accurate Player frame is subtracted from the KDEN Live frame extraction (with the action \textit{add constant}).}
+		% KDENLive - JIT
 		\label{figure:addconstantgimp}
 	\end{center}
 \end{figure}
@@ -377,7 +382,8 @@ TODO other parameters description
 \begin{figure}[H]
 	\begin{center}
 		\cutpic{0.3cm}{0.65\textwidth}{multiply_gimp.png}
-		\caption[Subtraction of the two frames (KDEN Live (\textit{multiply}) and Accurate Player).]{Subtraction of the two frames from KDEN Live (with the action \textit{multiply}) and Accurate Player.}
+		\caption[Subtraction of the two frames (KDEN Live (\textit{multiply}) - Accurate Player).]{Subtraction of the two frames: Accurate Player frame is subtracted from the KDEN Live frame extraction (with the action \textit{multiply}).}
+		% KDEN Live - JIT
 		\label{figure:multiplygimp}
 	\end{center}
 \end{figure}
