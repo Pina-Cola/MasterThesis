@@ -288,9 +288,11 @@ For the other parameters (keep luma, alpha controlled and luma formula), the def
 %-------------------------------------------------------------------------------------------------------
 \subsubsection*{Change gamma}
 
-In Figure~\ref{figure:APframe1}, the extracted frame from the Accurate Player with the maximum red value applied can be seen. This frame was shown before in Figure~\ref{figure:redAP} and is shown here again for a better visualization of the frame comparison.
+\textit{Change gamma} refers to adjusting the luminance or brightness of an image or video by applying a gamma correction factor. This can be used to adapt the output to different devices.~\cite{gamma}
 
 In Figure~\ref{figure:gamma}, the extracted frame from KDEN Live with the application of the maximum red value for the \textit{Change gamma} action is shown. This frame extraction is visually darker than the frame extraction from the Accurate Player.
+
+In Figure~\ref{figure:APframe1}, the extracted frame from the Accurate Player with the maximum red value applied can be seen. This frame was shown before in Figure~\ref{figure:redAP} and is shown here again for a better visualization of the frame comparison.
 
 \begin{minipage}{0.48\textwidth}
 	\begin{figure}[H]
@@ -313,14 +315,14 @@ In Figure~\ref{figure:gamma}, the extracted frame from KDEN Live with the applic
 \end{minipage}
 \vspace*{1em}
 
-The result of the subtraction can be seen Figure~\ref{figure:gammagimp}. The Accurate Player frame was subtracted from the KDEN Live frame extraction. The result does not show green or blue areas, which shows that the KDEN Live frame has more or equally saturated red values than the Accurate Player frame extraction in all areas.
+The result of the subtraction can be seen Figure~\ref{figure:gammagimp}. The Accurate Player frame was subtracted from the KDEN Live frame extraction. The result does show green tones and no red tones, which shows that the Accurate Player frame has more saturated red values in than the KDEN Live frame extraction in all areas.
 
 
 
 \begin{figure}[H]
 	\begin{center}
 		\cutpic{0.3cm}{0.65\textwidth}{gamma_gimp.png}
-		\caption[Subtraction of the two frames (KDEN Live (\textit{change gamma}) - Accurate Player).]{Subtraction of the two frames: Accurate Player frame is subtracted from the KDEN Live frame extraction (with the action \textit{change gamma}).}
+		\caption[Subtraction of KDEN Live (\textit{change gamma}) and Accurate Player.]{Subtraction of the two frames: Accurate Player frame is subtracted from the KDEN Live frame extraction (with the action \textit{change gamma}).}
 		% KDENLive - JIT
 		\label{figure:gammagimp}
 	\end{center}
@@ -336,9 +338,13 @@ The result of the subtraction can be seen Figure~\ref{figure:gammagimp}. The Acc
 %-------------------------------------------------------------------------------------------------------
 \subsubsection*{Add constant}
 
-In Figure~\ref{figure:APframe2}, the extracted frame from the Accurate Player with the maximum red value applied can be seen. This frame was shown before in Figure~\ref{figure:redAP} and \ref{figure:APframe1} and is shown here again for a better visualization of the frame comparison.
+Adding a constant value involves increasing or decreasing the intensity of a channel in an image or video by a fixed amount. 
 
 In Figure~\ref{figure:addconstant}, the extracted frame from KDEN Live with the application of the maximum red value for the \textit{Add constant} action is shown. This frame extraction is visually darker than the frame extraction from the Accurate Player and looks similar to the frame that was created with the \textit{Change gamma} action, that was shown in Figure~\ref{figure:gamma}.
+
+In Figure~\ref{figure:APframe2}, the extracted frame from the Accurate Player with the maximum red value applied can be seen. This frame was shown before in Figure~\ref{figure:redAP} and \ref{figure:APframe1} and is shown here again for a better visualization of the frame comparison.
+
+
 
 
 \begin{minipage}{0.48\textwidth}
@@ -368,7 +374,7 @@ But the comparison of those frames in Figure~\ref{figure:addconstantgimp} shows,
 \begin{figure}[H]
 	\begin{center}
 		\cutpic{0.3cm}{0.65\textwidth}{addconstant_gimp.png}
-		\caption[Subtraction of the two frames (KDEN Live (\textit{add constant}) - Accurate Player).]{Subtraction of the two frames: Accurate Player frame is subtracted from the KDEN Live frame extraction (with the action \textit{add constant}).}
+		\caption[Subtraction of KDEN Live (\textit{add constant}) and Accurate Player.]{Subtraction of the two frames: Accurate Player frame is subtracted from the KDEN Live frame extraction (with the action \textit{add constant}).}
 		% KDENLive - JIT
 		\label{figure:addconstantgimp}
 	\end{center}
@@ -383,10 +389,11 @@ But the comparison of those frames in Figure~\ref{figure:addconstantgimp} shows,
 %-------------------------------------------------------------------------------------------------------
 \subsubsection*{Multiply}
 
-
-In Figure~\ref{figure:APframe2}, the extracted frame from the Accurate Player with the maximum red value applied can be seen. This frame was shown before in Figure~\ref{figure:redAP}, \ref{figure:APframe1} and \ref{figure:APframe2} and is shown here again for a better visualization of the frame comparison.
+Multiplying involves changing the intensity of each colour channel (red, green, blue) by a specified factor. This adjustment allows for precise control over colour balance and saturation.~\cite{gimp}
 
 In Figure~\ref{figure:multiply}, the extracted frame from KDEN Live with the application of the maximum red value for the \textit{Multiply} action is shown. This frame extraction is visually more saturated than the frame extraction from the Accurate Player.
+
+In Figure~\ref{figure:APframe2}, the extracted frame from the Accurate Player with the maximum red value applied can be seen. This frame was shown before in Figure~\ref{figure:redAP}, \ref{figure:APframe1} and \ref{figure:APframe2} and is shown here again for a better visualization of the frame comparison.
 
 
 \begin{minipage}{0.48\textwidth}
@@ -417,7 +424,7 @@ In Figre~\ref{figure:multiplygimp}, the subtraction of the Accurate Player frame
 \begin{figure}[H]
 	\begin{center}
 		\cutpic{0.3cm}{0.65\textwidth}{multiply_gimp.png}
-		\caption[Subtraction of the two frames (KDEN Live (\textit{multiply}) - Accurate Player).]{Subtraction of the two frames: Accurate Player frame is subtracted from the KDEN Live frame extraction (with the action \textit{multiply}).}
+		\caption[Subtraction of KDEN Live (\textit{multiply} and Accurate Player).]{Subtraction of the two frames: Accurate Player frame is subtracted from the KDEN Live frame extraction (with the action \textit{multiply}).}
 		% KDEN Live - JIT
 		\label{figure:multiplygimp}
 	\end{center}
