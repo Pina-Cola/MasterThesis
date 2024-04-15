@@ -349,6 +349,8 @@ A colour diagram that shows the additive model of RGB can be seen in Figure~\ref
 \end{figure}
 \end{minipage}
 
+\vspace*{1em}
+
 
 %\begin{figure}[H]
 	
@@ -364,6 +366,50 @@ A colour diagram that shows the additive model of RGB can be seen in Figure~\ref
 
 
 % Poynton, Charles A. "Digital Video and HDTV: Algorithms and Interfaces." Morgan Kaufmann Publishers, 2012.
+
+
+
+
+
+
+
+%-----------------------------------------------------------------------------------
+\subsection{Comparison of Different Colour Saturations with GIMP}
+\label{subsection:ComparisonOfDifferentColourSaturations}
+
+
+
+In this Section, a method for analysing the differences between two images is explained.
+For this, the the colours of the images are subtracted from each other using GNU Image Manipulation Program (GIMP). 
+This method subtracts the colour values of corresponding pixels from two images to show any differences and it is called \textit{grain extract} in GIMP. It is a visual representation of the colour subtraction process, where subtracting identical pixels from each other results in a grey image, indicating no differences.~\cite{gimp}
+
+
+When subtracting one image from another, the pixel values from one image are subtracted from the corresponding pixel values in the other image. 
+The result reflects the relative differences in the colour values between the two subtracted images. For example, areas where the subtracted image has a less intense red tone will result into red pixels after the subtraction and analogical, areas where the subtracted image has a more intense red tone will result into green or blue pixels in the result of the subtraction. The result of the subtracted pixels depends on the difference between the two colour values.
+
+Two examples of the colour subtraction with different red values can be seen in Figure~\ref{figure:neonminuslight}. In the Figure, the red colours \texttt{(202, 95, 95)} and \texttt{(255,0,0)} are subtracted from each other with the \textit{grain extract} function. This results in a blue colour \texttt{(74, 233, 233)} and a different red tone \texttt{(180, 32, 32)}.
+
+% "Grain extract [...] subtracts the pixel value of the upper layer from that of the lower layer and adds 128."
+
+% neon= 255, 0,0
+% light= 202, 95, 95
+
+% outcome blue = 74, 233, 233
+% outcome red= 180, 32, 32
+
+\begin{figure}[H]
+	
+	\centering
+	
+	\includegraphics[width=0.8\textwidth]{lightMINUSneon.png}
+	\includegraphics[width=0.8\textwidth]{neonMINUSlight.png}
+	
+	\caption[Colour subtraction with GIMP function \textit{grain extract}.]{Subtraction of two different red values from each other with the GIMP function \textit{grain extract} to visualize the differences.}
+	\label{figure:neonminuslight}
+	
+\end{figure}
+
+
 
 
 	

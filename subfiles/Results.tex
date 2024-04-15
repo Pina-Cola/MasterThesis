@@ -29,8 +29,8 @@ In this Chapter, the results of the user sided colour grading with JIT are compa
 
 
 To evaluate the difference in the frames and the filter application between the tested components, the frames are extracted. Those tests were run on the same computer to ensure consistency and the frames were extracted with taking screenshots of the output or pre-existing frame extraction functions.
-Then the colours of the images have been subtracted from each other using GNU Image Manipulation Program (GIMP). 
-This method subtracts the colour values of corresponding pixels from two images to show any differences and it is called \textit{grain extract} in GIMP. It is a visual representation of the colour subtraction process, where subtracting identical pixels from each other results in a grey image, indicating no differences.~\cite{gimp}
+Then the colours of the images have been subtracted from each other using the \textit{grain extract} function in GIMP. 
+This method was described in Section~\ref{subsection:ComparisonOfDifferentColourSaturations}.
 
 
 In the Figures~\ref{figure:greyresult_unit} and \ref{figure:greyresult_blurry}, two different results of colour subtraction can be seen. Figure~\ref{figure:greyresult_unit} shows the subtraction of an image from itself. This results in a uniformly grey image, because the images are identical. Figure~\ref{figure:greyresult_blurry} shows the subtractions of two separate screenshots of the same frame. Small distortions can be seen, which is caused by slightly different scaling or other inconsistencies in the screenshot process. Those small differences have to be considered in the comparison, because the images can not be expected to be exactly the same, when extracting them from different sources.
@@ -56,8 +56,6 @@ In the Figures~\ref{figure:greyresult_unit} and \ref{figure:greyresult_blurry}, 
 		\end{center}
 	\end{figure}
 \end{minipage}
-
-
 
 
 
@@ -110,6 +108,10 @@ For the evaluation, a comparison between the locally installed Melt version and 
 \vspace*{2em}
 Considering the visual difference in the frame extractions from the two different approaches to apply the filter, the subtraction of those two frames shows more differences than the expected distortions, that were described above. The result of the subtraction can be seen in Figure~\ref{figure:filterVSfilter}, which shows the difference in the two compared frame extractions.
 
+In Figure~\ref{figure:filterVSfilter}, the extracted frame of the Melt framework was subtracted from the frame of the Accurate Player.
+In this case, the result has a red tone itself, because the seemingly less red saturated frame was subtracted from the seemingly more saturated frame. Because of this, the pixels that were a deeper red in the Accurate Player frame have higher red values than the corresponding pixels in the Melt framework extraction. This causes the red tone in the resulting image in Figure~\ref{figure:filterVSfilter}.
+The result reflects the relative differences in the red value between the two frames. This result has a red tone and no green areas, which shows that the frame of the Accurate Player has overall a more saturated red tone than the extracted frame of the Melt framework.
+
 
 \begin{figure}[H]
 	\begin{center}
@@ -120,7 +122,7 @@ Considering the visual difference in the frame extractions from the two differen
 	\end{center}
 \end{figure}
 
-To evaluate, if the difference is caused by the application of the filter or by other aspects, for example video compression or difference in video players, the frames are compared without the filter applied to them. For this, frame 343 of the original video file is compared to the same frame extraction of the locally installed Melt framework and the Accurate Player without the application of the filter. The frame from the original video file can be seen in Figure~\ref{figure:nofilterO}.
+To evaluate, if this difference is caused by the application of the filter or by other aspects, for example video compression or difference in video players, the frames are compared without the filter applied to them. For this, frame 343 of the original video file is compared to the same frame extraction of the locally installed Melt framework and the Accurate Player without the application of the filter. The frame from the original video file can be seen in Figure~\ref{figure:nofilterO}.
 
 \begin{figure}[H]
 	\begin{center}
