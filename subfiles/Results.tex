@@ -65,6 +65,11 @@ In the Figures~\ref{figure:greyresult_unit} and \ref{figure:greyresult_blurry}, 
 
 
 
+
+%-------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------
+
+
 \subsection{Comparison with the Melt Framework} \label{section:comparisonMelt}
 
 
@@ -72,14 +77,6 @@ In this Section, the results of video colour grading using the locally installed
 Those tests were run on the same computer to ensure consistency and the frames were extracted with taking screenshots of the output from both approaches. These extracted frames are then visually inspected. 
 
 
-%-------------------------------------------------------------------------------------------------------
-% \subsubsection*{Testing} 
-% Discuss the testing methodologies and present validation results.
-
-
-
-
-% \vspace*{2em}
 For the evaluation, a comparison between the locally installed Melt version and the Accurate Player sliders with the red value on maximum was tested. The filter was applied to frame 343 and the results of the locally installed Melt framework can be seen in Figure~\ref{figure:redMelt} and in the Accurate Player frontend in Figure~\ref{figure:redAP}. In this Figures it can be seen, that the red tone of the two frames differs. In Figure~\ref{figure:redAP}, the colours seem more dark or saturated.
 
 
@@ -110,7 +107,7 @@ Considering the visual difference in the frame extractions from the two differen
 
 In Figure~\ref{figure:filterVSfilter}, the extracted frame of the Melt framework was subtracted from the frame of the Accurate Player.
 In this case, the result has a red tone itself, because the seemingly less red saturated frame was subtracted from the seemingly more saturated frame. Because of this, the pixels that were a deeper red in the Accurate Player frame have higher red values than the corresponding pixels in the Melt framework extraction. This causes the red tone in the resulting image in Figure~\ref{figure:filterVSfilter}.
-The result reflects the relative differences in the red value between the two frames. This result has a red tone and no green areas, which shows that the frame of the Accurate Player has overall a more saturated red tone than the extracted frame of the Melt framework.
+The result reflects the relative differences in the red value between the two frames. This result image is red tinted and has no green or blue areas, which shows that the frame of the Accurate Player has overall a more saturated red tone than the extracted frame of the Melt framework.
 
 
 \begin{figure}[H]
@@ -133,7 +130,7 @@ To evaluate, if this difference is caused by the application of the filter or by
 \end{figure}
 
 
-In Figure~\ref{figure:nofilterMelt}, the extraction of frame 343 without a filter from the locally installed Melt framework can be seen and in comparison in Figure~\ref{figure:nofilterAP}, the frame extraction from the Accurate Player without a filter can be seen. Figure~\ref{figure:nofilterAP} seems to be a more saturated.
+In Figure~\ref{figure:nofilterMelt}, the extraction of frame 343 without a filter from the locally installed Melt framework can be seen and in comparison to this the extracted frame from the Accurate Player without a filter can be seen in Figure~\ref{figure:nofilterAP}. Figure~\ref{figure:nofilterAP}, which is the Accurate Player frame, seems to be a more saturated.
 
 
 \begin{minipage}{0.48\textwidth}
@@ -157,7 +154,9 @@ In Figure~\ref{figure:nofilterMelt}, the extraction of frame 343 without a filte
 \end{minipage}
 
 \vspace*{2em}
-In Figure~\ref{figure:oVSmelt}, the subtraction of the original frame and the Meltframework frame extraction are visualized using GIMP. In Figure~\ref{figure:oVSap} in comparison, the subtraction was done with the original frame and the Accurate Player extraction. Figure~\ref{figure:oVSap} shows the expected result, for a same output, while it is visible in Figure~\ref{figure:oVSmelt}, that the output from the locally installed Melt framework and the original video frame differs, too.
+In Figure~\ref{figure:oVSmelt}, the subtraction of the original frame and the Melt Framework frame extraction are visualized using GIMP. In this image, the outlines of the motive of the frame can be seen in different grey tones, which shows, that the subtracted frames do not have the same colour values.
+In Figure~\ref{figure:oVSap} in comparison, the subtraction was done with the original frame and the Accurate Player extraction. Figure~\ref{figure:oVSap} shows the expected result for a same output, with some differences in the grey tones but no clear outlines or fragments from the original frame motive.
+
 
 
 \begin{minipage}{0.48\textwidth}
@@ -191,13 +190,9 @@ In Figure~\ref{figure:oVSmelt}, the subtraction of the original frame and the Me
 
 
 
-
-%-------------------------------------------------------------------------------------------------------
-% \subsubsection*{Evaluation and Comparison}
-% Evaluate the system's performance against defined criteria.
 \vspace*{2em}
 The extracted frames from the different approaches display significant differences, even when no filters were applied. 
-These differences of the video file without filters make it difficult to evaluate additional data regarding the application of filters using this method. The cause for the different display of the video frames by the Melt video player remains unclear. 
+These differences of the video file without filters make it difficult to evaluate additional data regarding the application of filters using this method. The cause for the different display of the video frames by the Melt video player remains unclear.
 % It is worth noting that the Melt video player is recognized for encountering occasional technical issues.
 
 
@@ -208,6 +203,11 @@ These differences of the video file without filters make it difficult to evaluat
 
 
 
+
+
+
+%-------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------
 
 
 \subsection{Comparison with KDEN Live} \label{section:comparisonKDENLive}
@@ -272,11 +272,25 @@ The frames were extracted from the Accurate Player through taking screenshots of
 \end{figure}
 
 
-TODO other parameters description
+For the other parameters (keep luma, alpha controlled and luma formula), the default values were used.
 
+
+
+
+
+
+
+
+
+
+
+
+%-------------------------------------------------------------------------------------------------------
 \subsubsection*{Change gamma}
 
+In Figure~\ref{figure:APframe1}, the extracted frame from the Accurate Player with the maximum red value applied can be seen. This frame was shown before in Figure~\ref{figure:redAP} and is shown here again for a better visualization of the frame comparison.
 
+In Figure~\ref{figure:gamma}, the extracted frame from KDEN Live with the application of the maximum red value for the \textit{Change gamma} action is shown. This frame extraction is visually darker than the frame extraction from the Accurate Player.
 
 \begin{minipage}{0.48\textwidth}
 	\begin{figure}[H]
@@ -297,6 +311,9 @@ TODO other parameters description
 		\end{center}
 	\end{figure}
 \end{minipage}
+\vspace*{1em}
+
+The result of the subtraction can be seen Figure~\ref{figure:gammagimp}. The Accurate Player frame was subtracted from the KDEN Live frame extraction. The result does not show green or blue areas, which shows that the KDEN Live frame has more or equally saturated red values than the Accurate Player frame extraction in all areas.
 
 
 
@@ -311,9 +328,17 @@ TODO other parameters description
 
 
 
+
+
+
+
+
+%-------------------------------------------------------------------------------------------------------
 \subsubsection*{Add constant}
 
+In Figure~\ref{figure:APframe2}, the extracted frame from the Accurate Player with the maximum red value applied can be seen. This frame was shown before in Figure~\ref{figure:redAP} and \ref{figure:APframe1} and is shown here again for a better visualization of the frame comparison.
 
+In Figure~\ref{figure:addconstant}, the extracted frame from KDEN Live with the application of the maximum red value for the \textit{Add constant} action is shown. This frame extraction is visually darker than the frame extraction from the Accurate Player and looks similar to the frame that was created with the \textit{Change gamma} action, that was shown in Figure~\ref{figure:gamma}.
 
 
 \begin{minipage}{0.48\textwidth}
@@ -335,7 +360,9 @@ TODO other parameters description
 		\end{center}
 	\end{figure}
 \end{minipage}
+\vspace*{1em}
 
+But the comparison of those frames in Figure~\ref{figure:addconstantgimp} shows, that the images that were created with the \textit{Change gamma} and the \textit{Add constant} action differ more than visually noticeable at first glance. The result of the subtraction of the Accurate Player frame from the KDEN Live frame extraction show, that the Accurate Player frame has a more saturated red value in some areas, while in other areas the KDEN Live frame extraction has a more saturated red value. This results into an image that contains red and green pixels after applying the \textit{grain extract} function for the subtraction in GIMP.
 
 
 \begin{figure}[H]
@@ -353,10 +380,13 @@ TODO other parameters description
 
 
 
-
+%-------------------------------------------------------------------------------------------------------
 \subsubsection*{Multiply}
 
 
+In Figure~\ref{figure:APframe2}, the extracted frame from the Accurate Player with the maximum red value applied can be seen. This frame was shown before in Figure~\ref{figure:redAP}, \ref{figure:APframe1} and \ref{figure:APframe2} and is shown here again for a better visualization of the frame comparison.
+
+In Figure~\ref{figure:multiply}, the extracted frame from KDEN Live with the application of the maximum red value for the \textit{Multiply} action is shown. This frame extraction is visually more saturated than the frame extraction from the Accurate Player.
 
 
 \begin{minipage}{0.48\textwidth}
@@ -378,6 +408,9 @@ TODO other parameters description
 		\end{center}
 	\end{figure}
 \end{minipage}
+\vspace*{1em}
+
+In Figre~\ref{figure:multiplygimp}, the subtraction of the Accurate Player frame extration from the KDEN Live frame can be seen. This subtraction result shows a mostly red picture, because of the high red values in the KDEN Live frame. In the green areas on the other hand, the Accurate Player frame had a more saturated red value than the KDEN Live frame.
 
 
 
@@ -392,14 +425,6 @@ TODO other parameters description
 
 
 
-%-------------------------------------------------------------------------------------------------------
-%-------------------------------------------------------------------------------------------------------
-%\subsubsection{Testing}
-% Discuss the testing methodologies and present validation results.
-
-%-------------------------------------------------------------------------------------------------------
-%\subsubsection{Evaluation and Comparison} 
-% Evaluate the system's performance against defined criteria.
 	
 	
 	
