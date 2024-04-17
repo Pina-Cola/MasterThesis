@@ -386,11 +386,8 @@ This method subtracts the colour values of corresponding pixels from two images 
 When subtracting one image from another, the pixel values from one image are subtracted from the corresponding pixel values in the other image. 
 The result reflects the relative differences in the colour values between the two subtracted images. For example, areas where the subtracted image has a less intense red tone will result into red pixels after the subtraction and analogical, areas where the subtracted image has a more intense red tone will result into green or blue pixels in the result of the subtraction. The result of the subtracted pixels depends on the difference between the two colour values.
 
-Two examples of the colour subtraction with different red values can be seen in Figure~\ref{figure:neonminuslight}. In the Figure, the red colours \texttt{RGB(202, 95, 95)} and \texttt{RGB(255,0,0)} are subtracted from each other with the \textit{grain extract} function. This results in a blue colour \texttt{RGB(74, 233, 233)} and a different red tone \texttt{RGB(180, 32, 32)}. 
+Two examples of the colour subtraction with different red values can be seen in Figure~\ref{figure:neonminuslight}. In the Figure, the red colours \texttt{RGB(202, 95, 95)} and \texttt{RGB(255,0,0)} are subtracted from each other with the \textit{grain extract} function. This results in a blue colour (\texttt{RGB(74, 223, 223)}) and a different red tone (\texttt{RGB(181, 33, 33)}). 
 
-% It needs to be considered, that GIMP works with HSV colour representation for hue, value and saturation. No it does not.
-
-% "Grain extract [...] subtracts the pixel value of the upper layer from that of the lower layer and adds 128."
 
 % RGB:
 % neon= 255, 0,0
@@ -399,12 +396,7 @@ Two examples of the colour subtraction with different red values can be seen in 
 % outcome red= 180, 32, 32
 
 
-%
-% HSV:
-% neon = 0, 100, 100
-% light = 0, 53, 79.2
-% outcome red = 0, 82.2, 70.6
-% outcome blue = 180, 66.8, 87.5
+
 
 \begin{figure}[H]
 	
@@ -419,7 +411,7 @@ Two examples of the colour subtraction with different red values can be seen in 
 \end{figure}
 
 The calculation to retrieve the new RGB values is defined and explained in the following.
-Let $g$ be the \textit{grain extract} function in GIMP that adds 128 to two subtracted RGB values. The function is defines as follows:
+Let $g$ be the \textit{grain extract} function in GIMP that adds 128 to two subtracted RGB values. The function is defined as follows:
 %
 \begin{align*}
 	g(x, y) = x - y + 128
@@ -432,24 +424,31 @@ Let $\text{\texttt{RGB}}_1$ and $\text{\texttt{RGB}}_2$ be the RGB values of a p
 	\text{\texttt{RGB}}_2 = (R_2, G_2, B_2)
 \end{align*}
 
-The following calculations are executed to retrieve the new values of the colours after the subtraction.
+The function $g$ can be applied to the RGB value pairs to retrieve the new values of the colours after the subtraction.
 %
 \begin{align*}
-	\text{\texttt{RGB}}_1 - \text{\texttt{RGB}}_2 & = (g(R_1, R_2), g(G_1, G_2), g(B_1, B_2)) \\
-	\text{\texttt{RGB}}_1 - \text{\texttt{RGB}}_2 & = ((R_1 - R_2 + 128), (G_1 - G_2 + 128) , (B_1 - B_2 + 128)) 
+	\text{\texttt{RGB}}_1 - \text{\texttt{RGB}}_2 & \Rightarrow (g(R_1, R_2), g(G_1, G_2), g(B_1, B_2)) \\
+	 & \Leftrightarrow ((R_1 - R_2 + 128), (G_1 - G_2 + 128) , (B_1 - B_2 + 128)) 
 \end{align*}
 
 
-For the examples, that are shown in Figure~\ref{figure:neonminuslight}, the calculations are shown in the following:
+For the examples, that are shown in Figure~\ref{figure:neonminuslight}, the calculations are shown in the following, with the RGB values $\text{\texttt{RGB}}_1 = (202, 95, 95)$ and
+$\text{\texttt{RGB}}_2 = (255, 0, 0)$.
 %
 \begin{align*}
-	\text{\texttt{RGB}}_1 & = (202, 95, 95) \ \ \ \ \ \ \ \ \ \ \ \ \ 
-	\text{\texttt{RGB}}_2 = (255, 0, 0) \\
-	\text{\texttt{RGB}}_1 - \text{\texttt{RGB}}_2 & = (g(202, 255), g(95, 0), g(95, 0)) \\
-	\text{\texttt{RGB}}_1 - \text{\texttt{RGB}}_2 & = ((202 - 255 + 128), (95 - 0 + 128) , (95 - 0 + 128)) \\
-	\text{\texttt{RGB}}_1 - \text{\texttt{RGB}}_2 & = (75, 223, 223) \\
-	(75, 223, 223) \neq (74, 233, 233)
+	\text{\texttt{RGB}}_1 - \text{\texttt{RGB}}_2 & \Rightarrow (g(202, 255), g(95, 0), g(95, 0)) \\
+	 & \Leftrightarrow ((202 - 255 + 128), (95 - 0 + 128) , (95 - 0 + 128)) \\
+	 & \Leftrightarrow (75, 223, 223) 
 \end{align*}
+%
+%
+\begin{align*}
+	\text{\texttt{RGB}}_2 - \text{\texttt{RGB}}_1 & \Rightarrow (g(255, 202), g(0, 95), g(0, 95)) \\
+	 & \Leftrightarrow ((255 - 202 + 128), (0 - 95 + 128) , (0 - 95 + 128)) \\
+	 & \Leftrightarrow (181, 33, 33) 
+\end{align*}
+
+The results are the light blue colour \texttt{RGB(74, 223, 223)} and the red tone \texttt{RGB(181, 33, 33)}, that can be seen as the result of the subtractions in Figure~\ref{figure:neonminuslight}. 
 
 
 % RGB:
