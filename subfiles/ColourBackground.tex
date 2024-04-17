@@ -372,7 +372,6 @@ A colour diagram that shows the additive model of RGB can be seen in Figure~\ref
 
 
 
-
 %-----------------------------------------------------------------------------------
 \subsection{Comparison of Different Colour Saturations with GIMP}
 \label{subsection:ComparisonOfDifferentColourSaturations}
@@ -387,32 +386,77 @@ This method subtracts the colour values of corresponding pixels from two images 
 When subtracting one image from another, the pixel values from one image are subtracted from the corresponding pixel values in the other image. 
 The result reflects the relative differences in the colour values between the two subtracted images. For example, areas where the subtracted image has a less intense red tone will result into red pixels after the subtraction and analogical, areas where the subtracted image has a more intense red tone will result into green or blue pixels in the result of the subtraction. The result of the subtracted pixels depends on the difference between the two colour values.
 
-Two examples of the colour subtraction with different red values can be seen in Figure~\ref{figure:neonminuslight}. In the Figure, the red colours \texttt{(202, 95, 95)} and \texttt{(255,0,0)} are subtracted from each other with the \textit{grain extract} function. This results in a blue colour \texttt{(74, 233, 233)} and a different red tone \texttt{(180, 32, 32)}.
+Two examples of the colour subtraction with different red values can be seen in Figure~\ref{figure:neonminuslight}. In the Figure, the red colours \texttt{RGB(202, 95, 95)} and \texttt{RGB(255,0,0)} are subtracted from each other with the \textit{grain extract} function. This results in a blue colour \texttt{RGB(74, 233, 233)} and a different red tone \texttt{RGB(180, 32, 32)}. 
+
+% It needs to be considered, that GIMP works with HSV colour representation for hue, value and saturation. No it does not.
 
 % "Grain extract [...] subtracts the pixel value of the upper layer from that of the lower layer and adds 128."
 
+% RGB:
 % neon= 255, 0,0
 % light= 202, 95, 95
-
 % outcome blue = 74, 233, 233
 % outcome red= 180, 32, 32
+
+
+%
+% HSV:
+% neon = 0, 100, 100
+% light = 0, 53, 79.2
+% outcome red = 0, 82.2, 70.6
+% outcome blue = 180, 66.8, 87.5
 
 \begin{figure}[H]
 	
 	\centering
 	
-	\includegraphics[width=0.8\textwidth]{lightMINUSneon.png}
-	\includegraphics[width=0.8\textwidth]{neonMINUSlight.png}
+	\includegraphics[width=0.6\textwidth]{lightMINUSneon.png}
+	\includegraphics[width=0.6\textwidth]{neonMINUSlight.png}
 	
 	\caption[Colour subtraction with GIMP function \textit{grain extract}.]{Subtraction of two different red values from each other with the GIMP function \textit{grain extract} to visualize the differences.}
 	\label{figure:neonminuslight}
 	
 \end{figure}
 
-TODO explain mathematical function
+The calculation to retrieve the new RGB values is defined and explained in the following.
+Let $g$ be the \textit{grain extract} function in GIMP that adds 128 to two subtracted RGB values. The function is defines as follows:
+%
+\begin{align*}
+	g(x, y) = x - y + 128
+\end{align*}
+
+Let $\text{\texttt{RGB}}_1$ and $\text{\texttt{RGB}}_2$ be the RGB values of a pixel in the same position in two different images, that are being subtracted.
+%
+\begin{align*}
+	\text{\texttt{RGB}}_1 = (R_1, G_1, B_1) \ \ \ \ \ \ \ \ \ \ \ \ \ 
+	\text{\texttt{RGB}}_2 = (R_2, G_2, B_2)
+\end{align*}
+
+The following calculations are executed to retrieve the new values of the colours after the subtraction.
+%
+\begin{align*}
+	\text{\texttt{RGB}}_1 - \text{\texttt{RGB}}_2 & = (g(R_1, R_2), g(G_1, G_2), g(B_1, B_2)) \\
+	\text{\texttt{RGB}}_1 - \text{\texttt{RGB}}_2 & = ((R_1 - R_2 + 128), (G_1 - G_2 + 128) , (B_1 - B_2 + 128)) 
+\end{align*}
 
 
+For the examples, that are shown in Figure~\ref{figure:neonminuslight}, the calculations are shown in the following:
+%
+\begin{align*}
+	\text{\texttt{RGB}}_1 & = (202, 95, 95) \ \ \ \ \ \ \ \ \ \ \ \ \ 
+	\text{\texttt{RGB}}_2 = (255, 0, 0) \\
+	\text{\texttt{RGB}}_1 - \text{\texttt{RGB}}_2 & = (g(202, 255), g(95, 0), g(95, 0)) \\
+	\text{\texttt{RGB}}_1 - \text{\texttt{RGB}}_2 & = ((202 - 255 + 128), (95 - 0 + 128) , (95 - 0 + 128)) \\
+	\text{\texttt{RGB}}_1 - \text{\texttt{RGB}}_2 & = (75, 223, 223) \\
+	(75, 223, 223) \neq (74, 233, 233)
+\end{align*}
 
+
+% RGB:
+% neon= 255, 0,0
+% light= 202, 95, 95
+% outcome blue = 74, 233, 233
+% outcome red= 180, 32, 32
 
 
 
