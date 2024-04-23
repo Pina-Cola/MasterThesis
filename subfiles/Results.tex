@@ -102,7 +102,7 @@ For the evaluation, a comparison between the locally installed Melt version and 
 	\end{figure}
 \end{minipage}
 
-\vspace*{2em}
+\vspace*{1.5em}
 Considering the visual difference in the frame extractions from the two different approaches to apply the filter, the subtraction of those two frames shows more differences than the expected distortions, that were described above. The result of the subtraction can be seen in Figure~\ref{figure:filterVSfilter}, which shows the difference in the two compared frame extractions.
 
 In Figure~\ref{figure:filterVSfilter}, the extracted frame of the Melt framework was subtracted from the frame of the Accurate Player.
@@ -153,7 +153,7 @@ In Figure~\ref{figure:nofilterMelt}, the extraction of frame 343 without a filte
 	\end{figure}
 \end{minipage}
 
-\vspace*{2em}
+\vspace*{1.5em}
 In Figure~\ref{figure:oVSmelt}, the subtraction of the original frame and the Melt Framework frame extraction are visualized using GIMP. In this image, the outlines of the motive of the frame can be seen in different grey tones, which shows, that the subtracted frames do not have the same colour values.
 In Figure~\ref{figure:oVSap} in comparison, the subtraction was done with the original frame and the Accurate Player extraction. Figure~\ref{figure:oVSap} shows the expected result for a same output, with some differences in the grey tones but no clear outlines or fragments from the original frame motive.
 
@@ -190,10 +190,15 @@ In Figure~\ref{figure:oVSap} in comparison, the subtraction was done with the or
 
 
 
-\vspace*{2em}
+\vspace*{1.5em}
 The extracted frames from the different approaches display significant differences, even when no filters were applied. 
-These differences of the video file without filters make it difficult to evaluate additional data regarding the application of filters using this method. The cause for the different display of the video frames by the Melt video player remains unclear.
+These differences in the video representation without filters applied to it make it difficult to evaluate additional data regarding the application of filters using this method. The cause for the different display of the video frames by the Melt framework remains unclear.
 % It is worth noting that the Melt video player is recognized for encountering occasional technical issues.
+
+
+One possible explanation for these differences in the extracted frames could come from the system environment potentially influencing the evaluation of the comparison on different platforms. The differences could be caused by software dependencies imposed by the Melt framework or its video player.
+
+
 
 
 
@@ -236,9 +241,9 @@ These differences of the video file without filters make it difficult to evaluat
 
 the filter applications, the usage of the \texttt{avfilter.colorbalance} filter in KDEN Live would have apositive effect on the evaluation process and results. To compare different filters is a difficult task, because it cannot be evaluated if the reults are the
 
-\vspace*{-0.6em}
+% \vspace*{-0.3em}
 \begin{minipage}{0.48\textwidth}
-	
+	\vspace*{-0.3em}
 	\begin{figure}[H]
 	\begin{center}
 		\cutpic{0.3cm}{0.9\textwidth}{kdenlive_effekte.png}
@@ -246,7 +251,7 @@ the filter applications, the usage of the \texttt{avfilter.colorbalance} filter 
 		\label{figure:kdenlive_effekte}
 	\end{center}
 	\end{figure}
-	\hfill
+	%\hfill
 	
 	
 \end{minipage}\begin{minipage}{0.04\textwidth}
@@ -434,9 +439,7 @@ In Figre~\ref{figure:multiplygimp}, the subtraction of the Accurate Player frame
 
 
 
-
-
-
+The comparison with KDEN Live did not show the same results as the filter application in the Accurate Player either and the results of the colour subtractions lead to the presumption, that KDEN Live is using a different Melt filter for the adjustment of the RGB values.
 
 
 
@@ -448,7 +451,7 @@ In Figre~\ref{figure:multiplygimp}, the subtraction of the Accurate Player frame
 %-------------------------------------------------------------------------------------------------------
 
 
-\subsection{Results of Filter Comparison} \label{section:resultscomparisons}
+%\subsection{Results of Filter Comparison} \label{section:resultscomparisons}
 
 
 
