@@ -23,10 +23,61 @@
 \newpage
 \section{Conclusion} \label{section:conclusion}
 
+In this Chapter, the summary, contributions and limitations are described. After this, opportunities for future work are introduced and examined.
+
+
+
+
+
 
 %-------------------------------------------------------------------------------------------------------
 \subsection{Summary, Contributions and Limitations} \label{subsection:summary}
 % Summarize the key findings and outcomes of the research.
+
+This thesis lays in the field of multimedia processing in real-time, regarding the adjustment of the RGB values of a video with JIT using the Melt framework as a backend. This option was implemented in Codemill's Accurate Player and using WebRTC as a data channel.
+
+For this, background knowledge on colour theory and representation (Chapter \ref{section:theoreticalfoundationofcolour}) and technical background, especially the structure and usage of the Melt framework were given (Chapter \ref{section:technicalbackground}).
+
+The research question consisted of two parts. The first part aimed to evaluate the feasibility of the above described implementation. The implementation confirm that it was achievable. The implementation was described in Chapter~\ref{section:designandimplementation}. This includes a comparison of different Melt filters, to select the most suitable filter for the RGB adjustment. The selected filter is the \texttt{avfilter.colorbalance} filter, which can be used to adjust the RGB values of the highlights, mid tones and shadows individually.
+
+
+The second part of the research question considers the comparison of video colour grading results with Melt filters, that were applied on different platforms. The compared platforms are the Accurate Player RGB adjustment, that was implemented in this thesis project with the locally installed Melt framework and KDEN Live. This comparison was described in Chapter~\ref{section:experimentalevaluationanddiscussion}.
+
+
+To evaluate the differences, frames of the different platforms were extracted and compared. 
+The colours of those frames have been subtracted from each other using the \textit{grain extract} function in GIMP, to show differences in the colour saturations.
+
+
+The comparison with the local version of the Melt framework showed the interesting result, that the extracted frames display significant differences, even without the applications of filters. The cause for those differences remains unclear.
+
+The comparison with KDEN Live did not show the same results as the filter application in the Accurate Player either and the results of the colour subtractions lead to the presumption, that KDEN Live is using a different Melt filter for the adjustment of the RGB values.
+
+
+
+% Introduction and Context: Briefly introduce the topic of your thesis and its significance within the broader field of study. Provide context for your research question or problem statement.
+
+% Objectives and Methodology: Summarize the objectives of your study and the methodology you employed to address them. This could include research methods, data collection techniques, and any theoretical frameworks or models used.
+
+% Main Findings: Highlight the main findings or results of your research. This may involve key discoveries, insights, trends, or conclusions drawn from your analysis.
+
+% Contributions to the Field: Discuss the contributions your thesis makes to the existing body of knowledge in your field. This could include novel insights, methodological advancements, or practical implications of your research.
+
+% Limitations and Future Directions: Acknowledge any limitations or constraints of your study and suggest potential avenues for future research or improvement. This demonstrates a critical reflection on the scope and implications of your work.
+
+% Conclusion: Sum up the overall significance and implications of your research. Reiterate the importance of your findings and their relevance to the broader academic or practical context.
+
+% Closing Remarks: Provide any final thoughts or reflections on the research process, including challenges encountered, lessons learned, or areas for further exploration.
+
+	
+
+
+	
+
+	
+	
+	
+	
+
 
 
 
@@ -72,6 +123,21 @@ Implementing options for the application of those presets is an interesting oppo
 
 
 
+
+%-------------------------------------------------------------------------------------------------------
+\subsubsection*{Advanced Video Processing}
+
+With the implementation of options for advanced video processing tools, other opportunities arise. An online video editing tool with a Melt backend could be implemented. The functionalities could include the cutting of video clips, the application of above described video presets and the manual adjustment of individual video and audio parameters.
+
+
+
+
+
+
+
+
+
+
 %-------------------------------------------------------------------------------------------------------
 \subsubsection*{Improvements of the User Interface}
 
@@ -80,7 +146,7 @@ Improvements of the user interface can be implemented to make the adjustment of 
 To decide, which changes enhance the usability of the colour adjustment and feel intuitive for the user, extensive testing and user studies could be conducted.
 
 
-In addition to this, the above described future work opportunity of implementing video presets needs a design for the user interface as well, ro guarantee the usability. 
+In addition to this, the above described future work opportunities of implementing video presets or an online video editing tool need a design for the user interface as well, ro guarantee the usability. 
 
 
 
@@ -95,26 +161,6 @@ The list of filters on the Melt website contains the available audio filters, to
 
 The implementation of the audio filter integrations is an interesting option for future work. To compare different audio filters, the according sound waves of a track could be read out and compared.
 
-
-
-
-
-
-
-
-
-
-
-
-%-------------------------------------------------------------------------------------------------------
-\subsubsection*{Advanced Video Processing}
-
-TODO 
-
-\begin{itemize}
-	\item Advanced Colour Grading Techniques
-	\item Online Video Editing Tool
-\end{itemize}
 
 
 
