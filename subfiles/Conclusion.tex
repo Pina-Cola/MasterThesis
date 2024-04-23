@@ -31,7 +31,7 @@ In this Chapter, the summary, contributions and limitations are described. After
 
 
 %-------------------------------------------------------------------------------------------------------
-\subsection{Summary, Contributions and Limitations} \label{subsection:summary}
+\subsection{Summary} \label{subsection:summary}
 % Summarize the key findings and outcomes of the research.
 
 
@@ -53,20 +53,32 @@ The comparison with the local version of the Melt framework showed the interesti
 
 The comparison with KDEN Live did not show the same results as the filter application in the Accurate Player either and the results of the colour subtractions lead to the presumption, that KDEN Live is using a different Melt filter for the adjustment of the RGB values.
 
+TODO -- conclusion from results part 
 
 
 
 
-% Contributions to the Field: Discuss the contributions your thesis makes to the existing body of knowledge in your field. This could include novel insights, methodological advancements, or practical implications of your research.
+%-------------------------------------------------------------------------------------------------------
+\subsection{Contributions and Limitations} \label{subsection:contributionslimitations}
+% Summarize the key findings and outcomes of the research.
 
-% Limitations and Future Directions: Acknowledge any limitations or constraints of your study and suggest potential avenues for future research or improvement. This demonstrates a critical reflection on the scope and implications of your work.
 
-% Conclusion: Sum up the overall significance and implications of your research. Reiterate the importance of your findings and their relevance to the broader academic or practical context.
 
-% Closing Remarks: Provide any final thoughts or reflections on the research process, including challenges encountered, lessons learned, or areas for further exploration.
+Regarding the contributions, the implementation of the RGB adjustment shows the feasibility of applying filters in real-time using the Melt framework.
+This contributes to the advancement of the field of real-time multimedia processing.
 
-	
 
+Through the comparison of different Melt filters for RGB adjustment, this thesis project provides insights into the suitability of various filters. Additionally, different options for Melt filters that exceed the area of RGB adjustment can be seen in Appendix~\ref{appendix:differentMeltFilter}.
+This contributes to the knowledge regarding the selection of Melt filters and gives an overview for different tasks using Melt.
+
+
+By examining discrepancies in the colour representation and RGB adjustment across different platforms, it is shown that there are various options to implement a solution for user sided RGB adjustment.
+
+
+Regarding the limitations, the results are limited to a specific implementation of real-time RGB adjustment within the Melt framework. The findings and conclusions can not be generalized to other streaming scenarios or platforms. Additionally, the application of different Melt filters, including audio filters, might not be comparable. Those opportunities for future work were further described in Section~\ref{subsection:futurework}.
+
+
+Another aspect that needs to be considered is that the systems environment might have influenced the evaluation of the comparison on different platforms. The frames that were extracted from the locally installed version of the Melt framework and the Accurate Video frontend showed visible differences. The cause of those differences remains unclear, but it could be caused by software dependencies imposed by the Melt framework or its video player.
 
 	
 
@@ -138,27 +150,17 @@ With the implementation of options for advanced video processing tools, other op
 %-------------------------------------------------------------------------------------------------------
 \subsubsection*{Improvements of the User Interface}
 
-\vspace*{0.5em}
 
-\begin{minipage}{0.38\textwidth}
-	Improvements of the user interface can be implemented to make the adjustment of the RGB colours more intuitive. This could involve a preview of the colour, that is being created by adjusting the RGB sliders and then applied to the video. An example for this preview can be seen in Figure~\ref{figure:UI}.
-	To decide, which changes in the user inter-
-\end{minipage}\begin{minipage}{0.04\textwidth}
-	\ 
-\end{minipage}\begin{minipage}{0.58\textwidth}
-	\begin{figure}[H]
-		\begin{center}
-			\cutpic{0.3cm}{0.9\textwidth}{ApoADC.png}
-			\caption[Example for the colour preview of the RGB sliders.]{Example for the preview of the colour, that is being created by adjusting the RGB sliders and then applied to the video.}
-			\label{figure:UI}
-		\end{center}
-	\end{figure}
-	\vfill
-\end{minipage}
-% \vspace*{1em}
+Improvements of the user interface can be implemented to make the adjustment of the RGB colours more intuitive. This could involve a preview of the colour, that is being created by adjusting the RGB sliders and then applied to the video. An example for this preview can be seen in Figure~\ref{figure:UI}.
+To decide, which changes in the user interface enhance the usability of the colour adjustment and feel intuitive for the user, extensive testing and user studies could be conducted.
 
-face enhance the usability of the colour adjustment and feel intuitive for the user, extensive testing and user studies could be conducted.
-
+\begin{figure}[H]
+	\begin{center}
+		\cutpic{0.3cm}{0.65\textwidth}{ApoADC.png}
+		\caption[Example for the colour preview of the RGB sliders.]{Example for the preview of the colour, that is being created by adjusting the RGB sliders and then applied to the video.}
+		\label{figure:UI}
+	\end{center}
+\end{figure}
 
 
 
@@ -180,12 +182,11 @@ The implementation of the audio filter integrations is an interesting option for
 
 
 
+In this thesis project, insights on multimedia processing, colour theory and the Melt framework have been gained and contributions have been made to the field. This lead to various options for future work projects.
+
+The project addressed the complexities of real-time RGB adjustment within the Melt framework and has provided comparisons of various filtering techniques. 
 
 
-
-
-
-	
 	
 	
 \end{document}
