@@ -218,6 +218,9 @@ skipbelow=\topsep
 ]{researchbox}
 %
 \usepackage{adjustbox}
+% Triangle in RedViolet instead:
+% \renewcommand{\blacktriangleright}{\textcolor{RedViolet}{$\blacktriangleright$}}
+\newcommand{\RedVioletTriangleright}{\textcolor{RedViolet}{$\blacktriangleright$}}
 %-------------------------------
 %----------------------------------------------------------------------------
 
@@ -296,8 +299,19 @@ skipbelow=\topsep
 
 \textbf{Keywords:}
 
+
+
+\begin{adjustbox}{width=1\textwidth}
+	\begin{tabular}{llll}
+		\RedVioletTriangleright~Multimedia~processing & \RedVioletTriangleright~RGB~colour~adjustment & \RedVioletTriangleright~Colour~grading & \RedVioletTriangleright~Melt~framework \\
+		\RedVioletTriangleright~Melt~filter \RedVioletTriangleright~Real-time & \RedVioletTriangleright~Just-in-time \RedVioletTriangleright~WebRTC &  \RedVioletTriangleright~Codemill & \RedVioletTriangleright~Accurate~Player \\
+		\ & \ & \ & \ \\
+	\end{tabular}
+\end{adjustbox}
+
 %\begin{itemize}
 	% \item[\textbf{Keywords:}] 
+\begin{comment}
 \begin{adjustbox}{width=1\textwidth}
 	\begin{tabular}{llll}
 		 $\blacktriangleright$~Multimedia~processing & $\blacktriangleright$~RGB~colour~adjustment & $\blacktriangleright$~Colour~grading & $\blacktriangleright$~Melt~framework \\
@@ -306,6 +320,9 @@ skipbelow=\topsep
 		  
 	\end{tabular}
 \end{adjustbox}
+
+\end{comment}
+	
 	
 	\begin{comment}
 	\mbox{$\blacktriangleright$~Multimedia~processing}
