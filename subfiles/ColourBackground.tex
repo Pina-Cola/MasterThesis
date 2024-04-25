@@ -266,9 +266,9 @@ positive associations with their products, because of its cheerful and optimisti
 
 
 RGB colour representation is a method to display colours on screens. It stands for Red, Green, and Blue. 
-Each of those colour channels (red, green, and blue) has a value ranging from 0 to 255. When all three colours are at their maximum value with \texttt{(255,255,255)}, the outcome is white. Conversely, when all three are at their minimum value with \texttt{(0,0,0}), the result is black.~\cite{colourRGB}
+Each of those colour channels (red, green, and blue) has a value ranging from 0 to 255. When all three colours are at their maximum value with \texttt{(255,255,255)}, the outcome is white. On the contrary, when all three colour channels are at their minimum value with \texttt{(0,0,0}), the result is black.~\cite{colourRGB}
 
-The three colours are combined in with different values to create the broad spectrum of colours. The red, green and blue values use 8 bits each. This results into $16\, 777\, 216$ possible colours.
+The three colours are combined in with different values to create the broad spectrum of colours. The red, green and blue values use 8 bits each. This results into $16\ 777\ 216$ possible colours.
 
 
 
@@ -376,12 +376,12 @@ A colour diagram that shows the additive model of RGB can be seen in Figure~\ref
 
 
 In this Section, a method for analysing the differences between two images is explained.
-For this, the the colours of the images are subtracted from each other using GNU Image Manipulation Program (GIMP). 
+For this, the colours of the images are subtracted from each other using GNU Image Manipulation Program (GIMP). 
 This method subtracts the colour values of corresponding pixels from two images to show any differences and it is called \textit{grain extract} in GIMP. It is a visual representation of the colour subtraction process, where subtracting identical pixels from each other results in a grey image, indicating no differences.~\cite{gimp}
 
 
 When subtracting one image from another, the pixel values from one image are subtracted from the corresponding pixel values in the other image. 
-The result reflects the relative differences in the colour values between the two subtracted images. For example, areas where the subtracted image has a less intense red tone will result into red pixels after the subtraction and analogical, areas where the subtracted image has a more intense red tone will result into green or blue pixels in the result of the subtraction. The result of the subtracted pixels depends on the difference between the two colour values.
+The result reflects the relative differences in the colour values between the two subtracted images. For example with the subtraction of two red toned images, areas where the subtracted image has a less intense red tone will result into red pixels after the subtraction and analogical, areas where the subtracted image has a more intense red tone will result into green or blue pixels in the result of the subtraction. The result of the subtracted pixels depends on the difference between the two colour values.
 
 Two examples of the colour subtraction with different red values can be seen in Figure~\ref{figure:neonminuslight}. In the Figure, the red colours \texttt{RGB(202, 95, 95)} and \texttt{RGB(255,0,0)} are subtracted from each other with the \textit{grain extract} function. This results in a blue colour (\texttt{RGB(74, 223, 223)}) and a different red tone (\texttt{RGB(181, 33, 33)}). 
 
