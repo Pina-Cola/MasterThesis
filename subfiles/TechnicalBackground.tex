@@ -67,7 +67,7 @@ The \textit{Consumer} represents the endpoint of the data processing pipeline an
 \end{figure}
 
 Applying filters in the Melt framework is a technique for manipulating multimedia content, including videos. 
-Melt filters can perform a wide range of operations, including colour correction, blurring, sharpening, cropping, resizing, and many others. A list of the filters can be found on the Melt website.~\cite{melt_filters}
+Melt filters can perform a wide range of operations, including colour correction, blurring, sharpening, cropping, resizing, and many others. A list of the filters can be found on the Melt website and example applications of a wide selection of visual filters can be seen in Appendix~\ref{appendix:differentMeltFilter}.~\cite{melt_filters}
 
 To apply a filter in Melt, a filter instance has to be created and its parameters have to contain the name of the filter and, if needed, the filter parameters and values for those.
 
@@ -110,7 +110,7 @@ The in the following described code structure refers to the creation of the nece
 	\begin{lstlisting}[language=C, numbers=none, columns=fullflexible, belowskip=0pt, aboveskip=9pt]
 	mlt_factory_init(const char * directory); \end{lstlisting}
 
-	The function takes a directory path as an optional parameter. In this directory, custom modules can bes stored, which can then override the default settings and the \texttt{MLT\_REPOSITORY} environment variable. 
+	The function takes a directory path as an optional parameter. In this directory, custom modules can be stored, which can then override the default settings. % and the \texttt{MLT\_REPOSITORY} environment variable. 
 	
 	
 	%-----------------------------------------------	
