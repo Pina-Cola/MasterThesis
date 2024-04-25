@@ -46,10 +46,10 @@
 	\subsection{Motivation} \label{subsection:motivation}
 	
 	
-	The colouring of a video can evoke different emotions and set an overall tone to the perception of the content. For instance, cool colours like blue can convey cold weather, while warm colours like yellow can create a feeling of warmth and sunlight. 
+	The colouring of a video can evoke different emotions and set an overall tone to the perception of the content. For instance, cool colours such as blue can convey cold weather, while warm colours such as yellow can create a feeling of warmth and sunlight. 
 	The colouring of a video is a powerful tool that can significantly impact the conveyed mood and atmosphere.~\cite{colorgrading1, colorgrading2}
 	
-	
+	% TODO: Only use colograding2 and not 1?
 	
 	
 	\begin{figure}[H]
@@ -78,19 +78,7 @@
 	
 	
 	
-	
-	%1. **Device Variability:** As mentioned earlier, different devices have distinct display characteristics. Users may prefer to adjust colours to compensate for variations in brightness, contrast, or colour rendering among devices.
-	
-	%2. **Personal Preferences:** Everyone perceives colours differently, and personal preferences for visual aesthetics vary. Real-time colour correction empowers users to customize the viewing experience according to their individual tastes.
-	
-	%3. **Environmental Conditions:** Lighting conditions in the viewing environment can impact how colours appear on the screen. Real-time colour correction allows users to adapt to different lighting situations, ensuring optimal visibility and comfort.
-	
-	%4. **Accessibility Considerations:** Users with visual impairments or specific color perception needs may benefit from real-time colour correction to enhance visibility and distinguishability of on-screen elements.
-	
-	
-	%6. **Cultural Differences:** Cultural preferences and associations with colours can vary globally. Real-time colour correction accommodates diverse cultural perspectives, allowing users to align the visual presentation with their cultural preferences.
-	
-	
+
 	
 	
 	
@@ -103,11 +91,10 @@
 	
 	
 	%-------------------------------------------------------------------------------------------------------
-	\subsection{Research Questions} \label{subsection:research% Formulate specific research questions that your thesis aims to answer.
-		TODOquestions}
+	\subsection{Research Questions} \label{subsection:researchquestions}
 	
 	
-	This thesis revolves around the implementation of video colour grading with RGB using Just-In-Time (JIT) techniques. 	
+	This thesis revolves around the implementation of video colour grading with the adjustment of the RGB values using Just-In-Time (JIT) techniques. 	
 	JIT is used for on-the-fly conversion of video files and optimizing them for streaming. 
 	%This process includes the transformation of a video file, potentially one with non-web-friendly formats, into a more suitable format for the playback in web browsers.
 	The demand for efficient and dynamic video processing tools is increasing and with this, the ability to perform on-the-fly colour correction becomes increasingly valuable. 
@@ -148,7 +135,7 @@
 	% Provide context, highlight the problem space, and explain the motivation behind the project.
 	
 	Codemill was founded in 2008 in Ume\aa \ (Sweden).~\cite{codemill_now, codemill_old, codemill_linkedin}
-	As of February 2024, they employ over 60 employees. \cite{codemill} 
+	As of February 2024, they employ over 60 employees.~\cite{codemill} 
 	Codemill is an IT-Consulting company that focussed on the distribution of broadcast media. Their Accurate Video Player that is described in Section~\ref{subsection:accuratevideo}, is part of this thesis and a cloud native software that is being used by the world's leading studios, broadcasters and media service providers.~\cite{codemill_linkedin, codemill_avp}
 	The infrastructure of the system that this thesis evolves around is visualized and explained in Chapter~\ref{section:designandimplementation}.
 	
@@ -278,11 +265,11 @@
 		
 		\item[\textbf{\ref{section:theoreticalfoundationofcolour}}] This Chapter contains the theoretical foundation of colour, including the differences between colour correction and grading and the  different effects that different colours can have to a viewer. Furthermore, the representation of colours using RGB and the comparison of different colour saturations is described.
 		
-		\item[\textbf{\ref{section:technicalbackground}}] In this Chapter the technical background of the project is explained, including an in depth description of the structure and usage of the Melt framework. Additionally, an overview of video streaming components and additional components is given and Protocol Buffers are described.
+		\item[\textbf{\ref{section:technicalbackground}}] In this Chapter the technical background of the project is explained, including an in depth description of the structure and usage of the Melt framework. Additionally, an overview of video streaming components and additional components is given and protocol buffers are described.
 		
-		\item[\textbf{\ref{section:systemrequirementsandspecifications}}] This Chapter outlines the system requirements and specifications for the system to be able to execute the code and it is described how to execute the code.
+		\item[\textbf{\ref{section:systemrequirementsandspecifications}}] This Chapter outlines the system requirements and specifications for the system to be able to execute the code. Additionally it is described how to execute the code.
 		
-		\item[\textbf{\ref{section:designandimplementation}}] Design and Implementation are described in this Chapter. The architecture of the system is introduced, describing the frontend and backend of the system: Accurate Player and JIT-WebRTC. Furthermore, different Melt filters for RGB adjustment are tested and compared and the implementation of the RGB adjustment is described.
+		\item[\textbf{\ref{section:designandimplementation}}] The design and implementation are described in this Chapter. The architecture of the system is introduced, describing the frontend and backend of the system: Accurate Player and JIT-WebRTC. Furthermore, different Melt filters for RGB adjustment are tested and compared. In the end of the Chapter the implementation of the RGB adjustment is described.
 		
 		\item[\textbf{\ref{section:experimentalevaluationanddiscussion}}] This Chapter presents the comparison of video colour grading results with Melt filters, that were applied on different platforms. The compared platforms are the Accurate Player RGB adjustment, that was implemented in this thesis project with the locally installed Melt framework and KDEN Live.
 		
