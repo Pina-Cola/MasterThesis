@@ -360,9 +360,9 @@ KDEN Live is a video editing software, that offers a wide range of features such
 \label{subsection:protocolbuffer}
 
 
-Protocol buffers are developed by Google. They compress data for sending it faster over a network. The protocol buffer provides an efficient binary data format. The structure of this format is defined in a \texttt{.proto} file. Those files are used to generate code for reading and writing to the protocol buffer. Because of the compression, it is useful for sending data in networks.~\cite{protobuffer}
+Protocol buffers are a binary data format developed by Google to compress data for sending it efficiently and faster over a network. The structure of this format is defined in a \texttt{.proto} file. Those files are used to generate code for reading and writing to the protocol buffer.~\cite{protobuffer}
 
-In this project, Protocol Buffers version 2 (proto2) was used. In the first line of the \texttt{.proto} file, the syntax is defined with the proto version that is being used. This can be seen for proto2 in the following:
+In this project, protocol buffers version 2 (proto2) were used. In the first line of the \texttt{.proto} file, the syntax is defined with the proto version that is being used. This can be seen for proto2 in the following:
 
 \begin{lstlisting}[style=protobufStyle, numbers=none]
 	syntax = "proto2";
@@ -416,7 +416,7 @@ The example message represents a person's information, including their name, age
 	}
 \end{lstlisting}
 
-Person is the name of the message and name, age, and email are the fields of the message with the data types \texttt{string} and \texttt{int32}.
+Person is the label of the message and name, age, and email are the fields of the message with the data types \texttt{string} and \texttt{int32}.
 The keywords \texttt{required} and \texttt{optional} define whether the field is mandatory or optional.
 The numbers $1$, $2$ and $3$ are the fields unique identifiers.
 
