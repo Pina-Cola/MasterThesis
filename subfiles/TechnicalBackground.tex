@@ -272,12 +272,12 @@ The in the following described code structure refers to the creation of the nece
 
 In this Section, an overview over video streaming components, that are relevant for this thesis project, is given.
 
-Transcoding is the conversion of one digital data format into another.~\cite{transcoding}
-One form of video transcoding is the compression of videos with h.264.
+Transcoding is the conversion of one digital data format into another.
+One form of video transcoding is the compression of videos with h.264:
 The video compression standard h.264 can be used to compress and decompress video streams in the context of real-time communication.~\cite{transcoding, h264}
 	
 
-File formats like Audio Video Interleave (AVI) often serve as input files for video transcoding processes.
+File formats such as Audio Video Interleave (AVI) often serve as input files for video transcoding processes.
 AVI can contain audio and video information to allow synchronized playback of audio and video components. 
 It is a container format, which means that it can contain multiple streams of audio and video data, along with other multimedia data such as subtitles.~\cite{avi}
 
@@ -285,10 +285,8 @@ It is a container format, which means that it can contain multiple streams of au
 AVI files can undergo transcoding to optimize their compression, compatibility, or quality, with h.264 being a commonly used codec for such purposes.~\cite{h264}
 
 
-Web Real-Time Communication (WebRTC), is a free, open-source project for real-time communication between web browsers and other applications, that was developed by Google in 2011. It enables direct peer-to-peer (P2P) communication without the need for intermediary servers.~\cite{webrtc}
-	
-
-WebRTC supports various video codecs, including h.264, which is used for video conferencing, streaming, and other real-time applications. The video streams exchanged between the browser and the backend are encoded and decoded using h.264.~\cite{h264}
+Web Real-Time Communication (WebRTC), is a free, open-source project for real-time communication between web browsers and other applications, that was developed by Google in 2011. It enables direct peer-to-peer (P2P) communication without the need for intermediary servers.
+WebRTC supports various video codecs, including h.264, which is used for video conferencing, streaming, and other real-time applications. This means, that the video streams exchanged between the browser and the backend are encoded and decoded using h.264.~\cite{webrtc, h264}
 
 
 
@@ -309,12 +307,17 @@ WebRTC supports various video codecs, including h.264, which is used for video c
 %\subsubsection*{REST} 
 
 
-Representational State Transfer (REST) is an architecture for network applications. A REST Application Programming Interface (API) exposes a set of endpoints (URLs) that allow communication between different software systems over the internet with hypertext transfer protocol (HTTP) methods.~\cite{IEEE_Rest, webservice, Nodejs_Rest}
+Representational State Transfer (REST) is an architecture for network applications. A REST Application Programming Interface (API) exposes a set of endpoints, which are Uniform Resource Locators (URLs) that serve as addresses for communication between different software systems over the internet using hypertext transfer protocol (HTTP) methods.~\cite{IEEE_Rest, webservice, Nodejs_Rest}
 
 
 
 	
-Just-In-Time (JIT), in the context of video streaming, refers to a dynamic software solution employed for real-time video transformation. It is used for on-the-fly conversion of video files, optimizing them for streaming. The process includes the transformation of a video file, potentially one with non-web-friendly formats, into a more suitable format for the playback in web browsers.~\cite{JIT_IEEE}
+Just-In-Time (JIT), in the context of video streaming, refers to a dynamic software solution employed for real-time video transformation. 
+It is used for on-the-fly conversion of video files, optimizing them for streaming. The process includes the transcoding of a video file, potentially one with non-web-friendly formats, into a more suitable format for the playback in web browsers.
+JIT operates by dynamically preprocessing of video content as it is requested by users, in opposition to pre-converting video files into formats that are suitable for streaming or browsers in advance. 
+This approach allows for greater flexibility and efficiency, as it minimizes the need for storage space and allows real-time adjustment such as the adjustment of the RGB colours that is implemented and described in this thesis project.
+Additionally, JIT allows to adjust video resolution, bitrate, and other parameters in real-time to adapt the results to the user's bandwidth.~\cite{JIT_IEEE}
+
 
 
 
