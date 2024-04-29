@@ -196,17 +196,13 @@ This is possible, because the Accurate Player uses JIT techniques to dynamically
 
 The following description of the system is based on the code base and the information from the \texttt{README} file.~\cite{RM_Backend}
 JIT-WebRTC is a live transcoder with a WebRTC output. As described in Section~\ref{subsection_OverviewVideoStreamingComponents}, transcoding is the conversion of one digital data format into another.~\cite{transcoding}
+The backend consists of three components: The Melt framework, \texttt{main.py} and a session service.
 
 
-
-The backend consists of three components: Melt, \texttt{main.py} and a session service.
-The system's frontend was described in Section~\ref{subsection:accuratevideo}.
-In the following, the data flow between the system's components is described.
-
-The user initiates a session through the browser, which then initiates the \texttt{main.py} script.
-Control commands are then sent from the browser to \texttt{main.py} with a WebRTC data channel.
-From the \texttt{main.py}, the control commands get sent to Melt via \texttt{stdout} (standard output) and \texttt{stdin} (standard input). These are the default input and output channels, that allow the Python script communication with other components.
-Data written to \texttt{stdout} by the Python code can be captured or redirected and data from an external source can be read from \texttt{stdin} by the Python script.~\cite{python} The control commands are highlighted in Figure~\ref{figure:controlcommands}.
+The user initiates a session through the browser, which then initiates the \texttt{main.py} script. The system's frontend that is displayed in the browser was described in Section~\ref{subsection:accuratevideo}.
+Control commands are then sent from the browser to the python backend with a WebRTC data channel.
+From the \texttt{main.py} file, the control commands get sent to Melt via \texttt{stdout} (standard output) and \texttt{stdin} (standard input). These are the default input and output channels, that allow the python script communication with other components.
+Data written to \texttt{stdout} by the python code can be captured or redirected and data from an external source can be read from \texttt{stdin} by the python script.~\cite{python} The data flow of the control commands are highlighted in Figure~\ref{figure:controlcommands}.
 
 \begin{figure}[H]
 	\centering
@@ -216,7 +212,7 @@ Data written to \texttt{stdout} by the Python code can be captured or redirected
 \end{figure}
 
 
-The Melt framework then sends an AVI stream with the rendered video and audio, status messages and metadata to the \texttt{main.py}. This is highlighted in Section~\ref{figure:avimetadata}.
+As a response, the Melt framework sends an AVI stream with the rendered video and audio, status messages and metadata to the python backend. This is highlighted in Section~\ref{figure:avimetadata}.
 AVI is a file format that can contain audio and video information to allow synchronized playback of audio and video components, as described in Section~\ref{subsection_OverviewVideoStreamingComponents}.~\cite{avi} 
 
 \begin{figure}[H]
@@ -227,7 +223,7 @@ AVI is a file format that can contain audio and video information to allow synch
 \end{figure}
 
 
-Then, the audio and video from the incoming AVI stream is extracted by the \texttt{main.py} script to then encode it for sending it to the browser with WebRTC. The WebRTC connection serves as a direct communication channel between the browser and the backend, enabling real-time data exchange, involving audio, video, or other data streams. 
+The audio and video from the incoming AVI stream is extracted by the \texttt{main.py} script to encode it for sending it to the browser with WebRTC. The WebRTC connection serves as a direct communication channel between the browser and the backend, enabling real-time data exchange, involving audio, video, or other data streams. 
 
 
 %It has the ability to extract specific channels from the rendered audio, to %be rendered to an stereo stream for WebRTC.
@@ -248,7 +244,7 @@ receives metadata from the \texttt{main.py} script and sends commands and respon
 \end{figure}
 
 The Melt framework and the \texttt{main.py} script are started once for each JIT session.
-The java-based \texttt{Session} service is designed to support the machine-to-machine interaction between the browser and the backend (\texttt{main.py} and Melt). 
+The java-based \texttt{Session} service is designed to support the machine-to-machine interaction between the browser and the python backend. 
 The \texttt{Session} service exposes a REST API (described in Section~\ref{subsection_OverviewVideoStreamingComponents}) for initiating a JIT session. 
 %
 % Additionally, it leverages AWS, specifically utilizing the Auto Scaling Group (ASG) feature to manage a cluster of instances dynamically, ensuring scalability and efficient distribution of JIT sessions across the instances in the cluster.
@@ -271,8 +267,8 @@ The \texttt{Session} service exposes a REST API (described in Section~\ref{subse
 %* [`main.py`](jit/README.md)
 %* [`session`](session/README.md)
 %
-
-For development and quick testing without the session service, JIT can be started in a Docker container. This has been done for the implementation for this project.
+%
+For development and testing without the session service, JIT can be started in a Docker container. This has been done for the implementation for this project.
 
 
 %\begin{figure}[H]
