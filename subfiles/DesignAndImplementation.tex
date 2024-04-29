@@ -24,8 +24,8 @@
 \newpage
 \section{Design and Implementation} \label{section:designandimplementation}
 
-In this Chapter, the system architecture and the implementation is explained. First a brief overview over the architecture is given in Section~\ref{subsection:architecturedesign} and then the frontend and backend are described in more detail in Section~\ref{subsection:accuratevideo} and Section~\ref{subsection:jit-webrtc}.
-For the application of a Melt filter, different filters were compared to select the most suitable option in Section~\ref{subsection:meltfilter}.
+In this Chapter, the system architecture and the implementation is explained. First a brief overview over the architecture is given in Section~\ref{subsection:architecturedesign} and then the frontend and backend are described in more detail (Section~\ref{subsection:accuratevideo} and Section~\ref{subsection:jit-webrtc}).
+For the application of a Melt filter, different filters were compared to select the most suitable option in Section~\ref{subsection:meltfilter}. Finally, the implementation is described with examples and code extractions in Section~\ref{subsection:implementation}.
 
 
 
@@ -33,24 +33,16 @@ For the application of a Melt filter, different filters were compared to select 
 
 %-------------------------------------------------------------------------------------------------------
 \subsection{Architecture Design} \label{subsection:architecturedesign}
-% Describe the overall architecture of the system.
-
-%Provide an overview of the system architecture and design. This could include high-level diagrams, such as system flowcharts or architecture diagrams, to illustrate the structure of the software.
-%Introduce the existing codebase and its components. Briefly describe the major modules or sections of the code.
-%Explain the design decisions made during the development process. Discuss the rationale behind the chosen architecture, programming languages, and frameworks.
-%Present any relevant design patterns or paradigms applied in the codebase.
-%Provide a detailed description of how the existing code works. This involves explaining the functionality of key modules or sections, the flow of data, and how different components interact.
-%If applicable, discuss any algorithms or data structures implemented in the codebase.
-%Highlight any challenges or considerations encountered during the implementation phase and how they were addressed.
-%Include code snippets, illustrations, or diagrams to enhance the understanding of your codebase.
-
-The system consists of four components: the frontend (browser), Melt, \texttt{main.py}, and a session service. The frontend is described in Section~\ref{subsection:accuratevideo} and the backend (Melt, \texttt{main.py} and session service) will be described in more detail in Section~\ref{subsection:jit-webrtc}. 
-In those Sections, the functionality of the system before the implementation of the colour grading is described. The implementation is described in Section~\ref{subsection:implementation}.
 
 
-The Python backend communicates with the Melt framework to use its video editing, processing and transcoding functionalities. The Melt framework was described in Section~\ref{subsection:melt}. Real-time communication is implemented through WebRTC, with Melt used for the manipulation of the video content. 
-The frontend, running on Node.js, executes JavaScript code. 
+The system consists of four components: The frontend that is displayed in the browser, \texttt{main.py} as the python backend, the Melt framework, and a session service. The frontend is described in Section~\ref{subsection:accuratevideo} and the backend components (\texttt{main.py}, the Melt framework and session service) will be described in more detail in Section~\ref{subsection:jit-webrtc}. The structure and usage of the Melt was introduced in Section~\ref{subsection:melt}.
+
+% In those Sections, the functionality of the system before the implementation of the colour grading is described. The implementation is described in Section~\ref{subsection:implementation}.
+
 The system architecture can be seen in Figure~\ref{figure:SA}.
+A session is initiated through the browser with the session service, which initiates the \texttt{main.py} script.
+The Python backend communicates with the Melt framework to use its video editing, processing and transcoding functionalities. The real-time communication is implemented through a WebRTC channel.
+
 
 
 
@@ -62,7 +54,7 @@ The system architecture can be seen in Figure~\ref{figure:SA}.
 \end{figure}
 
 
-For development and quick testing without the session service, the backend can be started in a Docker container. This has been done for the implementation for this project.
+For development and testing without the session service, the backend can be started in a Docker container. This has been done for the implementation for this thesis project.
 
 
 
@@ -76,7 +68,7 @@ For development and quick testing without the session service, the backend can b
 
 The following description of the system is based on the code base and the information from the \texttt{README} file.~\cite{RM_Frontend}
 
-The frontend uses Node.js as its runtime environment with yarn to manage project dependencies and packages. It is developed using HyperText Markup Language (HTML), Cascading Style Sheets (CSS), and JavaScript (JS) to create the user interface.
+The frontend is displayed in the browser and uses Node.js as its runtime environment with yarn to manage project dependencies and packages. It is developed using HyperText Markup Language (HTML), Cascading Style Sheets (CSS), and JavaScript (JS) to create the user interface.
 
 
 \begin{figure}[H]
@@ -88,8 +80,8 @@ The frontend uses Node.js as its runtime environment with yarn to manage project
 
 
 \hypersetup{urlcolor=black}
-The User Interface when playing a video in the Accurate Player at \url{http://localhost:5000/controls/jit/index.html} can be seen in Figure~\ref{figure:AV_before}. 
-First, a yellow field can be seen. After clicking this, a loading screen is show and then the video can be started with clicking in the play button.
+The user interface when playing a video in the Accurate Player can be seen in Figure~\ref{figure:AV_before}. This can be found under \url{http://localhost:5000/controls/jit/index.html} when executing the code as described in Section~\ref{subsection:runninghtecode}.
+First, a yellow field can be seen (shown on the left in Figure~\ref{figure:AV_before}). After clicking this, a loading screen is shown (in the middle in Figure~\ref{figure:AV_before}) and then the video can be started with clicking in the play button. The playing of a video can be seen on the right in Figure~\ref{figure:AV_before}.
 
 
 \begin{figure}[H]
@@ -103,32 +95,94 @@ First, a yellow field can be seen. After clicking this, a loading screen is show
 		\label{figure:AV_before}
 	\end{center}
 \end{figure}
+%
+%
+%
+%
+%
+%
+%
+%
+%
+\sodef\spaceout{}{0pt plus 1fil}{.4em plus 1fil}{0pt}
+%
+In addition to this, the user interface of the Accurate Player has multiple control fields, which can be seen in Figure~\ref{figure:qualityslider}, \ref{figure:subtitles} and \ref{figure:othercontrols} and will be further described in the 
+%
+\begin{minipage}{0.5\textwidth}
+%	
+\vspace*{0.7em}
+following.
 
+	
+Permanently fixed in the top left corner of the Accurate Player is a window, that contains a slider to adjust the quality of the video in real time. This function does work for a video that is currently playing and for a frame of a video that is currently pause as well. This can be seen in Figure~\ref{figure:qualityslider}. 
+In this project, the sliders for the RGB colour grading will be added in this windows, too. This is described in Section~\ref{subsection:implementation}.
 
-In addition to this, multiple control fields can be seen. Permanently fixed in the top left corner is a windows, that contains a slider to adjust the quality of the video in real time. In this project, the sliders for the RGB colour grading will be added there. This is described in Section~\ref{subsection:implementation}.
-On the top left corner, two icons to expand further menus can be found. This includes one menu for muting the audio and disabling the subtitles and a menu with further settings, inlcuding the time format.
-Those control fields are shown in Figure~\ref{figure:AV_details_before}.
-
-
+\end{minipage}\begin{minipage}{0.05\textwidth}
+	\ 
+\end{minipage}\begin{minipage}{0.45\textwidth}
+	
 \begin{figure}[H]
 	\begin{center}
-		\cutpic{0.3cm}{0.3\textwidth}{qualityslider.png}
-		\cutpic{0.3cm}{0.3\textwidth}{AV_settings.png}
-		\cutpic{0.3cm}{0.3\textwidth}{AV_settings2.png}
-		\caption[Screenshots of the frontend.]{Screenshots of the frontend.}
-		\label{figure:AV_details_before}
+		\cutpic{0.3cm}{0.9\textwidth}{qualityslider.png}
+		\caption[Quality slider in the frontend.]{Quality slider in the frontend.}
+		\label{figure:qualityslider} 
 	\end{center}
 \end{figure}
+% \vfill
+\end{minipage}
+
+\vspace*{0.2em}
+\makebox[\linewidth][l]{\spaceout{On the top right corner of the Accurate Player window that is displayed in the}}
+
+\begin{minipage}{0.5\textwidth}
+% \vspace*{0.7em}	
+	\begin{figure}[H]
+		\begin{center}
+			\cutpic{0.3cm}{0.9\textwidth}{AV_settings.png}
+			\caption[Subtitle and audio control field in the frontend.]{Subtitle and audio control field in the frontend.}
+			\label{figure:subtitles}
+		\end{center}
+	\end{figure}
+\vfill
+\end{minipage}\begin{minipage}{0.05\textwidth}
+	\ 
+\end{minipage}\begin{minipage}{0.45\textwidth}
+browser, two icons to expand further menus can be found. 
+This includes a menu for subtitle and audio setting, which is divided into two parts for those settings. This control window can be seen in Figure~\ref{figure:subtitles}. It enables the audio functionalities for muting the audio or changing to a different audio track, which can be used for example if a video is available in different languages to switch between the languages. These options can be seen in Figure~\ref{figure:subtitles} on the right part of the control menu.
+The left side of the window allows for enabling and disabling specific subtitles from a list of available subtitles. 
+%
+%
+\end{minipage}
+
+\begin{minipage}{0.45\textwidth}
+	
+Additionally, a menu with further settings can be found when expanding the menus. This menu can be seen in Figure~\ref{figure:othercontrols} and expands when clicking on the \textit{settings} symbol. Here, further settings, including the time format, the setting of keyboard shortcuts or the fading of the control options when playing the video can be adjusted. All of the above described menus for settings enhance the level of personalization available to the user. The customization options allows the 
+%
+%
+\end{minipage}\begin{minipage}{0.05\textwidth}
+	\ 
+\end{minipage}\begin{minipage}{0.5\textwidth}
+%
+%
+\begin{figure}[H]
+	\begin{center}
+		\cutpic{0.3cm}{0.9\textwidth}{AV_settings2.png}
+		\caption[Window for settings in the frontend.]{Window for settings in the frontend}
+		\label{figure:othercontrols}
+	\end{center}
+\end{figure}
+\vfill
+\end{minipage}
+%
+
+\vspace*{-0.3em}
+user to adapt the Accurate Player to their preferences and expectations. 
 
 
-TODO: formats of JIT, describe JIT situation
-
-%  With Accurate Player JIT, it becomes feasible to play formats like mxf and prores directly in web browsers, bypassing the necessity of converting them into web-friendly formats beforehand.
-
-% And also, that by performing color grading/correction directly on formats that supports larger bit depths, wider color gamuts etc before they are converted to a web friendly format we can achieve a better result with more precision.
+With JIT techniques in the Accurate Player it is possible to play different formats in the browser without the transcoding into a browser friendly format.
+This is possible, because the Accurate Player uses JIT techniques to dynamically handle the playback of different video formats on-the-fly, instead of relying on pre-transcoded video files. The video data is being processed in real-time, allowing for on-the-fly adjustment like the quality slider or the RGB colour adjustment that is being implemented for this thesis project.
 
 
-TODO: write about quality slider in the context of JIT
 
 
 
