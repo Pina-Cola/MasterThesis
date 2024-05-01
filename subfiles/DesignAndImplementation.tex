@@ -451,7 +451,7 @@ In the following, the extracted frames after the adjustment of the red value of 
 %--------------------------------------------------------------------------------------
 \subsubsection*{Filter \texttt{avfilter.colorbalance}}
 
-The parameters of the filter \texttt{avfilter.colorbalance} take input values as a float between $-1$ and $1$. The filter has individual parameters to set the shadows, mid tones and highlights per colour (red, green and blue). The results of the different parameters set on the maximum value of $1$ for adjusting the red shadows, mid tones and highlights can be seen in Figure~\ref{figure:rs1rm1rh1}.
+The parameters of the filter \texttt{avfilter.colorbalance} take input values as a floats between $-1$ and $1$. The filter has individual parameters to set the shadows, mid tones and highlights per colour (red, green and blue). The results of the different parameters set on the maximum value of $1$ for adjusting the red shadows, mid tones and highlights can be seen in Figure~\ref{figure:rs1rm1rh1}.
 
 \begin{figure}[H]
 	\begin{center}
@@ -480,8 +480,8 @@ To achieve an even colouring result of the frame, which would be applicable for 
 	\begin{center}
 		\cutpic{0.3cm}{0.45\textwidth}{rsrmrh_snow.png}
 		\cutpic{0.3cm}{0.45\textwidth}{rsrmrh_man.png}
-		\label{figure:rsrmrh1}
 		\caption[Parameters set to $1$ for red using the \texttt{avfilter.colorbalance} filter.]{All parameters for the adjustment of the red tones with the value $1$ from the filter \texttt{avfilter.colorbalance} applied: \texttt{av.rs=1}, \texttt{av.rm=1} and \texttt{av.rh=1}.}
+		\label{figure:rsrmrh1}
 	\end{center}
 \end{figure}
 
@@ -493,8 +493,8 @@ This results in yellow toned pictures, that can be seen in Figure~\ref{figure:cb
 	\begin{center}
 		\cutpic{0.3cm}{0.45\textwidth}{cb_yellow.png}
 		\cutpic{0.3cm}{0.45\textwidth}{cb_yellow_man.png}
-		\label{figure:cb_yellow}
 		\caption[Red and green parameters set to $1$ with \texttt{avfilter.colorbalance}.]{All parameters for red and green with the value $1$  from the filter \texttt{avfilter.colorbalance} applied: \texttt{av.rs=1}, \texttt{av.rm=1}, \texttt{av.rh=1}, \texttt{av.gs=1}, \texttt{av.gm=1} and \texttt{av.gh=1}.}
+		\label{figure:cb_yellow}
 	\end{center}
 \end{figure}
 
@@ -514,7 +514,7 @@ This results in yellow toned pictures, that can be seen in Figure~\ref{figure:cb
 
 \subsubsection*{Filter \texttt{avfilter.colorchannelmixer}}
 
-The parameters of the filter \texttt{avfilter.colorchannelmixer} take input values as float between $-2$ and $2$. The filter has individual parameters to set the red, green, blue or alpha gain for the red, green, blue or alpha channel. The application of the maximum value of 2 for the red gain on the red channel, alpha gain on the red channel and red gain on the alpha channel can be seen in Figure~\ref{figure:rrraar}.
+The parameters of the filter \texttt{avfilter.colorchannelmixer} take input values as floats between $-2$ and $2$. The filter has individual parameters to set the red, green, blue or alpha gain for the red, green, blue or alpha channel. The application of the maximum value of 2 for the red gain on the red channel, alpha gain on the red channel and red gain on the alpha channel can be seen in Figure~\ref{figure:rrraar}.
 
 \begin{figure}[H]
 	\begin{center}
@@ -538,28 +538,29 @@ The parameters of the filter \texttt{avfilter.colorchannelmixer} take input valu
 \end{figure}
 
 
-In Figure~\ref{figure:rrbrgr}, the red gain on the red, blue and green channel is applied. The parameter setting are \texttt{av.rr=2}, \texttt{av.gr=2} and \texttt{av.br=2}.
+Additionally, in Figure~\ref{figure:rrbrgr}, the red gain on the red, blue and green channel is applied simultaneously. The parameter settings for this are \texttt{av.rr=2}, \texttt{av.gr=2} and \texttt{av.br=2}.
 
 
 \begin{figure}[H]
 	\begin{center}
 		\cutpic{0.3cm}{0.45\textwidth}{rrbrgr_snow.png}
 		\cutpic{0.3cm}{0.45\textwidth}{rrbrgr_man.png}
-		\label{figure:rrbrgr}
 		\caption[Red gain set to $2$ with \texttt{avfilter.colorchannelmixer}.]{Red gain with the value $2$ for the red, green and blue channel from the filter \texttt{avfilter.colorchannelmixer} applied: \texttt{av.rr=2}, \texttt{av.gr=2} and \texttt{av.br=2}.}
+		\label{figure:rrbrgr}
 	\end{center}
 \end{figure}
 
-
-To evaluate if and how the overlay of different filters works, the values for the green and red gain on the green and red channel are set to $2$ and applied together. The parameters that are applied are \texttt{av.rr=2} and \texttt{av.gg=2}. This results in yellow toned pictures.
+To assess the effects of the combined colour adjustment of multiple colours for the \texttt{avfilter.colorchannelmixer} filter, the values for the green gain on the green channel and the red gain on the red channel are set to the maximum of $2$ and applied simultaneously. 
+The parameters that are applied are \texttt{av.rr=2} and \texttt{av.gg=2}.
+This results in yellow toned pictures, that can be seen in Figure~\ref{figure:rrgg}.
 
 
 \begin{figure}[H]
 	\begin{center}
 		\cutpic{0.3cm}{0.45\textwidth}{rrgg_snow.png}
 		\cutpic{0.3cm}{0.45\textwidth}{rrgg_man.png}
+		\caption[Red and green gain set to $2$ with \texttt{avfilter.colorchannelmixer}.]{Red gain on red channel and green gain on green channel with the value $2$ from the filter \texttt{avfilter.colorchannelmixer} applied: \texttt{av.rr=2} and \texttt{av.gg=2}.}
 		\label{figure:rrgg}
-		\caption[Red and green gain set to $2$ with \texttt{avfilter.colorchannelmixer}.]{Red and green gain on the red and green channel with the value $2$ from the filter \texttt{avfilter.colorchannelmixer} applied: \texttt{av.rr=2} and \texttt{av.gg=2}.}
 	\end{center}
 \end{figure}
 
@@ -572,7 +573,7 @@ To evaluate if and how the overlay of different filters works, the values for th
 %--------------------------------------------------------------------------------------
 \subsubsection*{Filter \texttt{frei0r.coloradj\_RGB}}
 
-The parameters of this filter take input values as float between $0$ and $1$. It has individual parameters to set the red, green, blue value. The application of the red parameters can be seen in Figure~\ref{figure:r}.
+The parameters of the filter \texttt{frei0r.coloradj\_RGB} take input values as floats between $0$ and $1$. The filter has individual parameters to set the red, green, blue value for RGB adjustment. The application of the red parameter with the maximum value of $1$ can be seen in Figure~\ref{figure:r}.
 
 
 \begin{figure}[H]
@@ -584,9 +585,7 @@ The parameters of this filter take input values as float between $0$ and $1$. It
 	\end{center}
 \end{figure}
 
-
-
-To evaluate if and how the overlay of different filters works, the values for the green and red parameter are set to $1$ and applied together. The parameters that are applied are \texttt{R=1} and \texttt{G=1}. This results in yellow toned pictures, which can be seen in Figure~\ref{figure:rg}.
+To assess the effects of the combined colour adjustment of multiple colours for the \texttt{frei0r.coloradj\_RGB} filter, the values for the green and red parameter are set to the maximum value $1$ and applied simultaneously. The applied parameters are \texttt{R=1} and \texttt{G=1}. This results in yellow toned pictures, which can be seen in Figure~\ref{figure:rg}.
 
 
 \begin{figure}[H]
@@ -607,7 +606,7 @@ To evaluate if and how the overlay of different filters works, the values for th
 
 
 
-The Melt filters \texttt{avfilter.colorbalance}, \texttt{avfilter\-.colorchannelmixer} and \texttt{frei\-0r\-.coloradj\_RGB} are compared regarding the colour vibrance and intensity of the result. This regards the colour intensity of a single colour value change (red, green and blue) and mixed colurs.
+The Melt filters \texttt{avfilter.colorbalance}, \texttt{avfilter\-.colorchannelmixer} and \texttt{frei\-0r\-.coloradj\_RGB} are compared regarding the colour vibrance and intensity of the result. This regards the colour intensity of a single colour value adjustment (red) and a mixed colur (yellow).
 
 % For the comparison of the result of the single colour filter application, the following parameters per filter are chosen:
 
@@ -632,12 +631,11 @@ In the following, the results of the change of a single colour (red) for each of
 
 \end{figure}
 
-In Figure~\ref{figure:redcomp} can be seen, that the colour of the \texttt{avfilter.colorbalance} is the most intense and vibrant. This leads to a broader colour range and more options for personalisation.
+In Figure~\ref{figure:redcomp} it can be seen, that the red tone of the frames with the filter \texttt{avfilter.colorbalance} applied is the most intense and vibrant. This leads to a broader colour range and more options for personalisation.
 
 
 
-
-In the following, the results of the application of two mixed colours for each of the filters can be seen. The chosen colours are red and green, whch should lead to a yellow result.
+In the following, the results of the application of two mixed colours for each of the filters can be seen. The chosen colours are red and green, which leads to a yellow result.
 
 \begin{figure}[H]
 	\centering
