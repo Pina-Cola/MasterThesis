@@ -709,7 +709,7 @@ For comparison, the original frame 3447 from the test video file and can be seen
 \subsection{Implementation} \label{subsection:implementation}
 % Discuss the technologies and tools chosen for the implementation.
 
-In this Section, the implementation is described. This is separated into three parts, that are described individually: Frontend, proto buffer and the application of the filter in the backend.
+In this Section, the implementation is described. This is separated into three parts, that are described individually: The frontend, the proto buffer and the application of the filter in the backend. For the implementation, sliders for each colour (red, green and blue) are added in the frontend. The input value of those sliders are then send with a proto buffer to the backend, where the values are used to set the parameters of the Melt filter \texttt{avfilter.colorbalance} before applying the filter. This results in user-sided the RGB adjustment of the video colouring, that is being played back in the frontend.
 
 %-----------------------------------------------------------------------------------------------------------
 \subsubsection*{Frontend}
