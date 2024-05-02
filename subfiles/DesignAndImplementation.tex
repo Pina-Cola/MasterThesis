@@ -610,7 +610,7 @@ The Melt filters \texttt{avfilter.colorbalance}, \texttt{avfilter\-.colorchannel
 
 % For the comparison of the result of the single colour filter application, the following parameters per filter are chosen:
 
-In the following, the results of the change of a single colour (red) for each of the filters can be seen:
+In the following in Figure~\ref{figure:redcomp}, the results of the change of a single colour (red) for each of the filters can be seen as a side-by-side comparison:
 
 \begin{figure}[H]
 	\centering
@@ -631,11 +631,11 @@ In the following, the results of the change of a single colour (red) for each of
 
 \end{figure}
 
-In Figure~\ref{figure:redcomp} it can be seen, that the red tone of the frames with the filter \texttt{avfilter.colorbalance} applied is the most intense and vibrant. This leads to a broader colour range and more options for personalisation.
+In Figure~\ref{figure:redcomp} it can be seen, that the red tone of the frames with the filter \texttt{avfilter.colorbalance} applied is the most intense and vibrant. This makes the filter \texttt{avfilter.colorbalance} a suitable choice for the implementation of the RGB colour adjustment with sliders in the frontend, because it leads to a broader colour range and more options for personalisation.
 
 
 
-In the following, the results of the application of two mixed colours for each of the filters can be seen. The chosen colours are red and green, which leads to a yellow result.
+In the following in Figure~\ref{figure:yellowcomp}, the results of the application of two mixed colours for each of the filters can be seen as a side-by-side comparison. The chosen colours are red and green, which leads to a yellow result.
 
 \begin{figure}[H]
 	\centering
@@ -657,20 +657,21 @@ In the following, the results of the application of two mixed colours for each o
 	
 \end{figure}
 
-In Figure~\ref{figure:yellowcomp} can be seen, that the colour of the \texttt{avfilter.colorbalance} is the most intense and vibrant again. This leads to a broader colour range and more options for personalisation.
+In Figure~\ref{figure:yellowcomp} can be seen, that the colour of the \texttt{avfilter.colorbalance} is the most intense and vibrant again, which confirms the results of the previous comparison regarding the colour red. This makes the filter \texttt{avfilter.colorbalance} a suitable choice for the implementation of the RGB colour adjustment with sliders in the frontend, because it leads to a broader colour range and more options for personalisation. The filter \texttt{avfilter.colorbalance} shows the most intense colour results for single colour adjustments as well as for mixed colours.
 
-In the above shown cases cases, the results of the \texttt{avfilter.colorchannelmixer} filter have more depth and look more dynamic, because the colour gain was only executed on the corresponding colour channels. This might be an aspect, that lets the user achieve more aesthetically pleasing results but the overall intensity of the colours is lower. In addition to this, the expected behaviour of a slider for the RGB colour change might not be to only change the colour intensity on one colour channel. Based on this, the filter \texttt{avfilter.colorbalance} seems to deliver the most fitting results in those criteria.
-
-
+In the above shown tests, that are shown in the middle in Figure~\ref{figure:redcomp} and \ref{figure:yellowcomp}, the results of the \texttt{avfilter.colorchannelmixer} filter appear to have more depth and look more dynamic, because the colour gain was only executed on the respective colour channels. This can be an aspect, that lets the user achieve more aesthetically pleasing results but the overall intensity of the colours is lower. In addition to this, the expected behaviour of a sliders for RGB colour adjustment might not be to only change the colour intensity on one the respective colour channel. Based on this, the filter \texttt{avfilter.colorbalance} seems to deliver the most fitting results in those criteria.
 
 
-The \texttt{avfilter.colorbalance} filter leads to the most vibrant and intense results of the above listed selection of filters. Additionally it has the option to adapt the shadows, mid tones and highlights individually, which creates the option for more (pre)adjustment of the results in the backend and introducing more sliders or options for the user for adjustment as future work.
-But on the downside, to tone the whole frame, three instead of one parameter have to be applied -- for the shadows, mid tones and highlights.
-When applying this with and without JIT, no performance difference was noticeable but for a accurate evaluation of this, performance tests would have to be performed and the implementations of the filters would need to be examined.
+The results of the filter \texttt{frei0r.coloradj\_RGB}, that can be seen on the right in Figure~\ref{figure:redcomp} and \ref{figure:yellowcomp} seem to have darker and less vibrant results, that do not present the expected colours as accurately as the other two filter. This does not make it a fitting choice for the RGB adjustment with sliders.
 
-Examining and evaluating the different options of the Melt filters is an interesting option for future work or for Codemill to implement. For this thesis project, the filter \texttt{avfilter.colorbalance} will be used, because it results look the most vibrant.
 
-In Figure~\ref{figure:septopus}, the 7 colour combinations of the subtractive colour model can be seen as the application of the filter \texttt{avfilter.colorbalance}. for this, the RGB values were either set to $1.0$ or $0$, which are the maximum and default values of this filter. 
+The \texttt{avfilter.colorbalance} filter leads to the most vibrant and intense results of the above listed selection of filters. Additionally it has the option to adapt the shadows, mid tones and highlights individually, which creates the option for more preadjustments of the results in the backend or for introducing more sliders or options for the user sided adjustment as future work.
+But on the downside, to tone the whole frame evenly, three instead of one parameter have to changed and applied -- for the shadows, mid tones and highlights for each colour slider.
+When applying this with and without JIT, no performance difference was noticeable but for a accurate evaluation of this, performance tests would have to be performed and the implementations of the filters would need to be examined. This is an opportunity for future work.
+
+A deeper examination and evaluation of the different options of other Melt filters is an interesting option for future work or for Codemill to implement. For this thesis project, the filter \texttt{avfilter.colorbalance} will be used, because its results look the most vibrant and fitting for the expected outcome of RGB colour adjustment.
+
+In Figure~\ref{figure:septopus}, the 7 basic colour combinations of the subtractive colour model can be seen with the application of the filter \texttt{avfilter.colorbalance}. For this, the RGB values were set to either $1.0$ or $0$, which are the maximum and default values of this filter. 
 
 
 
@@ -678,11 +679,11 @@ In Figure~\ref{figure:septopus}, the 7 colour combinations of the subtractive co
 	\begin{center}
 		\cutpic{0.3cm}{0.8\textwidth}{septopus.png}
 		\label{figure:septopus}
-		\caption[Base colours with the application of the filter \texttt{avfilter.colorbalance}.]{Base colours of the subtractive colour model with the application of the filter \texttt{avfilter.colorbalance}.}
+		\caption[Basic colours with the application of the filter \texttt{avfilter.colorbalance}.]{Basic colours of the subtractive colour model with the application of the filter \texttt{avfilter.colorbalance}.}
 	\end{center}
 \end{figure}
 
-The original frame is frame 3447 from the test video file and can be seen in Figure~\ref{figure:septo_nofilter}.
+For comparison, the original frame 3447 from the test video file and can be seen in Figure~\ref{figure:septo_nofilter} without applied filters.
 
 \begin{figure}[H]
 	\begin{center}
