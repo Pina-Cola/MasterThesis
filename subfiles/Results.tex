@@ -110,12 +110,12 @@ In comparison, the extracted frame from the Accurate Player frontend can be seen
 In these Figures it can be seen, that the red tone of the two frames visually differs. In Figure~\ref{figure:redAP}, the colours seem to be more dark or saturated. This is an unexpected result, because both components use the same Melt filter with the same parameters.
 
 
+Considering the visual difference in the frame extractions from the two different approaches of applying the filter \texttt{avfilter.colorbalance}, the subtraction of those two frames shows more differences than the expected distortions, that were described above. The result of the subtraction can be seen in Figure~\ref{figure:filterVSfilter}, which shows the difference in the two compared frames.
 
-Considering the visual difference in the frame extractions from the two different approaches to apply the filter, the subtraction of those two frames shows more differences than the expected distortions, that were described above. The result of the subtraction can be seen in Figure~\ref{figure:filterVSfilter}, which shows the difference in the two compared frame extractions.
-
-In Figure~\ref{figure:filterVSfilter}, the extracted frame of the Melt framework was subtracted from the frame of the Accurate Player.
-In this case, the result has a red tone itself, because the seemingly less red saturated frame was subtracted from the seemingly more saturated frame. Because of this, the pixels that were a deeper red in the Accurate Player frame have higher red values than the corresponding pixels in the Melt framework extraction. This causes the red tone in the resulting image in Figure~\ref{figure:filterVSfilter}.
-The result reflects the relative differences in the red value between the two frames. This result image is red tinted and has no green or blue areas, which shows that the frame of the Accurate Player has overall a more saturated red tone than the extracted frame of the Melt framework.
+In Figure~\ref{figure:filterVSfilter}, the extracted frame of the Melt framework is subtracted from the frame of the Accurate Player.
+In this case, the result has a red tone itself, because the seemingly less red saturated frame is subtracted from the seemingly more red saturated frame. The pixels in the Accurate Player frame have higher RGB values on the red colour channel than the corresponding pixels in the Melt framework extraction. This causes the red tone in the resulting image in Figure~\ref{figure:filterVSfilter}.
+The result reflects the relative differences in the red value between the two frames. 
+This result image from the subtraction is red tinted and has no green or blue areas, which shows that the frame of the Accurate Player has overall a more saturated red tone than the extracted frame of the Melt framework.
 
 
 \begin{figure}[H]
@@ -127,7 +127,7 @@ The result reflects the relative differences in the red value between the two fr
 	\end{center}
 \end{figure}
 
-To evaluate, if this difference is caused by the application of the filter or by other aspects, for example video compression or difference in video players, the frames are compared without the filter applied to them. For this, frame 343 of the original video file is compared to the same frame extraction of the locally installed Melt framework and the Accurate Player without the application of the filter. The frame from the original video file can be seen in Figure~\ref{figure:nofilterO}.
+To evaluate, if this difference is caused by the application of the filter or by other aspects, such as video compression or difference in video players, the frames from the original video file are compared with the frames from both methods without a filter applied to them. For this, frame 343 of the original video file is compared to the same frame extraction of the locally installed Melt framework and the Accurate Player without the application of the filter. The frame from the original video file can be seen in Figure~\ref{figure:nofilterO}.
 
 \begin{figure}[H]
 	\begin{center}
@@ -138,7 +138,7 @@ To evaluate, if this difference is caused by the application of the filter or by
 \end{figure}
 
 
-In Figure~\ref{figure:nofilterMelt}, the extraction of frame 343 without a filter from the locally installed Melt framework can be seen and in comparison to this the extracted frame from the Accurate Player without a filter can be seen in Figure~\ref{figure:nofilterAP}. Figure~\ref{figure:nofilterAP}, which is the Accurate Player frame, seems to be a more saturated.
+In Figure~\ref{figure:nofilterMelt}, the extraction of frame 343 without a filter application from the locally installed Melt framework can be seen. In comparison to this, the extracted frame from the Accurate Player without an applied filter can be seen in Figure~\ref{figure:nofilterAP}. Figure~\ref{figure:nofilterAP}, which is the Accurate Player frame, visually seems to be a more saturated.
 
 
 \begin{minipage}{0.48\textwidth}
@@ -162,8 +162,9 @@ In Figure~\ref{figure:nofilterMelt}, the extraction of frame 343 without a filte
 \end{minipage}
 
 \vspace*{1.5em}
-In Figure~\ref{figure:oVSmelt}, the subtraction of the original frame and the Melt Framework frame extraction are visualized using GIMP. In this image, the outlines of the motive of the frame can be seen in different grey tones, which shows, that the subtracted frames do not have the same colour values.
-In Figure~\ref{figure:oVSap} in comparison, the subtraction was done with the original frame and the Accurate Player extraction. Figure~\ref{figure:oVSap} shows the expected result for a same output, with some differences in the grey tones but no clear outlines or fragments from the original frame motive.
+To analyse the differences between the frames without a filter of the two methods further, another frame subtraction is conducted. Each of the frames are compared to the extraction of the original video file, to identify, which method is altering the results.
+In Figure~\ref{figure:oVSmelt}, the subtraction of the Melt Framework frame from the original frame are visualized using the \textit{grain extract} function. In this image, the outlines of the motive of the frame can be seen in different grey tones, which shows, that the subtracted frames do not have the same colour values.
+In Figure~\ref{figure:oVSap} in comparison, the subtraction is done with the Accurate Player frame from the original frame. Figure~\ref{figure:oVSap} shows the expected result for a same output, with some differences in the grey tones but no clear outlines or fragments from the original frame motive.
 
 
 
@@ -199,13 +200,13 @@ In Figure~\ref{figure:oVSap} in comparison, the subtraction was done with the or
 
 
 \vspace*{1.5em}
-The extracted frames from the different approaches display significant differences, even when no filters were applied. 
-These differences in the video representation without filters applied to it make it difficult to evaluate additional data regarding the application of filters using this method. The cause for the different display of the video frames by the Melt framework remains unclear.
+The extracted frames from the different approaches display significant differences, even when no filter is applied. 
+The results show, that the Accurate Player plays back the video more accurate than the Melt framework.
+These differences in the video representation without a filters application make it difficult to evaluate additional data regarding the application of filters using this method. The cause for the different display of the video frames by the Melt framework remains unclear.
 % It is worth noting that the Melt video player is recognized for encountering occasional technical issues.
-
-
-One possible explanation for these differences in the extracted frames could come from the system environment potentially influencing the evaluation of the comparison on different platforms. The differences could be caused by software dependencies imposed by the Melt framework or its video player.
-
+%
+%
+One possible explanation for these differences in the extracted frames could be rooted in the system environment potentially influencing the evaluation of the comparison on different platforms. The differences could be caused by software dependencies imposed by the Melt framework or its video player.
 
 
 
