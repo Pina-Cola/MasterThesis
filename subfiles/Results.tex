@@ -74,10 +74,14 @@ Figure~\ref{figure:greyresult_unit} shows the subtraction of an image from itsel
 
 
 In this Section, the results of video colour grading using the locally installed Melt framework and the in Section~\ref{subsection:implementation} described implementation with JIT compared. 
-Those tests were run on the same computer to ensure consistency and the frames were extracted with taking screenshots of the output from both approaches. These extracted frames are then visually inspected. 
+Those tests are run on the same computer to ensure consistency and the frames are extracted with taking screenshots of the output from both approaches. These extracted frames are then visually inspected. 
 
 
-For the evaluation, a comparison between the locally installed Melt version and the Accurate Player sliders with the red value on maximum was tested. The filter was applied to frame 343 and the results of the locally installed Melt framework can be seen in Figure~\ref{figure:redMelt} and in the Accurate Player frontend in Figure~\ref{figure:redAP}. In this Figures it can be seen, that the red tone of the two frames differs. In Figure~\ref{figure:redAP}, the colours seem more dark or saturated.
+For the evaluation, a comparison between the locally installed Melt version with the \texttt{avfilter.colorbalance} filter applied and the RGB adjustment in the Accurate Player with the sliders is tested.
+For the tests, the red value is set on the maximum with the respective method, assuming that the results of the green and blue value work analogical.
+The filter is applied and frame 343 of the test video file is extracted from both components. The results of the locally installed Melt framework can be seen in Figure~\ref{figure:redMelt}, with the \texttt{avfilter.colorbalance} filter applied and the parameters for shadows, mid tones and highlights set to the maximum of $1$ (\texttt{av.rs=1}, \texttt{av.rm=1} and \texttt{av.rh=1}).
+In comparison, the extracted frame from the Accurate Player frontend can be seen in Figure~\ref{figure:redAP}. This result is obtained by setting the red slider in the frontend onto the maximum value and leaving the sliders for green and blue on the default value, which corresponds to $0$ in the filter application in the backend. The maximum value of the red slider gets send to the backend and is being applied for the parameters of the filter \texttt{avfilter.colorbalance}, setting the parameters for shadows, mid tones and highlights to the maximum of $1$ (\texttt{av.rs=1}, \texttt{av.rm=1} and \texttt{av.rh=1}) as well.
+
 
 
 \begin{minipage}{0.48\textwidth}
@@ -103,6 +107,10 @@ For the evaluation, a comparison between the locally installed Melt version and 
 \end{minipage}
 
 \vspace*{1.5em}
+In these Figures it can be seen, that the red tone of the two frames visually differs. In Figure~\ref{figure:redAP}, the colours seem to be more dark or saturated. This is an unexpected result, because both components use the same Melt filter with the same parameters.
+
+
+
 Considering the visual difference in the frame extractions from the two different approaches to apply the filter, the subtraction of those two frames shows more differences than the expected distortions, that were described above. The result of the subtraction can be seen in Figure~\ref{figure:filterVSfilter}, which shows the difference in the two compared frame extractions.
 
 In Figure~\ref{figure:filterVSfilter}, the extracted frame of the Melt framework was subtracted from the frame of the Accurate Player.
