@@ -311,9 +311,11 @@ For the other additional parameters (keep luma, alpha controlled and luma formul
 
 \textit{Change gamma} refers to adjusting the luminance or brightness of an image or video by applying a gamma correction factor. This can be used to adapt the output to different devices.~\cite{gamma}
 
-In Figure~\ref{figure:gamma}, the extracted frame from KDEN Live with the application of the maximum red value for the \textit{Change gamma} action is shown. This frame extraction is visually darker than the frame extraction from the Accurate Player.
+In Figure~\ref{figure:gamma}, the extracted frame from KDEN Live with the application of the maximum red value with the \textit{Change gamma} action is shown. The slider for the adjustment of the colour red is set to the maximum while the other sliders remain unchanged, to achieve the shown result.
+In comparison, in Figure~\ref{figure:APframe1}, the extracted frame from the Accurate Player with the maximum red value applied can be seen. This result is obtained by setting the red slider in the frontend onto the maximum value and leaving the sliders for green and blue on the default value. In the backend, the filter \texttt{avfilter.colorbalance} with the parameters for red shadows, mid tones and highlights to the maximum of $1$ is applied (\texttt{av.rs=1}, \texttt{av.rm=1} and \texttt{av.rh=1}).
+This frame from the Accurate Player was shown before in Figure~\ref{figure:redAP} and is shown here again for a better visualization of the frame comparison.
 
-In Figure~\ref{figure:APframe1}, the extracted frame from the Accurate Player with the maximum red value applied can be seen. This frame was shown before in Figure~\ref{figure:redAP} and is shown here again for a better visualization of the frame comparison.
+The frame extraction from KDEN Live (Figure~\ref{figure:gamma}) is visually darker than the frame extraction from the Accurate Player (Figure~\ref{figure:APframe1}). This leads to the assumption, that the KDEN Live effect \textit{RGB adjusment} is not based on the functionalities of the Melt filter \texttt{avfilter.colorbalance}.
 
 \begin{minipage}{0.48\textwidth}
 	\begin{figure}[H]
@@ -335,17 +337,17 @@ In Figure~\ref{figure:APframe1}, the extracted frame from the Accurate Player wi
 	\end{figure}
 \end{minipage}
 
-%\vspace*{1.5em}
-\newpage
+\vspace*{1.2em}
+% \newpage
 
-The result of the subtraction can be seen Figure~\ref{figure:gammagimp}. The Accurate Player frame was subtracted from the KDEN Live frame extraction. The result does show green tones and no red tones, which shows that the Accurate Player frame has more saturated red values in than the KDEN Live frame extraction in all areas.
+The result of the subtraction can be seen Figure~\ref{figure:gammagimp}. The Accurate Player frame was subtracted from the KDEN Live frame. The result does show green tones and no red tones, which shows that the Accurate Player frame has more saturated red values than the KDEN Live frame in all areas. Because the frames differ, the outlines and fragments of the original motive of the frame can be seen.
 
 
 
 \begin{figure}[H]
 	\begin{center}
 		\cutpic{0.3cm}{0.65\textwidth}{gamma_gimp.png}
-		\caption[Subtraction of KDEN Live (\textit{change gamma}) and Accurate Player.]{Subtraction of the two frames: Accurate Player frame is subtracted from the KDEN Live frame extraction (with the action \textit{change gamma}).}
+		\caption[Subtraction of KDEN Live (\textit{change gamma}) and Accurate Player.]{Subtraction of the two frames: Accurate Player frame is subtracted from the KDEN Live frame (with the action \textit{change gamma}).}
 		% KDENLive - JIT
 		\label{figure:gammagimp}
 	\end{center}
@@ -361,14 +363,12 @@ The result of the subtraction can be seen Figure~\ref{figure:gammagimp}. The Acc
 %-------------------------------------------------------------------------------------------------------
 \subsubsection*{Add constant}
 
-Adding a constant value involves increasing or decreasing the intensity of a channel in an image or video by a fixed amount. 
+Adding a constant value involves increasing or decreasing the intensity of a colour channel in an image or video by a fixed amount. Assuming that the Melt filter \texttt{avfilter.colorbalance} adjusts the RGB colour channels by a fixed amount, that is set by the filter parameters, this action could lead to more similar results to the Accurate Player frame.
 
-In Figure~\ref{figure:addconstant}, the extracted frame from KDEN Live with the application of the maximum red value for the \textit{Add constant} action is shown. This frame extraction is visually darker than the frame extraction from the Accurate Player and looks similar to the frame that was created with the \textit{Change gamma} action, that was shown in Figure~\ref{figure:gamma}.
+In Figure~\ref{figure:addconstant}, the extracted frame from KDEN Live with the application of the maximum red value for the \textit{Add constant} action is shown. 
+In Figure~\ref{figure:APframe2} in comparison, the extracted frame from the Accurate Player with the maximum red value applied can be seen. This frame was shown before in Figure~\ref{figure:redAP} and \ref{figure:APframe1} and is shown here again for a better visualization of the frame comparison. The adjustment of the red slider to the maximum value in the frontend leads to the application of the filter \texttt{avfilter.colorbalance} with the red parameters set on the maximum value of $1$ in the backend (\texttt{av.rs=1}, \texttt{av.rm=1} and \texttt{av.rh=1}).
 
-In Figure~\ref{figure:APframe2}, the extracted frame from the Accurate Player with the maximum red value applied can be seen. This frame was shown before in Figure~\ref{figure:redAP} and \ref{figure:APframe1} and is shown here again for a better visualization of the frame comparison.
-
-
-
+The KDEN Live frame extraction (Figure~\ref{figure:addconstant}) is visually darker than the frame extraction from the Accurate Player (Figure~\ref{figure:APframe2}) and looks similar to the frame that was created with the \textit{Change gamma} action, that was shown in Figure~\ref{figure:gamma}.
 
 \begin{minipage}{0.48\textwidth}
 	\begin{figure}[H]
@@ -391,7 +391,8 @@ In Figure~\ref{figure:APframe2}, the extracted frame from the Accurate Player wi
 \end{minipage}
 \vspace*{1em}
 
-But the comparison of those frames in Figure~\ref{figure:addconstantgimp} shows, that the images that were created with the \textit{Change gamma} and the \textit{Add constant} action differ more than visually noticeable at first glance. The result of the subtraction of the Accurate Player frame from the KDEN Live frame extraction show, that the Accurate Player frame has a more saturated red value in some areas, while in other areas the KDEN Live frame extraction has a more saturated red value. This results into an image that contains red and green pixels after applying the \textit{grain extract} function for the subtraction in GIMP.
+
+The subtraction of those frames can be seen in Figure~\ref{figure:addconstantgimp}. It shows, that the images that were created with the \textit{Change gamma} and the \textit{Add constant} action differ more than visually noticeable at first glance. The result of the subtraction of the Accurate Player frame from the KDEN Live frame extraction in Figure~\ref{figure:addconstantgimp} shows, that the Accurate Player frame has a more saturated red value in some areas, while in other areas the KDEN Live frame extraction has a more saturated red value. This results into an unexpected result that contains red and green pixels after applying the \textit{grain extract} function for the subtraction in GIMP.
 
 
 \begin{figure}[H]
@@ -414,9 +415,10 @@ But the comparison of those frames in Figure~\ref{figure:addconstantgimp} shows,
 
 Multiplying involves changing the intensity of each colour channel (red, green, blue) by a specified factor. This adjustment allows for precise control over colour balance and saturation.~\cite{gimp}
 
-In Figure~\ref{figure:multiply}, the extracted frame from KDEN Live with the application of the maximum red value for the \textit{Multiply} action is shown. This frame extraction is visually more saturated than the frame extraction from the Accurate Player.
+In Figure~\ref{figure:multiply}, the extracted frame from KDEN Live with the application of the maximum red value for the \textit{Multiply} action is shown. 
+In comparison in Figure~\ref{figure:APframe2}, the extracted frame from the Accurate Player with the maximum red value applied can be seen. This frame was shown and explained before and is shown here again for a better visualization of the frame comparison.
 
-In Figure~\ref{figure:APframe2}, the extracted frame from the Accurate Player with the maximum red value applied can be seen. This frame was shown before in Figure~\ref{figure:redAP}, \ref{figure:APframe1} and \ref{figure:APframe2} and is shown here again for a better visualization of the frame comparison.
+The frame extraction from KDEN Live (Figure~\ref{figure:multiply}) is visually more saturated and red toned than the frame extraction from the Accurate Player (Figure~\ref{figure:APframe2}).
 
 
 \begin{minipage}{0.48\textwidth}
@@ -440,7 +442,7 @@ In Figure~\ref{figure:APframe2}, the extracted frame from the Accurate Player wi
 \end{minipage}
 \vspace*{1em}
 
-In Figre~\ref{figure:multiplygimp}, the subtraction of the Accurate Player frame extration from the KDEN Live frame can be seen. This subtraction result shows a mostly red picture, because of the high red values in the KDEN Live frame. In the green areas on the other hand, the Accurate Player frame had a more saturated red value than the KDEN Live frame.
+In Figure~\ref{figure:multiplygimp}, the subtraction of the Accurate Player frame extration from the KDEN Live frame can be seen. This subtraction result shows a mostly red picture, caused by the high red values in the KDEN Live frame. In the green areas on the other hand, the Accurate Player frame had a more saturated red value than the KDEN Live frame. This is presumably caused by the darkness of those areas in the frame that was extracted from KDEN Live.
 
 
 
@@ -457,7 +459,6 @@ In Figre~\ref{figure:multiplygimp}, the subtraction of the Accurate Player frame
 
 
 
-The comparison with KDEN Live did not show the same results as the filter application in the Accurate Player either and the results of the colour subtractions lead to the presumption, that KDEN Live is using a different Melt filter for the adjustment of the RGB values.
 
 
 
@@ -469,11 +470,27 @@ The comparison with KDEN Live did not show the same results as the filter applic
 %-------------------------------------------------------------------------------------------------------
 
 
-%\subsection{Results of Filter Comparison} \label{section:resultscomparisons}
+\subsection{Conclusion of the Filter Comparison} \label{section:resultscomparisons}
+
+
+In this Chapter, the results of the user-sided colour grading with JIT were compared to the results of the colour grading with the Melt framework CLI tool and KDEN Live, which uses the Melt framework as a backend.
+
+In Section~\ref{section:comparisonMelt}, the results of video colour grading using the locally installed Melt framework and the implementation with JIT were compared. 
+The results in this comparison display significant differences, even when no filter is applied. 
+The results of the comparison with the original video frame and without a filter application show, that the Accurate Player plays back the original video more accurate than the Melt framework.
+These differences in the video representation without a filters application make it difficult to evaluate additional data regarding the application of filters using this method. The cause for the differences of the video frames by the Melt framework remains unclear.
+One possible explanation for these differences in the extracted frames could be rooted in the system environment potentially influencing the evaluation of the comparison on different platforms. The differences could be caused by software dependencies imposed by the Melt framework or its video player.
 
 
 
-	
+Additionally, the comparison with KDEN Live did not show the same results as the filter application in the Accurate Player either. The results of the visual comparisons, functionalities and colour subtractions lead to the assumption, that the KDEN Live effect \textit{RGB adjustment} is not using the Melt filter \texttt{avfilter.colorbalance} to adjust the RGB values but a different filter.
+The comparison showed the different options and functionalities that arise with the use of different Melt filters and techniques but those techniques make KDEN Live unsuitable for further comparisons with the implementation of this thesis project.
+
+
+Those significant differences in the compared frames show the complexity of the topic of colour adjustment and representation. All tests were run on the same device to ensure consistency but still differences could be shown. To ensure a consistent output across various platforms and devices adds even more complexity to the topic of colour representation and video streaming.
+
+
+Additionally it was shown, that there are many different ways to achieve similar results or functionalities in the topic of video colour grading. Many parameters and aspects have to be taken into consideration. This confirms the necessity for user-sided colour adjustment for a more customizable video streaming experience and satisfying results. 
 	
 	
 	
