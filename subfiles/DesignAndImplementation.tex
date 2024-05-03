@@ -709,14 +709,14 @@ For comparison, the original frame 3447 from the test video file and can be seen
 \subsection{Implementation} \label{subsection:implementation}
 % Discuss the technologies and tools chosen for the implementation.
 
-In this Section, the implementation is described. This is separated into three parts, that are described individually: The frontend, the proto buffer and the application of the filter in the backend. For the implementation, sliders for each colour (red, green and blue) are added in the frontend. The input value of those sliders are then send with a proto buffer to the backend, where the values are used to set the parameters of the Melt filter \texttt{avfilter.colorbalance} before applying the filter. This results in user-sided the RGB adjustment of the video colouring, that is being played back in the frontend.
+In this Section, the implementation is described. This is separated into three parts, that are described individually: The frontend, the proto buffer and the application of the filter in the backend. For the implementation, the sliders for each colour (red, green and blue) are added in the frontend. The input value of those sliders are sent with a proto buffer to the backend, where the values are used to set the parameters of the Melt filter \texttt{avfilter.colorbalance} before applying the filter. This results in the user-sided RGB adjustment of the video colouring, which is played back in the frontend.
 
 %-----------------------------------------------------------------------------------------------------------
 \subsubsection*{Frontend}
 %
-\vspace*{-1em}
+\vspace*{-0em}
 \begin{minipage}{0.48\textwidth}
-In the frontend, input sliders for the user sided adjustment of the RGB values were added below the already existing slider for the quality adjustment. This is located in the overlay windows in the top right corner. The sliders were coloured according to their associated functions in red, green and blue. This can be seen in Figure~\ref{figure:sliders}.
+In the frontend, input sliders for the user sided adjustment of the RGB values are added below the already existing slider for the quality adjustment. This is located in the overlay windows in the top left corner. The sliders are coloured according to their associated functions in red, green and blue. This can be seen in Figure~\ref{figure:sliders}.
 
 The HTML code for the red slider can be seen below. The other sliders for green and blue work analogical. The input range is set between $-100$ and $100$, to divide it later by $100$ to achieve a float 
 
@@ -756,6 +756,12 @@ value between $-1$ and $1$ for the filter parameter. The default value is set to
 	</p>
 \end{lstlisting}
 
+The design of the sliders is defined in a CSS file: The \texttt{class} attribute of the slider uses the design setting of the pre-existing quality slider and the \texttt{id} with the value \texttt{red-slider} sets the background colour of the slider to red. 
+
+
+
+
+
 
 
 
@@ -764,7 +770,7 @@ value between $-1$ and $1$ for the filter parameter. The default value is set to
 %-----------------------------------------------------------------------------------------------------------
 \subsubsection*{Proto Buffer}
 
-For the data transfer between frontend and backend for the colour grading, fields and enums were added to the \texttt{.proto} file. Proto buffers are explained in Section~\ref{subsection:protocolbuffer}. The 
+For the data transfer between frontend and backend for the colour grading, fields and enums are added to the \texttt{.proto} file. Proto buffers are explained in Section~\ref{subsection:protocolbuffer}. The 
 %
 \begin{minipage}{0.54\textwidth}
 \vspace*{-0.2em}
@@ -790,10 +796,10 @@ enum ControlType {
 	\ 
 \end{minipage}\begin{minipage}{0.42\textwidth}
 \vspace*{0.7em}
-values that were retrieved by the previously described sliders for the RGB value are transferred with this data structure.
+values that are retrieved by the previously described sliders for the RGB value are transferred with this data structure.
 In the code, the message \texttt{JitControl} and the enum \texttt{ControlType} can be seen. 
 In the message, three optional fields for the red, green and blue value are defined as \texttt{red\_value}, \texttt{green\_value} and \texttt{blue\_value} to represent the RGB colour values. 
-In the enum, the three constants (\texttt{RED\_VALUE}, \texttt{GREEN\_VALUE}, and \texttt{BLUE\_VALUE}) were added. 
+In the enum, the three constants (\texttt{RED\_VALUE}, \texttt{GREEN\_VALUE}, and \texttt{BLUE\_VALUE}) are added. 
 Through the sliders in the frontend, users can manipulate these values for red, green
 
 \end{minipage}
@@ -815,7 +821,7 @@ and blue. The input values of those sliders are read out and assigned to the enu
 
 
 \begin{minipage}{0.60\textwidth}
-	The application of the Melt filter is implemented in the \texttt{jit.c} file. To be bale to apply multiple values for the three different colour channels at once, the command needs to be sent to Melt with all of the 
+	The application of the Melt filter is implemented in the \texttt{jit.c} file. To be able to apply multiple values for the three different colour channels at once, the command needs to be sent to Melt with all of the 
 \end{minipage}\begin{minipage}{0.04\textwidth}
 	\ 
 \end{minipage}\begin{minipage}{0.36\textwidth}
@@ -825,10 +831,11 @@ and blue. The input values of those sliders are read out and assigned to the enu
 		float blue_value; \end{lstlisting}}
 	\vfill
 \end{minipage}
+\vspace*{0.1em}
 
-according parameters set, else the other parameters will be overwritten with the default value $0$. To be able to achieve mixed colour results, including for example yellow, the previous values need to be sent to the Melt framework together with the changed value. This is implemented with initializing global variables for each of the colours, that are set to the current value in each call. This can be seen in the code snippet above.
+according parameters set, else the other parameters will be overwritten with the default value $0$. This refers to the achieving of mixed colour results, including for example yellow, which can be created by adjusting the red and the green colour channel. The previous values for each colour channel need to be sent to the backend together with the changed value, to prevent the overwriting of the already adjusted colours with the default value. This is implemented with initializing global variables for each of the colours, that are set to the current value in each call. This can be seen in the code snippet above.
 
-The appilcation of the Melt filter with the current input values from the sliders is implemented in the function \texttt{jit\_action()}, that has a Melt producer as a parameter. In the following code, the beginning of the function can be seen. The Melt properties, consumer and producer are retrieved and set. Then the filter \texttt{avfilter.colorbalance} is set. The comparison of the different filter options can be seen in Section~\ref{subsection:meltfilter}.
+The application of the Melt filter with the current input values from the sliders is implemented in the function \texttt{jit\_action()}, that has a Melt producer as a parameter. In the following code, the beginning of the function can be seen. The Melt properties, consumer and producer are retrieved and set. Then the filter \texttt{avfilter.colorbalance} is set. The comparison of the different filter options can be seen in Section~\ref{subsection:meltfilter}.
 
 
 \begin{lstlisting}[language=c, numbers=none, columns=fullflexible]	
@@ -840,7 +847,7 @@ mlt_filter filter = mlt_factory_filter(service, "avfilter.colorbalance", NULL);
 \end{lstlisting}
 
 
-In the following, a pointer \texttt{jit\_control} is declared, that casts a value into the type \texttt{JitControl}.
+In the following code extraction, a pointer \texttt{jit\_control} is declared, that casts a value into the type \texttt{JitControl}.
 Then, a switch statement is started, based on the value of \texttt{jit\_control}.
 The \texttt{->} operator is used to access the type field of the \texttt{jit\_control} structure and depending on the value, the execution will jump to the corresponding case within the switch statement.
 
@@ -851,7 +858,7 @@ switch (jit_control->type) { ...
 
 Three cases were implemented -- one for each colour value (red, green, blue). In the following, the switch case for the adjustment of the red value is explained in more detail. The other cases work analogical.
 
-In the following code, the case for the red value can be seen. First, the red value that was retrieved from the slider in the frontend is assigned to the variable \texttt{red\_value}. Then, an \texttt{mlt\_properties} object is created for setting the filter parameters later on. 
+In the following code part, the case for the red value can be seen. First, the red value that was retrieved from the slider in the frontend is assigned to the variable \texttt{red\_value}. Then, an \texttt{mlt\_properties} object is created for setting the filter parameters later on. 
 
 \begin{lstlisting}[language=c, numbers=none, columns=fullflexible]			
 case CONTROL_TYPE__RED_VALUE:
@@ -860,7 +867,7 @@ case CONTROL_TYPE__RED_VALUE:
 		mlt_properties filter_props_red = mlt_filter_properties(filter);
 \end{lstlisting}
 
-In the first if statement of this case, the red value is added to the filter properties. For this, it gets checked if the value is in the input range of the filter parameter. Then, a string containing the value is created, because the function \texttt{mlt\_properties\_set} requires the value for the filter parameter in string format. After this, the filter properties are set to this value. Three parameters per colour have to be set, because the chosen filter has the possibility of adjusting the shadows, mid tones and highlights individually. 
+In the first if statement of this case, the red value is added to the filter properties. For this, it gets controlled if the value is in the input range of the filter parameter, which has to be a float between $-1$ and $1$. Then, a string containing the value is created, because the function \texttt{mlt\_properties\_set} requires the value for the filter parameter in string format. After this, the filter properties are set to this value. Three parameters per colour have to be set, because the chosen filter has the possibility of adjusting the shadows, mid tones and highlights individually. 
 The comparison of the different filters can be seen in Section~\ref{subsection:meltfilter} and the described code can be seen below.
 
 
@@ -874,7 +881,7 @@ The comparison of the different filters can be seen in Section~\ref{subsection:m
 		}	
 \end{lstlisting}
 
-The previous values for the green and red values were saved in the variables, that were declared outside of the function. In the following, the values are set analogical to the above described red value. This is neccessary to not overwrite the previously adjusted colour values.
+The previous values that were set on the sliders for the for the green and red values were saved in the variables, that were declared outside of the function. In the following, the values are set analogical to the above described red value. This is necessary to not overwrite the previously adjusted colour values.
 	
 \begin{lstlisting}[language=c, numbers=none, columns=fullflexible]
 		if (green_value >= -1.0 && green_value <= 1.0) {
@@ -903,9 +910,11 @@ In the following code snippet, the filter and the producer get connected and the
 	break;			
 \end{lstlisting}
 
-This case shows the code that is executed, when the slider for the red value is changed in the frontend and the red value is applied to the video output in real time with the Melt framework.
+The above presented and described code is executed, when the slider for the red value is changed in the frontend and the red value is applied to the video output in real time with the Melt framework.
 
-The implementation of the switch case for the green value can be seen in the following:
+The implementation of the switch case for the application of the filter for the colour adjustment of green and blue can be seen in the following:
+
+\newpage
 
 \begin{lstlisting}[language=c, numbers=none, columns=fullflexible]
 case CONTROL_TYPE__GREEN_VALUE:
@@ -941,7 +950,7 @@ green_value = jit_control->green_value;
 
 \end{lstlisting}
 
-The implementation of the switch case for the blue value can be seen in the following:
+% The implementation of the switch case for the blue value can be seen in the following:
 
 \begin{lstlisting}[language=c, numbers=none, columns=fullflexible]	
 case CONTROL_TYPE__BLUE_VALUE:
