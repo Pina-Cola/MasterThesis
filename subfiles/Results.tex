@@ -228,14 +228,14 @@ One possible explanation for these differences in the extracted frames could be 
 
 
 % \vspace*{-1em}
-\begin{minipage}{0.48\textwidth}
+\begin{minipage}{0.54\textwidth}
 	
-	In this Section, the results of video colour grading using KDEN Live and the in Section~\ref{subsection:implementation} described implementation with JIT compared. In Figure~\ref{figure:kdenlive_effects}, the list of categories for the effects can be seen. This includes the \textit{Color and Image correction} option, which will be examined in the following. The aim is to find the options for the RGB colour adjustment and compare the results. With those results it can probably be seen, if KDEN Live uses the \texttt{avfilter.colorbalance} filter or a different filter for the adjustment of the RGB values. For the comparison of
+	In this Section, the results of video colour grading using KDEN Live and the in Section~\ref{subsection:implementation} described implementation with JIT are compared. In Figure~\ref{figure:kdenlive_effects}, the list of categories for the available effects in KDEN Live can be seen. This includes the \textit{Color and Image correction} option, which will be examined in the following. The aim is to find the options for the RGB colour adjustment and compare the results. With those results it can probably be seen, if KDEN Live uses the \texttt{avfilter.colorbalance} filter or a different 
 	
 	
 \end{minipage}\begin{minipage}{0.04\textwidth}
 	\ 
-\end{minipage}\begin{minipage}{0.48\textwidth}
+\end{minipage}\begin{minipage}{0.42\textwidth}
 	\begin{figure}[H]
 		\begin{center}
 			\cutpic{0.3cm}{0.9\textwidth}{kdenlive_effects.png}
@@ -243,12 +243,18 @@ One possible explanation for these differences in the extracted frames could be 
 			\label{figure:kdenlive_effects}
 		\end{center}
 	\end{figure}
-	\hfill
+	\vfill
 \end{minipage}
 
-\vspace*{-0.8em}
+\vspace*{-0.2em}
 
-the filter applications, the usage of the \texttt{avfilter.colorbalance} filter in KDEN Live would have apositive effect on the evaluation process and results. To compare different filters is a difficult task, because it cannot be evaluated if the reults are the
+filter for the adjustment of the RGB values. 
+For the comparison of the filter applications, the usage of the \texttt{avfilter.colorbalance} filter in KDEN Live would have a positive effect on the evaluation process and results. 
+The comparison of different filters is a difficult task, because it cannot be evaluated, which aspects of the results differ because of the different filters and which aspects are influenced by other influences.
+
+
+In the effect category \textit{Color and Image correction} in KDEN Live, different effects for colours can be found. The list of effects in this category can be seen in in Figure~\ref{figure:kdenlive_effekte}. 
+
 
 % \vspace*{-0.3em}
 \begin{minipage}{0.48\textwidth}
@@ -256,25 +262,27 @@ the filter applications, the usage of the \texttt{avfilter.colorbalance} filter 
 	\begin{figure}[H]
 	\begin{center}
 		\cutpic{0.3cm}{0.9\textwidth}{kdenlive_effekte.png}
-		\caption[List of colour effects in KDEN Live.]{List of colour effects in KDEN Live.}
+		\caption[List of colour effects in KDEN Live.]{List of colour effects (KDEN Live).}
 		\label{figure:kdenlive_effekte}
 	\end{center}
 	\end{figure}
-	%\hfill
+	\vfill
 	
 	
 \end{minipage}\begin{minipage}{0.04\textwidth}
 	\ 
 \end{minipage}\begin{minipage}{0.48\textwidth}
-
-same but criteria considering the expected or more useful outcome have to be considered, which does not lay in the field of computer science.
-
-In the effect category \textit{Color and Image correction}, different effects can be found. The list of effects in this category can be seen in in Figure~\ref{figure:kdenlive_effekte}. Those effect options were examined and \textit{RGB adjustment} seems to be the only effect, that is adjusting the colour of the produced video with RGB values. For example \textit{3 point balance} adjusts the values for black, gray and white.
+%
+%
+Those effect options were examined and \textit{RGB adjustment} is the only effect, that is adjusting the colour of the produced video with RGB values. This adjustment is implemented with sliders for red, green and blue, similar to the user-sided RGB adjustment in the Accurate Player using JIT. The other effects in the list, that can be seen in Figure~\ref{figure:kdenlive_effekte} are not adjusting the RGB colouring of the video.
+For example the effect \textit{3 point balance} might sound promising as well but refers to the adjustment of the values for black, gray and white.
 
 \end{minipage}
 
-In Figure~\ref{figure:kdenlive_rgb}, the RGB colour sliders of the effect \textit{RGB adjustment} can be seen. The following different actions can be chosen: Change gamma, add constant, multiply. For each of those actions, a comparison through colour subtraction with the \textit{grain extract} in GIMP with the application of the \texttt{avfilter.colorbalance} is done.
-The frames were extracted from the Accurate Player through taking screenshots of the output and in KDEN Live, the \textit{extract frame} function was used. These extracted frames are then visually inspected. 
+\vspace*{0.6em}
+
+In Figure~\ref{figure:kdenlive_rgb}, the RGB colour sliders of the effect \textit{RGB adjustment} can be seen. As additional parameters, the following different actions can be chosen: Change gamma, add constant and multiply. For each of those actions, a comparison through colour subtraction with the \textit{grain extract} function in GIMP is done. Those frames from KDEN Live are compared with the extracted frames from the Accurate Player, with the application of the filter \texttt{avfilter.colorbalance} in the backend.
+The frames were extracted from the Accurate Player through taking screenshots of the output and in KDEN Live, the \textit{extract frame} function was used.
 
 
 \begin{figure}[H]
@@ -285,8 +293,7 @@ The frames were extracted from the Accurate Player through taking screenshots of
 	\end{center}
 \end{figure}
 
-
-For the other parameters (keep luma, alpha controlled and luma formula), the default values were used.
+For the other additional parameters (keep luma, alpha controlled and luma formula), the default values were used for this comparison.
 
 
 
