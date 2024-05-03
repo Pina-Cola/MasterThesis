@@ -25,7 +25,7 @@
 % \section{Experimental Evaluation and Discussion} \label{section:experimentalevaluationanddiscussion}
 
 
-In this Chapter, the results of the user sided colour grading with JIT are compared to the results of the colour grading with the Melt framework and KDEN Live, which uses the Melt framework as a backend. For the comparison, frames of the original video file, the frames created by the JIT implementation and the Melt framework or KDEN Live are compared with and without the application of filters.
+In this Chapter, the results of the user-sided colour grading with JIT are compared to the results of the colour grading with the Melt framework CLI tool and KDEN Live, which uses the Melt framework as a backend. For the comparison, frames of the original video file, the frames created by the JIT implementation and the Melt framework or KDEN Live are compared with and without the application of filters.
 
 
 To evaluate the difference in the frames and the filter application between the tested components, the frames are extracted. Those tests were run on the same computer to ensure consistency and the frames were extracted with taking screenshots of the output or pre-existing frame extraction functions.
@@ -33,7 +33,10 @@ Then the colours of the images have been subtracted from each other using the \t
 This method was described in Section~\ref{subsection:ComparisonOfDifferentColourSaturations}.
 
 
-In the Figures~\ref{figure:greyresult_unit} and \ref{figure:greyresult_blurry}, two different results of colour subtraction can be seen. Figure~\ref{figure:greyresult_unit} shows the subtraction of an image from itself. This results in a uniformly grey image, because the images are identical. Figure~\ref{figure:greyresult_blurry} shows the subtractions of two separate screenshots of the same frame. Small distortions can be seen, which is caused by slightly different scaling or other inconsistencies in the screenshot process. Those small differences have to be considered in the comparison, because the images can not be expected to be exactly the same, when extracting them from different sources.
+In the Figures~\ref{figure:greyresult_unit} and \ref{figure:greyresult_blurry}, two different results of the colour subtraction can be seen. 
+
+
+Figure~\ref{figure:greyresult_unit} shows the subtraction of an image from itself. This results in a uniformly grey image, because the images are identical. Figure~\ref{figure:greyresult_blurry} shows the subtractions of two separate screenshots of the same frame. Small distortions can be seen, which is caused by slightly different scaling or other inconsistencies in the screenshot process. Those small differences have to be considered in the comparison, because the images can not be expected to be exactly the same, when extracting them from different sources. Two subtracted frames that have a similar result to Figure~\ref{figure:greyresult_blurry} can be considered as the same frames.
 
 
 \begin{minipage}{0.48\textwidth}
@@ -56,9 +59,6 @@ In the Figures~\ref{figure:greyresult_unit} and \ref{figure:greyresult_blurry}, 
 		\end{center}
 	\end{figure}
 \end{minipage}
-
-
-
 
 
 
