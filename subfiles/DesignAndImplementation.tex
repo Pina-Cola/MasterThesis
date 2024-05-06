@@ -49,7 +49,7 @@ The Python backend communicates with the Melt framework to use its video editing
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\textwidth]{IM3.png}
-	\caption[System architecture]{Architecture of the system that consists out of four parts.}
+	\caption[Architecture of the system that consists out of four parts.]{Architecture of the system that consists out of four parts.}
 	\label{figure:SA}
 \end{figure}
 
@@ -180,7 +180,7 @@ user to adapt the Accurate Player to their preferences and expectations.
 
 
 With JIT techniques in the Accurate Player it is possible to play different formats in the browser without the transcoding into a browser friendly format.
-This is possible, because the Accurate Player uses JIT techniques to dynamically handle the playback of different video formats on-the-fly, instead of relying on pre-transcoded video files. The video data is being processed in real-time, allowing for on-the-fly adjustment like the quality slider or the RGB colour adjustment that is being implemented for this thesis project.
+This is possible, because the Accurate Player uses JIT techniques to dynamically handle the playback of different video formats on-the-fly, instead of relying on pre-transcoded video files. The video data is being processed in real-time, allowing for on-the-fly adjustment of option such as the quality slider or the RGB colour adjustment that is being implemented for this thesis project.
 
 
 
@@ -665,7 +665,7 @@ In the above shown tests, that are shown in the middle in Figure~\ref{figure:red
 The results of the filter \texttt{frei0r.coloradj\_RGB}, that can be seen on the right in Figure~\ref{figure:redcomp} and \ref{figure:yellowcomp} seem to have darker and less vibrant results, that do not present the expected colours as accurately as the other two filter. This does not make it a fitting choice for the RGB adjustment with sliders.
 
 
-The \texttt{avfilter.colorbalance} filter leads to the most vibrant and intense results of the above listed selection of filters. Additionally it has the option to adapt the shadows, mid tones and highlights individually, which creates the option for more preadjustments of the results in the backend or for introducing more sliders or options for the user sided adjustment as future work.
+The \texttt{avfilter.colorbalance} filter leads to the most vibrant and intense results of the above listed selection of filters. Additionally it has the option to adapt the shadows, mid tones and highlights individually, which creates the option for more preadjustments of the results in the backend or for introducing more sliders or options for the user-sided adjustment as future work.
 But on the downside, to tone the whole frame evenly, three instead of one parameter have to changed and applied -- for the shadows, mid tones and highlights for each colour slider.
 When applying this with and without JIT, no performance difference was noticeable but for a accurate evaluation of this, performance tests would have to be performed and the implementations of the filters would need to be examined. This is an opportunity for future work.
 
@@ -709,14 +709,14 @@ For comparison, the original frame 3447 from the test video file and can be seen
 \subsection{Implementation} \label{subsection:implementation}
 % Discuss the technologies and tools chosen for the implementation.
 
-In this Section, the implementation is described. This is separated into three parts, that are described individually: The frontend, the proto buffer and the application of the filter in the backend. For the implementation, the sliders for each colour (red, green and blue) are added in the frontend. The input value of those sliders are sent with a proto buffer to the backend, where the values are used to set the parameters of the Melt filter \texttt{avfilter.colorbalance} before applying the filter. This results in the user-sided RGB adjustment of the video colouring, which is played back in the frontend.
+In this Section, the implementation is described. This is separated into three parts, that are described individually: The frontend, the protocol buffer and the application of the filter in the backend. For the implementation, the sliders for each colour (red, green and blue) are added in the frontend. The input value of those sliders are sent with a protocol buffer to the backend, where the values are used to set the parameters of the Melt filter \texttt{avfilter.colorbalance} before applying the filter. This results in the user-sided RGB adjustment of the video colouring, which is played back in the frontend.
 
 %-----------------------------------------------------------------------------------------------------------
 \subsubsection*{Frontend}
 %
 \vspace*{-0em}
 \begin{minipage}{0.48\textwidth}
-In the frontend, input sliders for the user sided adjustment of the RGB values are added below the already existing slider for the quality adjustment. This is located in the overlay windows in the top left corner. The sliders are coloured according to their associated functions in red, green and blue. This can be seen in Figure~\ref{figure:sliders}.
+In the frontend, input sliders for the user-sided adjustment of the RGB values are added below the already existing slider for the quality adjustment. This is located in the overlay windows in the top left corner. The sliders are coloured according to their associated functions in red, green and blue. This can be seen in Figure~\ref{figure:sliders}.
 
 The HTML code for the red slider can be seen below. The other sliders for green and blue work analogical. The input range is set between $-100$ and $100$, to divide it later by $100$ to achieve a float 
 
@@ -768,9 +768,9 @@ The design of the sliders is defined in a CSS file: The \texttt{class} attribute
 
 
 %-----------------------------------------------------------------------------------------------------------
-\subsubsection*{Proto Buffer}
+\subsubsection*{Protocol Buffer}
 
-For the data transfer between frontend and backend for the colour grading, fields and enums are added to the \texttt{.proto} file. Proto buffers are explained in Section~\ref{subsection:protocolbuffer}. The 
+For the data transfer between frontend and backend for the colour grading, fields and enums are added to the \texttt{.proto} file. Protocol buffers are explained in Section~\ref{subsection:protocolbuffer}. The 
 %
 \begin{minipage}{0.54\textwidth}
 \vspace*{-0.2em}

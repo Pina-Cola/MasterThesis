@@ -16,7 +16,7 @@
 \section{Technical Background} \label{section:technicalbackground}
 
 
-In this Chapter, the structure and usage of the Melt framework is explained and a brief overview of video streaming components and addition components is given. In additional to this, proto buffers are introduced and explained with examples.
+In this Chapter, the structure and usage of the Melt framework is explained and a brief overview of video streaming components and addition components is given. In additional to this, protocol buffers are introduced and explained with examples.
 
 
 %---------------------------------
@@ -62,7 +62,7 @@ The \textit{Consumer} represents the endpoint of the data processing pipeline an
 		% Arrows
 		\draw[->,>=stealth, line width=1.2pt] (producer) -- (consumer);
 	\end{tikzpicture}
-	\caption{Producer-Consumer Relationship}
+	\caption{Producer-Consumer Relationship in the Melt framework.}
 	\label{fig:producer_consumer}
 \end{figure}
 
@@ -86,7 +86,7 @@ Filters are processing units that manipulate the multimedia data as it flows thr
 		\draw[->,>=stealth, line width=1.2pt] (producer) -- (filter);
 		\draw[->,>=stealth, line width=1.2pt] (filter) -- (consumer);
 	\end{tikzpicture}
-	\caption{Producer-Filter-Consumer Relationship}
+	\caption{Producer-Filter-Consumer Relationship in the Melt framework}
 	\label{fig:producer_filter_consumer}
 \end{figure}
 
@@ -401,7 +401,7 @@ Data structures are defined using message declarations. Messages can contain fie
 		bytes & Variable-length sequence of bytes \\
 		\bottomrule
 	\end{tabular}
-	\caption{Data types for fields in Protocol Buffers (proto2).~\cite{proto2_doc}}
+	\caption{Data types for fields in protocol buffers (proto2).~\cite{proto2_doc}}
 	\label{table:proto2_data_types}
 \end{table}
 
