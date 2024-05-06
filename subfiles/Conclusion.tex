@@ -35,11 +35,11 @@ In this Chapter, the summary, contributions and limitations are described. After
 % Summarize the key findings and outcomes of the research.
 
 
-This thesis lays in the field of multimedia processing in real-time, regarding the adjustment of the RGB values of a video with JIT using the Melt framework as a backend. This option was implemented in Codemill's Accurate Player and using WebRTC as a data channel.
+This thesis project lays in the field of multimedia processing in real-time, regarding the adjustment of the RGB values of a video with JIT using the Melt framework as a backend. This solution was implemented in Codemill's Accurate Player and using WebRTC as a data channel.
 
-For this, background knowledge on colour theory and representation (Chapter \ref{section:theoreticalfoundationofcolour}) and technical background, especially the structure and usage of the Melt framework were given (Chapter \ref{section:technicalbackground}).
+In this thesis, background knowledge on colour theory and representation (Chapter \ref{section:theoreticalfoundationofcolour}) and technical background, especially the structure and usage of the Melt framework were given but also the introduction of protocol buffers and other streaming components (Chapter \ref{section:technicalbackground}).
 
-The research question consisted of two parts. The first part aimed to evaluate the feasibility of the above described implementation. The implementation confirm that it was achievable. The implementation was described in Chapter~\ref{section:designandimplementation}. This includes a comparison of different Melt filters, to select the most suitable filter for the RGB adjustment. The selected filter is the \texttt{avfilter.colorbalance} filter, which can be used to adjust the RGB values of the highlights, mid tones and shadows individually.
+The research question consisted of two parts. The first part aimed to evaluate the feasibility of the above described implementation. The implementation confirms that it was achievable and was described in Chapter~\ref{section:designandimplementation}. This includes a comparison of different Melt filters, to select the most suitable filter for the RGB adjustment. The selected filter is the \texttt{avfilter.colorbalance} filter, which can be used to adjust the RGB values of the highlights, mid tones and shadows of a video individually.
 
 
 The second part of the research question considers the comparison of video colour grading results with Melt filters, that were applied on different platforms. The compared platforms are the Accurate Player RGB adjustment, that was implemented in this thesis project with the locally installed Melt framework and KDEN Live. This comparison was described in Chapter~\ref{section:experimentalevaluationanddiscussion}.
@@ -47,11 +47,13 @@ The second part of the research question considers the comparison of video colou
 
 To evaluate the differences, frames of the different platforms were extracted and compared. 
 The colours of those frames have been subtracted from each other using the \textit{grain extract} function in GIMP, to show differences in the colour saturations.
-
-
 The comparison with the local version of the Melt framework showed the interesting result, that the extracted frames display significant differences, even without the applications of filters. The cause for those differences remains unclear.
-
 The comparison with KDEN Live did not show the same results as the filter application in the Accurate Player either and the results of the colour subtractions lead to the presumption, that KDEN Live is using a different Melt filter for the adjustment of the RGB values.
+
+Those significant differences in the compared frames show the complexity of the topic of colour adjustment and representation. All tests were run on the same device to ensure consistency but still differences could be shown. To ensure a consistent output across various platforms and devices adds even more complexity to the topic of colour representation and video streaming.
+
+
+Additionally it was shown, that there are many different ways to achieve similar results or functionalities in the topic of video colour grading. Many parameters and aspects have to be taken into consideration. This confirms the necessity for user-sided colour adjustment for a more customizable video streaming experience and satisfying results. 
 
 
 
