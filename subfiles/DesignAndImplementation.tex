@@ -35,7 +35,7 @@ For the application of a Melt filter, different filters were compared to select 
 \subsection{Architecture Design} \label{subsection:architecturedesign}
 
 
-The system consists of four components: The frontend that is displayed in the browser, \texttt{main.py} as the python backend, the Melt framework, and a session service. The frontend is described in Section~\ref{subsection:accuratevideo} and the backend components (\texttt{main.py}, the Melt framework and session service) will be described in more detail in Section~\ref{subsection:jit-webrtc}. The structure and usage of the Melt was introduced in Section~\ref{subsection:melt}.
+The system consists of four components: The frontend that is displayed in the browser, \texttt{main.py} as the Python backend, the Melt framework, and a session service. The frontend is described in Section~\ref{subsection:accuratevideo} and the backend components (\texttt{main.py}, the Melt framework and session service) will be described in more detail in Section~\ref{subsection:jit-webrtc}. The structure and usage of the Melt was introduced in Section~\ref{subsection:melt}.
 
 % In those Sections, the functionality of the system before the implementation of the colour grading is described. The implementation is described in Section~\ref{subsection:implementation}.
 
@@ -200,9 +200,9 @@ The backend consists of three components: The Melt framework, \texttt{main.py} a
 
 
 The user initiates a session through the browser, which then initiates the \texttt{main.py} script. The system's frontend that is displayed in the browser was described in Section~\ref{subsection:accuratevideo}.
-Control commands are then sent from the browser to the python backend with a WebRTC data channel.
-From the \texttt{main.py} file, the control commands get sent to Melt via \texttt{stdout} (standard output) and \texttt{stdin} (standard input). These are the default input and output channels, that allow the python script communication with other components.
-Data written to \texttt{stdout} by the python code can be captured or redirected and data from an external source can be read from \texttt{stdin} by the python script.~\cite{python} The data flow of the control commands are highlighted in Figure~\ref{figure:controlcommands}.
+Control commands are then sent from the browser to the Python backend with a WebRTC data channel.
+From the \texttt{main.py} file, the control commands get sent to Melt via \texttt{stdout} (standard output) and \texttt{stdin} (standard input). These are the default input and output channels, that allow the Python script communication with other components.
+Data written to \texttt{stdout} by the Python code can be captured or redirected and data from an external source can be read from \texttt{stdin} by the Python script.~\cite{python} The data flow of the control commands are highlighted in Figure~\ref{figure:controlcommands}.
 
 \begin{figure}[H]
 	\centering
@@ -212,7 +212,7 @@ Data written to \texttt{stdout} by the python code can be captured or redirected
 \end{figure}
 
 
-As a response, the Melt framework sends an AVI stream with the rendered video and audio, status messages and metadata to the python backend. This is highlighted in Section~\ref{figure:avimetadata}.
+As a response, the Melt framework sends an AVI stream with the rendered video and audio, status messages and metadata to the Python backend. This is highlighted in Section~\ref{figure:avimetadata}.
 AVI is a file format that can contain audio and video information to allow synchronized playback of audio and video components, as described in Section~\ref{subsection_OverviewVideoStreamingComponents}.~\cite{avi} 
 
 \begin{figure}[H]
@@ -244,7 +244,7 @@ receives metadata from the \texttt{main.py} script and sends commands and respon
 \end{figure}
 
 The Melt framework and the \texttt{main.py} script are started once for each JIT session.
-The java-based \texttt{Session} service is designed to support the machine-to-machine interaction between the browser and the python backend. 
+The java-based \texttt{Session} service is designed to support the machine-to-machine interaction between the browser and the Python backend. 
 The \texttt{Session} service exposes a REST API (described in Section~\ref{subsection_OverviewVideoStreamingComponents}) for initiating a JIT session. 
 %
 % Additionally, it leverages AWS, specifically utilizing the Auto Scaling Group (ASG) feature to manage a cluster of instances dynamically, ensuring scalability and efficient distribution of JIT sessions across the instances in the cluster.
@@ -671,15 +671,15 @@ When applying this with and without JIT, no performance difference was noticeabl
 
 A deeper examination and evaluation of the different options of other Melt filters is an interesting option for future work or for Codemill to implement. For this thesis project, the filter \texttt{avfilter.colorbalance} will be used, because its results look the most vibrant and fitting for the expected outcome of RGB colour adjustment.
 
-In Figure~\ref{figure:septopus}, the 7 basic colour combinations of the subtractive colour model can be seen with the application of the filter \texttt{avfilter.colorbalance}. For this, the RGB values were set to either $1.0$ or $0$, which are the maximum and default values of this filter. 
+In Figure~\ref{figure:septopus}, the seven basic colour combinations of the subtractive colour model can be seen with the application of the filter \texttt{avfilter.colorbalance}. For this, the RGB values were set to either $1.0$ or $0$, which are the maximum and default values of this filter. 
 
 
 
 \begin{figure}[H]
 	\begin{center}
 		\cutpic{0.3cm}{0.8\textwidth}{septopus.png}
-		\label{figure:septopus}
 		\caption[Basic colours with the application of the filter \texttt{avfilter.colorbalance}.]{Basic colours of the subtractive colour model with the application of the filter \texttt{avfilter.colorbalance}.}
+		\label{figure:septopus}
 	\end{center}
 \end{figure}
 
