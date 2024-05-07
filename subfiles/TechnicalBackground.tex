@@ -355,12 +355,22 @@ KDEN Live is a video editing software, that offers a wide range of features such
 
 
 
+
+
+
+
+
+
+
+
 %-------------------------------------------------------------------------------------------------------
 \subsection{Protocol Buffer}
 \label{subsection:protocolbuffer}
 
 
-Protocol buffers are a binary data format developed by Google to compress data for sending it efficiently and faster over a network. The structure of this format is defined in a \texttt{.proto} file. Those files are used to generate code for reading and writing to the protocol buffer.~\cite{protobuffer}
+Protocol buffers are a binary data format developed by Google to compress data for sending it efficiently and fast over a network. The structure of this format is defined in a \texttt{.proto} file. Those files are used to generate code for reading and writing to the protocol buffer.~\cite{protobuffer}
+
+
 
 In this project, protocol buffers version 2 (proto2) were used. In the first line of the \texttt{.proto} file, the syntax is defined with the proto version that is being used. This can be seen for proto2 in the following:
 
@@ -376,10 +386,26 @@ In this project, protocol buffers version 2 (proto2) were used. In the first lin
 
 Data structures are defined using message declarations. Messages can contain fields for the data, each with a unique identifier and a specified data type. The data types for proto2 can be seen in Table~\ref{table:proto2_data_types}.~\cite{proto2_doc}
 
+In the following, an example message is shown and described.
+The example message represents a person's information, including their name, age, and email address. This is defined as follows:
+
+\begin{lstlisting}[style=protobufStyle, numbers=none]
+	message Person {
+		required string name = 1;
+		required int32 age = 2;
+		optional string email = 3;
+	}
+\end{lstlisting}
+
+Person is the label of the message and name, age, and email are the fields of the message with the data types \texttt{string} and \texttt{int32}.
+The keywords \texttt{required} and \texttt{optional} define whether the field is mandatory or optional.
+The numbers $1$, $2$ and $3$ are the fields unique identifiers.
+
 
 \begin{table}[H]
 	\centering
-
+	% \small % Adjusting font size
+	% \renewcommand{\arraystretch}{0.75} % Adjusting row spacing
 	\begin{tabular}{ll}
 		\toprule
 		\textbf{Data Type} & \textbf{Description} \\
@@ -401,24 +427,11 @@ Data structures are defined using message declarations. Messages can contain fie
 		bytes & Variable-length sequence of bytes \\
 		\bottomrule
 	\end{tabular}
-	\caption{Data types for fields in protocol buffers (proto2).~\cite{proto2_doc}}
+	\caption[Data types for fields in protocol buffers (proto2).]{Data types for fields in protocol buffers (proto2).~\cite{proto2_doc}}
 	\label{table:proto2_data_types}
 \end{table}
 
-In the following, an example message is shown and described.
-The example message represents a person's information, including their name, age, and email address. This is defined as follows:
 
-\begin{lstlisting}[style=protobufStyle, numbers=none]
-	message Person {
-		required string name = 1;
-		required int32 age = 2;
-		optional string email = 3;
-	}
-\end{lstlisting}
-
-Person is the label of the message and name, age, and email are the fields of the message with the data types \texttt{string} and \texttt{int32}.
-The keywords \texttt{required} and \texttt{optional} define whether the field is mandatory or optional.
-The numbers $1$, $2$ and $3$ are the fields unique identifiers.
 
 
 %---------------------------------------------------------------------------------------------------------
