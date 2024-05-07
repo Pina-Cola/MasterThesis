@@ -856,9 +856,9 @@ JitControl *const jit_control = (JitControl*) value;
 switch (jit_control->type) { ...
 \end{lstlisting}
 
-Three cases were implemented -- one for each colour value (red, green, blue). In the following, the switch case for the adjustment of the red value is explained in more detail. The other cases work analogical.
+Three cases are implemented -- one for each colour value (red, green, blue). In the following, the switch case for the adjustment of the red value is explained in more detail. The other cases work analogical.
 
-In the following code part, the case for the red value can be seen. First, the red value that was retrieved from the slider in the frontend is assigned to the variable \texttt{red\_value}. Then, an \texttt{mlt\_properties} object is created for setting the filter parameters later on. 
+In the following code part, the case for the red value can be seen. First, the red value that is retrieved from the slider in the frontend is assigned to the variable \texttt{red\_value}. Then, an \texttt{mlt\_properties} object is created for setting the filter parameters later on. 
 
 \begin{lstlisting}[language=c, numbers=none, columns=fullflexible]			
 case CONTROL_TYPE__RED_VALUE:
@@ -881,7 +881,7 @@ The comparison of the different filters can be seen in Section~\ref{subsection:m
 		}	
 \end{lstlisting}
 
-The previous values that were set on the sliders for the for the green and red values were saved in the variables, that were declared outside of the function. In the following, the values are set analogical to the above described red value. This is necessary to not overwrite the previously adjusted colour values.
+The previous values that are set on the sliders for the for the green and red values are saved in the variables, that are declared outside of the function. In the following, the values are set analogical to the above described red value. This is necessary to not overwrite the previously adjusted colour values.
 	
 \begin{lstlisting}[language=c, numbers=none, columns=fullflexible]
 		if (green_value >= -1.0 && green_value <= 1.0) {
