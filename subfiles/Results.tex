@@ -79,7 +79,7 @@ Those tests are run on the same computer to ensure consistency and the frames ar
 
 For the evaluation, a comparison between the locally installed Melt version with the \texttt{avfilter.colorbalance} filter applied and the RGB adjustment in the Accurate Player with the sliders is tested.
 For the tests, the red value is set on the maximum with the respective method, assuming that the results of the green and blue value work analogical.
-The filter is applied and frame 343 of the test video file is extracted from both components. The results of the locally installed Melt framework can be seen in Figure~\ref{figure:redMelt}, with the \texttt{avfilter.colorbalance} filter applied and the parameters for shadows, mid tones and highlights set to the maximum of $1$ (\texttt{av.rs=1}, \texttt{av.rm=1} and \texttt{av.rh=1}).
+The filter is applied and frame 343 of the short film \textit{Sintel} is extracted from both components. The results of the locally installed Melt framework can be seen in Figure~\ref{figure:redMelt}, with the \texttt{avfilter.colorbalance} filter applied and the parameters for shadows, mid tones and highlights set to the maximum of $1$ (\texttt{av.rs=1}, \texttt{av.rm=1} and \texttt{av.rh=1}).
 In comparison, the extracted frame from the Accurate Player frontend can be seen in Figure~\ref{figure:redAP}. This result is obtained by setting the red slider in the frontend onto the maximum value and leaving the sliders for green and blue on the default value, which corresponds to $0$ in the filter application in the backend. The maximum value of the red slider gets send to the backend and is being applied for the parameters of the filter \texttt{avfilter.colorbalance}, setting the parameters for shadows, mid tones and highlights to the maximum of $1$ (\texttt{av.rs=1}, \texttt{av.rm=1} and \texttt{av.rh=1}) as well.
 
 
@@ -127,7 +127,7 @@ This result image from the subtraction is red tinted and has no green or blue ar
 	\end{center}
 \end{figure}
 
-To evaluate, if this difference is caused by the application of the filter or by other aspects, such as video compression or difference in video players, the frames from the original video file are compared with the frames from both methods without a filter applied to them. For this, frame 343 of the original video file is compared to the same frame extraction of the locally installed Melt framework and the Accurate Player without the application of the filter. The frame from the original video file can be seen in Figure~\ref{figure:nofilterO}.
+To evaluate, if this difference is caused by the application of the filter or by other aspects, such as video compression or difference in video players, the frames from the original video file of the short film \textit{Sintel} are compared with the frames from both methods without a filter applied to them. For this, frame 343 of the original video file is compared to the same frame extraction of the locally installed Melt framework and the Accurate Player without the application of the filter. The frame from the original video file can be seen in Figure~\ref{figure:nofilterO}.
 
 \begin{figure}[H]
 	\begin{center}
