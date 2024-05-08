@@ -94,13 +94,14 @@
 	\subsection{Research Questions} \label{subsection:researchquestions}
 	
 	
-	This thesis revolves around the implementation of video colour grading with the adjustment of the RGB values using JIT techniques. 	
+	This thesis revolves around the implementation of video colour grading with the adjustment of the RGB values using JIT techniques and the Melt framework. The Melt framework (MLT/Melt) is a multimedia framework as a command-line (CLI) tool that can be used for video editing and playback. It is introduced and described in Section~\ref{subsection:melt}.
 	JIT is used for on-the-fly conversion of video files and optimizing them for streaming. 
 	%This process includes the transformation of a video file, potentially one with non-web-friendly formats, into a more suitable format for the playback in web browsers.
 	The demand for efficient and dynamic video processing tools is increasing and with this, the ability to perform on-the-fly colour correction becomes increasingly valuable. 
 	
 	
-	The goal of this thesis is to explore the feasibility of implementing the video grading process with JIT, with the focus on real-time colour grading and to implement such a solution, if possible. This project lies in the area of multimedia processing, video editing and real-time computing and is done in cooperation with the company Codemill, that is introduced in Section~\ref{subsection:codemill}.
+	The goal of this thesis is to explore the feasibility of implementing the video grading process with JIT, with the focus on real-time colour grading and to implement such a solution, if possible. This solution should contain three sliders in the frontend to adjust the individual RGB values: Red, green and blue. The colour adjustment should then be applied to the video output in real-time, while streaming the video.
+	This project lies in the area of multimedia processing, video editing and real-time computing and is done in cooperation with the company Codemill, that is introduced in Section~\ref{subsection:codemill}.
 	
 	
 	%The infrastructure of the system is visualized and explained in Chapter~\ref{section:designandimplementation}.
@@ -108,7 +109,7 @@
 	The project aims to address the feasibility and effectiveness of implementing video colour correction using JIT in the context of real-time video streaming. The following question is relevant:
 	
 	\begin{researchbox}
-		Is it possible to obtain colour-graded video results on the fly, meaning in real-time, using JIT?
+		Is it possible to obtain colour-graded video results on the fly, meaning in real-time, using JIT and the Melt framework?
 	\end{researchbox}
 	
 	After answering this research question, the following question will be evaluated and answered:
@@ -117,19 +118,18 @@
 		Does the result of the filter application in different applications with a Melt backend and the described system differ? 
 	\end{researchbox}
 
-	The Melt framework (MLT/Melt) is a multimedia framework as a command-line (CLI) tool that can be used for video editing and playback. It is introduced and described in Section~\ref{subsection:melt}.
 
-	% Those different applications, that use Melt as a backend are the Melt framework itself and KDEN Live. The Melt framework was introduced and described in Section~\ref{subsection:melt} and KDEN Live in Section~\ref{section:comparisonKDENLive}.
-
-	
-	The aim is to contribute insights into the technological and scientific aspects of real-time video processing, exploring the possibilities and potential applications introduced by using JIT to implement colour grading. 
+	The different applications for comparison, that use Melt as a backend are the Melt framework itself and the video editing software KDEN Live. 
 	
 	
+	The aim of this thesis project is the contribution of insights into the technological and scientific aspects of real-time video processing, exploring the possibilities and potential applications introduced by using JIT and Melt to implement colour grading. 
 	
 	
 	
 	
 	
+	
+\newpage	
 	%-------------------------------------------------------------------------------------------------------
 	\subsection{Codemill} \label{subsection:codemill}
 	% Provide context, highlight the problem space, and explain the motivation behind the project.
