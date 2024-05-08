@@ -867,7 +867,7 @@ case CONTROL_TYPE__RED_VALUE:
 		mlt_properties filter_props_red = mlt_filter_properties(filter);
 \end{lstlisting}
 
-In the first if statement of this case, the red value is added to the filter properties. For this, it gets controlled if the value is in the input range of the filter parameter, which has to be a float between $-1$ and $1$. Then, a string containing the value is created, because the function \texttt{mlt\_properties\_set} requires the value for the filter parameter in string format. After this, the filter properties are set to this value. Three parameters per colour have to be set, because the chosen filter has the possibility of adjusting the shadows, mid tones and highlights individually. 
+In the first if statement of this case, the red value is added to the filter properties. For this, it is controlled if the value is in the input range of the filter parameter, which has to be a float between $-1$ and $1$. Then, a string containing the value is created, because the function \texttt{mlt\_properties\_set} requires the value for the filter parameter in string format. After this, the filter properties are set to this value. Three parameters per colour have to be set, because the chosen filter has the possibility of adjusting the shadows, mid tones and highlights individually. 
 The comparison of the different filters can be seen in Section~\ref{subsection:meltfilter} and the described code can be seen below.
 
 
