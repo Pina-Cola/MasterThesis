@@ -24,7 +24,7 @@
 \newpage
 \section{Design and Implementation} \label{section:designandimplementation}
 
-In this Chapter, the system architecture and the implementation is explained. First a brief overview over the architecture is given in Section~\ref{subsection:architecturedesign} and then the frontend and backend are described in more detail (Section~\ref{subsection:accuratevideo} and Section~\ref{subsection:jit-webrtc}).
+In this Chapter, the system architecture and the implementation are explained. First a brief overview over the architecture is given in Section~\ref{subsection:architecturedesign} and then the frontend and backend are described in more detail (Section~\ref{subsection:accuratevideo} and Section~\ref{subsection:jit-webrtc}).
 For the application of a Melt filter, different filters were compared to select the most suitable option in Section~\ref{subsection:meltfilter}. Finally, the implementation is described with examples and code extractions in Section~\ref{subsection:implementation}.
 
 
@@ -35,7 +35,7 @@ For the application of a Melt filter, different filters were compared to select 
 \subsection{Architecture Design} \label{subsection:architecturedesign}
 
 
-The system consists of four components: The frontend that is displayed in the browser, \texttt{main.py} as the Python backend, the Melt framework, and a session service. The frontend is described in Section~\ref{subsection:accuratevideo} and the backend components (\texttt{main.py}, the Melt framework and session service) will be described in more detail in Section~\ref{subsection:jit-webrtc}. The structure and usage of the Melt was introduced in Section~\ref{subsection:melt}.
+The system consists of four components: The frontend that is displayed in the browser, \texttt{main.py} as the Python backend, the Melt framework and a session service. The frontend is described in Section~\ref{subsection:accuratevideo} and the backend components (\texttt{main.py}, the Melt framework and session service) will be described in more detail in Section~\ref{subsection:jit-webrtc}. The structure and usage of the Melt was introduced in Section~\ref{subsection:melt}.
 
 % In those Sections, the functionality of the system before the implementation of the colour grading is described. The implementation is described in Section~\ref{subsection:implementation}.
 
@@ -68,7 +68,7 @@ For development and testing without the session service, the backend can be star
 
 The following description of the system is based on the code base and the information from the \texttt{README} file.~\cite{RM_Frontend}
 
-The frontend is displayed in the browser and uses Node.js as its runtime environment with yarn to manage project dependencies and packages. It is developed using HyperText Markup Language (HTML), Cascading Style Sheets (CSS), and JavaScript (JS) to create the user interface.
+The frontend is displayed in the browser and uses Node.js as its runtime environment with Yarn to manage project dependencies and packages. It is developed using HyperText Markup Language (HTML), Cascading Style Sheets (CSS) and JavaScript (JS) to create the user interface.
 
 
 \begin{figure}[H]
@@ -114,7 +114,7 @@ In addition to this, the user interface of the Accurate Player has multiple cont
 following.
 
 	
-Permanently fixed in the top left corner of the Accurate Player is a window, that contains a slider to adjust the quality of the video in real time. This function does work for a video that is currently playing and for a frame of a video that is currently pause as well. This can be seen in Figure~\ref{figure:qualityslider}. 
+Permanently fixed in the top left corner of the Accurate Player is a window that contains a slider to adjust the quality of the video in real time. This function does work for a video that is currently playing and for a frame of a video that is currently paused as well. This can be seen in Figure~\ref{figure:qualityslider}. 
 In this project, the sliders for the RGB colour grading will be added in this windows, too. This is described in Section~\ref{subsection:implementation}.
 
 \end{minipage}\begin{minipage}{0.05\textwidth}
@@ -148,7 +148,7 @@ In this project, the sliders for the RGB colour grading will be added in this wi
 	\ 
 \end{minipage}\begin{minipage}{0.45\textwidth}
 browser, two icons to expand further menus can be found. 
-This includes a menu for subtitle and audio setting, which is divided into two parts for those settings. This control window can be seen in Figure~\ref{figure:subtitles}. It enables the audio functionalities for muting the audio or changing to a different audio track, which can be used for example if a video is available in different languages to switch between the languages. These options can be seen in Figure~\ref{figure:subtitles} on the right part of the control menu.
+This includes a menu for subtitle and audio settings, which is divided into two parts for those settings. This control window can be seen in Figure~\ref{figure:subtitles}. It enables the audio functionalities for muting the audio or changing to a different audio track, which can be used for example if a video is available in different languages to switch between the languages. These options can be seen in Figure~\ref{figure:subtitles} on the right part of the control menu.
 The left side of the window allows for enabling and disabling specific subtitles from a list of available subtitles. 
 %
 %
@@ -167,7 +167,7 @@ Additionally, a menu with further settings can be found when expanding the menus
 \begin{figure}[H]
 	\begin{center}
 		\cutpic{0.3cm}{0.9\textwidth}{AV_settings2.png}
-		\caption[Window for settings in the frontend.]{Window for settings in the frontend}
+		\caption[Window for settings in the frontend.]{Window for settings in the frontend.}
 		\label{figure:othercontrols}
 	\end{center}
 \end{figure}
@@ -194,7 +194,7 @@ This is possible, because the Accurate Player uses JIT techniques to dynamically
 \subsection{JIT-WebRTC} \label{subsection:jit-webrtc}
 % Describe the backend
 
-The following description of the system is based on the code base and the information from the \texttt{README} file.~\cite{RM_Backend}
+The following description of the system's backend is based on the code base and the information from the \texttt{README} file.~\cite{RM_Backend}
 JIT-WebRTC is a live transcoder with a WebRTC output. As described in Section~\ref{subsection_OverviewVideoStreamingComponents}, transcoding is the conversion of one digital data format into another.~\cite{transcoding}
 The backend consists of three components: The Melt framework, \texttt{main.py} and a session service.
 
@@ -207,7 +207,7 @@ Data written to \texttt{stdout} by the Python code can be captured or redirected
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\textwidth]{IM_control.png}
-	\caption{Control commands in the system architecture}
+	\caption{Control commands in the system architecture.}
 	\label{figure:controlcommands}
 \end{figure}
 
@@ -223,7 +223,7 @@ AVI is a file format that can contain audio and video information to allow synch
 \end{figure}
 
 
-The audio and video from the incoming AVI stream is extracted by the \texttt{main.py} script to encode it for sending it to the browser with WebRTC. The WebRTC connection serves as a direct communication channel between the browser and the backend, enabling real-time data exchange, involving audio, video, or other data streams. 
+The audio and video from the incoming AVI stream is extracted by the \texttt{main.py} script to encode it for sending it to the browser with WebRTC. The WebRTC connection serves as a direct communication channel between the browser and the backend, enabling real-time data exchange, involving audio, video or other data streams. 
 
 
 %It has the ability to extract specific channels from the rendered audio, to %be rendered to an stereo stream for WebRTC.
@@ -239,7 +239,7 @@ receives metadata from the \texttt{main.py} script and sends commands and respon
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\textwidth]{IM_wrtc_control.png}
-	\caption[WebRTC and control in the system architecture]{WebRTC connection and control commands in the system architecture}
+	\caption[WebRTC and control in the system architecture.]{WebRTC connection and control commands in the system architecture.}
 	\label{figure:videoaudio}
 \end{figure}
 
@@ -268,7 +268,7 @@ The \texttt{Session} service exposes a REST API (described in Section~\ref{subse
 %* [`session`](session/README.md)
 %
 %
-For development and testing without the session service, JIT can be started in a Docker container. This has been done for the implementation for this project.
+For development and testing without the session service, JIT can be started in a Docker container. This has been done for the implementation in this project.
 
 
 %\begin{figure}[H]
@@ -330,7 +330,7 @@ The goal for this thesis project is the on-the-fly adjustment of the RGB values 
 For this purpose, various Melt filters were examined and compared to identify the most suitable ones for implementing this functionality. 
 RGB colour representation was described in Section~\ref{subsection:RGB} and the Melt framework was described in Section~\ref{subsection:melt}.
 
-In table~\ref{table:filter}, a selection of filters, that influence the RGB representation of the video are listed. This includes the filter name, description and possible parameters, that are listed on the Melt website.~\cite{melt_filters} Only the for this thesis relevant parameters will be listed.
+In table~\ref{table:filter}, a selection of filters that influence the RGB representation of the video are listed. This includes the filter name, description and possible parameters that are listed on the Melt website.~\cite{melt_filters} Only the for this thesis relevant parameters will be listed.
 Then, those filters were executed locally to compare the visual results of applying them. This comparison is done in the following as well.
 The Melt filters \texttt{avfilter.colorbalance}, \texttt{avfilter\-.colorchannelmixer} and \texttt{frei0r\-.coloradj\_RGB} are listed with their description and parameters in Table~\ref{table:filter} and then their visual results are compared. Other Melt filters that change the visual appearance of the video can be seen in Appendix~\ref{appendix:differentMeltFilter}.
 
@@ -411,10 +411,10 @@ The Melt filters \texttt{avfilter.colorbalance}, \texttt{avfilter\-.colorchannel
 
 
 To compare the listed filters and their parameters, different values to change the red tones of the video will be tested and compared, assuming that the adjustment of green and blue works analogical.
-
+%
 In addition to this, it needs to be tested, if multiple parameters of the same filter can be applied simultaneously. For this evaluation, the filters with their different parameters for green and red are applied to the same frame of the test video file. Regarding the RGB colour model, this should result in a yellow toned output frame. The functionality of the RGB colour model was explained in Section~\ref{subsection:RGB}. 
 
-For the purpose evaluating and comparing, two frames were selected from the example video file. Each of those frames has a distinct colour schemes. One frame shows a snow landscape and the \textit{Blender Institute Production} text, while the other frame shows an elderly man in a warm lighted indoor setting. The original frames $343$ and $3377$ can be seen in Figure~\ref{figure:nofilter} for reference.
+For the purpose of evaluating and comparing, two frames were selected from the example video file. Each of those frames has a distinct colour scheme. One frame shows a snow landscape and the \textit{Blender Institute Production} text, while the other frame shows an elderly man in a warm lighted indoor setting. The original frames $343$ and $3377$ can be seen in Figure~\ref{figure:nofilter} for reference.
 
 
 \begin{figure}[H]
@@ -451,7 +451,7 @@ In the following, the extracted frames after the adjustment of the red value of 
 %--------------------------------------------------------------------------------------
 \subsubsection*{Filter \texttt{avfilter.colorbalance}}
 
-The parameters of the filter \texttt{avfilter.colorbalance} take input values as a floats between $-1$ and $1$. The filter has individual parameters to set the shadows, mid tones and highlights per colour (red, green and blue). The results of the different parameters set on the maximum value of $1$ for adjusting the red shadows, mid tones and highlights can be seen in Figure~\ref{figure:rs1rm1rh1}.
+The parameters of the filter \texttt{avfilter.colorbalance} take input values as a floats between $-1$ and $1$. The filter has individual parameters to set the shadows, mid tones and highlights per colour (red, green and blue). The results of the different parameters set on the maximum value of $1$ for adjusting the red shadows with \texttt{av.rs=1}, the red mid tones with \texttt{av.rm=1} and the red highlights with \texttt{av.rg=1} can be seen in Figure~\ref{figure:rs1rm1rh1}.
 
 \begin{figure}[H]
 	\begin{center}
@@ -610,7 +610,7 @@ The Melt filters \texttt{avfilter.colorbalance}, \texttt{avfilter\-.colorchannel
 
 % For the comparison of the result of the single colour filter application, the following parameters per filter are chosen:
 
-In the following in Figure~\ref{figure:redcomp}, the results of the change of a single colour (red) for each of the filters can be seen as a side-by-side comparison:
+In Figure~\ref{figure:redcomp}, the results of the change of a single colour (red) for each of the filters can be seen as a side-by-side comparison:
 
 \begin{figure}[H]
 	\centering
@@ -631,11 +631,11 @@ In the following in Figure~\ref{figure:redcomp}, the results of the change of a 
 
 \end{figure}
 
-In Figure~\ref{figure:redcomp} it can be seen, that the red tone of the frames with the filter \texttt{avfilter.colorbalance} applied is the most intense and vibrant. This makes the filter \texttt{avfilter.colorbalance} a suitable choice for the implementation of the RGB colour adjustment with sliders in the frontend, because it leads to a broader colour range and more options for personalisation.
+In Figure~\ref{figure:redcomp} it can be seen that the red tone of the frames with the filter \texttt{avfilter.colorbalance} applied is the most intense and vibrant. This makes the filter \texttt{avfilter.colorbalance} a suitable choice regarding the adjustment of a single colour channel, because a broader range in the colour intensity leads to more options for personalization.
 
 
 
-In the following in Figure~\ref{figure:yellowcomp}, the results of the application of two mixed colours for each of the filters can be seen as a side-by-side comparison. The chosen colours are red and green, which leads to a yellow result.
+In Figure~\ref{figure:yellowcomp}, the results of the application of two mixed colours for each of the filters can be seen as a side-by-side comparison. The chosen colours are red and green, which leads to a yellow result.
 
 \begin{figure}[H]
 	\centering
@@ -659,15 +659,15 @@ In the following in Figure~\ref{figure:yellowcomp}, the results of the applicati
 
 In Figure~\ref{figure:yellowcomp} can be seen, that the colour of the \texttt{avfilter.colorbalance} is the most intense and vibrant again, which confirms the results of the previous comparison regarding the colour red. This makes the filter \texttt{avfilter.colorbalance} a suitable choice for the implementation of the RGB colour adjustment with sliders in the frontend, because it leads to a broader colour range and more options for personalisation. The filter \texttt{avfilter.colorbalance} shows the most intense colour results for single colour adjustments as well as for mixed colours.
 
-In the above shown tests, that are shown in the middle in Figure~\ref{figure:redcomp} and \ref{figure:yellowcomp}, the results of the \texttt{avfilter.colorchannelmixer} filter appear to have more depth and look more dynamic, because the colour gain was only executed on the respective colour channels. This can be an aspect, that lets the user achieve more aesthetically pleasing results but the overall intensity of the colours is lower. In addition to this, the expected behaviour of a sliders for RGB colour adjustment might not be to only change the colour intensity on one the respective colour channel. Based on this, the filter \texttt{avfilter.colorbalance} seems to deliver the most fitting results in those criteria.
+In the above shown tests, that are visualized in the middle in Figure~\ref{figure:redcomp} and \ref{figure:yellowcomp}, the results of the \texttt{avfilter.colorchannelmixer} filter appear to have more depth and look more dynamic, because the colour gain was only executed on the respective colour channels. This can be an aspect, that lets the user achieve more aesthetically pleasing results but the overall intensity of the colours is lower. In addition to this, the expected behaviour of a sliders for RGB colour adjustment might not be to only change the colour intensity on one of the respective colour channel. Based on this, the filter \texttt{avfilter.colorbalance} seems to deliver the most fitting results in those criteria.
 
 
-The results of the filter \texttt{frei0r.coloradj\_RGB}, that can be seen on the right in Figure~\ref{figure:redcomp} and \ref{figure:yellowcomp} seem to have darker and less vibrant results, that do not present the expected colours as accurately as the other two filter. This does not make it a fitting choice for the RGB adjustment with sliders.
+The results of the filter \texttt{frei0r.coloradj\_RGB}, that can be seen on the right in Figure~\ref{figure:redcomp} and \ref{figure:yellowcomp} seem to have darker and less vibrant results, that do not present the expected colours as accurately as the other two filters. This does not make it a fitting choice for the RGB adjustment with sliders.
 
 
 The \texttt{avfilter.colorbalance} filter leads to the most vibrant and intense results of the above listed selection of filters. Additionally it has the option to adapt the shadows, mid tones and highlights individually, which creates the option for more preadjustments of the results in the backend or for introducing more sliders or options for the user-sided adjustment as future work.
-But on the downside, to tone the whole frame evenly, three instead of one parameter have to changed and applied -- for the shadows, mid tones and highlights for each colour slider.
-When applying this with and without JIT, no performance difference was noticeable but for a accurate evaluation of this, performance tests would have to be performed and the implementations of the filters would need to be examined. This is an opportunity for future work.
+But on the downside, to tone the whole frame evenly, three instead of one parameter have to be changed and applied -- for the shadows, mid tones and highlights for each colour slider.
+When applying this with and without JIT, no performance difference was noticeable but for an accurate evaluation of this, performance tests would have to be performed and the implementations of the filters would need to be examined, which exceeds the scope of this project..
 
 A deeper examination and evaluation of the different options of other Melt filters is an interesting option for future work or for Codemill to implement. For this thesis project, the filter \texttt{avfilter.colorbalance} will be used, because its results look the most vibrant and fitting for the expected outcome of RGB colour adjustment.
 
@@ -683,7 +683,7 @@ In Figure~\ref{figure:septopus}, the seven basic colour combinations of the subt
 	\end{center}
 \end{figure}
 
-For comparison, the original frame 3447 from the test video file and can be seen in Figure~\ref{figure:septo_nofilter} without applied filters.
+For comparison, the original frame 3447 from the test video file can be seen in Figure~\ref{figure:septo_nofilter} without applied filters.
 
 \begin{figure}[H]
 	\begin{center}
@@ -795,11 +795,11 @@ enum ControlType {
 \end{minipage}\begin{minipage}{0.04\textwidth}
 	\ 
 \end{minipage}\begin{minipage}{0.42\textwidth}
-\vspace*{0.7em}
+\vspace*{0.6em}
 values that are retrieved by the previously described sliders for the RGB value are transferred with this data structure.
 In the code, the message \texttt{JitControl} and the enum \texttt{ControlType} can be seen. 
 In the message, three optional fields for the red, green and blue value are defined as \texttt{red\_value}, \texttt{green\_value} and \texttt{blue\_value} to represent the RGB colour values. 
-In the enum, the three constants (\texttt{RED\_VALUE}, \texttt{GREEN\_VALUE}, and \texttt{BLUE\_VALUE}) are added. 
+In the enum, the three constants (\texttt{RED\_VALUE}, \texttt{GREEN\_VALUE} and \texttt{BLUE\_VALUE}) are added. 
 Through the sliders in the frontend, users can manipulate these values for red, green
 
 \end{minipage}
@@ -833,9 +833,9 @@ and blue. The input values of those sliders are read out and assigned to the enu
 \end{minipage}
 \vspace*{0.1em}
 
-according parameters set, else the other parameters will be overwritten with the default value $0$. This refers to the achieving of mixed colour results, including for example yellow, which can be created by adjusting the red and the green colour channel. The previous values for each colour channel need to be sent to the backend together with the changed value, to prevent the overwriting of the already adjusted colours with the default value. This is implemented with initializing global variables for each of the colours, that are set to the current value in each call. This can be seen in the code snippet above.
+according parameters set, else the other parameters will be overwritten with the default value $0$. This refers to the achieving of mixed colour results, including for example yellow, which can be created by adjusting the red and the green colour channel. The previous values for each colour channel need to be sent to the backend together with the changed value to prevent the overwriting of the already adjusted colours with the default value. This is implemented with initializing global variables for each of the colours that are set to the current value in each call. This can be seen in the code snippet above.
 
-The application of the Melt filter with the current input values from the sliders is implemented in the function \texttt{jit\_action()}, that has a Melt producer as a parameter. In the following code, the beginning of the function can be seen. The Melt properties, consumer and producer are retrieved and set. Then the filter \texttt{avfilter.colorbalance} is set. The comparison of the different filter options can be seen in Section~\ref{subsection:meltfilter}.
+The application of the Melt filter with the current input values from the sliders is implemented in the function \texttt{jit\_action()}, that has a Melt producer as a parameter. In the code below, the beginning of the function can be seen. The Melt properties, consumer and producer are retrieved and set. Then the filter \texttt{avfilter.colorbalance} is set. The comparison of the different filter options can be seen in Section~\ref{subsection:meltfilter}.
 
 
 \begin{lstlisting}[language=c, numbers=none, columns=fullflexible]	
@@ -847,7 +847,7 @@ mlt_filter filter = mlt_factory_filter(service, "avfilter.colorbalance", NULL);
 \end{lstlisting}
 
 
-In the following code extraction, a pointer \texttt{jit\_control} is declared, that casts a value into the type \texttt{JitControl}.
+In the following code extraction, a pointer \texttt{jit\_control} is declared, which casts a value into the type \texttt{JitControl}.
 Then, a switch statement is started, based on the value of \texttt{jit\_control}.
 The \texttt{->} operator is used to access the type field of the \texttt{jit\_control} structure and depending on the value, the execution will jump to the corresponding case within the switch statement.
 
@@ -856,9 +856,9 @@ JitControl *const jit_control = (JitControl*) value;
 switch (jit_control->type) { ...
 \end{lstlisting}
 
-Three cases are implemented -- one for each colour value (red, green, blue). In the following, the switch case for the adjustment of the red value is explained in more detail. The other cases work analogical.
+Three cases are implemented: One for each colour value (red, green, blue). In the following, the switch case for the adjustment of the red value is explained in more detail. The other cases work analogical.
 
-In the following code part, the case for the red value can be seen. First, the red value that is retrieved from the slider in the frontend is assigned to the variable \texttt{red\_value}. Then, an \texttt{mlt\_properties} object is created for setting the filter parameters later on. 
+In the code part below, the case for the red value can be seen. First, the red value that is retrieved from the slider in the frontend is assigned to the variable \texttt{red\_value}. Then, an \texttt{mlt\_properties} object is created for setting the filter parameters later on. 
 
 \begin{lstlisting}[language=c, numbers=none, columns=fullflexible]			
 case CONTROL_TYPE__RED_VALUE:
@@ -867,7 +867,7 @@ case CONTROL_TYPE__RED_VALUE:
 		mlt_properties filter_props_red = mlt_filter_properties(filter);
 \end{lstlisting}
 
-In the first if statement of this case, the red value is added to the filter properties. For this, it is controlled if the value is in the input range of the filter parameter, which has to be a float between $-1$ and $1$. Then, a string containing the value is created, because the function \texttt{mlt\_properties\_set} requires the value for the filter parameter in string format. After this, the filter properties are set to this value. Three parameters per colour have to be set, because the chosen filter has the possibility of adjusting the shadows, mid tones and highlights individually. 
+In the first if statement of this case, the red value is added to the filter properties. For this, the value needs to be in the input range of the filter parameter, which has to be a float between $-1$ and $1$. Then, a string containing the value is created, because the function \texttt{mlt\_properties\_set} requires the value for the filter parameter in String format. After this, the filter properties are set to this value. Three parameters per colour have to be set, because the chosen filter has the possibility of adjusting the shadows, mid tones and highlights individually. 
 The comparison of the different filters can be seen in Section~\ref{subsection:meltfilter} and the described code can be seen below.
 
 
@@ -881,7 +881,7 @@ The comparison of the different filters can be seen in Section~\ref{subsection:m
 		}	
 \end{lstlisting}
 
-The previous values that are set on the sliders for the for the green and red values are saved in the variables, that are declared outside of the function. In the following, the values are set analogical to the above described red value. This is necessary to not overwrite the previously adjusted colour values.
+The previous values that are set on the sliders for the for the green and red values are saved in the variables that are declared outside of the function. In the code below, the values are set analogical to the above described red value. This is necessary to not overwrite the previously adjusted colour values.
 	
 \begin{lstlisting}[language=c, numbers=none, columns=fullflexible]
 		if (green_value >= -1.0 && green_value <= 1.0) {
@@ -901,7 +901,7 @@ The previous values that are set on the sliders for the for the green and red va
 	}
 \end{lstlisting}
 
-In the following code snippet, the filter and the producer get connected and then the consumer and the filter get connected aswell.
+In the following code snippet, the filter and the producer get connected after which the consumer and the filter get connected aswell.
 
 
 \begin{lstlisting}[language=c, numbers=none, columns=fullflexible]
@@ -910,9 +910,9 @@ In the following code snippet, the filter and the producer get connected and the
 	break;			
 \end{lstlisting}
 
-The above presented and described code is executed, when the slider for the red value is changed in the frontend and the red value is applied to the video output in real time with the Melt framework.
+The above presented and described code is executed when the slider for the red value is changed in the frontend and the red value is applied to the video output in real time with the Melt framework.
 
-The implementation of the switch case for the application of the filter for the colour adjustment of green and blue can be seen in the following:
+The implementation of the switch case for the application of the filter for the colour adjustment of green and blue can be seen in the code below:
 
 \newpage
 
