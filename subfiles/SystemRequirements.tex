@@ -28,7 +28,7 @@
 
 
 
-In this Chapter, the technical requirements for the system are described. These requirements provide the necessary standards to ensure the systems functionality. Additionally, the execution of the code is described.
+In this Chapter, the technical requirements for the system are described. These requirements provide the necessary standards to ensure the system functionality. Additionally, the execution of the code is described.
 
 
 
@@ -45,7 +45,7 @@ While implementing, it was observed that the system should have a minimum of $16
 
 
 The software requirements include information about the operating system, applications and frameworks.
-While testing, the code encountered difficulties running on Windows. While it should be possible that with debugging and configuration adjustments it could run, it was decided to proceed with this thesis project on a Linux system (Ubuntu 22.04). This decision was influenced by factors such as the compatibility of the code base with Linux and its command-line interface.
+While testing, the code encountered difficulties running on Windows. It should be possible to run the code after adjusting the configuration but it was decided to proceed with this thesis project on a Linux system (Ubuntu 22.04). This decision was influenced by factors such as the compatibility of the code base with Linux and its command-line interface.
 Regarding the documentation in the README files, the Mac operating system should be able to run the code after making adjustments, but this was not tested in the scope of this thesis.
 
 
@@ -56,7 +56,7 @@ Additionally, Git is essential for version control. While it is not strictly req
 An installation of the Melt framework is not needed for the execution or development of this system, but can be useful for testing or exploring the functionalities of Melt.
 %
 %Regarding the security measurements, the Docker containers use a \textit{you snooze you lose} approach, where the container terminates automatically if there are no incoming requests within a certain time frame. 
-Furthermore, the system adheres to standard security practices.
+Furthermore, the system adheres to standard security practices, including using the secure communication protocol HTTP.
 
 
 	
@@ -78,7 +78,9 @@ Furthermore, the system adheres to standard security practices.
 \subsection{Execution of the Code} \label{subsection:runninghtecode}
 % Discuss the technologies and tools chosen for the implementation.
 
-The codebase for this project consists of two directories -- \texttt{accurate-player-3-core} and \texttt{jit-webrtc}. The system's architecture is described in Section~\ref{section:designandimplementation}. Additionally, the READMEs of the two main components of the system can be seen in Appendix~\ref{appendix:readme}.
+In this Section, the execution of the code is described and information regarding the test video file are given.
+
+The codebase for this project consists of two directories: \texttt{Accurate-player-3-core} and \texttt{jit-webrtc}. The system's architecture is described in Section~\ref{section:designandimplementation}. Additionally, the READMEs of the two main components of the system can be seen in Appendix~\ref{appendix:readme}.
 
 
 The files for the frontend code are in a directory that is called \texttt{accurate-player-3-core}. To execute the frontend, it needs to be navigated to the directory \texttt{demo} in \texttt{packages} and then \texttt{yarn start} needs to be executed with the parameter for the backend in the CLI:
@@ -107,7 +109,7 @@ It tells the story of a young girl, who is searching for her lost dragon compani
 
 The film is allowed to be used for free distribution, sharing, and adaptation, as long as the following credit is given to the original creators. This licensing approach promotes collaborations and progress of the Free and Open-Source Software (FOSS) community.
 
-$\small\copyright$copyright Blender Foundation $|$ \url{durian.blender.org}
+$\small\copyright$ copyright Blender Foundation $|$ \url{durian.blender.org}
 
 It is noted that for the sake of clarity, this copyright attribution is applied to the entire use of frames of the film in this thesis. It will not be added to each extracted frame.
 
