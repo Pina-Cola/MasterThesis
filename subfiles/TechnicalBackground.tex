@@ -16,13 +16,13 @@
 \section{Technical Background} \label{section:technicalbackground}
 
 
-In this Chapter, the structure and usage of the Melt framework is explained and a brief overview of video streaming components and addition components is given. In additional to this, protocol buffers are introduced and explained with examples.
+In this Chapter, the structure and usage of the Melt framework is explained and a brief overview of video streaming components and addition components is given. In addition to this, protocol buffers are introduced and explained with examples.
 
 
 %---------------------------------
 \subsection{Melt} \label{subsection:melt}
 
-The Melt framework is a multimedia framework as a command-line tool that can be used for video editing and playback. It is written in C and provides a set of tools, libraries, and services for handling multimedia content, including video and audio.~\cite{melt} 
+The Melt framework is a multimedia framework as a command-line tool that can be used for video editing and playback. It is written in C and provides a set of tools, libraries and services for handling multimedia content, including video and audio.~\cite{melt} 
 
 
 A variety of tasks can be performed with Melt, including video editing, rendering, the application of filters on audio or video files and converting data between different formats. 
@@ -35,7 +35,9 @@ Additionally, the Melt framework supports a wide range of media formats and code
 \subsubsection*{Structure of the Melt framework}
 
 
-In the following, the for this project relevant components of the Melt framework's structure will be explained. For this, the documentation as well as the code of the framework are taken into consideration.~\cite{melt, melt_code}
+In the following, the relevant components of the Melt framework's structure will be explained. This includes the documentation as well as the code of the framework.~\cite{melt, melt_code}
+
+
 
 \textit{Producer}, \textit{Consumer} and \textit{MLT frame objects} are fundamental components in the Melt framework.
 
@@ -44,10 +46,10 @@ It is a container that holds multimedia data. Each \textit{MLT frame object} con
 \textit{MLT frame objects} can store the multimedia data in various formats and they support metadata annotations, which allows to attach additional information or properties to the multimedia content. This includes filters, which are discussed in Section~\ref{subsection:meltfilter}.
 
 
-A \textit{Producer} generates or provides data -- it produces the \textit{MLT Frame objects}. 
+A \textit{Producer} generates or provides data -- it produces the \textit{MLT frame objects}. 
 It reads data from files or other data sources. The \textit{Producer} serves as the starting point of the data processing pipeline in Melt. It retrieves the raw data and passes it on to other components, for example the \textit{Consumer}. This can be seen in Figure~\ref{fig:producer_consumer}.
 
-A \textit{Consumer} requests \textit{MLT Frame objects} from the producer.
+A \textit{Consumer} requests \textit{MLT frame objects} from the producer.
 It is responsible for consuming or processing the data that was produced by the \textit{Producer} or other components that are between the \textit{Producer} and \textit{Consumer}. 
 The \textit{Consumer} represents the endpoint of the data processing pipeline and produces the final output or results.
 
@@ -67,10 +69,9 @@ The \textit{Consumer} represents the endpoint of the data processing pipeline an
 \end{figure}
 
 Applying filters in the Melt framework is a technique for manipulating multimedia content, including videos. 
-Melt filters can perform a wide range of operations, including colour correction, blurring, sharpening, cropping, resizing, and many others. A list of the filters can be found on the Melt website and example applications of a wide selection of visual filters can be seen in Appendix~\ref{appendix:differentMeltFilter}.~\cite{melt_filters}
+Melt filters can perform a wide range of operations, including colour correction, blurring, sharpening, cropping, resizing and many others. A list of the filters can be found on the Melt website and example applications of a wide selection of visual filters can be seen in Appendix~\ref{appendix:differentMeltFilter}.~\cite{melt_filters}
 
 To apply a filter in Melt, a filter instance has to be created and its parameters have to contain the name of the filter and, if needed, the filter parameters and values for those.
-
 Filters are processing units that manipulate the multimedia data as it flows through the pipeline. They are placed between the producer and consumer, allowing them to modify the data before it reaches the consumer. This can be seen in Figure~\ref{fig:producer_filter_consumer}.
 
 
@@ -97,7 +98,7 @@ Filters are processing units that manipulate the multimedia data as it flows thr
 
 In this Section, the usage of the Melt framework is explained with code examples and the explanation of those. This is based on the implemented code for this project, the code of the Melt framework and the Melt documentation.~\cite{melt}
 
-The in the following described code structure refers to the creation of the necessary melt components to apply a filter.
+The below described code structure refers to the creation of the necessary melt components to apply a filter.
 
 
 \begin{description}[font=\color{RedViolet!80!black}, style=nextline]
@@ -144,7 +145,8 @@ The in the following described code structure refers to the creation of the nece
 	%-----------------------------------------------	
 	\item[Create properties] 
 	
-	This line retrieves the properties that are associated with a as parameter given producer in a property object.
+	
+	This line retrieves the properties associated with a specified producer parameter within a property object.
 	
 	\begin{lstlisting}[language=C, numbers=none, columns=fullflexible, belowskip=0pt, aboveskip=9pt]
 	mlt_properties properties = MLT_PRODUCER_PROPERTIES(producer); \end{lstlisting}
@@ -279,14 +281,12 @@ The video compression standard h.264 can be used to compress and decompress vide
 
 File formats such as Audio Video Interleave (AVI) often serve as input files for video transcoding processes.
 AVI can contain audio and video information to allow synchronized playback of audio and video components. 
-It is a container format, which means that it can contain multiple streams of audio and video data, along with other multimedia data such as subtitles.~\cite{avi}
-
-
-AVI files can undergo transcoding to optimize their compression, compatibility, or quality, with h.264 being a commonly used codec for such purposes.~\cite{h264}
+It is a container format, which means that it can contain multiple streams of audio and video data, along with other multimedia data such as subtitles.
+AVI files can undergo transcoding to optimize their compression, compatibility, or quality, with h.264 being a commonly used codec for such purposes.~\cite{avi, h264}
 
 
 WebRTC, is a free, open-source project for real-time communication between web browsers and other applications, that was developed by Google in 2011. It enables direct peer-to-peer (P2P) communication without the need for intermediary servers.
-WebRTC supports various video codecs, including h.264, which is used for video conferencing, streaming, and other real-time applications. This means, that the video streams exchanged between the browser and the backend are encoded and decoded using h.264.~\cite{webrtc, h264}
+WebRTC supports various video codecs, including h.264, which is used for video conferencing, streaming and other real-time applications. This means, that the video streams exchanged between the browser and the backend are encoded and decoded using h.264.~\cite{webrtc, h264}
 
 
 
@@ -332,7 +332,7 @@ Additionally, JIT allows to adjust video resolution, bitrate, and other paramete
 This Section introduces additional components that are relevant for the system's functionality.
 
 
-Docker is a platform that provides an isolated environment where applications can run. It enables the usage of these isolated environments, that are called Docker containers.
+Docker is a platform that provides an isolated environment where applications can run. It enables the usage of these isolated environments, that are called containers.
 Those Docker containers can lower the problems that arise from environmental discrepancies. This enables testing in local environments with enhancing the reliability and comparability.~\cite{docker}
 
 
@@ -342,7 +342,7 @@ It enables developers to use JavaScript both on the client and server sides of w
 Node.js has an open-source community that contributes to its evolution. This community-driven development model has led to a big selection of modules and libraries.~\cite{nodejs, RM_Frontend, ap3_docs}
 
 
-To manage project dependencies and packages for Node.js, package managers such as Yarn or npm (Node Package Manager) can be used. These package managers allow developers to install, update, and manage libraries and tools used in the project, by providing a centralized repository of libraries and tools.~\cite{RM_Frontend, npmyarn}
+To manage project dependencies and packages for Node.js, package managers such as Yarn or Node Package Manager (npm) can be used. These package managers allow developers to install, update and manage libraries and tools used in the project, by providing a centralized repository of libraries and tools.~\cite{RM_Frontend, npmyarn}
 
 
 
@@ -453,8 +453,8 @@ It represents the gender of a person and is defined as follows:
 	}
 \end{lstlisting}
 
-Gender is the name of the enum and \texttt{UNKNOWN}, \texttt{MALE}, and \texttt{FEMALE} are the enum constants with the associated integer values $1$, $2$ and $3$.
-It allows to represent the gender options unknown, male, or female, providing a way to represent a fixed set of options or states.
+Gender is the name of the enum and \texttt{UNKNOWN}, \texttt{MALE}, \texttt{FEMALE} and \texttt{DIVERSE} are the enum constants with the associated integer values $0$, $1$, $2$ and $3$.
+It allows to represent the gender options unknown, male, female or diverse, providing a way to represent a fixed set of options or states.
 
 
 
