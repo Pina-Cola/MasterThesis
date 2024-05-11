@@ -25,17 +25,15 @@
 % \section{Experimental Evaluation and Discussion} \label{section:experimentalevaluationanddiscussion}
 
 
-In this Chapter, the results of the user-sided colour grading with JIT are compared to the results of the colour grading with the Melt framework CLI tool and KDEN Live, which uses the Melt framework as a backend. For the comparison, frames of the original video file, the frames created by the JIT implementation and the Melt framework or KDEN Live are compared with and without the application of filters.
+In this Chapter, the results of the user-sided colour grading with JIT are compared to the results of the colour grading with the Melt framework CLI tool and KDEN Live, which uses the Melt framework as a backend. For the comparison, frames of the original video file, the frames created by the JIT implementation and the Melt framework and KDEN Live are compared with and without the application of filters.
 
 
-To evaluate the difference in the frames and the filter application between the tested components, the frames are extracted. Those tests were run on the same computer to ensure consistency and the frames were extracted with taking screenshots of the output or pre-existing frame extraction functions.
-Then the colours of the images have been subtracted from each other using the \textit{grain extract} function in GIMP. 
-This method was described in Section~\ref{subsection:ComparisonOfDifferentColourSaturations}.
+To evaluate the difference in the frames and the filter application between the tested components, the frames are extracted. Those tests were run on the same computer to ensure consistency and the frames were extracted by taking screenshots of the output or pre-existing frame extraction functions.
+Then, the colours of the images have been subtracted from each other using the \textit{grain extract} function in GIMP, as described in Section~\ref{subsection:ComparisonOfDifferentColourSaturations}.
 
 
 In the Figures~\ref{figure:greyresult_unit} and \ref{figure:greyresult_blurry}, two different results of the colour subtraction can be seen. 
-
-
+%
 Figure~\ref{figure:greyresult_unit} shows the subtraction of an image from itself. This results in a uniformly grey image, because the images are identical. Figure~\ref{figure:greyresult_blurry} shows the subtractions of two separate screenshots of the same frame. Small distortions can be seen, which is caused by slightly different scaling or other inconsistencies in the screenshot process. Those small differences have to be considered in the comparison, because the images can not be expected to be exactly the same, when extracting them from different sources. Two subtracted frames that have a similar result to Figure~\ref{figure:greyresult_blurry} can be considered as the same frames.
 
 
@@ -73,12 +71,13 @@ Figure~\ref{figure:greyresult_unit} shows the subtraction of an image from itsel
 \subsection{Comparison with the Melt Framework} \label{section:comparisonMelt}
 
 
-In this Section, the results of video colour grading using the locally installed Melt framework and the in Section~\ref{subsection:implementation} described implementation with JIT compared. 
+In this Section, the results of video colour grading using the locally installed Melt framework and the in Section~\ref{subsection:implementation} described implementation with JIT are compared. 
 Those tests are run on the same computer to ensure consistency and the frames are extracted with taking screenshots of the output from both approaches. These extracted frames are then visually inspected. 
 
 
-For the evaluation, a comparison between the locally installed Melt version with the \texttt{avfilter.colorbalance} filter applied and the RGB adjustment in the Accurate Player with the sliders is tested.
-For the tests, the red value is set on the maximum with the respective method, assuming that the results of the green and blue value work analogical.
+For the evaluation, a comparison between the locally installed Melt version with the \texttt{avfilter.colorbalance} filter applied and the RGB adjustment in the Accurate Player with the sliders is made.
+For the tests, the red value is set to the maximum with the respective method.
+%, assuming that the results of the green and blue value work analogical.
 The filter is applied and frame 343 of the short film \textit{Sintel} is extracted from both components. The results of the locally installed Melt framework can be seen in Figure~\ref{figure:redMelt}, with the \texttt{avfilter.colorbalance} filter applied and the parameters for shadows, mid tones and highlights set to the maximum of $1$ (\texttt{av.rs=1}, \texttt{av.rm=1} and \texttt{av.rh=1}).
 In comparison, the extracted frame from the Accurate Player frontend can be seen in Figure~\ref{figure:redAP}. This result is obtained by setting the red slider in the frontend onto the maximum value and leaving the sliders for green and blue on the default value, which corresponds to $0$ in the filter application in the backend. The maximum value of the red slider gets send to the backend and is being applied for the parameters of the filter \texttt{avfilter.colorbalance}, setting the parameters for shadows, mid tones and highlights to the maximum of $1$ (\texttt{av.rs=1}, \texttt{av.rm=1} and \texttt{av.rh=1}) as well.
 
@@ -107,15 +106,15 @@ In comparison, the extracted frame from the Accurate Player frontend can be seen
 \end{minipage}
 
 \vspace*{1.5em}
-In these Figures it can be seen, that the red tone of the two frames visually differs. In Figure~\ref{figure:redAP}, the colours seem to be more dark or saturated. This is an unexpected result, because both components use the same Melt filter with the same parameters.
+In these Figures it can be seen that the red tone of the two frames visually differs. In Figure~\ref{figure:redAP}, the colours seem to be darker or more saturated. This is an unexpected result, because both components use the same Melt filter with the same parameters.
 
 
-Considering the visual difference in the frame extractions from the two different approaches of applying the filter \texttt{avfilter.colorbalance}, the subtraction of those two frames shows more differences than the expected distortions, that were described above. The result of the subtraction can be seen in Figure~\ref{figure:filterVSfilter}, which shows the difference in the two compared frames.
+Considering the visual difference in the frame extractions from the two different approaches of applying the filter \texttt{avfilter.colorbalance}, the subtraction of those two frames shows more differences than the expected distortions, that were described above.
 
 In Figure~\ref{figure:filterVSfilter}, the extracted frame of the Melt framework is subtracted from the frame of the Accurate Player.
-In this case, the result has a red tone itself, because the seemingly less red saturated frame is subtracted from the seemingly more red saturated frame. The pixels in the Accurate Player frame have higher RGB values on the red colour channel than the corresponding pixels in the Melt framework extraction. This causes the red tone in the resulting image in Figure~\ref{figure:filterVSfilter}.
-The result reflects the relative differences in the red value between the two frames. 
-This result image from the subtraction is red tinted and has no green or blue areas, which shows that the frame of the Accurate Player has overall a more saturated red tone than the extracted frame of the Melt framework.
+In this case, the result has a red tone itself, because the seemingly less red saturated frame (Figure~\ref{figure:redMelt}) is subtracted from the seemingly more red saturated frame (Figure~\ref{figure:redAP}). The pixels in the Accurate Player frame have higher RGB values on the red colour channel than the corresponding pixels in the Melt framework extraction. This causes the red tone in the resulting image in Figure~\ref{figure:filterVSfilter}.
+This shows the relative differences in the red value between the two frames. 
+The result image from the subtraction is red tinted and has no green or blue areas, which shows that the frame of the Accurate Player has overall a more saturated red tone than the extracted frame of the Melt framework.
 
 
 \begin{figure}[H]
@@ -138,7 +137,7 @@ To evaluate, if this difference is caused by the application of the filter or by
 \end{figure}
 
 
-In Figure~\ref{figure:nofilterMelt}, the extraction of frame 343 without a filter application from the locally installed Melt framework can be seen. In comparison to this, the extracted frame from the Accurate Player without an applied filter can be seen in Figure~\ref{figure:nofilterAP}. Figure~\ref{figure:nofilterAP}, which is the Accurate Player frame, visually seems to be a more saturated.
+In Figure~\ref{figure:nofilterMelt}, the extraction of frame 343 without a filter application from the locally installed Melt framework can be seen. In comparison to this, the extracted frame from the Accurate Player without an applied filter is shown in Figure~\ref{figure:nofilterAP}, which seems to be more saturated.
 
 
 \begin{minipage}{0.48\textwidth}
@@ -201,7 +200,7 @@ In Figure~\ref{figure:oVSap} in comparison, the subtraction is done with the Acc
 \vspace*{1.5em}
 The extracted frames from the different approaches display significant differences, even when no filter is applied. 
 The results show, that the Accurate Player plays back the video more accurate than the Melt framework.
-These differences in the video representation without a filters application make it difficult to evaluate additional data regarding the application of filters using this method. The cause for the different display of the video frames by the Melt framework remains unclear.
+These differences in the video representation without a filter application make it difficult to evaluate additional data regarding the application of filters using this method. The cause for the different display of the video frames by the Melt framework remains unclear.
 % It is worth noting that the Melt video player is recognized for encountering occasional technical issues.
 %
 %
@@ -229,7 +228,7 @@ One possible explanation for these differences in the extracted frames could be 
 % \vspace*{-1em}
 \begin{minipage}{0.54\textwidth}
 	
-	In this Section, the results of video colour grading using KDEN Live and the in Section~\ref{subsection:implementation} described implementation with JIT are compared. In Figure~\ref{figure:kdenlive_effects}, the list of categories for the available effects in KDEN Live can be seen. This includes the \textit{Color and Image correction} option, which will be examined in the following. The aim is to find the options for the RGB colour adjustment and compare the results. With those results it can probably be seen, if KDEN Live uses the \texttt{avfilter.colorbalance} filter or a different 
+	In this Section, the results of video colour grading using KDEN Live and the in Section~\ref{subsection:implementation} described implementation with JIT are compared. In Figure~\ref{figure:kdenlive_effects}, the list of categories for the available effects in KDEN Live can be seen. This includes the \textit{Color and Image correction} option, which will be examined in the following. The options for the RGB colour adjustment in KDEN Live are examined and the results are compared to the frames of the Accurate Player. With those results it can be seen, if KDEN Live uses the \texttt{avfilter.colorbalance} filter or a different 
 	
 	
 \end{minipage}\begin{minipage}{0.04\textwidth}
@@ -248,8 +247,7 @@ One possible explanation for these differences in the extracted frames could be 
 \vspace*{-0.2em}
 
 filter for the adjustment of the RGB values. 
-For the comparison of the filter applications, the usage of the \texttt{avfilter.colorbalance} filter in KDEN Live would have a positive effect on the evaluation process and results. 
-The comparison of different filters is a difficult task, because it cannot be evaluated, which aspects of the results differ because of the different filters and which aspects are influenced by other influences.
+The comparison of different filters is a difficult task, because it cannot be evaluated, which aspects of the results differ due to the different filters and which aspects are influenced by other aspects.
 
 
 In the effect category \textit{Color and Image correction} in KDEN Live, different effects for colours can be found. The list of effects in this category can be seen in in Figure~\ref{figure:kdenlive_effekte}. 
