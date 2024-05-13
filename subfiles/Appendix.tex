@@ -2,6 +2,8 @@
 \graphicspath{ {./assets/images/} }
 
 
+
+
 %----------------------------------------------------------------------------
 %----------------------------------------------------------------------------
 
@@ -41,6 +43,571 @@ The README-file of the JIT-WebRTC code was referenced as~\cite{RM_Backend} and i
 
 
 
+
+
+%----------------------------------------------------------------------------
+%----------------------------------------------------------------------------
+
+\newpage
+\section{Comparison on all Colour Channels} \label{appendix:comparisonRGB}
+
+\captionsetup{font=small}
+
+\subsection*{Comparison with the Melt Framework}
+
+
+% RED
+
+\textbf{Red}
+
+\vspace*{-1.2em}
+
+\begin{minipage}{0.48\textwidth}
+	
+	\begin{figure}[H]
+		\begin{center}
+			\cutpic{0.3cm}{0.99\textwidth}{red_Melt.png}
+			\caption[Frame 343 after the application of the red filter in the Melt framework.]{Frame 343 after the application of the maximum value for red in the Melt framework.}
+			%\label{figure:redMelt}
+		\end{center}
+	\end{figure}
+\end{minipage}\begin{minipage}{0.04\textwidth}
+	\ 
+\end{minipage}\begin{minipage}{0.48\textwidth}
+	
+	\begin{figure}[H]
+		\begin{center}
+			\cutpic{0.3cm}{0.99\textwidth}{red_AP.png}
+			\caption[Frame 343 after the application of the red filter in the Accurate Player.]{Frame 343 after the application of the maximum value for red in the Accurate Player.}
+			%\label{figure:redAP}
+		\end{center}
+	\end{figure}
+\end{minipage}
+
+\vspace*{-1em}
+
+\begin{figure}[H]
+	\begin{center}
+		\cutpic{0.3cm}{0.4752\textwidth}{filterVSfilter.png}
+		\caption[Subtraction of the two different frames (Accurate Player - Melt).]{Subtraction of the same frame with filter application: Local Melt frame is subtracted from the frame of the Accurate Player.}
+		% JIT - Melt
+		% \label{figure:filterVSfilter}
+	\end{center}
+\end{figure}
+
+
+
+\vspace*{-1em}
+
+
+% GREEN
+
+\textbf{Green}
+
+\vspace*{-1em}
+
+\begin{minipage}{0.48\textwidth}
+	
+	\begin{figure}[H]
+		\begin{center}
+			\cutpic{0.3cm}{0.99\textwidth}{green_Melt.png}
+			\caption[Frame 343 after the application of the green filter in the Melt framework.]{Frame 343 after the application of the maximum value for green in the Melt framework.}
+			%\label{figure:redMelt}
+		\end{center}
+	\end{figure}
+\end{minipage}\begin{minipage}{0.04\textwidth}
+	\ 
+\end{minipage}\begin{minipage}{0.48\textwidth}
+	
+	\begin{figure}[H]
+		\begin{center}
+			\cutpic{0.3cm}{0.99\textwidth}{green_AP.png}
+			\caption[Frame 343 after the application of the green filter in the Accurate Player.]{Frame 343 after the application of the maximum value for green in the Accurate Player.}
+			%\label{figure:redAP}
+		\end{center}
+	\end{figure}
+\end{minipage}
+
+\vspace*{-1em}
+
+\begin{figure}[H]
+	\begin{center}
+		\cutpic{0.3cm}{0.4752\textwidth}{filterVSfilterG.png}
+		\caption[Subtraction of the two different frames (Accurate Player - Melt).]{Subtraction of the same frame with filter application: Local Melt frame is subtracted from the frame of the Accurate Player.}
+		% JIT - Melt
+		% \label{figure:filterVSfilter}
+	\end{center}
+\end{figure}
+
+
+
+
+
+
+
+
+% BLUE
+
+\textbf{Blue}
+
+\vspace*{-1em}
+
+\begin{minipage}{0.48\textwidth}
+	
+	\begin{figure}[H]
+		\begin{center}
+			\cutpic{0.3cm}{0.99\textwidth}{blue_Melt.png}
+			\caption[Frame 343 after the application of the blue filter in the Melt framework.]{Frame 343 after the application of the maximum value for blue in the Melt framework.}
+			%\label{figure:redMelt}
+		\end{center}
+	\end{figure}
+\end{minipage}\begin{minipage}{0.04\textwidth}
+	\ 
+\end{minipage}\begin{minipage}{0.48\textwidth}
+	
+	\begin{figure}[H]
+		\begin{center}
+			\cutpic{0.3cm}{0.99\textwidth}{blue_AP.png}
+			\caption[Frame 343 after the application of the blue filter in the Accurate Player.]{Frame 343 after the application of the maximum value for blue in the Accurate Player.}
+			%\label{figure:redAP}
+		\end{center}
+	\end{figure}
+\end{minipage}
+
+\vspace*{-1em}
+
+\begin{figure}[H]
+	\begin{center}
+		\cutpic{0.3cm}{0.4752\textwidth}{filterVSfilterB.png}
+		\caption[Subtraction of the two different frames (Accurate Player - Melt).]{Subtraction of the same frame with filter application: Local Melt frame is subtracted from the frame of the Accurate Player.}
+		% JIT - Melt
+		% \label{figure:filterVSfilter}
+	\end{center}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% \newpage
+
+\subsection*{Comparison with KDEN Live}
+
+\subsubsection*{Change gamma}
+
+
+% RED
+
+\textbf{Red}
+
+\vspace*{-1em}
+
+\begin{minipage}{0.48\textwidth}
+	\begin{figure}[H]
+		\begin{center}
+			\cutpic{0.3cm}{0.99\textwidth}{red_AP.png}
+			\caption[Frame 343 after the application of the red filter in the Accurate Player.]{Frame 343 after the application of the maximum value for red in the Accurate Player.}
+			%\label{figure:APframe1}
+		\end{center}
+	\end{figure}
+\end{minipage}\begin{minipage}{0.04\textwidth}
+	\ 
+\end{minipage}\begin{minipage}{0.48\textwidth}
+	\begin{figure}[H]
+		\begin{center}
+			\cutpic{0.3cm}{0.99\textwidth}{gamma.png}
+			\caption[Frame 343 from KDEN Live with the action \textit{change gamma}.]{Frame 343 from KDEN Live with the action \textit{change gamma} in the red filter application.}
+			%\label{figure:gamma}
+		\end{center}
+	\end{figure}
+\end{minipage}
+
+\vspace*{-1em}
+
+\begin{figure}[H]
+	\begin{center}
+		\cutpic{0.3cm}{0.4752\textwidth}{gamma_gimp.png}
+		\caption[Subtraction of KDEN Live (\textit{change gamma}) and Accurate Player.]{Subtraction of the two frames: Accurate Player frame is subtracted from the KDEN Live frame (with the action \textit{change gamma}).}
+		% KDENLive - JIT
+		%\label{figure:gammagimp}
+	\end{center}
+\end{figure}
+
+
+
+
+
+
+% GREEN
+\vspace*{-1em}
+
+\textbf{Green}
+
+\vspace*{-1em}
+
+\begin{minipage}{0.48\textwidth}
+	\begin{figure}[H]
+		\begin{center}
+			\cutpic{0.3cm}{0.99\textwidth}{green_AP.png}
+			\caption[Frame 343 after the application of the green filter in the Accurate Player.]{Frame 343 after the application of the maximum value for green in the Accurate Player.}
+			%\label{figure:APframe1}
+		\end{center}
+	\end{figure}
+\end{minipage}\begin{minipage}{0.04\textwidth}
+	\ 
+\end{minipage}\begin{minipage}{0.48\textwidth}
+	\begin{figure}[H]
+		\begin{center}
+			\cutpic{0.3cm}{0.99\textwidth}{g_gamma.png}
+			\caption[Frame 343 from KDEN Live with the action \textit{change gamma}.]{Frame 343 from KDEN Live with the action \textit{change gamma} in the green filter application.}
+			%\label{figure:gamma}
+		\end{center}
+	\end{figure}
+\end{minipage}
+
+\vspace*{-1em}
+
+\begin{figure}[H]
+	\begin{center}
+		\cutpic{0.3cm}{0.4752\textwidth}{gamma_gimp_g.png}
+		\caption[Subtraction of KDEN Live (\textit{change gamma}) and Accurate Player.]{Subtraction of the two frames: Accurate Player frame is subtracted from the KDEN Live frame (with the action \textit{change gamma}).}
+		% KDENLive - JIT
+		%\label{figure:gammagimp}
+	\end{center}
+\end{figure}
+
+
+
+
+
+
+
+\vspace*{-1em}
+
+% BLUE
+\textbf{Blue}
+
+\vspace*{-1em}
+
+
+\begin{minipage}{0.48\textwidth}
+	\begin{figure}[H]
+		\begin{center}
+			\cutpic{0.3cm}{0.99\textwidth}{blue_AP.png}
+			\caption[Frame 343 after the application of the blue filter in the Accurate Player.]{Frame 343 after the application of the maximum value for blue in the Accurate Player.}
+			%\label{figure:APframe1}
+		\end{center}
+	\end{figure}
+\end{minipage}\begin{minipage}{0.04\textwidth}
+	\ 
+\end{minipage}\begin{minipage}{0.48\textwidth}
+	\begin{figure}[H]
+		\begin{center}
+			\cutpic{0.3cm}{0.99\textwidth}{b_gamma.png}
+			\caption[Frame 343 from KDEN Live with the action \textit{change gamma}.]{Frame 343 from KDEN Live with the action \textit{change gamma} in the blue filter application.}
+			%\label{figure:gamma}
+		\end{center}
+	\end{figure}
+\end{minipage}
+
+\vspace*{-1em}
+
+\begin{figure}[H]
+	\begin{center}
+		\cutpic{0.3cm}{0.4752\textwidth}{gamma_gimp_b.png}
+		\caption[Subtraction of KDEN Live (\textit{change gamma}) and Accurate Player.]{Subtraction of the two frames: Accurate Player frame is subtracted from the KDEN Live frame (with the action \textit{change gamma}).}
+		% KDENLive - JIT
+		%\label{figure:gammagimp}
+	\end{center}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsubsection*{Add constant}
+
+
+\vspace*{-1em}
+
+% RED
+\textbf{Red}
+
+\vspace*{-1em}
+
+\begin{minipage}{0.48\textwidth}
+	\begin{figure}[H]
+		\begin{center}
+			\cutpic{0.3cm}{0.99\textwidth}{red_AP.png}
+			\caption[Frame 343 after the application of the red filter in the Accurate Player.]{Frame 343 after the application of the maximum value for red in the Accurate Player.}
+			% \label{figure:APframe2}
+		\end{center}
+	\end{figure}
+\end{minipage}\begin{minipage}{0.04\textwidth}
+	\ 
+\end{minipage}\begin{minipage}{0.48\textwidth}
+	\begin{figure}[H]
+		\begin{center}
+			\cutpic{0.3cm}{0.99\textwidth}{addconstant.png}
+			\caption[Frame 343 from KDEN Live with the action \textit{add constant}.]{Frame 343 from KDEN Live with the action \textit{add constant} in the red filter application.}
+			% \label{figure:addconstant}
+		\end{center}
+	\end{figure}
+\end{minipage}
+
+\vspace*{-1em}
+
+\begin{figure}[H]
+	\begin{center}
+		\cutpic{0.3cm}{0.4752\textwidth}{addconstant_gimp.png}
+		\caption[Subtraction of KDEN Live (\textit{add constant}) and Accurate Player.]{Subtraction of the two frames: Accurate Player frame is subtracted from the KDEN Live frame extraction (with the action \textit{add constant}).}
+		% KDENLive - JIT
+		% \label{figure:addconstantgimp}
+	\end{center}
+\end{figure}
+
+
+
+
+
+\vspace*{-1em}
+% GREEN 
+\textbf{Green}
+
+\vspace*{-1em}
+
+
+\begin{minipage}{0.48\textwidth}
+	\begin{figure}[H]
+		\begin{center}
+			\cutpic{0.3cm}{0.99\textwidth}{green_AP.png}
+			\caption[Frame 343 after the application of the green filter in the Accurate Player.]{Frame 343 after the application of the maximum value for green in the Accurate Player.}
+			% \label{figure:APframe2}
+		\end{center}
+	\end{figure}
+\end{minipage}\begin{minipage}{0.04\textwidth}
+	\ 
+\end{minipage}\begin{minipage}{0.48\textwidth}
+	\begin{figure}[H]
+		\begin{center}
+			\cutpic{0.3cm}{0.99\textwidth}{g_addconstant.png}
+			\caption[Frame 343 from KDEN Live with the action \textit{add constant}.]{Frame 343 from KDEN Live with the action \textit{add constant} in the green filter application.}
+			% \label{figure:addconstant}
+		\end{center}
+	\end{figure}
+\end{minipage}
+
+\vspace*{-1em}
+
+\begin{figure}[H]
+	\begin{center}
+		\cutpic{0.3cm}{0.4752\textwidth}{addconstant_gimp_g.png}
+		\caption[Subtraction of KDEN Live (\textit{add constant}) and Accurate Player.]{Subtraction of the two frames: Accurate Player frame is subtracted from the KDEN Live frame extraction (with the action \textit{add constant}).}
+		% KDENLive - JIT
+		% \label{figure:addconstantgimp}
+	\end{center}
+\end{figure}
+
+
+
+\vspace*{-1em}
+
+
+% BLUE
+\textbf{Blue}
+
+\vspace*{-1em}
+
+
+\begin{minipage}{0.48\textwidth}
+	\begin{figure}[H]
+		\begin{center}
+			\cutpic{0.3cm}{0.99\textwidth}{blue_AP.png}
+			\caption[Frame 343 after the application of the blue filter in the Accurate Player.]{Frame 343 after the application of the maximum value for blue in the Accurate Player.}
+			% \label{figure:APframe2}
+		\end{center}
+	\end{figure}
+\end{minipage}\begin{minipage}{0.04\textwidth}
+	\ 
+\end{minipage}\begin{minipage}{0.48\textwidth}
+	\begin{figure}[H]
+		\begin{center}
+			\cutpic{0.3cm}{0.99\textwidth}{g_addconstant.png}
+			\caption[Frame 343 from KDEN Live with the action \textit{add constant}.]{Frame 343 from KDEN Live with the action \textit{add constant} in the green filter application.}
+			% \label{figure:addconstant}
+		\end{center}
+	\end{figure}
+\end{minipage}
+
+\vspace*{-1em}
+
+
+
+\begin{figure}[H]
+	\begin{center}
+		\cutpic{0.3cm}{0.4752\textwidth}{addconstant_gimp_b.png}
+		\caption[Subtraction of KDEN Live (\textit{add constant}) and Accurate Player.]{Subtraction of the two frames: Accurate Player frame is subtracted from the KDEN Live frame extraction (with the action \textit{add constant}).}
+		% KDENLive - JIT
+		% \label{figure:addconstantgimp}
+	\end{center}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsubsection*{Multiply}
+
+\vspace*{-1em}
+
+% RED
+\textbf{Red}
+
+\vspace*{-1em}
+
+
+\begin{minipage}{0.48\textwidth}
+	\begin{figure}[H]
+		\begin{center}
+			\cutpic{0.3cm}{0.99\textwidth}{red_AP.png}
+			\caption[Frame 343 after the application of the red filter in the Accurate Player.]{Frame 343 after the application of the maximum value for red in the Accurate Player.}
+			% \label{figure:APframe3}
+		\end{center}
+	\end{figure}
+\end{minipage}\begin{minipage}{0.04\textwidth}
+	\ 
+\end{minipage}\begin{minipage}{0.48\textwidth}
+	\begin{figure}[H]
+		\begin{center}
+			\cutpic{0.3cm}{0.99\textwidth}{multiply.png}
+			\caption[Frame 343 from KDEN Live with the action \textit{Multiply}.]{Frame 343 from KDEN Live with the action \textit{Multiply} in the red filter application.}
+			% \label{figure:multiply}
+		\end{center}
+	\end{figure}
+\end{minipage}
+
+\vspace*{-1em}
+
+\begin{figure}[H]
+	\begin{center}
+		\cutpic{0.3cm}{0.4752\textwidth}{multiply_gimp.png}
+		\caption[Subtraction of KDEN Live (\textit{Multiply} and Accurate Player).]{Subtraction of the two frames: Accurate Player frame is subtracted from the KDEN Live frame extraction (with the action \textit{Multiply}).}
+		% KDEN Live - JIT
+		%\label{figure:multiplygimp}
+	\end{center}
+\end{figure}
+
+
+
+
+\vspace*{-1em}
+% GREEN
+\textbf{Green}
+
+\vspace*{-1em}
+
+
+\begin{minipage}{0.48\textwidth}
+	\begin{figure}[H]
+		\begin{center}
+			\cutpic{0.3cm}{0.99\textwidth}{green_AP.png}
+			\caption[Frame 343 after the application of the green filter in the Accurate Player.]{Frame 343 after the application of the maximum value for green in the Accurate Player.}
+			% \label{figure:APframe3}
+		\end{center}
+	\end{figure}
+\end{minipage}\begin{minipage}{0.04\textwidth}
+	\ 
+\end{minipage}\begin{minipage}{0.48\textwidth}
+	\begin{figure}[H]
+		\begin{center}
+			\cutpic{0.3cm}{0.99\textwidth}{g_multiply.png}
+			\caption[Frame 343 from KDEN Live with the action \textit{Multiply}.]{Frame 343 from KDEN Live with the action \textit{Multiply} in the green filter application.}
+			% \label{figure:multiply}
+		\end{center}
+	\end{figure}
+\end{minipage}
+
+\vspace*{-1em}
+
+\begin{figure}[H]
+	\begin{center}
+		\cutpic{0.3cm}{0.4752\textwidth}{multiply_gimp_g.png}
+		\caption[Subtraction of KDEN Live (\textit{Multiply} and Accurate Player).]{Subtraction of the two frames: Accurate Player frame is subtracted from the KDEN Live frame extraction (with the action \textit{Multiply}).}
+		% KDEN Live - JIT
+		%\label{figure:multiplygimp}
+	\end{center}
+\end{figure}
+
+
+\vspace*{-1em}
+
+% BLUE
+\textbf{Blue}
+
+\vspace*{-1em}
+
+
+\begin{minipage}{0.48\textwidth}
+	\begin{figure}[H]
+		\begin{center}
+			\cutpic{0.3cm}{0.99\textwidth}{blue_AP.png}
+			\caption[Frame 343 after the application of the blue filter in the Accurate Player.]{Frame 343 after the application of the maximum value for blue in the Accurate Player.}
+			% \label{figure:APframe3}
+		\end{center}
+	\end{figure}
+\end{minipage}\begin{minipage}{0.04\textwidth}
+	\ 
+\end{minipage}\begin{minipage}{0.48\textwidth}
+	\begin{figure}[H]
+		\begin{center}
+			\cutpic{0.3cm}{0.99\textwidth}{b_multiply.png}
+			\caption[Frame 343 from KDEN Live with the action \textit{Multiply}.]{Frame 343 from KDEN Live with the action \textit{Multiply} in the blue filter application.}
+			% \label{figure:multiply}
+		\end{center}
+	\end{figure}
+\end{minipage}
+
+\vspace*{-1em}
+
+\begin{figure}[H]
+	\begin{center}
+		\cutpic{0.3cm}{0.4752\textwidth}{multiply_gimp_b.png}
+		\caption[Subtraction of KDEN Live (\textit{Multiply} and Accurate Player).]{Subtraction of the two frames: Accurate Player frame is subtracted from the KDEN Live frame extraction (with the action \textit{Multiply}).}
+		% KDEN Live - JIT
+		%\label{figure:multiplygimp}
+	\end{center}
+\end{figure}
 
 
 
