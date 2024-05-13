@@ -1,0 +1,97 @@
+\contentsline {figure}{\numberline {1}{\ignorespaces Photo in three different colour tones (original, yellow, blue).}}{1}{figure.caption.2}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Picture of a Amanita muscaria in Sweden with alarming red colour.}}{7}{figure.caption.3}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Picture of a lake in Sweden with mainly blue tones.}}{8}{figure.caption.4}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Picture of a forest in Sweden with mainly green tones.}}{8}{figure.caption.5}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Picture of a sunrise in Sweden with mainly yellow tones.}}{9}{figure.caption.6}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Picture of skyscrapers in Dubai in greyscales.}}{9}{figure.caption.7}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Different shades of red represented by different RGB values.}}{10}{figure.caption.8}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Additive colour model of RGB}}{11}{figure.caption.9}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Subtractive colour model of RGB}}{11}{figure.caption.10}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Colour subtraction with the GIMP function \textit {grain extract}.}}{12}{figure.caption.11}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Producer-Consumer Relationship in the Melt framework.}}{15}{figure.caption.13}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Producer-Filter-Consumer Relationship in the Melt framework.}}{15}{figure.caption.14}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Architecture of the system that consists out of four parts.}}{25}{figure.caption.17}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Accurate Video in the system architecture.}}{26}{figure.caption.18}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Screenshots of the frontend.}}{26}{figure.caption.19}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Quality slider in the frontend.}}{27}{figure.caption.20}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Subtitle and audio control field in the frontend.}}{27}{figure.caption.21}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Window for settings in the frontend.}}{28}{figure.caption.22}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Control commands in the system architecture.}}{29}{figure.caption.23}%
+\contentsline {figure}{\numberline {20}{\ignorespaces AVI stream in the system architecture.}}{29}{figure.caption.24}%
+\contentsline {figure}{\numberline {21}{\ignorespaces WebRTC and control in the system architecture.}}{30}{figure.caption.25}%
+\contentsline {figure}{\numberline {22}{\ignorespaces Frames $343$ and $3377$ from the test video file without a filter.}}{32}{figure.caption.27}%
+\contentsline {figure}{\numberline {23}{\ignorespaces Different parameters from the filter \texttt {avfilter.colorbalance} applied.}}{32}{figure.caption.29}%
+\contentsline {figure}{\numberline {24}{\ignorespaces Parameters set to $1$ for red using the \texttt {avfilter.colorbalance} filter.}}{33}{figure.caption.30}%
+\contentsline {figure}{\numberline {25}{\ignorespaces Red and green parameters set to $1$ with \texttt {avfilter.colorbalance}.}}{33}{figure.caption.31}%
+\contentsline {figure}{\numberline {26}{\ignorespaces Different parameters from \texttt {avfilter.colorchannelmixer} applied.}}{34}{figure.caption.33}%
+\contentsline {figure}{\numberline {27}{\ignorespaces Red gain set to $2$ with \texttt {avfilter.colorchannelmixer}.}}{34}{figure.caption.34}%
+\contentsline {figure}{\numberline {28}{\ignorespaces Red and green gain set to $2$ with \texttt {avfilter.colorchannelmixer}.}}{34}{figure.caption.35}%
+\contentsline {figure}{\numberline {29}{\ignorespaces Red parameter set to $1$ with \texttt {frei0r.coloradj\_RGB}.}}{35}{figure.caption.37}%
+\contentsline {figure}{\numberline {30}{\ignorespaces Red and green parameter set to $1$ with \texttt {frei0r.coloradj\_RGB}.}}{35}{figure.caption.38}%
+\contentsline {figure}{\numberline {31}{\ignorespaces Comparison of red filter option of all three filters.}}{36}{figure.caption.40}%
+\contentsline {figure}{\numberline {32}{\ignorespaces Comparison of green filter option of all three filters.}}{36}{figure.caption.41}%
+\contentsline {figure}{\numberline {33}{\ignorespaces Comparison of blue filter option of all three filters.}}{36}{figure.caption.42}%
+\contentsline {figure}{\numberline {34}{\ignorespaces Comparison of red filter option of all three filters.}}{37}{figure.caption.43}%
+\contentsline {figure}{\numberline {35}{\ignorespaces Basic colours with the application of the filter \texttt {avfilter.colorbalance}.}}{38}{figure.caption.44}%
+\contentsline {figure}{\numberline {36}{\ignorespaces Frame 3447 of the test video file without a filter.}}{39}{figure.caption.45}%
+\contentsline {figure}{\numberline {37}{\ignorespaces Sliders for RGB colour adjustment.}}{39}{figure.caption.47}%
+\contentsline {figure}{\numberline {38}{\ignorespaces Colour subtraction of the same file from itself.}}{46}{figure.caption.50}%
+\contentsline {figure}{\numberline {39}{\ignorespaces Colour subtraction of the same frame but a different screenshot.}}{46}{figure.caption.51}%
+\contentsline {figure}{\numberline {40}{\ignorespaces Frame 343 after the application of the red filter in the Melt framework.}}{47}{figure.caption.52}%
+\contentsline {figure}{\numberline {41}{\ignorespaces Frame 343 after the application of the red filter in the Accurate Player.}}{47}{figure.caption.53}%
+\contentsline {figure}{\numberline {42}{\ignorespaces Subtraction of the two different frames (Accurate Player - Melt).}}{48}{figure.caption.54}%
+\contentsline {figure}{\numberline {43}{\ignorespaces Frame 343 without filter application in the original video file.}}{49}{figure.caption.55}%
+\contentsline {figure}{\numberline {44}{\ignorespaces Frame 343 without filter application in the Melt framework.}}{49}{figure.caption.56}%
+\contentsline {figure}{\numberline {45}{\ignorespaces Frame 343 without filter application in the Accurate Player.}}{49}{figure.caption.57}%
+\contentsline {figure}{\numberline {46}{\ignorespaces Subtraction of the Melt frame from the original frame.}}{50}{figure.caption.58}%
+\contentsline {figure}{\numberline {47}{\ignorespaces Subtraction of Accurate Player frame from the original frame.}}{50}{figure.caption.59}%
+\contentsline {figure}{\numberline {48}{\ignorespaces List of effect menus in KDEN Live.}}{50}{figure.caption.60}%
+\contentsline {figure}{\numberline {49}{\ignorespaces List of colour effects in KDEN Live.}}{51}{figure.caption.61}%
+\contentsline {figure}{\numberline {50}{\ignorespaces RGB colour adjustment in KDEN Live.}}{51}{figure.caption.62}%
+\contentsline {figure}{\numberline {51}{\ignorespaces Frame 343 after the application of the red filter in the Accurate Player.}}{52}{figure.caption.64}%
+\contentsline {figure}{\numberline {52}{\ignorespaces Frame 343 from KDEN Live with the action \textit {change gamma}.}}{52}{figure.caption.65}%
+\contentsline {figure}{\numberline {53}{\ignorespaces Subtraction of KDEN Live (\textit {change gamma}) and Accurate Player.}}{53}{figure.caption.66}%
+\contentsline {figure}{\numberline {54}{\ignorespaces Frame 343 after the application of the red filter in the Accurate Player.}}{54}{figure.caption.68}%
+\contentsline {figure}{\numberline {55}{\ignorespaces Frame 343 from KDEN Live with the action \textit {add constant}.}}{54}{figure.caption.69}%
+\contentsline {figure}{\numberline {56}{\ignorespaces Subtraction of KDEN Live (\textit {add constant}) and Accurate Player.}}{54}{figure.caption.70}%
+\contentsline {figure}{\numberline {57}{\ignorespaces Frame 343 after the application of the red filter in the Accurate Player.}}{55}{figure.caption.72}%
+\contentsline {figure}{\numberline {58}{\ignorespaces Frame 343 from KDEN Live with the action \textit {Multiply}.}}{55}{figure.caption.73}%
+\contentsline {figure}{\numberline {59}{\ignorespaces Subtraction of KDEN Live (\textit {Multiply} and Accurate Player).}}{55}{figure.caption.74}%
+\contentsline {figure}{\numberline {60}{\ignorespaces Presets in Adobe Premiere Pro (\textit {Magic Bullet Looks}).}}{59}{figure.caption.76}%
+\contentsline {figure}{\numberline {61}{\ignorespaces Example for the colour preview of the RGB sliders.}}{60}{figure.caption.79}%
+\contentsline {figure}{\numberline {62}{\ignorespaces Frame 343 after the application of the red filter in the Melt framework.}}{72}{figure.caption.86}%
+\contentsline {figure}{\numberline {63}{\ignorespaces Frame 343 after the application of the red filter in the Accurate Player.}}{72}{figure.caption.87}%
+\contentsline {figure}{\numberline {64}{\ignorespaces Subtraction of the two different frames (Accurate Player - Melt).}}{72}{figure.caption.88}%
+\contentsline {figure}{\numberline {65}{\ignorespaces Frame 343 after the application of the green filter in the Melt framework.}}{72}{figure.caption.89}%
+\contentsline {figure}{\numberline {66}{\ignorespaces Frame 343 after the application of the green filter in the Accurate Player.}}{72}{figure.caption.90}%
+\contentsline {figure}{\numberline {67}{\ignorespaces Subtraction of the two different frames (Accurate Player - Melt).}}{72}{figure.caption.91}%
+\contentsline {figure}{\numberline {68}{\ignorespaces Frame 343 after the application of the blue filter in the Melt framework.}}{73}{figure.caption.92}%
+\contentsline {figure}{\numberline {69}{\ignorespaces Frame 343 after the application of the blue filter in the Accurate Player.}}{73}{figure.caption.93}%
+\contentsline {figure}{\numberline {70}{\ignorespaces Subtraction of the two different frames (Accurate Player - Melt).}}{73}{figure.caption.94}%
+\contentsline {figure}{\numberline {71}{\ignorespaces Frame 343 after the application of the red filter in the Accurate Player.}}{73}{figure.caption.97}%
+\contentsline {figure}{\numberline {72}{\ignorespaces Frame 343 from KDEN Live with the action \textit {change gamma}.}}{73}{figure.caption.98}%
+\contentsline {figure}{\numberline {73}{\ignorespaces Subtraction of KDEN Live (\textit {change gamma}) and Accurate Player.}}{73}{figure.caption.99}%
+\contentsline {figure}{\numberline {74}{\ignorespaces Frame 343 after the application of the green filter in the Accurate Player.}}{74}{figure.caption.100}%
+\contentsline {figure}{\numberline {75}{\ignorespaces Frame 343 from KDEN Live with the action \textit {change gamma}.}}{74}{figure.caption.101}%
+\contentsline {figure}{\numberline {76}{\ignorespaces Subtraction of KDEN Live (\textit {change gamma}) and Accurate Player.}}{74}{figure.caption.102}%
+\contentsline {figure}{\numberline {77}{\ignorespaces Frame 343 after the application of the blue filter in the Accurate Player.}}{74}{figure.caption.103}%
+\contentsline {figure}{\numberline {78}{\ignorespaces Frame 343 from KDEN Live with the action \textit {change gamma}.}}{74}{figure.caption.104}%
+\contentsline {figure}{\numberline {79}{\ignorespaces Subtraction of KDEN Live (\textit {change gamma}) and Accurate Player.}}{74}{figure.caption.105}%
+\contentsline {figure}{\numberline {80}{\ignorespaces Frame 343 after the application of the red filter in the Accurate Player.}}{75}{figure.caption.107}%
+\contentsline {figure}{\numberline {81}{\ignorespaces Frame 343 from KDEN Live with the action \textit {add constant}.}}{75}{figure.caption.108}%
+\contentsline {figure}{\numberline {82}{\ignorespaces Subtraction of KDEN Live (\textit {add constant}) and Accurate Player.}}{75}{figure.caption.109}%
+\contentsline {figure}{\numberline {83}{\ignorespaces Frame 343 after the application of the green filter in the Accurate Player.}}{75}{figure.caption.110}%
+\contentsline {figure}{\numberline {84}{\ignorespaces Frame 343 from KDEN Live with the action \textit {add constant}.}}{75}{figure.caption.111}%
+\contentsline {figure}{\numberline {85}{\ignorespaces Subtraction of KDEN Live (\textit {add constant}) and Accurate Player.}}{75}{figure.caption.112}%
+\contentsline {figure}{\numberline {86}{\ignorespaces Frame 343 after the application of the blue filter in the Accurate Player.}}{76}{figure.caption.113}%
+\contentsline {figure}{\numberline {87}{\ignorespaces Frame 343 from KDEN Live with the action \textit {add constant}.}}{76}{figure.caption.114}%
+\contentsline {figure}{\numberline {88}{\ignorespaces Subtraction of KDEN Live (\textit {add constant}) and Accurate Player.}}{76}{figure.caption.115}%
+\contentsline {figure}{\numberline {89}{\ignorespaces Frame 343 after the application of the red filter in the Accurate Player.}}{76}{figure.caption.117}%
+\contentsline {figure}{\numberline {90}{\ignorespaces Frame 343 from KDEN Live with the action \textit {Multiply}.}}{76}{figure.caption.118}%
+\contentsline {figure}{\numberline {91}{\ignorespaces Subtraction of KDEN Live (\textit {Multiply} and Accurate Player).}}{76}{figure.caption.119}%
+\contentsline {figure}{\numberline {92}{\ignorespaces Frame 343 after the application of the green filter in the Accurate Player.}}{77}{figure.caption.120}%
+\contentsline {figure}{\numberline {93}{\ignorespaces Frame 343 from KDEN Live with the action \textit {Multiply}.}}{77}{figure.caption.121}%
+\contentsline {figure}{\numberline {94}{\ignorespaces Subtraction of KDEN Live (\textit {Multiply} and Accurate Player).}}{77}{figure.caption.122}%
+\contentsline {figure}{\numberline {95}{\ignorespaces Frame 343 after the application of the blue filter in the Accurate Player.}}{77}{figure.caption.123}%
+\contentsline {figure}{\numberline {96}{\ignorespaces Frame 343 from KDEN Live with the action \textit {Multiply}.}}{77}{figure.caption.124}%
+\contentsline {figure}{\numberline {97}{\ignorespaces Subtraction of KDEN Live (\textit {Multiply} and Accurate Player).}}{77}{figure.caption.125}%

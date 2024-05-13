@@ -1,0 +1,17 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is 'MasterThesis.blg'
+[103] biber-MSWIN64:340> INFO - === 
+[135] Biber.pm:419> INFO - Reading 'MasterThesis.bcf'
+[253] Biber.pm:979> INFO - Found 48 citekeys in bib section 0
+[267] Biber.pm:4419> INFO - Processing section 0
+[278] Biber.pm:4610> INFO - Looking for bibtex file 'references.bib' for section 0
+[325] bibtex.pm:1713> INFO - LaTeX decoding ...
+[376] bibtex.pm:1519> INFO - Found BibTeX data source 'references.bib'
+[589] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[589] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[590] Biber.pm:4239> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[590] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[629] bbl.pm:660> INFO - Writing 'MasterThesis.bbl' with encoding 'UTF-8'
+[646] bbl.pm:763> INFO - Output to MasterThesis.bbl
+[646] Biber.pm:131> WARN - legacy month field 'January' in entry 'avi' is not an integer - this will probably not sort properly.
+[646] Biber.pm:133> INFO - WARNINGS: 1

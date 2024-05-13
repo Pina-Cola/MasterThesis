@@ -1,0 +1,1400 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{premierepro}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=982fcaba495a907a85ae313fb99c11dd}{%
+           family={{Adobe Systems}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Adobe Systems}%
+      }
+      \strng{namehash}{982fcaba495a907a85ae313fb99c11dd}
+      \strng{fullhash}{982fcaba495a907a85ae313fb99c11dd}
+      \strng{bibnamehash}{982fcaba495a907a85ae313fb99c11dd}
+      \strng{authorbibnamehash}{982fcaba495a907a85ae313fb99c11dd}
+      \strng{authornamehash}{982fcaba495a907a85ae313fb99c11dd}
+      \strng{authorfullhash}{982fcaba495a907a85ae313fb99c11dd}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Computer software}
+      \field{title}{Adobe Premiere Pro}
+      \field{year}{2020}
+    \endentry
+    \entry{transcoding}{article}{}
+      \name{author}{4}{}{%
+        {{hash=29a3475bb1f4b4bf09fcbe3e740c843f}{%
+           family={Ahmad},
+           familyi={A\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod}}}%
+        {{hash=293a1f0a11120ab33e6e6e6bfe0d5ba0}{%
+           family={Wei},
+           familyi={W\bibinitperiod},
+           given={Xiaohui},
+           giveni={X\bibinitperiod}}}%
+        {{hash=17b6a43f5598c7efd897f9d254090fdd}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={Yu},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=8be401d86c52c2ca35455449ed40cd25}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Ya-Qin},
+           giveni={Y\bibinithyphendelim Q\bibinitperiod}}}%
+      }
+      \strng{namehash}{950a564f1062986b7ae9ade8a198345f}
+      \strng{fullhash}{4b31415aeae5606a2fdce6c664fa941c}
+      \strng{bibnamehash}{4b31415aeae5606a2fdce6c664fa941c}
+      \strng{authorbibnamehash}{4b31415aeae5606a2fdce6c664fa941c}
+      \strng{authornamehash}{950a564f1062986b7ae9ade8a198345f}
+      \strng{authorfullhash}{4b31415aeae5606a2fdce6c664fa941c}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Multimedia}
+      \field{number}{5}
+      \field{title}{Video transcoding: an overview of various techniques and research issues}
+      \field{volume}{7}
+      \field{year}{2005}
+      \field{pages}{793\bibrangedash 804}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1109/TMM.2005.854472
+      \endverb
+      \keyw{Transcoding;Video compression;Multimedia systems;Bit rate;Decoding;Telemedicine;Crisis management;Transportation;Personal communication networks;Portable computers;Frequency domain;heterogeneous video systems;H.26X;MPEG-X;motion vector refinement;spatial domain;video transcoding}
+    \endentry
+    \entry{greenwashing}{article}{}
+      \name{author}{3}{}{%
+        {{hash=e12ac09e217e41ef2f58ab2d59ad4098}{%
+           family={Alamsyah},
+           familyi={A\bibinitperiod},
+           given={D},
+           giveni={D\bibinitperiod}}}%
+        {{hash=045df474b9a4968ec85d23cc6567fd51}{%
+           family={Othman},
+           familyi={O\bibinitperiod},
+           given={N},
+           giveni={N\bibinitperiod}}}%
+        {{hash=ee5168303bc82fb52ba8c742d3fc28a3}{%
+           family={Mohammed},
+           familyi={M\bibinitperiod},
+           given={H},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{52616458ee7fa22cbd9a7f718c2cc5cb}
+      \strng{fullhash}{52616458ee7fa22cbd9a7f718c2cc5cb}
+      \strng{bibnamehash}{52616458ee7fa22cbd9a7f718c2cc5cb}
+      \strng{authorbibnamehash}{52616458ee7fa22cbd9a7f718c2cc5cb}
+      \strng{authornamehash}{52616458ee7fa22cbd9a7f718c2cc5cb}
+      \strng{authorfullhash}{52616458ee7fa22cbd9a7f718c2cc5cb}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Management Science Letters}
+      \field{number}{9}
+      \field{title}{The awareness of environmentally friendly products: The impact of green advertising and green brand image}
+      \field{volume}{10}
+      \field{year}{2020}
+      \field{pages}{1961\bibrangedash 1968}
+      \range{pages}{8}
+    \endentry
+    \entry{Nodejs_Rest}{book}{}
+      \name{author}{1}{}{%
+        {{hash=5ee4ea88e92b81cb4d35a9b5aff56182}{%
+           family={Bojinov},
+           familyi={B\bibinitperiod},
+           given={Valentin},
+           giveni={V\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Packt Publishing Ltd}%
+      }
+      \strng{namehash}{5ee4ea88e92b81cb4d35a9b5aff56182}
+      \strng{fullhash}{5ee4ea88e92b81cb4d35a9b5aff56182}
+      \strng{bibnamehash}{5ee4ea88e92b81cb4d35a9b5aff56182}
+      \strng{authorbibnamehash}{5ee4ea88e92b81cb4d35a9b5aff56182}
+      \strng{authornamehash}{5ee4ea88e92b81cb4d35a9b5aff56182}
+      \strng{authorfullhash}{5ee4ea88e92b81cb4d35a9b5aff56182}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{RESTful Web API Design with Node. js 10: Learn to create robust RESTful web services with Node. js, MongoDB, and Express. js}
+      \field{year}{2018}
+    \endentry
+    \entry{codemill_now}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=ac5cbfba4fb9f52997a2c75f64648b34}{%
+           family={Bolagsverket},
+           familyi={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{ac5cbfba4fb9f52997a2c75f64648b34}
+      \strng{fullhash}{ac5cbfba4fb9f52997a2c75f64648b34}
+      \strng{bibnamehash}{ac5cbfba4fb9f52997a2c75f64648b34}
+      \strng{authorbibnamehash}{ac5cbfba4fb9f52997a2c75f64648b34}
+      \strng{authornamehash}{ac5cbfba4fb9f52997a2c75f64648b34}
+      \strng{authorfullhash}{ac5cbfba4fb9f52997a2c75f64648b34}
+      \field{extraname}{1}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed 06.02.2024}
+      \field{title}{CodeMill AB (publ)}
+      \verb{urlraw}
+      \verb https://foretagsinfo.bolagsverket.se/sok-foretagsinformation-web/foretag/556762-3839/foretagsform/AB
+      \endverb
+      \verb{url}
+      \verb https://foretagsinfo.bolagsverket.se/sok-foretagsinformation-web/foretag/556762-3839/foretagsform/AB
+      \endverb
+    \endentry
+    \entry{codemill_old}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=ac5cbfba4fb9f52997a2c75f64648b34}{%
+           family={Bolagsverket},
+           familyi={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{ac5cbfba4fb9f52997a2c75f64648b34}
+      \strng{fullhash}{ac5cbfba4fb9f52997a2c75f64648b34}
+      \strng{bibnamehash}{ac5cbfba4fb9f52997a2c75f64648b34}
+      \strng{authorbibnamehash}{ac5cbfba4fb9f52997a2c75f64648b34}
+      \strng{authornamehash}{ac5cbfba4fb9f52997a2c75f64648b34}
+      \strng{authorfullhash}{ac5cbfba4fb9f52997a2c75f64648b34}
+      \field{extraname}{2}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed 06.02.2024}
+      \field{title}{CodeMill Handelsbolag}
+      \verb{urlraw}
+      \verb https://foretagsinfo.bolagsverket.se/sok-foretagsinformation-web/foretag/969729-6854/foretagsform/HB
+      \endverb
+      \verb{url}
+      \verb https://foretagsinfo.bolagsverket.se/sok-foretagsinformation-web/foretag/969729-6854/foretagsform/HB
+      \endverb
+    \endentry
+    \entry{accessibility}{article}{}
+      \name{author}{2}{}{%
+        {{hash=90ce05042dbf2305e67c1d99f5076c3a}{%
+           family={Brophy},
+           familyi={B\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+        {{hash=ef99702f09ccca5705859a9f07b8a953}{%
+           family={Craven},
+           familyi={C\bibinitperiod},
+           given={Jenny},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Johns Hopkins University Press}%
+      }
+      \strng{namehash}{a3573f3220f02b1a01b2a9047763a3ba}
+      \strng{fullhash}{a3573f3220f02b1a01b2a9047763a3ba}
+      \strng{bibnamehash}{a3573f3220f02b1a01b2a9047763a3ba}
+      \strng{authorbibnamehash}{a3573f3220f02b1a01b2a9047763a3ba}
+      \strng{authornamehash}{a3573f3220f02b1a01b2a9047763a3ba}
+      \strng{authorfullhash}{a3573f3220f02b1a01b2a9047763a3ba}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Library trends}
+      \field{number}{4}
+      \field{title}{Web accessibility}
+      \field{volume}{55}
+      \field{year}{2007}
+      \field{pages}{950\bibrangedash 972}
+      \range{pages}{23}
+    \endentry
+    \entry{RM_Frontend}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=2ef8536322d1b6b9232711d35fb6d2c3}{%
+           family={Codemill},
+           familyi={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{2ef8536322d1b6b9232711d35fb6d2c3}
+      \strng{fullhash}{2ef8536322d1b6b9232711d35fb6d2c3}
+      \strng{bibnamehash}{2ef8536322d1b6b9232711d35fb6d2c3}
+      \strng{authorbibnamehash}{2ef8536322d1b6b9232711d35fb6d2c3}
+      \strng{authornamehash}{2ef8536322d1b6b9232711d35fb6d2c3}
+      \strng{authorfullhash}{2ef8536322d1b6b9232711d35fb6d2c3}
+      \field{extraname}{1}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Retrieved from company's codebase}
+      \field{note}{Accessed 07.02.2024. File attached in Appendix \ref{appendix:readmeaccurateplayer}}
+      \field{title}{Accurate-Player-3-Core README}
+    \endentry
+    \entry{codemill_avp}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=2ef8536322d1b6b9232711d35fb6d2c3}{%
+           family={Codemill},
+           familyi={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{2ef8536322d1b6b9232711d35fb6d2c3}
+      \strng{fullhash}{2ef8536322d1b6b9232711d35fb6d2c3}
+      \strng{bibnamehash}{2ef8536322d1b6b9232711d35fb6d2c3}
+      \strng{authorbibnamehash}{2ef8536322d1b6b9232711d35fb6d2c3}
+      \strng{authornamehash}{2ef8536322d1b6b9232711d35fb6d2c3}
+      \strng{authorfullhash}{2ef8536322d1b6b9232711d35fb6d2c3}
+      \field{extraname}{2}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed 06.02.2024}
+      \field{title}{Accurate.Video - Deliver with confidence}
+      \verb{urlraw}
+      \verb https://www.codemill.se/accuratevideo
+      \endverb
+      \verb{url}
+      \verb https://www.codemill.se/accuratevideo
+      \endverb
+    \endentry
+    \entry{ap3_docs}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=2ef8536322d1b6b9232711d35fb6d2c3}{%
+           family={Codemill},
+           familyi={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{2ef8536322d1b6b9232711d35fb6d2c3}
+      \strng{fullhash}{2ef8536322d1b6b9232711d35fb6d2c3}
+      \strng{bibnamehash}{2ef8536322d1b6b9232711d35fb6d2c3}
+      \strng{authorbibnamehash}{2ef8536322d1b6b9232711d35fb6d2c3}
+      \strng{authornamehash}{2ef8536322d1b6b9232711d35fb6d2c3}
+      \strng{authorfullhash}{2ef8536322d1b6b9232711d35fb6d2c3}
+      \field{extraname}{3}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed 09.02.2024}
+      \field{title}{Accurate.Video Documentation}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://docs.accurate.video/docs/
+      \endverb
+      \verb{url}
+      \verb https://docs.accurate.video/docs/
+      \endverb
+    \endentry
+    \entry{RM_Backend}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=2ef8536322d1b6b9232711d35fb6d2c3}{%
+           family={Codemill},
+           familyi={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{2ef8536322d1b6b9232711d35fb6d2c3}
+      \strng{fullhash}{2ef8536322d1b6b9232711d35fb6d2c3}
+      \strng{bibnamehash}{2ef8536322d1b6b9232711d35fb6d2c3}
+      \strng{authorbibnamehash}{2ef8536322d1b6b9232711d35fb6d2c3}
+      \strng{authornamehash}{2ef8536322d1b6b9232711d35fb6d2c3}
+      \strng{authorfullhash}{2ef8536322d1b6b9232711d35fb6d2c3}
+      \field{extraname}{4}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Retrieved from company's codebase}
+      \field{note}{Accessed 07.02.2024. File attached in Appendix \ref{appendix:readmejitwebrtc}}
+      \field{title}{Jit-WebRTC README}
+    \endentry
+    \entry{codemill_linkedin}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=2ef8536322d1b6b9232711d35fb6d2c3}{%
+           family={Codemill},
+           familyi={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{2ef8536322d1b6b9232711d35fb6d2c3}
+      \strng{fullhash}{2ef8536322d1b6b9232711d35fb6d2c3}
+      \strng{bibnamehash}{2ef8536322d1b6b9232711d35fb6d2c3}
+      \strng{authorbibnamehash}{2ef8536322d1b6b9232711d35fb6d2c3}
+      \strng{authornamehash}{2ef8536322d1b6b9232711d35fb6d2c3}
+      \strng{authorfullhash}{2ef8536322d1b6b9232711d35fb6d2c3}
+      \field{extraname}{5}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed 06.02.2024}
+      \field{title}{LinkedIn profile of Codemill}
+      \verb{urlraw}
+      \verb https://se.linkedin.com/company/codemill
+      \endverb
+      \verb{url}
+      \verb https://se.linkedin.com/company/codemill
+      \endverb
+    \endentry
+    \entry{codemill}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=2ef8536322d1b6b9232711d35fb6d2c3}{%
+           family={Codemill},
+           familyi={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{2ef8536322d1b6b9232711d35fb6d2c3}
+      \strng{fullhash}{2ef8536322d1b6b9232711d35fb6d2c3}
+      \strng{bibnamehash}{2ef8536322d1b6b9232711d35fb6d2c3}
+      \strng{authorbibnamehash}{2ef8536322d1b6b9232711d35fb6d2c3}
+      \strng{authornamehash}{2ef8536322d1b6b9232711d35fb6d2c3}
+      \strng{authorfullhash}{2ef8536322d1b6b9232711d35fb6d2c3}
+      \field{extraname}{6}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed 02.02.2024}
+      \field{title}{This is Codemill}
+      \verb{urlraw}
+      \verb https://www.codemill.se/about-us
+      \endverb
+      \verb{url}
+      \verb https://www.codemill.se/about-us
+      \endverb
+    \endentry
+    \entry{protobuffer}{incollection}{}
+      \name{author}{1}{}{%
+        {{hash=c413ff20ca82db9a68353a71dee93ebd}{%
+           family={Currier},
+           familyi={C\bibinitperiod},
+           given={Chris},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{c413ff20ca82db9a68353a71dee93ebd}
+      \strng{fullhash}{c413ff20ca82db9a68353a71dee93ebd}
+      \strng{bibnamehash}{c413ff20ca82db9a68353a71dee93ebd}
+      \strng{authorbibnamehash}{c413ff20ca82db9a68353a71dee93ebd}
+      \strng{authornamehash}{c413ff20ca82db9a68353a71dee93ebd}
+      \strng{authorfullhash}{c413ff20ca82db9a68353a71dee93ebd}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Mobile Forensics--The File Format Handbook: Common File Formats and File Systems Used in Mobile Devices}
+      \field{title}{Protocol buffers}
+      \field{year}{2022}
+      \field{pages}{223\bibrangedash 260}
+      \range{pages}{38}
+    \endentry
+    \entry{stats}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=586e08aef06b3781fb387c66b2c2e087}{%
+           family={Duarte},
+           familyi={D\bibinitperiod},
+           given={Fabio},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{586e08aef06b3781fb387c66b2c2e087}
+      \strng{fullhash}{586e08aef06b3781fb387c66b2c2e087}
+      \strng{bibnamehash}{586e08aef06b3781fb387c66b2c2e087}
+      \strng{authorbibnamehash}{586e08aef06b3781fb387c66b2c2e087}
+      \strng{authornamehash}{586e08aef06b3781fb387c66b2c2e087}
+      \strng{authorfullhash}{586e08aef06b3781fb387c66b2c2e087}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{09}
+      \field{note}{Accessed 02.02.2024}
+      \field{title}{Video Streaming Services Stats (2023)}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://explodingtopics.com/blog/video-streaming-stats
+      \endverb
+      \verb{url}
+      \verb https://explodingtopics.com/blog/video-streaming-stats
+      \endverb
+    \endentry
+    \entry{colour}{article}{}
+      \name{author}{1}{}{%
+        {{hash=07ad8fd913ca3ef4fa40732af891f9a4}{%
+           family={Elliot},
+           familyi={E\bibinitperiod},
+           given={Andrew\bibnamedelima J},
+           giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Frontiers}%
+      }
+      \strng{namehash}{07ad8fd913ca3ef4fa40732af891f9a4}
+      \strng{fullhash}{07ad8fd913ca3ef4fa40732af891f9a4}
+      \strng{bibnamehash}{07ad8fd913ca3ef4fa40732af891f9a4}
+      \strng{authorbibnamehash}{07ad8fd913ca3ef4fa40732af891f9a4}
+      \strng{authornamehash}{07ad8fd913ca3ef4fa40732af891f9a4}
+      \strng{authorfullhash}{07ad8fd913ca3ef4fa40732af891f9a4}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Frontiers in psychology}
+      \field{title}{Color and psychological functioning: a review of theoretical and empirical work}
+      \field{volume}{6}
+      \field{year}{2015}
+      \field{pages}{127893}
+      \range{pages}{1}
+    \endentry
+    \entry{red_romance}{article}{}
+      \name{author}{2}{}{%
+        {{hash=07ad8fd913ca3ef4fa40732af891f9a4}{%
+           family={Elliot},
+           familyi={E\bibinitperiod},
+           given={Andrew\bibnamedelima J},
+           giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=0bbf0b777b3649f3e346f1b640171c6c}{%
+           family={Niesta},
+           familyi={N\bibinitperiod},
+           given={Daniela},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Psychological Association}%
+      }
+      \strng{namehash}{4aab96f7dc63406874366feade8536db}
+      \strng{fullhash}{4aab96f7dc63406874366feade8536db}
+      \strng{bibnamehash}{4aab96f7dc63406874366feade8536db}
+      \strng{authorbibnamehash}{4aab96f7dc63406874366feade8536db}
+      \strng{authornamehash}{4aab96f7dc63406874366feade8536db}
+      \strng{authorfullhash}{4aab96f7dc63406874366feade8536db}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of personality and social psychology}
+      \field{number}{5}
+      \field{title}{Romantic red: red enhances men's attraction to women.}
+      \field{volume}{95}
+      \field{year}{2008}
+      \field{pages}{1150}
+      \range{pages}{1}
+    \endentry
+    \entry{colorgrading2}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=bb56d16146b8fcab559380378a0f3c61}{%
+           family={Filmbaker},
+           familyi={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{bb56d16146b8fcab559380378a0f3c61}
+      \strng{fullhash}{bb56d16146b8fcab559380378a0f3c61}
+      \strng{bibnamehash}{bb56d16146b8fcab559380378a0f3c61}
+      \strng{authorbibnamehash}{bb56d16146b8fcab559380378a0f3c61}
+      \strng{authornamehash}{bb56d16146b8fcab559380378a0f3c61}
+      \strng{authorfullhash}{bb56d16146b8fcab559380378a0f3c61}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{08}
+      \field{note}{Accessed 22.03.2024}
+      \field{title}{The Role of Color in Video Production: How to Evoke Emotions and Convey Meaning}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://www.filmbaker.com/blog/the-role-of-color-in-video-production-how-to-evoke-emotions-and-convey-meaning
+      \endverb
+      \verb{url}
+      \verb https://www.filmbaker.com/blog/the-role-of-color-in-video-production-how-to-evoke-emotions-and-convey-meaning
+      \endverb
+    \endentry
+    \entry{nodejs}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=37ad480f97bed434bd748fcd4aa11d40}{%
+           family={Foundation},
+           familyi={F\bibinitperiod},
+           given={OpenJS},
+           giveni={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{37ad480f97bed434bd748fcd4aa11d40}
+      \strng{fullhash}{37ad480f97bed434bd748fcd4aa11d40}
+      \strng{bibnamehash}{37ad480f97bed434bd748fcd4aa11d40}
+      \strng{authorbibnamehash}{37ad480f97bed434bd748fcd4aa11d40}
+      \strng{authornamehash}{37ad480f97bed434bd748fcd4aa11d40}
+      \strng{authorfullhash}{37ad480f97bed434bd748fcd4aa11d40}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{01}
+      \field{note}{Accessed 09.02.2024}
+      \field{title}{About Node.js}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://nodejs.org/en/about
+      \endverb
+      \verb{url}
+      \verb https://nodejs.org/en/about
+      \endverb
+    \endentry
+    \entry{proto2_doc}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=6bc28252c14133d21331dc54856c1797}{%
+           family={{Google Developers}},
+           familyi={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{6bc28252c14133d21331dc54856c1797}
+      \strng{fullhash}{6bc28252c14133d21331dc54856c1797}
+      \strng{bibnamehash}{6bc28252c14133d21331dc54856c1797}
+      \strng{authorbibnamehash}{6bc28252c14133d21331dc54856c1797}
+      \strng{authornamehash}{6bc28252c14133d21331dc54856c1797}
+      \strng{authorfullhash}{6bc28252c14133d21331dc54856c1797}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed 06.04.24}
+      \field{title}{Protocol Buffers - Proto2}
+      \verb{urlraw}
+      \verb https://protobuf.dev/programming-guides/proto2/
+      \endverb
+      \verb{url}
+      \verb https://protobuf.dev/programming-guides/proto2/
+      \endverb
+    \endentry
+    \entry{red_sport}{article}{}
+      \name{author}{2}{}{%
+        {{hash=f8183b4a94e9e7840b429ccf30914ef7}{%
+           family={Hill},
+           familyi={H\bibinitperiod},
+           given={Russell\bibnamedelima A},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=85d44185fd26c30c4bbdfa227d41a6d3}{%
+           family={Barton},
+           familyi={B\bibinitperiod},
+           given={Robert\bibnamedelima A},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Nature Publishing Group UK London}%
+      }
+      \strng{namehash}{4ae24351ae7fa1057bb239d34a22ddce}
+      \strng{fullhash}{4ae24351ae7fa1057bb239d34a22ddce}
+      \strng{bibnamehash}{4ae24351ae7fa1057bb239d34a22ddce}
+      \strng{authorbibnamehash}{4ae24351ae7fa1057bb239d34a22ddce}
+      \strng{authornamehash}{4ae24351ae7fa1057bb239d34a22ddce}
+      \strng{authorfullhash}{4ae24351ae7fa1057bb239d34a22ddce}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nature}
+      \field{number}{7040}
+      \field{title}{Red enhances human performance in contests}
+      \field{volume}{435}
+      \field{year}{2005}
+      \field{pages}{293\bibrangedash 293}
+      \range{pages}{1}
+    \endentry
+    \entry{cc1}{book}{}
+      \name{author}{1}{}{%
+        {{hash=ce30d04fab7bde7a8c03f33807f7888c}{%
+           family={Hullfish},
+           familyi={H\bibinitperiod},
+           given={Steve},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Routledge}%
+      }
+      \strng{namehash}{ce30d04fab7bde7a8c03f33807f7888c}
+      \strng{fullhash}{ce30d04fab7bde7a8c03f33807f7888c}
+      \strng{bibnamehash}{ce30d04fab7bde7a8c03f33807f7888c}
+      \strng{authorbibnamehash}{ce30d04fab7bde7a8c03f33807f7888c}
+      \strng{authornamehash}{ce30d04fab7bde7a8c03f33807f7888c}
+      \strng{authorfullhash}{ce30d04fab7bde7a8c03f33807f7888c}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The art and technique of digital color correction}
+      \field{year}{2013}
+    \endentry
+    \entry{IEEE_Rest}{article}{}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Std 9274.1.1-2023}
+      \field{title}{IEEE Standard for Learning Technology--JavaScript Object Notation (JSON) Data Model Format and Representational State Transfer (RESTful) Web Service for Learner Experience Data Tracking and Access}
+      \field{year}{2023}
+      \field{pages}{1\bibrangedash 103}
+      \range{pages}{103}
+      \verb{doi}
+      \verb 10.1109/IEEESTD.2023.10273185
+      \endverb
+    \endentry
+    \entry{docker}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=0a6e82dfd0df55343233c1768adf738c}{%
+           family={Inc.},
+           familyi={I\bibinitperiod},
+           given={Docker},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{0a6e82dfd0df55343233c1768adf738c}
+      \strng{fullhash}{0a6e82dfd0df55343233c1768adf738c}
+      \strng{bibnamehash}{0a6e82dfd0df55343233c1768adf738c}
+      \strng{authorbibnamehash}{0a6e82dfd0df55343233c1768adf738c}
+      \strng{authornamehash}{0a6e82dfd0df55343233c1768adf738c}
+      \strng{authorfullhash}{0a6e82dfd0df55343233c1768adf738c}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{01}
+      \field{note}{Accessed 09.02.2024}
+      \field{title}{Docker Documentation}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://docs.docker.com/
+      \endverb
+      \verb{url}
+      \verb https://docs.docker.com/
+      \endverb
+    \endentry
+    \entry{npmyarn}{article}{}
+      \name{author}{1}{}{%
+        {{hash=ea83fe84556255dbecbadb9fa3459461}{%
+           family={Jacobs},
+           familyi={J\bibinitperiod},
+           given={Alexander},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{ea83fe84556255dbecbadb9fa3459461}
+      \strng{fullhash}{ea83fe84556255dbecbadb9fa3459461}
+      \strng{bibnamehash}{ea83fe84556255dbecbadb9fa3459461}
+      \strng{authorbibnamehash}{ea83fe84556255dbecbadb9fa3459461}
+      \strng{authornamehash}{ea83fe84556255dbecbadb9fa3459461}
+      \strng{authorfullhash}{ea83fe84556255dbecbadb9fa3459461}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Comparison of JavaScript package managers}
+      \field{year}{2019}
+    \endentry
+    \entry{green}{book}{}
+      \name{author}{2}{}{%
+        {{hash=12486ca4a61b761580c6121250cd46a9}{%
+           family={Kaplan},
+           familyi={K\bibinitperiod},
+           given={Rachel},
+           giveni={R\bibinitperiod}}}%
+        {{hash=03561f3b10c24d2f4024878ecd725f57}{%
+           family={Kaplan},
+           familyi={K\bibinitperiod},
+           given={Stephen},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge university press}%
+      }
+      \strng{namehash}{90984addf7eeb5a685377f4a4371aeeb}
+      \strng{fullhash}{90984addf7eeb5a685377f4a4371aeeb}
+      \strng{bibnamehash}{90984addf7eeb5a685377f4a4371aeeb}
+      \strng{authorbibnamehash}{90984addf7eeb5a685377f4a4371aeeb}
+      \strng{authornamehash}{90984addf7eeb5a685377f4a4371aeeb}
+      \strng{authorfullhash}{90984addf7eeb5a685377f4a4371aeeb}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The experience of nature: A psychological perspective}
+      \field{year}{1989}
+    \endentry
+    \entry{kdenlive}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=da5764376ee8c0a08db0927af5e7798e}{%
+           family={Kdenlive},
+           familyi={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{da5764376ee8c0a08db0927af5e7798e}
+      \strng{fullhash}{da5764376ee8c0a08db0927af5e7798e}
+      \strng{bibnamehash}{da5764376ee8c0a08db0927af5e7798e}
+      \strng{authorbibnamehash}{da5764376ee8c0a08db0927af5e7798e}
+      \strng{authornamehash}{da5764376ee8c0a08db0927af5e7798e}
+      \strng{authorfullhash}{da5764376ee8c0a08db0927af5e7798e}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed 09.04.24}
+      \field{title}{Kdenlive}
+      \verb{urlraw}
+      \verb https://kdenlive.org/en/
+      \endverb
+      \verb{url}
+      \verb https://kdenlive.org/en/
+      \endverb
+    \endentry
+    \entry{colourRGB}{book}{}
+      \name{author}{1}{}{%
+        {{hash=3ecb96736f61a2a70ba1056b75795f70}{%
+           family={Kuehni},
+           familyi={K\bibinitperiod},
+           given={Rolf\bibnamedelima G},
+           giveni={R\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {John Wiley \& Sons}%
+      }
+      \strng{namehash}{3ecb96736f61a2a70ba1056b75795f70}
+      \strng{fullhash}{3ecb96736f61a2a70ba1056b75795f70}
+      \strng{bibnamehash}{3ecb96736f61a2a70ba1056b75795f70}
+      \strng{authorbibnamehash}{3ecb96736f61a2a70ba1056b75795f70}
+      \strng{authornamehash}{3ecb96736f61a2a70ba1056b75795f70}
+      \strng{authorfullhash}{3ecb96736f61a2a70ba1056b75795f70}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Color: An introduction to practice and principles}
+      \field{year}{2012}
+    \endentry
+    \entry{gimp}{book}{}
+      \name{author}{2}{}{%
+        {{hash=6e5ece5436ad9f349002274f06f8f605}{%
+           family={Lecarme},
+           familyi={L\bibinitperiod},
+           given={Olivier},
+           giveni={O\bibinitperiod}}}%
+        {{hash=31569aca2a1a0a213d72b27694a16bbb}{%
+           family={Delvare},
+           familyi={D\bibinitperiod},
+           given={Karine},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {No Starch Press}%
+      }
+      \strng{namehash}{aeda719b1af8ab8ec303358d0ed4f8f5}
+      \strng{fullhash}{aeda719b1af8ab8ec303358d0ed4f8f5}
+      \strng{bibnamehash}{aeda719b1af8ab8ec303358d0ed4f8f5}
+      \strng{authorbibnamehash}{aeda719b1af8ab8ec303358d0ed4f8f5}
+      \strng{authornamehash}{aeda719b1af8ab8ec303358d0ed4f8f5}
+      \strng{authorfullhash}{aeda719b1af8ab8ec303358d0ed4f8f5}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The book of GIMP: A complete guide to nearly everything}
+      \field{year}{2013}
+    \endentry
+    \entry{avi}{report}{}
+      \name{author}{1}{}{%
+        {{hash=9565002c760d5f54e633221fa5e570e3}{%
+           family={{Library of Congress}},
+           familyi={L\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Library of Congress Preservation}%
+      }
+      \strng{namehash}{9565002c760d5f54e633221fa5e570e3}
+      \strng{fullhash}{9565002c760d5f54e633221fa5e570e3}
+      \strng{bibnamehash}{9565002c760d5f54e633221fa5e570e3}
+      \strng{authorbibnamehash}{9565002c760d5f54e633221fa5e570e3}
+      \strng{authornamehash}{9565002c760d5f54e633221fa5e570e3}
+      \strng{authorfullhash}{9565002c760d5f54e633221fa5e570e3}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{1}
+      \field{title}{{AVI (Audio Video Interleaved) File Format}}
+      \field{type}{techreport}
+      \field{year}{2022}
+    \endentry
+    \entry{red_dominance}{article}{}
+      \name{author}{2}{}{%
+        {{hash=0179cf6909644cac3710fc7db677f0ff}{%
+           family={Little},
+           familyi={L\bibinitperiod},
+           given={Anthony\bibnamedelima C},
+           giveni={A\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=f8183b4a94e9e7840b429ccf30914ef7}{%
+           family={Hill},
+           familyi={H\bibinitperiod},
+           given={Russell\bibnamedelima A},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Akadémiai Kiadó, co-published with Springer Science+ Business Media BV~…}%
+      }
+      \strng{namehash}{7c373a2191750a2f7d0a4a2b4b865f20}
+      \strng{fullhash}{7c373a2191750a2f7d0a4a2b4b865f20}
+      \strng{bibnamehash}{7c373a2191750a2f7d0a4a2b4b865f20}
+      \strng{authorbibnamehash}{7c373a2191750a2f7d0a4a2b4b865f20}
+      \strng{authornamehash}{7c373a2191750a2f7d0a4a2b4b865f20}
+      \strng{authorfullhash}{7c373a2191750a2f7d0a4a2b4b865f20}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of evolutionary psychology}
+      \field{number}{1}
+      \field{title}{Attribution to red suggests special role in dominance signalling}
+      \field{volume}{5}
+      \field{year}{2007}
+      \field{pages}{161\bibrangedash 168}
+      \range{pages}{8}
+    \endentry
+    \entry{cc_cg_2}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=1b5913756923e7e4e696b0badce685fc}{%
+           family={MasterClass},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{1b5913756923e7e4e696b0badce685fc}
+      \strng{fullhash}{1b5913756923e7e4e696b0badce685fc}
+      \strng{bibnamehash}{1b5913756923e7e4e696b0badce685fc}
+      \strng{authorbibnamehash}{1b5913756923e7e4e696b0badce685fc}
+      \strng{authornamehash}{1b5913756923e7e4e696b0badce685fc}
+      \strng{authorfullhash}{1b5913756923e7e4e696b0badce685fc}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{06}
+      \field{note}{Accessed 23.03.2024}
+      \field{title}{Color Correcting vs. Color Grading: Understanding Film Coloring}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://www.masterclass.com/articles/color-correcting-vs-color-grading
+      \endverb
+      \verb{url}
+      \verb https://www.masterclass.com/articles/color-correcting-vs-color-grading
+      \endverb
+    \endentry
+    \entry{melt}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=3a885c38e006f083f6408a37d10192bf}{%
+           family={Meltytech},
+           familyi={M\bibinitperiod},
+           given={LLC},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{3a885c38e006f083f6408a37d10192bf}
+      \strng{fullhash}{3a885c38e006f083f6408a37d10192bf}
+      \strng{bibnamehash}{3a885c38e006f083f6408a37d10192bf}
+      \strng{authorbibnamehash}{3a885c38e006f083f6408a37d10192bf}
+      \strng{authornamehash}{3a885c38e006f083f6408a37d10192bf}
+      \strng{authorfullhash}{3a885c38e006f083f6408a37d10192bf}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed 08.02.2024}
+      \field{title}{Melt}
+      \verb{urlraw}
+      \verb https://www.mltframework.org/docs/melt/
+      \endverb
+      \verb{url}
+      \verb https://www.mltframework.org/docs/melt/
+      \endverb
+    \endentry
+    \entry{melt_filters}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=af7ae88606b72ab19f5711bf5571b909}{%
+           family={{Meltytech, LLC}},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{af7ae88606b72ab19f5711bf5571b909}
+      \strng{fullhash}{af7ae88606b72ab19f5711bf5571b909}
+      \strng{bibnamehash}{af7ae88606b72ab19f5711bf5571b909}
+      \strng{authorbibnamehash}{af7ae88606b72ab19f5711bf5571b909}
+      \strng{authornamehash}{af7ae88606b72ab19f5711bf5571b909}
+      \strng{authorfullhash}{af7ae88606b72ab19f5711bf5571b909}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.mltframework.org/plugins/PluginsFilters/}}
+      \field{note}{Accessed 25.03.2024}
+      \field{title}{{Filter Plugins}}
+    \endentry
+    \entry{melt_code}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=1548565e65ed996539ea36832371e44e}{%
+           family={{MLT Framework}},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{1548565e65ed996539ea36832371e44e}
+      \strng{fullhash}{1548565e65ed996539ea36832371e44e}
+      \strng{bibnamehash}{1548565e65ed996539ea36832371e44e}
+      \strng{authorbibnamehash}{1548565e65ed996539ea36832371e44e}
+      \strng{authornamehash}{1548565e65ed996539ea36832371e44e}
+      \strng{authorfullhash}{1548565e65ed996539ea36832371e44e}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://github.com/mltframework/mlt}}
+      \field{note}{Accessed 25.03.2024}
+      \field{title}{{Melt Framework}}
+      \field{year}{2023}
+    \endentry
+    \entry{nielsen}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=bc09318dce909d6ba1220cfcba7ef70d}{%
+           family={Nielsen},
+           familyi={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{bc09318dce909d6ba1220cfcba7ef70d}
+      \strng{fullhash}{bc09318dce909d6ba1220cfcba7ef70d}
+      \strng{bibnamehash}{bc09318dce909d6ba1220cfcba7ef70d}
+      \strng{authorbibnamehash}{bc09318dce909d6ba1220cfcba7ef70d}
+      \strng{authornamehash}{bc09318dce909d6ba1220cfcba7ef70d}
+      \strng{authorfullhash}{bc09318dce909d6ba1220cfcba7ef70d}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{01}
+      \field{note}{Accessed 02.02.2024}
+      \field{title}{Streaming services remain most popular destination for TV viewing in December}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://www.nielsen.com/insights/2023/streaming-services-remain-most-popular-destination-for-tv-viewing-in-december/
+      \endverb
+      \verb{url}
+      \verb https://www.nielsen.com/insights/2023/streaming-services-remain-most-popular-destination-for-tv-viewing-in-december/
+      \endverb
+    \endentry
+    \entry{colorgrading1}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=e445f9b5e802026ffcdcd1ca2014203a}{%
+           family={Productions},
+           familyi={P\bibinitperiod},
+           given={A\bibnamedelima Cubed},
+           giveni={A\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{e445f9b5e802026ffcdcd1ca2014203a}
+      \strng{fullhash}{e445f9b5e802026ffcdcd1ca2014203a}
+      \strng{bibnamehash}{e445f9b5e802026ffcdcd1ca2014203a}
+      \strng{authorbibnamehash}{e445f9b5e802026ffcdcd1ca2014203a}
+      \strng{authornamehash}{e445f9b5e802026ffcdcd1ca2014203a}
+      \strng{authorfullhash}{e445f9b5e802026ffcdcd1ca2014203a}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{06}
+      \field{note}{Accessed 22.03.2024}
+      \field{title}{The Importance of Color Grading in Videos: Elevating Visual Impact and Storytelling}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://acubedproductions.com/2023/07/the-importance-of-color-grading-in-videos-elevating-visual-impact-and-storytelling/
+      \endverb
+      \verb{url}
+      \verb https://acubedproductions.com/2023/07/the-importance-of-color-grading-in-videos-elevating-visual-impact-and-storytelling/
+      \endverb
+    \endentry
+    \entry{gamma}{article}{}
+      \name{author}{5}{}{%
+        {{hash=212f2f0592423a918e90ff3ca3aefda1}{%
+           family={Rahman},
+           familyi={R\bibinitperiod},
+           given={Shanto},
+           giveni={S\bibinitperiod}}}%
+        {{hash=a61a1976bd66188636c8f25c20d2e342}{%
+           family={Rahman},
+           familyi={R\bibinitperiod},
+           given={Md\bibnamedelima Mostafijur},
+           giveni={M\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=607f13cfa5fa158295629cbef1644f7f}{%
+           family={Abdullah-Al-Wadud},
+           familyi={A\bibinithyphendelim A\bibinithyphendelim W\bibinitperiod},
+           given={Mohammad},
+           giveni={M\bibinitperiod}}}%
+        {{hash=6ef3d30a5cfb968a2ef0164951f88366}{%
+           family={Al-Quaderi},
+           familyi={A\bibinithyphendelim Q\bibinitperiod},
+           given={Golam\bibnamedelima Dastegir},
+           giveni={G\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=aa382b4eb47003f5b504b1c3d0826c40}{%
+           family={Shoyaib},
+           familyi={S\bibinitperiod},
+           given={Mohammad},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{63380ecc9cd659e9608949fdcc8c293c}
+      \strng{fullhash}{92bed2e351f934d3c1b6cc0350e05a40}
+      \strng{bibnamehash}{92bed2e351f934d3c1b6cc0350e05a40}
+      \strng{authorbibnamehash}{92bed2e351f934d3c1b6cc0350e05a40}
+      \strng{authornamehash}{63380ecc9cd659e9608949fdcc8c293c}
+      \strng{authorfullhash}{92bed2e351f934d3c1b6cc0350e05a40}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{EURASIP Journal on Image and Video Processing}
+      \field{title}{An adaptive gamma correction for image enhancement}
+      \field{volume}{2016}
+      \field{year}{2016}
+      \field{pages}{1\bibrangedash 13}
+      \range{pages}{13}
+    \endentry
+    \entry{magicbullet}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=601b970549b0ba2d02950b2bfe49e716}{%
+           family={{Red Giant}},
+           familyi={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Red Giant}%
+      }
+      \strng{namehash}{601b970549b0ba2d02950b2bfe49e716}
+      \strng{fullhash}{601b970549b0ba2d02950b2bfe49e716}
+      \strng{bibnamehash}{601b970549b0ba2d02950b2bfe49e716}
+      \strng{authorbibnamehash}{601b970549b0ba2d02950b2bfe49e716}
+      \strng{authornamehash}{601b970549b0ba2d02950b2bfe49e716}
+      \strng{authorfullhash}{601b970549b0ba2d02950b2bfe49e716}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Adobe Premiere Pro plugin}
+      \field{title}{Magic Bullet Looks}
+      \field{year}{2013}
+    \endentry
+    \entry{webservice}{book}{}
+      \name{author}{2}{}{%
+        {{hash=1d85fbf65464db3ffcf0c108192462b8}{%
+           family={Richardson},
+           familyi={R\bibinitperiod},
+           given={Leonard},
+           giveni={L\bibinitperiod}}}%
+        {{hash=4fe2b4735d8d0a44dacec923a762c191}{%
+           family={Ruby},
+           familyi={R\bibinitperiod},
+           given={Sam},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {O'Reilly Media, Inc.}%
+      }
+      \strng{namehash}{d89bade9579459580d9690008a52a0c2}
+      \strng{fullhash}{d89bade9579459580d9690008a52a0c2}
+      \strng{bibnamehash}{d89bade9579459580d9690008a52a0c2}
+      \strng{authorbibnamehash}{d89bade9579459580d9690008a52a0c2}
+      \strng{authornamehash}{d89bade9579459580d9690008a52a0c2}
+      \strng{authorfullhash}{d89bade9579459580d9690008a52a0c2}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{RESTful web services}
+      \field{year}{2008}
+    \endentry
+    \entry{JIT_IEEE}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=70d13c052c674a25b19bd5f78a3cea00}{%
+           family={Rusert},
+           familyi={R\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=e462605878dff919e9848a965dcc69ff}{%
+           family={Andersson},
+           familyi={A\bibinitperiod},
+           given={Kenneth},
+           giveni={K\bibinitperiod}}}%
+        {{hash=a14143eafc70317e36fc9c66b28f41f9}{%
+           family={Yu},
+           familyi={Y\bibinitperiod},
+           given={Ruoyang},
+           giveni={R\bibinitperiod}}}%
+        {{hash=284ed477c20b6b58b7b9b6a23a6c5c51}{%
+           family={Nordgren},
+           familyi={N\bibinitperiod},
+           given={Harald},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{264fe7dbcb94b70abe4ddea5f20c0ee7}
+      \strng{fullhash}{e18ce988365d75b92357403e20b50497}
+      \strng{bibnamehash}{e18ce988365d75b92357403e20b50497}
+      \strng{authorbibnamehash}{e18ce988365d75b92357403e20b50497}
+      \strng{authornamehash}{264fe7dbcb94b70abe4ddea5f20c0ee7}
+      \strng{authorfullhash}{e18ce988365d75b92357403e20b50497}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2016 IEEE International Conference on Image Processing (ICIP)}
+      \field{title}{Guided just-in-time transcoding for cloud-based video platforms}
+      \field{year}{2016}
+      \field{pages}{1489\bibrangedash 1493}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1109/ICIP.2016.7532606
+      \endverb
+    \endentry
+    \entry{screentype}{article}{}
+      \name{author}{2}{}{%
+        {{hash=8ed6c96da4b272323f9c72740faba755}{%
+           family={Shieh},
+           familyi={S\bibinitperiod},
+           given={Kong-King},
+           giveni={K\bibinithyphendelim K\bibinitperiod}}}%
+        {{hash=9e4929b02405ce793d64df4af10ed86b}{%
+           family={Lin},
+           familyi={L\bibinitperiod},
+           given={Chin-Chiuan},
+           giveni={C\bibinithyphendelim C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{1e8a68d478be967a8a11e0f071085d35}
+      \strng{fullhash}{1e8a68d478be967a8a11e0f071085d35}
+      \strng{bibnamehash}{1e8a68d478be967a8a11e0f071085d35}
+      \strng{authorbibnamehash}{1e8a68d478be967a8a11e0f071085d35}
+      \strng{authornamehash}{1e8a68d478be967a8a11e0f071085d35}
+      \strng{authorfullhash}{1e8a68d478be967a8a11e0f071085d35}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International journal of industrial ergonomics}
+      \field{number}{5}
+      \field{title}{Effects of screen type, ambient illumination, and color combination on VDT visual performance and subjective preference}
+      \field{volume}{26}
+      \field{year}{2000}
+      \field{pages}{527\bibrangedash 536}
+      \range{pages}{10}
+    \endentry
+    \entry{webrtc}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=7a094f48e0367b19c4d51e564a58db88}{%
+           family={Sredojev},
+           familyi={S\bibinitperiod},
+           given={Branislav},
+           giveni={B\bibinitperiod}}}%
+        {{hash=686dd3d3b74bb0e383fa874b1f9807d8}{%
+           family={Samardzija},
+           familyi={S\bibinitperiod},
+           given={Dragan},
+           giveni={D\bibinitperiod}}}%
+        {{hash=7430f514f8c8adcaaf213b0fd14c5228}{%
+           family={Posarac},
+           familyi={P\bibinitperiod},
+           given={Dragan},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{92b282f4b6ccc897119a2f0ac69c0ecb}
+      \strng{fullhash}{92b282f4b6ccc897119a2f0ac69c0ecb}
+      \strng{bibnamehash}{92b282f4b6ccc897119a2f0ac69c0ecb}
+      \strng{authorbibnamehash}{92b282f4b6ccc897119a2f0ac69c0ecb}
+      \strng{authornamehash}{92b282f4b6ccc897119a2f0ac69c0ecb}
+      \strng{authorfullhash}{92b282f4b6ccc897119a2f0ac69c0ecb}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2015 38th international convention on information and communication technology, electronics and microelectronics (MIPRO)}
+      \field{title}{WebRTC technology overview and signaling solution design and implementation}
+      \field{year}{2015}
+      \field{pages}{1006\bibrangedash 1009}
+      \range{pages}{4}
+    \endentry
+    \entry{colour2}{article}{}
+      \name{author}{2}{}{%
+        {{hash=84b770ace633f342e125ca6d0daf97c3}{%
+           family={Valdez},
+           familyi={V\bibinitperiod},
+           given={Patricia},
+           giveni={P\bibinitperiod}}}%
+        {{hash=76414d390fc9d9dd330c3b8358dc1d75}{%
+           family={Mehrabian},
+           familyi={M\bibinitperiod},
+           given={Albert},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Psychological Association}%
+      }
+      \strng{namehash}{d9aa399fdf7ce51f889e0d19eef634ee}
+      \strng{fullhash}{d9aa399fdf7ce51f889e0d19eef634ee}
+      \strng{bibnamehash}{d9aa399fdf7ce51f889e0d19eef634ee}
+      \strng{authorbibnamehash}{d9aa399fdf7ce51f889e0d19eef634ee}
+      \strng{authornamehash}{d9aa399fdf7ce51f889e0d19eef634ee}
+      \strng{authorfullhash}{d9aa399fdf7ce51f889e0d19eef634ee}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of experimental psychology: General}
+      \field{number}{4}
+      \field{title}{Effects of color on emotions.}
+      \field{volume}{123}
+      \field{year}{1994}
+      \field{pages}{394}
+      \range{pages}{1}
+    \endentry
+    \entry{python}{book}{}
+      \name{author}{2}{}{%
+        {{hash=e504145eff12cd8803c227c919ccfacd}{%
+           family={Van\bibnamedelima Rossum},
+           familyi={V\bibinitperiod\bibinitdelim R\bibinitperiod},
+           given={Guido},
+           giveni={G\bibinitperiod}}}%
+        {{hash=0b735fb6ad359aa95b3bac4d5567af6f}{%
+           family={Drake},
+           familyi={D\bibinitperiod},
+           given={Fred\bibnamedelima L.},
+           giveni={F\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Scotts Valley, CA}%
+      }
+      \list{publisher}{1}{%
+        {CreateSpace}%
+      }
+      \strng{namehash}{190e2e6e0d73bf5671d8927d221674e7}
+      \strng{fullhash}{190e2e6e0d73bf5671d8927d221674e7}
+      \strng{bibnamehash}{190e2e6e0d73bf5671d8927d221674e7}
+      \strng{authorbibnamehash}{190e2e6e0d73bf5671d8927d221674e7}
+      \strng{authornamehash}{190e2e6e0d73bf5671d8927d221674e7}
+      \strng{authorfullhash}{190e2e6e0d73bf5671d8927d221674e7}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{1441412697}
+      \field{title}{Python 3 Reference Manual}
+      \field{year}{2009}
+    \endentry
+    \entry{cc_cg_1}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=8f0379589b782af811eec591d38b5e33}{%
+           family={Vegas},
+           familyi={V\bibinitperiod}}}%
+      }
+      \strng{namehash}{8f0379589b782af811eec591d38b5e33}
+      \strng{fullhash}{8f0379589b782af811eec591d38b5e33}
+      \strng{bibnamehash}{8f0379589b782af811eec591d38b5e33}
+      \strng{authorbibnamehash}{8f0379589b782af811eec591d38b5e33}
+      \strng{authornamehash}{8f0379589b782af811eec591d38b5e33}
+      \strng{authorfullhash}{8f0379589b782af811eec591d38b5e33}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed 23.03.2024}
+      \field{title}{Understanding What Color Correction And Color Grading Are – And Aren’t}
+      \verb{urlraw}
+      \verb https://www.vegascreativesoftware.com/ca/video-editing/color-grading-vs-color-correction-process/
+      \endverb
+      \verb{url}
+      \verb https://www.vegascreativesoftware.com/ca/video-editing/color-grading-vs-color-correction-process/
+      \endverb
+    \endentry
+    \entry{h264}{article}{}
+      \name{author}{4}{}{%
+        {{hash=3368f50ce11fb1730ded20b3d4310435}{%
+           family={Wiegand},
+           familyi={W\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=a118363dffb5e83c828ec6fd29eeb4d3}{%
+           family={Sullivan},
+           familyi={S\bibinitperiod},
+           given={G.J.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=389b1742c776d532ba7c12e5416b5df1}{%
+           family={Bjontegaard},
+           familyi={B\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=04d0f846c08fdcd1829bf87c13fc921a}{%
+           family={Luthra},
+           familyi={L\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{a9a79fd9e9f7392c0f61cc6aaa3047ff}
+      \strng{fullhash}{d51b6526f03967e68275d0e3d278d10f}
+      \strng{bibnamehash}{d51b6526f03967e68275d0e3d278d10f}
+      \strng{authorbibnamehash}{d51b6526f03967e68275d0e3d278d10f}
+      \strng{authornamehash}{a9a79fd9e9f7392c0f61cc6aaa3047ff}
+      \strng{authorfullhash}{d51b6526f03967e68275d0e3d278d10f}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Circuits and Systems for Video Technology}
+      \field{number}{7}
+      \field{title}{Overview of the H.264/AVC video coding standard}
+      \field{volume}{13}
+      \field{year}{2003}
+      \field{pages}{560\bibrangedash 576}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1109/TCSVT.2003.815165
+      \endverb
+    \endentry
+    \entry{blue_trust}{article}{}
+      \name{author}{1}{}{%
+        {{hash=7fe3492e3b41c679eec5eead385401e2}{%
+           family={Yüksel},
+           familyi={Y\bibinitperiod},
+           given={Atila},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Taylor \& Francis}%
+      }
+      \strng{namehash}{7fe3492e3b41c679eec5eead385401e2}
+      \strng{fullhash}{7fe3492e3b41c679eec5eead385401e2}
+      \strng{bibnamehash}{7fe3492e3b41c679eec5eead385401e2}
+      \strng{authorbibnamehash}{7fe3492e3b41c679eec5eead385401e2}
+      \strng{authornamehash}{7fe3492e3b41c679eec5eead385401e2}
+      \strng{authorfullhash}{7fe3492e3b41c679eec5eead385401e2}
+      \field{sortinit}{Y}
+      \field{sortinithash}{fd67ad5a9ef0f7456bdd9aab10fe1495}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Quality Assurance in Hospitality \& Tourism}
+      \field{number}{4}
+      \field{title}{Exterior color and perceived retail crowding: Effects on tourists' shopping quality inferences and approach behaviors}
+      \field{volume}{10}
+      \field{year}{2009}
+      \field{pages}{233\bibrangedash 254}
+      \range{pages}{22}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
