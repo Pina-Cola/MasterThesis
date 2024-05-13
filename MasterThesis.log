@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.12.11)  13 MAY 2024 22:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.12.11)  13 MAY 2024 22:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2908,11 +2908,11 @@ Package logreq Info: Writing requests to 'MasterThesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 42369 strings out of 474490
- 819665 string characters out of 5743812
- 2181473 words of memory out of 5000000
+ 42371 strings out of 474490
+ 819681 string characters out of 5743812
+ 2182473 words of memory out of 5000000
  63132 multiletter control sequences out of 15000+600000
- 581591 words of font info for 222 fonts, out of 8000000 for 9000
+ 581700 words of font info for 223 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  109i,18n,125p,1159b,2414s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\pinak\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
@@ -2935,7 +2935,7 @@ TeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/pinak/AppData/Local/Pro
 grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Users/pinak/AppData/
 Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt8.pfb><C:/Users/pinak/
 AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on MasterThesis.pdf (83 pages, 96578715 bytes).
+Output written on MasterThesis.pdf (83 pages, 96578710 bytes).
 PDF statistics:
  1758 PDF objects out of 2073 (max. 8388607)
  495 named destinations out of 1000 (max. 500000)

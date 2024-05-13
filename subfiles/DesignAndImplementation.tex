@@ -24,7 +24,7 @@
 \newpage
 \section{Design and Implementation} \label{section:designandimplementation}
 
-In this Chapter, the system architecture and the implementation are explained. First a brief overview over the architecture is given in Section~\ref{subsection:architecturedesign} and then the frontend and backend are described in more detail (Section~\ref{subsection:accuratevideo} and Section~\ref{subsection:jit-webrtc}).
+In this Chapter, the system architecture and the implementation are explained. First a brief overview of the architecture is given in Section~\ref{subsection:architecturedesign} and then the frontend and backend are described in more detail (Section~\ref{subsection:accuratevideo} and Section~\ref{subsection:jit-webrtc}).
 For the application of a Melt filter, different filters were compared to select the most suitable option in Section~\ref{subsection:meltfilter}. Finally, the implementation is described with examples and code extractions in Section~\ref{subsection:implementation}.
 
 
@@ -115,7 +115,7 @@ following.
 
 	
 Permanently fixed in the top left corner of the Accurate Player is a window that contains a slider to adjust the quality of the video in real time. This function does work for a video that is currently playing and for a frame of a video that is currently paused as well. This can be seen in Figure~\ref{figure:qualityslider}. 
-In this project, the sliders for the RGB colour grading will be added in this windows, too. This is described in Section~\ref{subsection:implementation}.
+In this project, the sliders for the RGB colour grading will be added in these windows, too. This is described in Section~\ref{subsection:implementation}.
 
 \end{minipage}\begin{minipage}{0.05\textwidth}
 	\ 
@@ -132,7 +132,7 @@ In this project, the sliders for the RGB colour grading will be added in this wi
 \end{minipage}
 
 \vspace*{0.2em}
-\makebox[\linewidth][l]{\spaceout{On the top right corner of the Accurate Player window that is displayed in the}}
+\makebox[\linewidth][l]{\spaceout{In the top right corner of the Accurate Player window that is displayed in the}}
 
 \begin{minipage}{0.5\textwidth}
 % \vspace*{0.7em}	
@@ -148,7 +148,7 @@ In this project, the sliders for the RGB colour grading will be added in this wi
 	\ 
 \end{minipage}\begin{minipage}{0.45\textwidth}
 browser, two icons to expand further menus can be found. 
-This includes a menu for subtitle and audio settings, which is divided into two parts for those settings. This control window can be seen in Figure~\ref{figure:subtitles}. It enables the audio functionalities for muting the audio or changing to a different audio track, which can be used for example if a video is available in different languages to switch between the languages. These options can be seen in Figure~\ref{figure:subtitles} on the right part of the control menu.
+This includes a menu for subtitles and audio settings, which is divided into two parts for those settings. This control window can be seen in Figure~\ref{figure:subtitles}. It enables the audio functionalities for muting the audio or changing to a different audio track, which can be used for example if a video is available in different languages to switch between the languages. These options can be seen in Figure~\ref{figure:subtitles} on the right part of the control menu.
 The left side of the window allows for enabling and disabling specific subtitles from a list of available subtitles. 
 %
 %
@@ -202,7 +202,7 @@ The backend consists of three components: The Melt framework, \texttt{main.py} a
 The user initiates a session through the browser, which then initiates the \texttt{main.py} script. The system's frontend that is displayed in the browser was described in Section~\ref{subsection:accuratevideo}.
 Control commands are then sent from the browser to the Python backend with a WebRTC data channel.
 From the \texttt{main.py} file, the control commands get sent to Melt via \texttt{stdout} (standard output) and \texttt{stdin} (standard input). These are the default input and output channels, that allow the Python script communication with other components.
-Data written to \texttt{stdout} by the Python code can be captured or redirected and data from an external source can be read from \texttt{stdin} by the Python script.~\cite{python} The data flow of the control commands are highlighted in Figure~\ref{figure:controlcommands}.
+Data written to \texttt{stdout} by the Python code can be captured or redirected and data from an external source can be read from \texttt{stdin} by the Python script.~\cite{python} The data flow of the control commands is highlighted in Figure~\ref{figure:controlcommands}.
 
 \begin{figure}[H]
 	\centering
