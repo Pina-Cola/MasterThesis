@@ -316,7 +316,7 @@ JIT or Just-In-Time, in the context of video streaming, refers to a dynamic soft
 It is used for on-the-fly conversion of video files, optimizing them for streaming. The process includes the transcoding of a video file, potentially one with non-web-friendly formats, into a more suitable format for the playback in web browsers.
 JIT operates by dynamically preprocessing of video content as it is requested by users, in opposition to pre-converting video files into formats that are suitable for streaming or browsers in advance. 
 This approach allows for greater flexibility and efficiency, as it minimizes the need for storage space and allows real-time adjustment such as the adjustment of the RGB colours that is implemented and described in this thesis project.
-Additionally, JIT allows to adjust video resolution, bitrate, and other parameters in real-time to adapt the results to the user's bandwidth.~\cite{JIT_IEEE}
+Additionally, JIT allows to adjust video resolution, bitrate and other parameters in real-time to adapt the results to the user's bandwidth.~\cite{JIT_IEEE}
 
 
 
@@ -351,7 +351,7 @@ They allow data exchange and function calling across platforms and programming l
 Java-based web services are commonly used in modern software development, due to the robustness and scalability of the Java platform for building distributed systems over the web.
 Web services enable machine-to-machine (M2M) interaction -- the communication and data exchange between devices or systems.~\cite{webservice}
 
-KDEN Live is a video editing software, that offers a wide range of features such as cutting, trimming and arranging video clips and adding effects, transitions, and titles to videos. It also supports various file formats. KDEN Live is freely available, open-source and uses Melt as its backend.~\cite{kdenlive}
+KDEN Live is a video editing software, that offers a wide range of features such as cutting, trimming and arranging video clips and adding effects, transitions and titles to videos. It also supports various file formats. KDEN Live is freely available, open-source and uses Melt as its backend.~\cite{kdenlive}
 
 
 
@@ -387,7 +387,7 @@ In this project, protocol buffers version 2 (proto2) were used. In the first lin
 Data structures are defined using message declarations. Messages can contain fields for the data, each with a unique identifier and a specified data type. The data types for proto2 can be seen in Table~\ref{table:proto2_data_types}.~\cite{proto2_doc}
 
 In the following, an example message is shown and described.
-The example message represents a person's information, including their name, age, and email address. This is defined as follows:
+The example message represents a person's information, including their name, age and email address. This is defined as follows:
 
 \begin{lstlisting}[style=protobufStyle, numbers=none]
 	message Person {
@@ -397,7 +397,7 @@ The example message represents a person's information, including their name, age
 	}
 \end{lstlisting}
 
-Person is the label of the message and name, age, and email are the fields of the message with the data types \texttt{string} and \texttt{int32}.
+Person is the label of the message and name, age and email are the fields of the message with the data types \texttt{string} and \texttt{int32}.
 The keywords \texttt{required} and \texttt{optional} define whether the field is mandatory or optional.
 The numbers $1$, $2$ and $3$ are the fields unique identifiers.
 

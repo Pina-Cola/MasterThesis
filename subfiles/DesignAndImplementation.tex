@@ -410,7 +410,7 @@ The Melt filters \texttt{avfilter.colorbalance}, \texttt{avfilter\-.colorchannel
 %\end{center}
 
 
-To compare the listed filters and their parameters, different values to change the red tones of the video will be tested and compared, assuming that the adjustment of green and blue works analogical.
+To analyse the listed filters and their parameters, different values to change the red tones of the video will be tested and compared. In the following comparison, the adjustment of all three colour channels (red, green and blue) will be presented.
 %
 In addition to this, it needs to be tested, if multiple parameters of the same filter can be applied simultaneously. For this evaluation, the filters with their different parameters for green and red are applied to the same frame of the test video file. Regarding the RGB colour model, this should result in a yellow toned output frame. The functionality of the RGB colour model was explained in Section~\ref{subsection:RGB}. 
 
@@ -606,11 +606,10 @@ To assess the effects of the combined colour adjustment of multiple colours for 
 
 
 
-The Melt filters \texttt{avfilter.colorbalance}, \texttt{avfilter\-.colorchannelmixer} and \texttt{frei\-0r\-.coloradj\_RGB} are compared regarding the colour vibrance and intensity of the result. This regards the colour intensity of a single colour value adjustment (red) and a mixed colur (yellow).
-
+The Melt filters \texttt{avfilter.colorbalance}, \texttt{avfilter\-.colorchannelmixer} and \texttt{frei\-0r\-.coloradj\_RGB} are compared regarding the colour vibrance and intensity of the result. This analysis of the filters above was conducted regarding the colour red in depth and a side-by-side comparison can be seen in Figure~\ref{figure:redcomp}. The colour changes of green and blue work analogical and are displayed in Figure~\ref{figure:filtersG} and \ref{figure:filtersB}.
 % For the comparison of the result of the single colour filter application, the following parameters per filter are chosen:
-
-In Figure~\ref{figure:redcomp}, the results of the change of a single colour (red) for each of the filters can be seen as a side-by-side comparison:
+%
+The results of the change of a single colour (red, green and blue) for each of the filters can be seen as a side-by-side comparison:
 
 \begin{figure}[H]
 	\centering
@@ -628,10 +627,53 @@ In Figure~\ref{figure:redcomp}, the results of the change of a single colour (re
 	
 	\caption{Comparison of red filter option of all three filters.}
 	\label{figure:redcomp}
-
+	
 \end{figure}
 
-In Figure~\ref{figure:redcomp} it can be seen that the red tone of the frames with the filter \texttt{avfilter.colorbalance} applied is the most intense and vibrant. This makes the filter \texttt{avfilter.colorbalance} a suitable choice regarding the adjustment of a single colour channel, because a broader range in the colour intensity leads to more options for personalization.
+
+\begin{figure}[H]
+	\centering
+	\begin{tabular}{c|c|c}
+		
+		\footnotesize{\texttt{avfilter.colorbalance}} & \footnotesize{\texttt{avfilter.colorchannelmixer}} & \footnotesize{\texttt{frei0r.coloradj\_RGB}} \\
+		
+		\scriptsize{\texttt{av.gs=1} \texttt{av.gm=1} \texttt{av.gh=1}} & \scriptsize{\texttt{av.gg=2}} & \scriptsize{\texttt{G=1}} \\
+		
+		\cutpic{0.3cm}{0.29\textwidth}{gsgmgh_snow.png} & \cutpic{0.3cm}{0.29\textwidth}{gg_snow.png} & \cutpic{0.3cm}{0.29\textwidth}{g_snow.png} \\
+		
+		\cutpic{0.3cm}{0.29\textwidth}{gsgmgh_man.png} & \cutpic{0.3cm}{0.29\textwidth}{gg_man.png} & \cutpic{0.3cm}{0.29\textwidth}{g_man.png} \\
+		
+	\end{tabular}
+	
+	\caption{Comparison of green filter option of all three filters.}
+	\label{figure:filtersG}
+	
+\end{figure}
+
+
+\begin{figure}[H]
+	\centering
+	\begin{tabular}{c|c|c}
+		
+		\footnotesize{\texttt{avfilter.colorbalance}} & \footnotesize{\texttt{avfilter.colorchannelmixer}} & \footnotesize{\texttt{frei0r.coloradj\_RGB}} \\
+		
+		\scriptsize{\texttt{av.bs=1} \texttt{av.bm=1} \texttt{av.bh=1}} & \scriptsize{\texttt{av.bb=2}} & \scriptsize{\texttt{B=1}} \\
+		
+		\cutpic{0.3cm}{0.29\textwidth}{bsbmbh_snow.png} & \cutpic{0.3cm}{0.29\textwidth}{bb_snow.png} & \cutpic{0.3cm}{0.29\textwidth}{b_snow.png} \\
+		
+		\cutpic{0.3cm}{0.29\textwidth}{bsbmbh_man.png} & \cutpic{0.3cm}{0.29\textwidth}{b_man.png} & \cutpic{0.3cm}{0.29\textwidth}{b_man.png} \\
+		
+	\end{tabular}
+	
+	\caption{Comparison of blue filter option of all three filters.}
+	\label{figure:filtersB}
+	
+\end{figure}
+
+
+
+
+In the Figures, it can be seen that the red tone of the frames with the filter \texttt{avfilter.colorbalance} applied is the most intense and vibrant. This makes the filter \texttt{avfilter.colorbalance} a suitable choice regarding the adjustment of a single colour channel, because a broader range in the colour intensity leads to more options for personalization.
 
 
 
@@ -657,17 +699,17 @@ In Figure~\ref{figure:yellowcomp}, the results of the application of two mixed c
 	
 \end{figure}
 
-In Figure~\ref{figure:yellowcomp} can be seen, that the colour of the \texttt{avfilter.colorbalance} is the most intense and vibrant again, which confirms the results of the previous comparison regarding the colour red. This makes the filter \texttt{avfilter.colorbalance} a suitable choice for the implementation of the RGB colour adjustment with sliders in the frontend, because it leads to a broader colour range and more options for personalisation. The filter \texttt{avfilter.colorbalance} shows the most intense colour results for single colour adjustments as well as for mixed colours.
+In Figure~\ref{figure:yellowcomp} can be seen, that the colour of the \texttt{avfilter.colorbalance} is the most intense and vibrant again, which confirms the results of the previous comparison regarding the single colour adjustment of red, green and blue. This makes the filter \texttt{avfilter.colorbalance} a suitable choice for the implementation of the RGB colour adjustment with sliders in the frontend, because it leads to a broader colour range and more options for personalisation. The filter \texttt{avfilter.colorbalance} shows the most intense colour results for single colour adjustments as well as for mixed colours.
 
-In the above shown tests, that are visualized in the middle in Figure~\ref{figure:redcomp} and \ref{figure:yellowcomp}, the results of the \texttt{avfilter.colorchannelmixer} filter appear to have more depth and look more dynamic, because the colour gain was only executed on the respective colour channels. This can be an aspect, that lets the user achieve more aesthetically pleasing results but the overall intensity of the colours is lower. In addition to this, the expected behaviour of a sliders for RGB colour adjustment might not be to only change the colour intensity on one of the respective colour channel. Based on this, the filter \texttt{avfilter.colorbalance} seems to deliver the most fitting results in those criteria.
+In the above shown tests, that are visualized in the middle in Figure~\ref{figure:redcomp}, \ref{figure:filtersG}, \ref{figure:filtersB} and \ref{figure:yellowcomp}, the results of the \texttt{avfilter.colorchannelmixer} filter appear to have more depth and look more dynamic, because the colour gain was only executed on the respective colour channels. This can be an aspect, that lets the user achieve more aesthetically pleasing results but the overall intensity of the colours is lower. In addition to this, the expected behaviour of a sliders for RGB colour adjustment might not be to only change the colour intensity on one of the respective colour channel. Based on this, the filter \texttt{avfilter.colorbalance} seems to deliver the most fitting results in those criteria.
 
 
-The results of the filter \texttt{frei0r.coloradj\_RGB}, that can be seen on the right in Figure~\ref{figure:redcomp} and \ref{figure:yellowcomp} seem to have darker and less vibrant results, that do not present the expected colours as accurately as the other two filters. This does not make it a fitting choice for the RGB adjustment with sliders.
+The results of the filter \texttt{frei0r.coloradj\_RGB}, that can be seen on the right in Figure~\ref{figure:redcomp}, \ref{figure:filtersG}, \ref{figure:filtersB} and \ref{figure:yellowcomp} seem to have darker and less vibrant results, that do not present the expected colours as accurately as the other two filters. This does not make it a fitting choice for the RGB adjustment with sliders.
 
 
 The \texttt{avfilter.colorbalance} filter leads to the most vibrant and intense results of the above listed selection of filters. Additionally it has the option to adapt the shadows, mid tones and highlights individually, which creates the option for more preadjustments of the results in the backend or for introducing more sliders or options for the user-sided adjustment as future work.
 But on the downside, to tone the whole frame evenly, three instead of one parameter have to be changed and applied -- for the shadows, mid tones and highlights for each colour slider.
-When applying this with and without JIT, no performance difference was noticeable but for an accurate evaluation of this, performance tests would have to be performed and the implementations of the filters would need to be examined, which exceeds the scope of this project..
+When applying this with and without JIT, no performance difference was noticeable but for an accurate evaluation of this, performance tests would have to be performed and the implementations of the filters would need to be examined, which exceeds the scope of this project.
 
 A deeper examination and evaluation of the different options of other Melt filters is an interesting option for future work or for Codemill to implement. For this thesis project, the filter \texttt{avfilter.colorbalance} will be used, because its results look the most vibrant and fitting for the expected outcome of RGB colour adjustment.
 
