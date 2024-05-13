@@ -896,7 +896,7 @@ The previous values that are set on the sliders for the for the green and red va
 			snprintf(blue_value_str, sizeof(blue_value_str), "%.2f", blue_value);
 			mlt_properties_set(filter_props_red, "av.bs", blue_value_str);
 			mlt_properties_set(filter_props_red, "av.bm", blue_value_str);	
-			mlt_properties_set(filter_props_red, "av.hs", blue_value_str);
+			mlt_properties_set(filter_props_red, "av.bh", blue_value_str);
 		}					
 	}
 \end{lstlisting}
@@ -941,7 +941,7 @@ green_value = jit_control->green_value;
 		snprintf(blue_value_str, sizeof(blue_value_str), "%.2f", blue_value);
 		mlt_properties_set(filter_props_green, "av.bs", blue_value_str);
 		mlt_properties_set(filter_props_green, "av.bm", blue_value_str);
-		mlt_properties_set(filter_props_green, "av.hs", blue_value_str);
+		mlt_properties_set(filter_props_green, "av.bh", blue_value_str);
 	}		
 }	
 	mlt_filter_connect(filter, service, 0);
@@ -977,7 +977,7 @@ case CONTROL_TYPE__BLUE_VALUE:
 			snprintf(blue_value_str, sizeof(blue_value_str), "%.2f", blue_value);
 			mlt_properties_set(filter_props_blue, "av.bs", blue_value_str);
 			mlt_properties_set(filter_props_blue, "av.bm", blue_value_str);
-			mlt_properties_set(filter_props_blue, "av.hs", blue_value_str);
+			mlt_properties_set(filter_props_blue, "av.bh", blue_value_str);
 		}	
 	}
 	mlt_filter_connect(filter, service, 0);
