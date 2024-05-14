@@ -760,17 +760,17 @@ In this Section, the implementation is described. This is separated into three p
 \subsubsection*{Frontend}
 %
 \vspace*{-0em}
-\begin{minipage}{0.48\textwidth}
+\begin{minipage}{0.52\textwidth}
 In the frontend, input sliders for the user-sided adjustment of the RGB values are added below the already existing slider for the quality adjustment. This is located in the overlay windows in the top left corner. The sliders are coloured according to their associated functions in red, green and blue. This can be seen in Figure~\ref{figure:sliders}.
 
-The HTML code for the red slider can be seen below. The other sliders for green and blue work analogical. The input range is set between $-100$ and $100$, to divide it later by $100$ to achieve a float 
+The HTML code for the red slider can be seen below. The other sliders for green and blue work analogical. The input range is set between $-100$ and $100$, to divide it later by $100$ to achieve a float value between $-1$ and 
 
 
 
 
 \end{minipage}\begin{minipage}{0.04\textwidth}
 \ 
-\end{minipage}\begin{minipage}{0.48\textwidth}
+\end{minipage}\begin{minipage}{0.44\textwidth}
 \begin{figure}[H]
 	\begin{center}
 		\cutpic{0.3cm}{0.9\textwidth}{sliders.png}
@@ -781,8 +781,8 @@ The HTML code for the red slider can be seen below. The other sliders for green 
 \hfill
 \end{minipage}
 
-\vspace*{-1.3em}
-value between $-1$ and $1$ for the filter parameter. The default value is set to $0$. The input value from the slider then gets read out in a TypeScript file.  
+\vspace*{-1.5em}
+$1$ for the filter parameter. The default value is set to $0$. The input value from the slider then gets read out in a TypeScript file.  
 
 
 \begin{lstlisting}[language=html, numbers=none]
@@ -959,7 +959,6 @@ The above presented and described code is executed when the slider for the red v
 
 The implementation of the switch case for the application of the filter for the colour adjustment of green and blue can be seen in the code below:
 
-\newpage
 
 \begin{lstlisting}[language=c, numbers=none, columns=fullflexible]
 case CONTROL_TYPE__GREEN_VALUE:
