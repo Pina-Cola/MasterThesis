@@ -52,23 +52,32 @@ The README-file of the JIT-WebRTC code was referenced as~\cite{RM_Backend} and i
 \newpage
 \section{Comparison on all Colour Channels} \label{appendix:comparisonRGB}
 
-\captionsetup{font=small}
+%\captionsetup{font=small}
+
+%\renewcommand{\captionfont}{\small} % Set caption font size to small
+%\renewcommand{\captionlabelfont}{\bfseries} % Set caption label font to bold
+\setlength{\abovecaptionskip}{2pt} % Adjust the space between caption and figure/table
+\setlength{\belowcaptionskip}{4pt} % Adjust the space below caption
+%\setlength{\baselineskip}{0.6\baselineskip} % Adjust the spacing between lines of captions
+
+\vspace*{-0.4em}
 
 \subsection*{Comparison with the Melt Framework}
 
+\vspace*{-0.4em}
 
 % RED
 
 \textbf{Red}
 
-\vspace*{-1.2em}
+\vspace*{-1.4em}
 
 \begin{minipage}{0.48\textwidth}
 	
 	\begin{figure}[H]
 		\begin{center}
 			\cutpic{0.3cm}{0.99\textwidth}{red_Melt.png}
-			\caption[]{Frame 343 after the application of the maximum value for red in the Melt framework.}
+			\caption[]{\small Frame 343 after the application of the maximum value for red in the Melt framework.}
 			%\label{figure:redMelt}
 		\end{center}
 	\end{figure}
@@ -79,7 +88,7 @@ The README-file of the JIT-WebRTC code was referenced as~\cite{RM_Backend} and i
 	\begin{figure}[H]
 		\begin{center}
 			\cutpic{0.3cm}{0.99\textwidth}{red_AP.png}
-			\caption[]{Frame 343 after the application of the maximum value for red in the Accurate Player.}
+			\caption[]{\small Frame 343 after the application of the maximum value for red in the Accurate Player.}
 			%\label{figure:redAP}
 		\end{center}
 	\end{figure}
@@ -90,7 +99,7 @@ The README-file of the JIT-WebRTC code was referenced as~\cite{RM_Backend} and i
 \begin{figure}[H]
 	\begin{center}
 		\cutpic{0.3cm}{0.4752\textwidth}{filterVSfilter.png}
-		\caption[]{Subtraction of the same frame with filter application: Local Melt frame is subtracted from the frame of the Accurate Player.}
+		\caption[]{\small Subtraction of the same frame with filter application: Local Melt frame is subtracted from the frame of the Accurate Player.}
 		% JIT - Melt
 		% \label{figure:filterVSfilter}
 	\end{center}
@@ -112,7 +121,7 @@ The README-file of the JIT-WebRTC code was referenced as~\cite{RM_Backend} and i
 	\begin{figure}[H]
 		\begin{center}
 			\cutpic{0.3cm}{0.99\textwidth}{green_Melt.png}
-			\caption[]{Frame 343 after the application of the maximum value for green in the Melt framework.}
+			\caption[]{\small Frame 343 after the application of the maximum value for green in the Melt framework.}
 			%\label{figure:redMelt}
 		\end{center}
 	\end{figure}
@@ -123,7 +132,7 @@ The README-file of the JIT-WebRTC code was referenced as~\cite{RM_Backend} and i
 	\begin{figure}[H]
 		\begin{center}
 			\cutpic{0.3cm}{0.99\textwidth}{green_AP.png}
-			\caption[]{Frame 343 after the application of the maximum value for green in the Accurate Player.}
+			\caption[]{\small Frame 343 after the application of the maximum value for green in the Accurate Player.}
 			%\label{figure:redAP}
 		\end{center}
 	\end{figure}
@@ -134,7 +143,7 @@ The README-file of the JIT-WebRTC code was referenced as~\cite{RM_Backend} and i
 \begin{figure}[H]
 	\begin{center}
 		\cutpic{0.3cm}{0.4752\textwidth}{filterVSfilterG.png}
-		\caption[]{Subtraction of the same frame with filter application: Local Melt frame is subtracted from the frame of the Accurate Player.}
+		\caption[]{\small Subtraction of the same frame with filter application: Local Melt frame is subtracted from the frame of the Accurate Player.}
 		% JIT - Melt
 		% \label{figure:filterVSfilter}
 	\end{center}
@@ -158,7 +167,7 @@ The README-file of the JIT-WebRTC code was referenced as~\cite{RM_Backend} and i
 	\begin{figure}[H]
 		\begin{center}
 			\cutpic{0.3cm}{0.99\textwidth}{blue_Melt.png}
-			\caption[]{Frame 343 after the application of the maximum value for blue in the Melt framework.}
+			\caption[]{\small Frame 343 after the application of the maximum value for blue in the Melt framework.}
 			%\label{figure:redMelt}
 		\end{center}
 	\end{figure}
@@ -169,7 +178,7 @@ The README-file of the JIT-WebRTC code was referenced as~\cite{RM_Backend} and i
 	\begin{figure}[H]
 		\begin{center}
 			\cutpic{0.3cm}{0.99\textwidth}{blue_AP.png}
-			\caption[]{Frame 343 after the application of the maximum value for blue in the Accurate Player.}
+			\caption[]{\small Frame 343 after the application of the maximum value for blue in the Accurate Player.}
 			%\label{figure:redAP}
 		\end{center}
 	\end{figure}
@@ -180,7 +189,7 @@ The README-file of the JIT-WebRTC code was referenced as~\cite{RM_Backend} and i
 \begin{figure}[H]
 	\begin{center}
 		\cutpic{0.3cm}{0.4752\textwidth}{filterVSfilterB.png}
-		\caption[]{Subtraction of the same frame with filter application: Local Melt frame is subtracted from the frame of the Accurate Player.}
+		\caption[]{\small Subtraction of the same frame with filter application: Local Melt frame is subtracted from the frame of the Accurate Player.}
 		% JIT - Melt
 		% \label{figure:filterVSfilter}
 	\end{center}
@@ -203,9 +212,12 @@ The README-file of the JIT-WebRTC code was referenced as~\cite{RM_Backend} and i
 
 \subsection*{Comparison with KDEN Live}
 
+\vspace*{-0.4em}
+
 \subsubsection*{Change gamma}
 
-\vspace*{-1em}
+\vspace*{-0.4em}
+
 % RED
 
 \textbf{Red}
@@ -216,7 +228,7 @@ The README-file of the JIT-WebRTC code was referenced as~\cite{RM_Backend} and i
 	\begin{figure}[H]
 		\begin{center}
 			\cutpic{0.3cm}{0.99\textwidth}{red_AP.png}
-			\caption[]{Frame 343 after the application of the maximum value for red in the Accurate Player.}
+			\caption[]{\small Frame 343 after the application of the maximum value for red in the Accurate Player.}
 			%\label{figure:APframe1}
 		\end{center}
 	\end{figure}
@@ -226,7 +238,7 @@ The README-file of the JIT-WebRTC code was referenced as~\cite{RM_Backend} and i
 	\begin{figure}[H]
 		\begin{center}
 			\cutpic{0.3cm}{0.99\textwidth}{gamma.png}
-			\caption[]{Frame 343 from KDEN Live with the action \textit{change gamma} in the red filter application.}
+			\caption[]{\small Frame 343 from KDEN Live with the action \textit{change gamma} in the red filter application.}
 			%\label{figure:gamma}
 		\end{center}
 	\end{figure}
@@ -237,7 +249,7 @@ The README-file of the JIT-WebRTC code was referenced as~\cite{RM_Backend} and i
 \begin{figure}[H]
 	\begin{center}
 		\cutpic{0.3cm}{0.4752\textwidth}{gamma_gimp.png}
-		\caption[]{Subtraction of the two frames: Accurate Player frame is subtracted from the KDEN Live frame (with the action \textit{change gamma}).}
+		\caption[]{\small Subtraction of the two frames: Accurate Player frame is subtracted from the KDEN Live frame (with the action \textit{change gamma}).}
 		% KDENLive - JIT
 		%\label{figure:gammagimp}
 	\end{center}
@@ -259,7 +271,7 @@ The README-file of the JIT-WebRTC code was referenced as~\cite{RM_Backend} and i
 	\begin{figure}[H]
 		\begin{center}
 			\cutpic{0.3cm}{0.99\textwidth}{green_AP.png}
-			\caption[]{Frame 343 after the application of the maximum value for green in the Accurate Player.}
+			\caption[]{\small Frame 343 after the application of the maximum value for green in the Accurate Player.}
 			%\label{figure:APframe1}
 		\end{center}
 	\end{figure}
@@ -269,7 +281,7 @@ The README-file of the JIT-WebRTC code was referenced as~\cite{RM_Backend} and i
 	\begin{figure}[H]
 		\begin{center}
 			\cutpic{0.3cm}{0.99\textwidth}{g_gamma.png}
-			\caption[]{Frame 343 from KDEN Live with the action \textit{change gamma} in the green filter application.}
+			\caption[]{\small Frame 343 from KDEN Live with the action \textit{change gamma} in the green filter application.}
 			%\label{figure:gamma}
 		\end{center}
 	\end{figure}
@@ -280,7 +292,7 @@ The README-file of the JIT-WebRTC code was referenced as~\cite{RM_Backend} and i
 \begin{figure}[H]
 	\begin{center}
 		\cutpic{0.3cm}{0.4752\textwidth}{gamma_gimp_g.png}
-		\caption[]{Subtraction of the two frames: Accurate Player frame is subtracted from the KDEN Live frame (with the action \textit{change gamma}).}
+		\caption[]{\small Subtraction of the two frames: Accurate Player frame is subtracted from the KDEN Live frame (with the action \textit{change gamma}).}
 		% KDENLive - JIT
 		%\label{figure:gammagimp}
 	\end{center}
@@ -304,7 +316,7 @@ The README-file of the JIT-WebRTC code was referenced as~\cite{RM_Backend} and i
 	\begin{figure}[H]
 		\begin{center}
 			\cutpic{0.3cm}{0.99\textwidth}{blue_AP.png}
-			\caption[]{Frame 343 after the application of the maximum value for blue in the Accurate Player.}
+			\caption[]{\small Frame 343 after the application of the maximum value for blue in the Accurate Player.}
 			%\label{figure:APframe1}
 		\end{center}
 	\end{figure}
@@ -314,7 +326,7 @@ The README-file of the JIT-WebRTC code was referenced as~\cite{RM_Backend} and i
 	\begin{figure}[H]
 		\begin{center}
 			\cutpic{0.3cm}{0.99\textwidth}{b_gamma.png}
-			\caption[]{Frame 343 from KDEN Live with the action \textit{change gamma} in the blue filter application.}
+			\caption[]{\small Frame 343 from KDEN Live with the action \textit{change gamma} in the blue filter application.}
 			%\label{figure:gamma}
 		\end{center}
 	\end{figure}
@@ -325,7 +337,7 @@ The README-file of the JIT-WebRTC code was referenced as~\cite{RM_Backend} and i
 \begin{figure}[H]
 	\begin{center}
 		\cutpic{0.3cm}{0.4752\textwidth}{gamma_gimp_b.png}
-		\caption[]{Subtraction of the two frames: Accurate Player frame is subtracted from the KDEN Live frame (with the action \textit{change gamma}).}
+		\caption[]{\small Subtraction of the two frames: Accurate Player frame is subtracted from the KDEN Live frame (with the action \textit{change gamma}).}
 		% KDENLive - JIT
 		%\label{figure:gammagimp}
 	\end{center}
@@ -348,7 +360,7 @@ The README-file of the JIT-WebRTC code was referenced as~\cite{RM_Backend} and i
 \subsubsection*{Add constant}
 
 
-\vspace*{-1em}
+
 
 % RED
 \textbf{Red}
@@ -359,7 +371,7 @@ The README-file of the JIT-WebRTC code was referenced as~\cite{RM_Backend} and i
 	\begin{figure}[H]
 		\begin{center}
 			\cutpic{0.3cm}{0.99\textwidth}{red_AP.png}
-			\caption[]{Frame 343 after the application of the maximum value for red in the Accurate Player.}
+			\caption[]{\small Frame 343 after the application of the maximum value for red in the Accurate Player.}
 			% \label{figure:APframe2}
 		\end{center}
 	\end{figure}
@@ -369,7 +381,7 @@ The README-file of the JIT-WebRTC code was referenced as~\cite{RM_Backend} and i
 	\begin{figure}[H]
 		\begin{center}
 			\cutpic{0.3cm}{0.99\textwidth}{addconstant.png}
-			\caption[]{Frame 343 from KDEN Live with the action \textit{add constant} in the red filter application.}
+			\caption[]{\small Frame 343 from KDEN Live with the action \textit{add constant} in the red filter application.}
 			% \label{figure:addconstant}
 		\end{center}
 	\end{figure}
@@ -380,7 +392,7 @@ The README-file of the JIT-WebRTC code was referenced as~\cite{RM_Backend} and i
 \begin{figure}[H]
 	\begin{center}
 		\cutpic{0.3cm}{0.4752\textwidth}{addconstant_gimp.png}
-		\caption[]{Subtraction of the two frames: Accurate Player frame is subtracted from the KDEN Live frame extraction (with the action \textit{add constant}).}
+		\caption[]{\small Subtraction of the two frames: Accurate Player frame is subtracted from the KDEN Live frame extraction (with the action \textit{add constant}).}
 		% KDENLive - JIT
 		% \label{figure:addconstantgimp}
 	\end{center}
@@ -401,7 +413,7 @@ The README-file of the JIT-WebRTC code was referenced as~\cite{RM_Backend} and i
 	\begin{figure}[H]
 		\begin{center}
 			\cutpic{0.3cm}{0.99\textwidth}{green_AP.png}
-			\caption[]{Frame 343 after the application of the maximum value for green in the Accurate Player.}
+			\caption[]{\small Frame 343 after the application of the maximum value for green in the Accurate Player.}
 			% \label{figure:APframe2}
 		\end{center}
 	\end{figure}
@@ -411,7 +423,7 @@ The README-file of the JIT-WebRTC code was referenced as~\cite{RM_Backend} and i
 	\begin{figure}[H]
 		\begin{center}
 			\cutpic{0.3cm}{0.99\textwidth}{g_addconstant.png}
-			\caption[]{Frame 343 from KDEN Live with the action \textit{add constant} in the green filter application.}
+			\caption[]{\small Frame 343 from KDEN Live with the action \textit{add constant} in the green filter application.}
 			% \label{figure:addconstant}
 		\end{center}
 	\end{figure}
@@ -422,7 +434,7 @@ The README-file of the JIT-WebRTC code was referenced as~\cite{RM_Backend} and i
 \begin{figure}[H]
 	\begin{center}
 		\cutpic{0.3cm}{0.4752\textwidth}{addconstant_gimp_g.png}
-		\caption[]{Subtraction of the two frames: Accurate Player frame is subtracted from the KDEN Live frame extraction (with the action \textit{add constant}).}
+		\caption[]{\small Subtraction of the two frames: Accurate Player frame is subtracted from the KDEN Live frame extraction (with the action \textit{add constant}).}
 		% KDENLive - JIT
 		% \label{figure:addconstantgimp}
 	\end{center}
@@ -443,7 +455,7 @@ The README-file of the JIT-WebRTC code was referenced as~\cite{RM_Backend} and i
 	\begin{figure}[H]
 		\begin{center}
 			\cutpic{0.3cm}{0.99\textwidth}{blue_AP.png}
-			\caption[]{Frame 343 after the application of the maximum value for blue in the Accurate Player.}
+			\caption[]{\small Frame 343 after the application of the maximum value for blue in the Accurate Player.}
 			% \label{figure:APframe2}
 		\end{center}
 	\end{figure}
@@ -453,7 +465,7 @@ The README-file of the JIT-WebRTC code was referenced as~\cite{RM_Backend} and i
 	\begin{figure}[H]
 		\begin{center}
 			\cutpic{0.3cm}{0.99\textwidth}{b_addconstant.png}
-			\caption[]{Frame 343 from KDEN Live with the action \textit{add constant} in the green filter application.}
+			\caption[]{\small Frame 343 from KDEN Live with the action \textit{add constant} in the green filter application.}
 			% \label{figure:addconstant}
 		\end{center}
 	\end{figure}
@@ -466,7 +478,7 @@ The README-file of the JIT-WebRTC code was referenced as~\cite{RM_Backend} and i
 \begin{figure}[H]
 	\begin{center}
 		\cutpic{0.3cm}{0.4752\textwidth}{addconstant_gimp_b.png}
-		\caption[]{Subtraction of the two frames: Accurate Player frame is subtracted from the KDEN Live frame extraction (with the action \textit{add constant}).}
+		\caption[]{\small Subtraction of the two frames: Accurate Player frame is subtracted from the KDEN Live frame extraction (with the action \textit{add constant}).}
 		% KDENLive - JIT
 		% \label{figure:addconstantgimp}
 	\end{center}
@@ -490,7 +502,6 @@ The README-file of the JIT-WebRTC code was referenced as~\cite{RM_Backend} and i
 
 \subsubsection*{Multiply}
 
-\vspace*{-1em}
 
 % RED
 \textbf{Red}
@@ -502,7 +513,7 @@ The README-file of the JIT-WebRTC code was referenced as~\cite{RM_Backend} and i
 	\begin{figure}[H]
 		\begin{center}
 			\cutpic{0.3cm}{0.99\textwidth}{red_AP.png}
-			\caption[]{Frame 343 after the application of the maximum value for red in the Accurate Player.}
+			\caption[]{\small Frame 343 after the application of the maximum value for red in the Accurate Player.}
 			% \label{figure:APframe3}
 		\end{center}
 	\end{figure}
@@ -512,7 +523,7 @@ The README-file of the JIT-WebRTC code was referenced as~\cite{RM_Backend} and i
 	\begin{figure}[H]
 		\begin{center}
 			\cutpic{0.3cm}{0.99\textwidth}{multiply.png}
-			\caption[]{Frame 343 from KDEN Live with the action \textit{Multiply} in the red filter application.}
+			\caption[]{\small Frame 343 from KDEN Live with the action \textit{Multiply} in the red filter application.}
 			% \label{figure:multiply}
 		\end{center}
 	\end{figure}
@@ -523,7 +534,7 @@ The README-file of the JIT-WebRTC code was referenced as~\cite{RM_Backend} and i
 \begin{figure}[H]
 	\begin{center}
 		\cutpic{0.3cm}{0.4752\textwidth}{multiply_gimp.png}
-		\caption[]{Subtraction of the two frames: Accurate Player frame is subtracted from the KDEN Live frame extraction (with the action \textit{Multiply}).}
+		\caption[]{\small Subtraction of the two frames: Accurate Player frame is subtracted from the KDEN Live frame extraction (with the action \textit{Multiply}).}
 		% KDEN Live - JIT
 		%\label{figure:multiplygimp}
 	\end{center}
@@ -543,7 +554,7 @@ The README-file of the JIT-WebRTC code was referenced as~\cite{RM_Backend} and i
 	\begin{figure}[H]
 		\begin{center}
 			\cutpic{0.3cm}{0.99\textwidth}{green_AP.png}
-			\caption[]{Frame 343 after the application of the maximum value for green in the Accurate Player.}
+			\caption[]{\small Frame 343 after the application of the maximum value for green in the Accurate Player.}
 			% \label{figure:APframe3}
 		\end{center}
 	\end{figure}
@@ -553,7 +564,7 @@ The README-file of the JIT-WebRTC code was referenced as~\cite{RM_Backend} and i
 	\begin{figure}[H]
 		\begin{center}
 			\cutpic{0.3cm}{0.99\textwidth}{g_multiply.png}
-			\caption[]{Frame 343 from KDEN Live with the action \textit{Multiply} in the green filter application.}
+			\caption[]{\small Frame 343 from KDEN Live with the action \textit{Multiply} in the green filter application.}
 			% \label{figure:multiply}
 		\end{center}
 	\end{figure}
@@ -564,7 +575,7 @@ The README-file of the JIT-WebRTC code was referenced as~\cite{RM_Backend} and i
 \begin{figure}[H]
 	\begin{center}
 		\cutpic{0.3cm}{0.4752\textwidth}{multiply_gimp_g.png}
-		\caption[]{Subtraction of the two frames: Accurate Player frame is subtracted from the KDEN Live frame extraction (with the action \textit{Multiply}).}
+		\caption[]{\small Subtraction of the two frames: Accurate Player frame is subtracted from the KDEN Live frame extraction (with the action \textit{Multiply}).}
 		% KDEN Live - JIT
 		%\label{figure:multiplygimp}
 	\end{center}
@@ -583,7 +594,7 @@ The README-file of the JIT-WebRTC code was referenced as~\cite{RM_Backend} and i
 	\begin{figure}[H]
 		\begin{center}
 			\cutpic{0.3cm}{0.99\textwidth}{blue_AP.png}
-			\caption[]{Frame 343 after the application of the maximum value for blue in the Accurate Player.}
+			\caption[]{\small Frame 343 after the application of the maximum value for blue in the Accurate Player.}
 			% \label{figure:APframe3}
 		\end{center}
 	\end{figure}
@@ -593,7 +604,7 @@ The README-file of the JIT-WebRTC code was referenced as~\cite{RM_Backend} and i
 	\begin{figure}[H]
 		\begin{center}
 			\cutpic{0.3cm}{0.99\textwidth}{b_multiply.png}
-			\caption[]{Frame 343 from KDEN Live with the action \textit{Multiply} in the blue filter application.}
+			\caption[]{\small Frame 343 from KDEN Live with the action \textit{Multiply} in the blue filter application.}
 			% \label{figure:multiply}
 		\end{center}
 	\end{figure}
@@ -604,7 +615,7 @@ The README-file of the JIT-WebRTC code was referenced as~\cite{RM_Backend} and i
 \begin{figure}[H]
 	\begin{center}
 		\cutpic{0.3cm}{0.4752\textwidth}{multiply_gimp_b.png}
-		\caption[]{Subtraction of the two frames: Accurate Player frame is subtracted from the KDEN Live frame extraction (with the action \textit{Multiply}).}
+		\caption[]{\small Subtraction of the two frames: Accurate Player frame is subtracted from the KDEN Live frame extraction (with the action \textit{Multiply}).}
 		% KDEN Live - JIT
 		%\label{figure:multiplygimp}
 	\end{center}
