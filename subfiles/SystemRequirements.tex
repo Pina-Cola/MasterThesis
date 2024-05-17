@@ -87,16 +87,16 @@ The files for the frontend code are in a directory that is called \texttt{accura
 	~/accurate-player-3-core/packages/demo$ JIT_BACKEND=http://localhost:8080 yarn start
 \end{lstlisting}
 
-For updating dependecies during development, the following command should be executed and running in addition: 
+For updating dependencies during development, the following command should be executed and running in addition: 
 \begin{lstlisting}[language=bash, numbers=none, columns=fullflexible]
 	~/accurate-player-3-core/packages/jit$ yarn start
 \end{lstlisting}
 
 
 
-To run the backend, the folder \texttt{jit-webrtc} needs to be accessed in the CLI to start the script \texttt{main.sh}, that starts the backend in a docker container and pulls the needed dependencies:
+To run the backend, the folder \texttt{jit-webrtc} needs to be accessed in the CLI to start the script \texttt{main.sh}, which starts the backend in a docker container and pulls the needed dependencies:
 \begin{lstlisting}[language=bash, numbers=none, columns=fullflexible]
-	~/jit-webrtc$ docker/main/main.sh -v --threads 16 --port 8080  https://s3.eu-central-1.amazonaws.com/accurate-player-demo-assets/timecode/sintel-2048-timecode-stereo.mp4
+	~/jit-webrtc$ docker/main/main.sh -v --threads 16 --port 8080 https://s3.eu-central-1.amazonaws.com/accurate-player-demo-assets/timecode/sintel-2048-timecode-stereo.mp4
 \end{lstlisting}
 
 The optional parameter \texttt{-v} (verbose) provides additional information or detailed output when executing the code. The threads and the port are set with the parameters \texttt{--threads} and \texttt{--port} and then the link to the test video file is added. This is the file that will then be played in the Accurate Player.
@@ -110,7 +110,7 @@ The film is allowed to be used for free distribution, sharing and adaptation, as
 
 $\small\copyright$ copyright Blender Foundation $|$ \url{durian.blender.org}
 
-It is noted that for the sake of clarity, this copyright attribution is applied to the entire use of frames of the film in this thesis. It will not be added to each extracted frame.
+This copyright attribution is applied to the entire use of frames of the film in this thesis. It will not be added to each extracted frame.
 %
 The \textit{Sintel} video file that is being used in this thesis project is retrieved from the following source:
 

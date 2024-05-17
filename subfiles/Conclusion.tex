@@ -39,7 +39,7 @@ This thesis project lays in the field of multimedia processing in real-time, reg
 
 In this thesis, background knowledge on colour theory and representation (Chapter~\ref{section:theoreticalfoundationofcolour}) and the technical background, especially the structure and usage of the Melt framework were given. Additionally protocol buffers and other streaming components were introduced in Chapter~\ref{section:technicalbackground}.
 
-This thesis project explored two research questions. The first question aimed to evaluate the feasibility of the real-time colour grading with JIT and the Melt framework. The implementation as described in Chapter~\ref{section:designandimplementation} confirms that it was achievable. To select the most suitable Melt filter for the RGB adjustment, a comparison of different Melt filters was conducted. The selected filter is the \texttt{avfilter.colorbalance} filter, which can be used to adjust the RGB values of the highlights, mid tones and shadows of a video individually.
+This thesis project explored two research questions. The first question aimed to evaluate the feasibility of the real-time colour grading with JIT and the Melt framework. The implementation as described in Chapter~\ref{section:designandimplementation} confirms that it was achievable. To select the most suitable Melt filter for the RGB adjustment, a comparison of different Melt filters was conducted. The selected filter is the \texttt{avfilter.colorbalance} filter, which can be used to adjust the RGB values of the highlights, midtones and shadows of a video individually.
 
 
 The second research question considers the comparison of video colour grading results with Melt filters that were applied on different platforms. The compared platforms are the Accurate Player RGB adjustment, that was implemented in this thesis project with the locally installed Melt framework, and KDEN Live (Chapter~\ref{section:experimentalevaluationanddiscussion}).
@@ -47,15 +47,15 @@ The second research question considers the comparison of video colour grading re
 %
 %To evaluate the differences, frames of the different platforms were extracted and compared. 
 %The colours of those frames have been subtracted from each other using the \textit{grain extract} function in GIMP, to show differences in the colour saturations.
-The comparison with the local version of the Melt framework revealed an interesting result: The extracted frames display significant differences, even without the applications of filters. This showed that the Accurate Player is presenting the original videos files more accurately than the Melt framework does.
+The comparison with the local version of the Melt framework revealed an interesting result: The extracted frames display significant differences, even without the application of filters. This showed that the Accurate Player is presenting the original videos files more accurately than the Melt framework does.
 % The cause for those differences remains unclear.
 The comparison with KDEN Live did not show the same results as the filter application in the Accurate Player either and the results of the colour subtractions lead to the presumption that KDEN Live is using a different Melt filter for the adjustment of the RGB values.
 %
-Those significant differences in the compared frames emphasize the complexity of the topic of colour adjustment and representation. 
+Those significant differences in the compared frames emphasise the complexity of the topic of colour adjustment and representation. 
 %All tests were run on the same device to ensure consistency but still differences could be shown. To ensure a consistent output across various platforms and devices adds even more complexity to the topic of colour representation and video streaming.
 %
 %
-Additionally it was revealed, that there are many different ways to achieve similar results or functionalities in the topic of video colour grading. Many parameters and aspects have to be taken into consideration. This confirms the necessity for user-sided colour adjustment for a more customizable video streaming experience to achieve satisfying results. 
+Additionally it was revealed, that there are many different ways to achieve similar results or functionalities in the topic of video colour grading. Many parameters and aspects have to be taken into consideration. This confirms the necessity for user-sided colour adjustment for a more customisable video streaming experience to achieve satisfying results. 
 
 
 
@@ -78,7 +78,7 @@ This contributes to the knowledge regarding the selection of Melt filters and gi
 By examining discrepancies in the colour representation and RGB adjustment across different platforms, it is shown that there are various options to implement a solution for user-sided RGB adjustment. It is also revealed that the Accurate Player displays video files more precisely than the Melt framework's video player.
 
 
-Regarding the limitations, the results are limited to a specific implementation of real-time RGB adjustment within the Melt framework. The findings and conclusions can not be generalized to other streaming scenarios or platforms. 
+Regarding the limitations, the results are limited to a specific implementation of real-time RGB adjustment within the Melt framework. The findings and conclusions can not be generalised to other streaming scenarios or platforms. 
 Additionally, the application of different Melt filters that do not focus on the adjustment of the RGB values, including audio filters, might not be comparable. 
 %Those opportunities for future work were further described in Section~\ref{subsection:futurework}.
 %
@@ -100,7 +100,7 @@ Another aspect that needs to be considered is that the system's environment migh
 % Suggest possible extensions or improvements to your work.
 
 
-In this Section, different opportunities for future work are discussed. This includes the implementation of video presets, options for advances video processing improvements in the user interface and the application of audio filters.
+In this Section, different opportunities for future work are discussed. This includes the implementation of video presets, options for advanced video processing improvements in the user interface and the application of audio filters.
 
 
 %-------------------------------------------------------------------------------------------------------
@@ -108,7 +108,7 @@ In this Section, different opportunities for future work are discussed. This inc
 
 Video presets, also known as video filters, video effects or Look-Up-Tables (LUT), are pre-configured settings or adjustments that can be applied to videos to achieve specific visual styles or effects. 
 These presets often include templates for colour grading. 
-Video presets are commonly used in video editing software and social media platforms. They provide the user with options to customize their videos easily.~\cite{cc1}
+Video presets are commonly used in video editing software and social media platforms. They provide the user with options to customise their videos easily.~\cite{cc1}
 %
 One example of video presets can be seen in Figure~\ref{figure:app}, where the presets in Adobe Premiere Pro with the \textit{Magic Bullet Looks} plug-in are shown.~\cite{premierepro, magicbullet}
 
@@ -187,8 +187,8 @@ In addition to this, the above described future work opportunities of implementi
 
 In this thesis project, the results of different methods of applying Melt filters were visually compared. Another interesting aspect is the comparison of the performance of those different methods. For this, the runtime as well as the memory usage could be interesting parameters to observe. 
 To ensure accuracy, a separate system or server would be needed, which should be isolated from other processes to prevent interference. Monitoring tools can be used to track the resource usage. 
-Those tests can be run on test cases that were developed to represent typical scenarios or more specialized test cases for information with specific restrictions and conditions.
-It would be interesting to vary parameters such as the video file size or the amount of applied filters.
+Those tests can be run on test cases that were developed to represent typical scenarios or more specialised test cases for information with specific restrictions and conditions.
+It would be interesting to vary parameters such as the video file simidtones or the amount of applied filters.
 This data can then be statistically analysed.
 
 
@@ -205,7 +205,7 @@ This data can then be statistically analysed.
 %-------------------------------------------------------------------------------------------------------
 \subsubsection*{Audio Filter}
 
-This thesis project focusses on the application of visual filters to a video, especially the adjustment of the RGB values. Aside from this, audio processing plays a role in the processing of videos, too. Similar to the visual content, the audio can enhance the experience and evoke emotions in the viewer. Audio filters can also be used to improve the quality of the recorded audio for example by applying noise suppression or to add context to a scene by adding fitting surrounding noises. In addition to this, simple aspects including the volume or tone can be modified.
+This thesis project focuses on the application of visual filters to a video, especially the adjustment of the RGB values. Aside from this, audio processing plays a role in the processing of videos, too. Similar to the visual content, the audio can enhance the experience and evoke emotions in the viewer. Audio filters can also be used to improve the quality of the recorded audio for example by applying noise suppression or to add context to a scene by adding fitting surrounding noises. In addition to this, simple aspects including the volume or tone can be modified.
 The list of filters on the Melt website contains the available audio filters, too.~\cite{melt}
 The implementation of the audio filter integration is an interesting option for future work. To compare different audio filters, the according sound waves of a track could be read out and compared.
 

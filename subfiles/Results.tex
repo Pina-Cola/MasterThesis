@@ -78,8 +78,8 @@ In this Section, the results of video colour grading using the locally installed
 For the evaluation, a comparison between the locally installed Melt version with the \texttt{avfilter.colorbalance} filter applied and the RGB adjustment in the Accurate Player with the sliders is made.
 For the tests, the red value is set to the maximum with the respective method and the results will be compared and analysed below. The results and comparisons of the colours green and blue perform analogical, which can be seen in Appendix~\ref{appendix:comparisonRGB}.
 %, assuming that the results of the green and blue value work analogical.
-The filter is applied and frame 343 of the short film \textit{Sintel} is extracted from both components. The results of the locally installed Melt framework can be seen in Figure~\ref{figure:redMelt}, with the \texttt{avfilter.colorbalance} filter applied and the parameters for shadows, mid tones and highlights set to the maximum of $1$ (\texttt{av.rs=1}, \texttt{av.rm=1} and \texttt{av.rh=1}).
-In comparison, the extracted frame from the Accurate Player frontend can be seen in Figure~\ref{figure:redAP}. This result is obtained by setting the red slider in the frontend onto the maximum value and leaving the sliders for green and blue on the default value, which corresponds to $0$ in the filter application in the backend. The maximum value of the red slider gets sent to the backend and is being applied for the parameters of the filter \texttt{avfilter.colorbalance}, setting the parameters for shadows, mid tones and highlights to the maximum of $1$ (\texttt{av.rs=1}, \texttt{av.rm=1} and \texttt{av.rh=1}) as well.
+The filter is applied and frame 343 of the short film \textit{Sintel} is extracted from both components. The results of the locally installed Melt framework can be seen in Figure~\ref{figure:redMelt}, with the \texttt{avfilter.colorbalance} filter applied and the parameters for shadows, midtones and highlights set to the maximum of $1$ (\texttt{av.rs=1}, \texttt{av.rm=1} and \texttt{av.rh=1}).
+In comparison, the extracted frame from the Accurate Player frontend can be seen in Figure~\ref{figure:redAP}. This result is obtained by setting the red slider in the frontend onto the maximum value and leaving the sliders for green and blue on the default value, which corresponds to $0$ in the filter application in the backend. The maximum value of the red slider gets sent to the backend and is being applied for the parameters of the filter \texttt{avfilter.colorbalance}, setting the parameters for shadows, midtones and highlights to the maximum of $1$ (\texttt{av.rs=1}, \texttt{av.rm=1} and \texttt{av.rh=1}) as well.
 
 
 
@@ -112,7 +112,7 @@ Considering the visual difference in the frame extractions from the two differen
 In Figure~\ref{figure:filterVSfilter}, the extracted frame of the Melt framework is subtracted from the frame of the Accurate Player.
 In this case, the result has a red tone itself, because the seemingly less red saturated frame (Figure~\ref{figure:redMelt}) is subtracted from the seemingly more red saturated frame (Figure~\ref{figure:redAP}). The pixels in the Accurate Player frame have higher RGB values on the red colour channel than the corresponding pixels in the Melt framework extraction. This causes the red tone in the resulting image in Figure~\ref{figure:filterVSfilter}.
 This shows the relative differences in the red value between the two frames. 
-The result image from the subtraction is red tinted and has no green or blue areas, which reveals that the frame of the Accurate Player has overall a more saturated red tone than the extracted frame of the Melt framework.
+The result image from the subtraction is red tinted and has no green or blue areas, which reveals that the frame of the Accurate Player has an overall more saturated red tone than the extracted frame of the Melt framework.
 
 
 \begin{figure}[H]
@@ -124,7 +124,7 @@ The result image from the subtraction is red tinted and has no green or blue are
 	\end{center}
 \end{figure}
 
-To evaluate, if this difference is caused by the application of the filter or by other aspects, such as video compression or difference in video players, the frames from the original video file of the short film \textit{Sintel} are compared with the frames from both methods without a filter applied to them. For this, frame 343 of the original video file is compared to the same frame extraction of the locally installed Melt framework and the Accurate Player without the application of the filter. The frame from the original video file can be seen in Figure~\ref{figure:nofilterO}.
+To evaluate, if this difference is caused by the application of the filter or by other aspects, such as video compression or differences in video players, the frames from the original video file of the short film \textit{Sintel} are compared with the frames from both methods without a filter applied to them. For this, frame 343 of the original video file is compared to the same frame extraction of the locally installed Melt framework and the Accurate Player without the application of the filter. The frame from the original video file can be seen in Figure~\ref{figure:nofilterO}.
 
 \begin{figure}[H]
 	\begin{center}
@@ -160,7 +160,7 @@ In Figure~\ref{figure:nofilterMelt}, the extraction of frame 343 without a filte
 
 \vspace*{1.5em}
 To analyse the differences between the frames without a filter of the two methods further, another frame subtraction is conducted. Each of the frames are compared to the extraction of the original video file, to identify, which method is altering the results.
-In Figure~\ref{figure:oVSmelt}, the subtraction of the Melt Framework frame from the original frame is visualized using the \textit{grain extract} function. In this image, the outlines of the motive of the frame can be seen in different grey tones, which reveals, that the subtracted frames do not have the same colour values.
+In Figure~\ref{figure:oVSmelt}, the subtraction of the Melt Framework frame from the original frame is visualised using the \textit{grain extract} function. In this image, the outlines of the motive of the frame can be seen in different grey tones, which reveals, that the subtracted frames do not have the same colour values.
 In Figure~\ref{figure:oVSap} in comparison, the subtraction is done with the Accurate Player frame from the original frame. Figure~\ref{figure:oVSap} shows the expected result for a same output, with some differences in the grey tones but no clear outlines or fragments from the original frame motive.
 
 
@@ -197,9 +197,9 @@ In Figure~\ref{figure:oVSap} in comparison, the subtraction is done with the Acc
 
 \vspace*{1.5em}
 The extracted frames from the different approaches display significant differences, even when no filter is applied. 
-The results show, that the Accurate Player plays back the video more accurate than the Melt framework.
+The results show, that the Accurate Player plays back the video more accurately than the Melt framework.
 These differences in the video representation without a filter application make it difficult to evaluate additional data regarding the application of filters using this method. The cause for the different display of the video frames by the Melt framework remains unclear.
-% It is worth noting that the Melt video player is recognized for encountering occasional technical issues.
+% It is worth noting that the Melt video player is recognimidtonesd for encountering occasional technical issues.
 %
 %
 One possible explanation for these differences in the extracted frames could be rooted in the system environment potentially influencing the evaluation of the comparison on different platforms. The differences could be caused by software dependencies imposed by the Melt framework or its video player.
@@ -276,7 +276,7 @@ For example the effect \textit{3 point balance} might sound promising as well bu
 
 \vspace*{0.6em}
 
-In Figure~\ref{figure:kdenlive_rgb}, the RGB colour sliders of the effect \textit{RGB adjustment} can be seen. As additional parameter, the following different actions can be chosen: Change gamma, add constant and multiply. For each of those actions a comparison through colour subtraction with the \textit{grain extract} function in GIMP is performed. Those frames from KDEN Live are compared with the extracted frames from the Accurate Player, with the application of the filter \texttt{avfilter.colorbalance} in the backend.
+In Figure~\ref{figure:kdenlive_rgb}, the RGB colour sliders of the effect \textit{RGB adjustment} can be seen. As an additional parameter, the following different actions can be chosen: Change gamma, add constant and multiply. For each of those actions a comparison through colour subtraction with the \textit{grain extract} function in GIMP is performed. Those frames from KDEN Live are compared with the extracted frames from the Accurate Player, with the application of the filter \texttt{avfilter.colorbalance} in the backend.
 The frames were extracted from the Accurate Player through taking screenshots of the output and in KDEN Live the \textit{extract frame} function was used.
 
 
@@ -307,8 +307,8 @@ For the other additional parameters (keep luma, alpha controlled and luma formul
 \textit{Change gamma} refers to adjusting the luminance or brightness of an image or video by applying a gamma correction factor. This can be used to adapt the output to different devices.~\cite{gamma}
 
 In Figure~\ref{figure:gamma}, the extracted frame from KDEN Live with the application of the maximum red value with the \textit{Change gamma} action is shown. The slider for the adjustment of the colour red is set to the maximum while the other sliders remain unchanged.
-In comparison, the extracted frame from the Accurate Player with the maximum red value applied can be seen in Figure~\ref{figure:APframe1}. This result is obtained by setting the red slider in the frontend onto the maximum value and leaving the sliders for green and blue on the default value. In the backend, the filter \texttt{avfilter.colorbalance} with the parameters for red shadows, mid tones and highlights to the maximum of $1$ is applied (\texttt{av.rs=1}, \texttt{av.rm=1} and \texttt{av.rh=1}).
-This frame from the Accurate Player was shown before in Figure~\ref{figure:redAP} and is displayed here again for a better visualization of the frame comparison.
+In comparison, the extracted frame from the Accurate Player with the maximum red value applied can be seen in Figure~\ref{figure:APframe1}. This result is obtained by setting the red slider in the frontend onto the maximum value and leaving the sliders for green and blue on the default value. In the backend, the filter \texttt{avfilter.colorbalance} with the parameters for red shadows, midtones and highlights to the maximum of $1$ is applied (\texttt{av.rs=1}, \texttt{av.rm=1} and \texttt{av.rh=1}).
+This frame from the Accurate Player was shown before in Figure~\ref{figure:redAP} and is displayed here again for a better visualisation of the frame comparison.
 
 The frame extraction from KDEN Live (Figure~\ref{figure:gamma}) is visually darker than the frame extraction from the Accurate Player (Figure~\ref{figure:APframe1}). This leads to the assumption, that the KDEN Live effect \textit{RGB adjusment} is not based on the functionalities of the Melt filter \texttt{avfilter.colorbalance}.
 
@@ -474,7 +474,7 @@ In this Chapter, the results of the user-sided colour grading with JIT were comp
 In Section~\ref{section:comparisonMelt}, the results of video colour grading using the locally installed Melt framework and the implementation with JIT were compared. 
 The results in this comparison display significant differences, even when no filter is applied. 
 The results of the comparison with the original video frame and without a filter application reveal that the Accurate Player plays back the original video more accurately than the Melt framework.
-These differences in the video representation without a filter application make it difficult to evaluate additional data regarding the application of filters using this method. The cause for the differences of the video frames by the Melt framework remains unclear.
+These differences in the video representation without a filter application make it difficult to evaluate additional data regarding the application of filters using this method. The cause for the differences between the video frames by the Melt framework remains unclear.
 One possible explanation for these differences in the extracted frames could be rooted in the system environment potentially influencing the evaluation of the comparison on different platforms. The differences could be caused by software dependencies influencing the Melt framework or its video player.
 
 
@@ -487,7 +487,7 @@ Those significant differences in the compared frames show the complexity of the 
 For this thesis project, all tests were run on the same device to ensure consistency. 
 Ensuring a consistent output across various platforms and devices adds even more complexity to the task of colour representation and video streaming.
 %
-Additionally it was revealed, that there are many different ways to achieve similar results or functionalities in the topic of video colour grading. Many parameters and aspects have to be taken into consideration. This confirms the necessity for user-sided colour adjustment for a more customizable video streaming experience and satisfying results. 
+Additionally it was revealed, that there are many different ways to achieve similar results or functionalities in the topic of video colour grading. Many parameters and aspects have to be taken into consideration. This confirms the necessity for user-sided colour adjustment for a more customisable video streaming experience and satisfying results. 
 	
 	
 	

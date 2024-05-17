@@ -104,7 +104,7 @@ The below described code structure refers to the creation of the necessary melt 
 	%-----------------------------------------------
 	\item[Initialise the factory] 
 	
-	This command initializes the Melt factory, to set up the environment for creating and managing multimedia objects.
+	This command initialises the Melt factory, to set up the environment for creating and managing multimedia objects.
 	
 	\begin{lstlisting}[language=C, numbers=none, columns=fullflexible, belowskip=0pt, aboveskip=9pt]
 	mlt_factory_init(const char * directory); \end{lstlisting}
@@ -134,7 +134,7 @@ The below described code structure refers to the creation of the necessary melt 
 	mlt_producer producer = mlt_factory_producer(mlt_profile profile,
 																							const char* service,
 																							const void* resource); \end{lstlisting}
-																						  
+																						 
 	The function \texttt{mlt\_factory\_producer()} creates a producer based on the profile, service and resources, which are the parameters of this function.
 
 
@@ -163,7 +163,7 @@ The below described code structure refers to the creation of the necessary melt 
 																							const char* service, 
 																							const void* input); \end{lstlisting}
 																
-	The function \texttt{mlt\_factory\_consumer()} creates a consumer object, basedon the as parameter provided profile, service and optional input. If the service object is not specified, it defaults to \texttt{MLT\_CONSUMER}.
+	The function \texttt{mlt\_factory\_consumer()} creates a consumer object, based on the provided parameter profile, service and optional input. If the service object is not specified, it defaults to \texttt{MLT\_CONSUMER}.
 											
 																
 	% TODO: seems to take properties as first parameter in codemill code? Is property and prfile the same?
@@ -277,9 +277,9 @@ One form of video transcoding is the compression of videos with h.264:
 The video compression standard h.264 can be used to compress and decompress video streams in the context of real-time communication.~\cite{transcoding, h264}
 %	
 File formats such as Audio Video Interleave (AVI) often serve as input files for video transcoding processes.
-AVI can contain audio and video information to allow synchronized playback of audio and video components. 
+AVI can contain audio and video information to allow synchronised playback of audio and video components. 
 It is a container format, which means that it can contain multiple streams of audio and video data, along with other multimedia data such as subtitles.
-AVI files can undergo transcoding to optimize their compression, compatibility, or quality, with h.264 being a commonly used codec for such purposes.~\cite{avi, h264}
+AVI files can undergo transcoding to optimise their compression, compatibility, or quality, with h.264 being a commonly used codec for such purposes.~\cite{avi, h264}
 
 
 WebRTC, is a free, open-source project for real-time communication between web browsers and other applications, that was developed by Google in 2011. It enables direct peer-to-peer (P2P) communication without the need for intermediary servers.
@@ -310,9 +310,9 @@ Representational State Transfer (REST) is an architecture for network applicatio
 
 	
 JIT or Just-In-Time, in the context of video streaming, refers to a dynamic software solution employed for real-time video transformation. 
-It is used for on-the-fly conversion of video files, optimizing them for streaming. The process includes the transcoding of a video file, potentially one with non-web-friendly formats, into a more suitable format for the playback in web browsers.
-JIT operates by dynamically preprocessing of video content as it is requested by users, in opposition to pre-converting video files into formats that are suitable for streaming or browsers in advance. 
-This approach allows for greater flexibility and efficiency, as it minimizes the need for storage space and allows real-time adjustment such as the adjustment of the RGB colours that is implemented and described in this thesis project.
+It is used for on-the-fly conversion of video files, optimising them for streaming. The process includes the transcoding of a video file, potentially one with non-web-friendly formats, into a more suitable format for the playback in web browsers.
+JIT operates by dynamically preprocessing of video content as it is requested by users, in contrast to pre-converting video files into formats that are suitable for streaming or browsers in advance. 
+This approach allows for greater flexibility and efficiency, as it minimises the need for storage space and allows real-time adjustment such as the adjustment of the RGB colours that is implemented and described in this thesis project.
 Additionally, JIT allows to adjust video resolution, bitrate and other parameters in real-time to adapt the results to the user's bandwidth.~\cite{JIT_IEEE}
 
 
@@ -330,7 +330,7 @@ This Section introduces additional components that are relevant for the system's
 
 
 Docker is a platform that provides an isolated environment where applications can run. It enables the usage of these isolated environments, that are called containers.
-Those Docker containers can lower the problems that arise from environmental discrepancies. This enables testing in local environments with enhancing the reliability and comparability.~\cite{docker}
+Those Docker containers can reduce the problems that arise from environmental discrepancies. This enables testing in local environments with enhancing the reliability and comparability.~\cite{docker}
 
 
 
@@ -338,7 +338,7 @@ Node.js is a JavaScript runtime environment that enables the execution of JavaSc
 It enables developers to use JavaScript both on the client and server sides of web applications. 
 Node.js has an open-source community that contributes to its evolution. This community-driven development model has led to a big selection of modules and libraries.~\cite{nodejs, RM_Frontend, ap3_docs}
 %
-To manage project dependencies and packages for Node.js, package managers such as Yarn or Node Package Manager (npm) can be used. These package managers allow developers to install, update and manage libraries and tools used in the project, by providing a centralized repository of libraries and tools.~\cite{RM_Frontend, npmyarn}
+To manage project dependencies and packages for Node.js, package managers such as Yarn or Node Package Manager (npm) can be used. These package managers allow developers to install, update and manage libraries and tools used in the project, by providing a centralised repository of libraries and tools.~\cite{RM_Frontend, npmyarn}
 
 
 
@@ -419,7 +419,7 @@ The numbers $1$, $2$ and $3$ are the fields unique identifiers.
 		sfixed32 & Signed 32-bit integer (four bytes) \\
 		sfixed64 & Signed 64-bit integer (eight bytes) \\
 		bool & Boolean value (true or false) \\
-		string & Variable-length text string  \\
+		string & Variable-length text string \\
 		bytes & Variable-length sequence of bytes \\
 		\bottomrule
 	\end{tabular}

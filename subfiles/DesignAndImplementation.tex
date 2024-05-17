@@ -49,7 +49,7 @@ The Python backend communicates with the Melt framework to use its video editing
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\textwidth]{IM3.png}
-	\caption[Architecture of the system that consists out of four parts.]{Architecture of the system that consists out of four parts.}
+	\caption[Architecture of the system that consists of four parts.]{Architecture of the system that consists of four parts.}
 	\label{figure:SA}
 \end{figure}
 
@@ -81,7 +81,7 @@ The frontend is displayed in the browser and uses Node.js as its runtime environ
 
 \hypersetup{urlcolor=black}
 The user interface when playing a video in the Accurate Player can be seen in Figure~\ref{figure:AV_before}. This can be found under \url{http://localhost:5000/controls/jit/index.html} when executing the code as described in Section~\ref{subsection:runninghtecode}.
-First, a yellow field can be seen (shown on the left in Figure~\ref{figure:AV_before}). After clicking this, a loading screen is displayed (in the middle in Figure~\ref{figure:AV_before}) and then the video can be started with clicking in the play button. The playing of a video can be seen on the right in Figure~\ref{figure:AV_before}.
+First, a yellow field can be seen (shown on the left in Figure~\ref{figure:AV_before}). After clicking this, a loading screen is displayed (in the middle in Figure~\ref{figure:AV_before}) and then the video can be started by clicking on the play button. The playing of a video can be seen on the right in Figure~\ref{figure:AV_before}.
 
 
 \begin{figure}[H]
@@ -156,7 +156,7 @@ The left side of the window allows for enabling and disabling specific subtitles
 
 \begin{minipage}{0.45\textwidth}
 	
-Additionally, a menu with further settings can be found when expanding the menus. This menu can be seen in Figure~\ref{figure:othercontrols} and expands when clicking on the \textit{settings} symbol. Here, further settings, including the time format, the setting of keyboard shortcuts or the fading of the control options when playing the video can be adjusted. All of the above described menus for settings enhance the level of personalization available to the user. The customization options allows the 
+Additionally, a menu with further settings can be found when expanding the menus. This menu can be seen in Figure~\ref{figure:othercontrols} and expands when clicking on the \textit{settings} symbol. Here, further settings, including the time format, the setting of keyboard shortcuts or the fading of the control options when playing the video can be adjusted. All of the above described menus for settings enhance the level of personalisation available to the user. The customisation options allow the 
 %
 %
 \end{minipage}\begin{minipage}{0.05\textwidth}
@@ -180,7 +180,7 @@ user to adapt the Accurate Player to their preferences and expectations.
 
 
 With JIT techniques in the Accurate Player it is possible to play different formats in the browser without the transcoding into a browser friendly format.
-This is possible, because the Accurate Player uses JIT techniques to dynamically handle the playback of different video formats on-the-fly, instead of relying on pre-transcoded video files. The video data is being processed in real-time, allowing for on-the-fly adjustment of option such as the quality slider or the RGB colour adjustment that is being implemented for this thesis project.
+This is possible, because the Accurate Player uses JIT techniques to dynamically handle the playback of different video formats on-the-fly, instead of relying on pre-transcoded video files. The video data is being processed in real-time, allowing for on-the-fly adjustment of options such as the quality slider or the RGB colour adjustment that is being implemented for this thesis project.
 
 
 
@@ -213,7 +213,7 @@ Data written to \texttt{stdout} by the Python code can be captured or redirected
 
 
 As a response, the Melt framework sends an AVI stream with the rendered video and audio, status messages and metadata to the Python backend. This is highlighted in Section~\ref{figure:avimetadata}.
-AVI is a file format that can contain audio and video information to allow synchronized playback of audio and video components, as described in Section~\ref{subsection_OverviewVideoStreamingComponents}.~\cite{avi} 
+AVI is a file format that can contain audio and video information to allow synchronised playback of audio and video components, as described in Section~\ref{subsection_OverviewVideoStreamingComponents}.~\cite{avi} 
 
 \begin{figure}[H]
 	\centering
@@ -347,9 +347,9 @@ The Melt filters \texttt{avfilter.colorbalance}, \texttt{avfilter\-.colorchannel
 		\texttt{av.rs}: set red shadows \newline 
 		\texttt{av.gs}: set green shadows \newline 
 		\texttt{av.bs}: set blue shadows \newline 
-		\texttt{av.rm}: set red mid tones \newline 
-		\texttt{av.gm}: set green mid tones \newline 
-		\texttt{av.bm}: set blue mid tones \newline 
+		\texttt{av.rm}: set red midtones \newline 
+		\texttt{av.gm}: set green midtones \newline 
+		\texttt{av.bm}: set blue midtones \newline 
 		\texttt{av.rh}: set red highlights \newline 
 		\texttt{av.gh}: set green highlights \newline 
 		\texttt{av.bh}: set blue highlights}
@@ -454,7 +454,7 @@ In the following, the filter application and parameters of each filter are intro
 %--------------------------------------------------------------------------------------
 \subsubsection*{Filter \texttt{avfilter.colorbalance}}
 
-The parameters of the filter \texttt{avfilter.colorbalance} take input values as a floats between $-1$ and $1$. The filter has individual parameters to set the shadows, mid tones and highlights per colour (red, green and blue). The results of the different parameters set on the maximum value of $1$ for adjusting the red shadows with \texttt{av.rs=1}, the red mid tones with \texttt{av.rm=1} and the red highlights with \texttt{av.rg=1} can be seen in Figure~\ref{figure:rs1rm1rh1}.
+The parameters of the filter \texttt{avfilter.colorbalance} take input values as a floats between $-1$ and $1$. The filter has individual parameters to set the shadows, midtones and highlights per colour (red, green and blue). The results of the different parameters set on the maximum value of $1$ for adjusting the red shadows with \texttt{av.rs=1}, the red midtones with \texttt{av.rm=1} and the red highlights with \texttt{av.rg=1} can be seen in Figure~\ref{figure:rs1rm1rh1}.
 
 \begin{figure}[H]
 	\begin{center}
@@ -472,12 +472,12 @@ The parameters of the filter \texttt{avfilter.colorbalance} take input values as
 		\cutpic{0.32cm}{0.3\textwidth}{rh_man.png}
 		\small{
 		\texttt{av.rs=1} \hspace*{0.22\textwidth} \texttt{av.rm=1} \hspace*{0.23\textwidth} \texttt{av.rh=1}}
-		\caption[Different parameters from the filter \texttt{avfilter.colorbalance} applied.]{Different parameters from the filter \texttt{avfilter.colorbalance} applied: Left with \texttt{av.rs=1} for red shadows, middle with \texttt{av.rm=1} for red mid tones and right with \texttt{av.rh=1} for red highlights.}
+		\caption[Different parameters from the filter \texttt{avfilter.colorbalance} applied.]{Different parameters from the filter \texttt{avfilter.colorbalance} applied: Left with \texttt{av.rs=1} for red shadows, middle with \texttt{av.rm=1} for red midtones and right with \texttt{av.rh=1} for red highlights.}
 			\label{figure:rs1rm1rh1}
 	\end{center}
 \end{figure}
 
-To achieve an even colouring result of the frame, which would be applicable for a colour change with one slider per colour, the parameters for the shadows, mid tones and highlights can be adjusted simultaneously when adjusting one colour. In Figure~\ref{figure:rsrmrh1}, the shadows, mid tones and highlights for the red value are set to $1$. 
+To achieve an even colouring result of the frame, which would be applicable for a colour change with one slider per colour, the parameters for the shadows, midtones and highlights can be adjusted simultaneously when adjusting one colour. In Figure~\ref{figure:rsrmrh1}, the shadows, midtones and highlights for the red value are set to $1$. 
 
 \begin{figure}[H]
 	\begin{center}
@@ -488,7 +488,7 @@ To achieve an even colouring result of the frame, which would be applicable for 
 	\end{center}
 \end{figure}
 
-To assess the effects of the combined colour adjustment of multiple colours, the values for green and red (shadows, mid tones and highlights) are set to the maximum of $1$ and applied simultaneously. The parameters that are applied for this evaluation are \texttt{av.rs=1}, \texttt{av.rm=1}, \texttt{av.rh=1}, \texttt{av.gs=1}, \texttt{av.gm=1} and \texttt{av.gh=1}.
+To assess the effects of the combined colour adjustment of multiple colours, the values for green and red (shadows, midtones and highlights) are set to the maximum of $1$ and applied simultaneously. The parameters that are applied for this evaluation are \texttt{av.rs=1}, \texttt{av.rm=1}, \texttt{av.rh=1}, \texttt{av.gs=1}, \texttt{av.gm=1} and \texttt{av.gh=1}.
 This results in yellow toned pictures, that can be seen in Figure~\ref{figure:cb_yellow}.
 
 
@@ -496,7 +496,7 @@ This results in yellow toned pictures, that can be seen in Figure~\ref{figure:cb
 	\begin{center}
 		\cutpic{0.3cm}{0.45\textwidth}{cb_yellow.png}
 		\cutpic{0.3cm}{0.45\textwidth}{cb_yellow_man.png}
-		\caption[Red and green parameters set to $1$ with \texttt{avfilter.colorbalance}.]{All parameters for red and green with the value $1$  from the filter \texttt{avfilter.colorbalance} applied: \texttt{av.rs=1}, \texttt{av.rm=1}, \texttt{av.rh=1}, \texttt{av.gs=1}, \texttt{av.gm=1} and \texttt{av.gh=1}.}
+		\caption[Red and green parameters set to $1$ with \texttt{avfilter.colorbalance}.]{All parameters for red and green with the value $1$ from the filter \texttt{avfilter.colorbalance} applied: \texttt{av.rs=1}, \texttt{av.rm=1}, \texttt{av.rh=1}, \texttt{av.gs=1}, \texttt{av.gm=1} and \texttt{av.gh=1}.}
 		\label{figure:cb_yellow}
 	\end{center}
 \end{figure}
@@ -609,7 +609,7 @@ To assess the effects of the combined colour adjustment of multiple colours for 
 
 
 
-The Melt filters \texttt{avfilter.colorbalance}, \texttt{avfilter\-.colorchannelmixer} and \texttt{frei\-0r\-.coloradj\_RGB} are compared regarding the colour vibrance and intensity of the result. This analysis of the filters above was conducted regarding the colour red in depth and a side-by-side comparison can be seen in Figure~\ref{figure:redcomp}. The colour changes of green and blue work analogical and are displayed in Figure~\ref{figure:filtersG} and \ref{figure:filtersB}.
+The Melt filters \texttt{avfilter.colorbalance}, \texttt{avfilter\-.colorchannelmixer} and \texttt{frei\-0r\-.coloradj\_RGB} are compared regarding the colour vibrance and intensity of the result. This analysis of the filters above was conducted regarding the colour red in depth and a side-by-side comparison can be seen in Figure~\ref{figure:redcomp}. The colour changes of green and blue work analogically and are displayed in Figure~\ref{figure:filtersG} and \ref{figure:filtersB}.
 % For the comparison of the result of the single colour filter application, the following parameters per filter are chosen:
 %
 %The results of the change of a single colour (red, green and blue) for each of the filters can be seen as a side-by-side comparison:
@@ -676,7 +676,7 @@ The Melt filters \texttt{avfilter.colorbalance}, \texttt{avfilter\-.colorchannel
 
 
 
-In the Figures above, it can be seen that the red, green and blue tones of the frames with the filter \texttt{avfilter.colorbalance} applied is the most intense and vibrant. This makes the filter \texttt{avfilter.colorbalance} a suitable choice regarding the adjustment of a single colour channel, because a broader range in the colour intensity leads to more options for personalization.
+In the Figures above, it can be seen that the red, green and blue tones of the frames with the filter \texttt{avfilter.colorbalance} applied is the most intense and vibrant. This makes the filter \texttt{avfilter.colorbalance} a suitable choice regarding the adjustment of a single colour channel, because a broader range in the colour intensity leads to more options for personalisation.
 
 
 
@@ -688,8 +688,8 @@ In Figure~\ref{figure:yellowcomp}, the results of the application of two mixed c
 		
 		\footnotesize{\texttt{avfilter.colorbalance}} & \footnotesize{\texttt{avfilter.colorchannelmixer}} & \footnotesize{\texttt{frei0r.coloradj\_RGB}} \\
 		
-		\scriptsize{\texttt{av.rs=1} \texttt{av.rm=1} \texttt{av.rh=1}} & \scriptsize{\texttt{av.rr=2}}  & \scriptsize{\texttt{R=1}} \\
-		\scriptsize{\texttt{av.gs=1} \texttt{av.gm=1} \texttt{av.gh=1}} & \scriptsize{\texttt{av.gg=2}}  & \scriptsize{\texttt{G=1}} \\
+		\scriptsize{\texttt{av.rs=1} \texttt{av.rm=1} \texttt{av.rh=1}} & \scriptsize{\texttt{av.rr=2}} & \scriptsize{\texttt{R=1}} \\
+		\scriptsize{\texttt{av.gs=1} \texttt{av.gm=1} \texttt{av.gh=1}} & \scriptsize{\texttt{av.gg=2}} & \scriptsize{\texttt{G=1}} \\
 		
 		\cutpic{0.3cm}{0.29\textwidth}{cb_yellow.png} & \cutpic{0.3cm}{0.29\textwidth}{rrgg_snow.png} & \cutpic{0.3cm}{0.29\textwidth}{rg_snow.png} \\
 		
@@ -704,14 +704,14 @@ In Figure~\ref{figure:yellowcomp}, the results of the application of two mixed c
 
 It can be seen, that the colour of the \texttt{avfilter.colorbalance} is the most intense and vibrant again, which confirms the results of the previous comparison regarding the single colour adjustment of red, green and blue. This makes the filter \texttt{avfilter.colorbalance} a suitable choice for the implementation of the RGB colour adjustment with sliders in the frontend, because it leads to a broader colour range and more options for personalisation. The filter \texttt{avfilter.colorbalance} shows the most intense colour results for single colour adjustments as well as for mixed colours.
 
-In the above presented tests, that are visualized in the middle in Figure~\ref{figure:redcomp}, \ref{figure:filtersG}, \ref{figure:filtersB} and \ref{figure:yellowcomp}, the results of the \texttt{avfilter.colorchannelmixer} filter appear to have more depth and look more dynamic, because the colour gain was only executed on the respective colour channels. This can be an aspect, that lets the user achieve more aesthetically pleasing results but the overall intensity of the colours is lower. In addition to this, the expected behaviour of a sliders for RGB colour adjustment might not be to only change the colour intensity on one of the respective colour channel. Based on this, the filter \texttt{avfilter.colorbalance} seems to deliver the most fitting results in those criteria.
+In the above presented tests, which are visualised in the middle in Figure~\ref{figure:redcomp}, \ref{figure:filtersG}, \ref{figure:filtersB} and \ref{figure:yellowcomp}, the results of the \texttt{avfilter.colorchannelmixer} filter appear to have more depth and look more dynamic, because the colour gain was only executed on the respective colour channels. This can be an aspect, that lets the user achieve more aesthetically pleasing results but the overall intensity of the colours is lower. In addition to this, the expected behaviour of sliders for RGB colour adjustment might not be to only change the colour intensity on one of the respective colour channel. Based on this, the filter \texttt{avfilter.colorbalance} seems to deliver the most fitting results in those criteria.
 
 
 The results of the filter \texttt{frei0r.coloradj\_RGB}, that can be seen on the right in Figure~\ref{figure:redcomp}, \ref{figure:filtersG}, \ref{figure:filtersB} and \ref{figure:yellowcomp} seem to have darker and less vibrant results, that do not present the expected colours as accurately as the other two filters. This does not make it a fitting choice for the RGB adjustment with sliders.
 
 
-In conclusion, the \texttt{avfilter.colorbalance} filter leads to the most vibrant and intense results of the above listed selection of filters. Additionally it has the option to adapt the shadows, mid tones and highlights individually, which creates the option for more preadjustments of the results in the backend or for introducing more sliders or options for the user-sided adjustment as future work.
-But on the downside, to tone the whole frame evenly, three instead of one parameter have to be changed and applied -- for the shadows, mid tones and highlights for each colour slider.
+In conclusion, the \texttt{avfilter.colorbalance} filter leads to the most vibrant and intense results of the above listed selection of filters. Additionally it has the option to adapt the shadows, midtones and highlights individually, which creates the option for more pre-adjustments of the results in the backend or for introducing more sliders or options for the user-sided adjustment as future work.
+But on the downside, to tone the whole frame evenly, three instead of one parameter have to be changed and applied -- for the shadows, midtones and highlights for each colour slider.
 When applying this with and without JIT, no performance difference was noticeable but for an accurate evaluation of this, performance tests would have to be performed and the implementations of the filters would need to be examined, which exceeds the scope of this project.
 %
 A deeper examination and evaluation of the different options of other Melt filters is an interesting option for future work or for Codemill to implement. For this thesis project, the filter \texttt{avfilter.colorbalance} will be used, because its results look the most vibrant and fitting for the expected outcome of RGB colour adjustment.
@@ -763,7 +763,7 @@ In this Section, the implementation is described. This is separated into three p
 \begin{minipage}{0.52\textwidth}
 In the frontend, input sliders for the user-sided adjustment of the RGB values are added below the already existing slider for the quality adjustment. This is located in the overlay windows in the top left corner. The sliders are coloured according to their associated functions in red, green and blue. This can be seen in Figure~\ref{figure:sliders}.
 
-The HTML code for the red slider can be seen below. The other sliders for green and blue work analogical. The input range is set between $-100$ and $100$, to divide it later by $100$ to achieve a float value between $-1$ and 
+The HTML code for the red slider can be seen below. The other sliders for green and blue work analogically. The input range is set between $-100$ and $100$, to divide it later by $100$ to achieve a float value between $-1$ and 
 
 
 
@@ -782,7 +782,7 @@ The HTML code for the red slider can be seen below. The other sliders for green 
 \end{minipage}
 
 \vspace*{-1em}
-$1$ for the filter parameter. The default value is set to $0$. The input value from the slider then gets read out in a TypeScript file.  
+$1$ for the filter parameter. The default value is set to $0$. The input value from the slider then gets read out in a TypeScript file. 
 
 
 \begin{lstlisting}[language=html, numbers=none]
@@ -824,7 +824,7 @@ syntax = "proto2";
 	
 message JitControl {
 	...
-	optional float red_value = 4;  
+	optional float red_value = 4; 
 	optional float green_value = 5; 
 	optional float blue_value = 6; 
 }
@@ -878,7 +878,7 @@ and blue. The input values of those sliders are read out and assigned to the enu
 \end{minipage}
 \vspace*{0.1em}
 
-according parameters set, else the other parameters will be overwritten with the default value $0$. This refers to the achieving of mixed colour results, including for example yellow, which can be created by adjusting the red and the green colour channel. The previous values for each colour channel need to be sent to the backend together with the changed value to prevent the overwriting of the already adjusted colours with the default value. This is implemented with initializing global variables for each of the colours that are set to the current value in each call. This can be seen in the code snippet above.
+according parameters set, else the other parameters will be overwritten with the default value $0$. This refers to the achieving of mixed colour results, including for example yellow, which can be created by adjusting the red and the green colour channel. The previous values for each colour channel need to be sent to the backend together with the changed value to prevent the overwriting of the already adjusted colours with the default value. This is implemented with initialising global variables for each of the colours that are set to the current value in each call. This can be seen in the code snippet above.
 
 The application of the Melt filter with the current input values from the sliders is implemented in the function \texttt{jit\_action()}, that has a Melt producer as a parameter. In the code below, the beginning of the function can be seen. The Melt properties, consumer and producer are retrieved and set. Then the filter \texttt{avfilter.colorbalance} is set. The comparison of the different filter options can be seen in Section~\ref{subsection:meltfilter}.
 
@@ -901,7 +901,7 @@ JitControl *const jit_control = (JitControl*) value;
 switch (jit_control->type) { ...
 \end{lstlisting}
 
-Three cases are implemented: One for each colour value (red, green, blue). In the following, the switch case for the adjustment of the red value is explained in more detail. The other cases work analogical.
+Three cases are implemented: One for each colour value (red, green, blue). In the following, the switch case for the adjustment of the red value is explained in more detail. The other cases work analogically.
 
 In the code part below, the case for the red value can be seen. First, the red value that is retrieved from the slider in the frontend is assigned to the variable \texttt{red\_value}. Then, an \texttt{mlt\_properties} object is created for setting the filter parameters later on. 
 
@@ -912,7 +912,7 @@ case CONTROL_TYPE__RED_VALUE:
 		mlt_properties filter_props_red = mlt_filter_properties(filter);
 \end{lstlisting}
 
-In the first if statement of this case, the red value is added to the filter properties. For this, the value needs to be in the input range of the filter parameter, which has to be a float between $-1$ and $1$. Then, a string containing the value is created, because the function \texttt{mlt\_properties\_set} requires the value for the filter parameter in String format. After this, the filter properties are set to this value. Three parameters per colour have to be set, because the chosen filter has the possibility of adjusting the shadows, mid tones and highlights individually. 
+In the first if statement of this case, the red value is added to the filter properties. For this, the value needs to be in the input range of the filter parameter, which has to be a float between $-1$ and $1$. Then, a string containing the value is created, because the function \texttt{mlt\_properties\_set} requires the value for the filter parameter in String format. After this, the filter properties are set to this value. Three parameters per colour have to be set, because the chosen filter has the possibility of adjusting the shadows, midtones and highlights individually. 
 The comparison of the different filters can be seen in Section~\ref{subsection:meltfilter} and the described code can be seen below.
 
 
@@ -926,7 +926,7 @@ The comparison of the different filters can be seen in Section~\ref{subsection:m
 		}	
 \end{lstlisting}
 
-The previous values that are set on the sliders for the for the green and red values are saved in the variables that are declared outside of the function. In the code below, the values are set analogical to the above described red value. This is necessary to not overwrite the previously adjusted colour values.
+The previous values that are set on the sliders for the for the green and red values are saved in the variables that are declared outside of the function. In the code below, the values are set analogically to the above described red value. This is necessary to not overwrite the previously adjusted colour values.
 	
 \begin{lstlisting}[language=c, numbers=none, columns=fullflexible]
 		if (green_value >= -1.0 && green_value <= 1.0) {
@@ -1026,7 +1026,7 @@ case CONTROL_TYPE__BLUE_VALUE:
 	}
 	mlt_filter_connect(filter, service, 0);
 	mlt_consumer_connect(consumer, mlt_filter_service(filter));
-	break;  
+	break; 
 
 \end{lstlisting}
 
