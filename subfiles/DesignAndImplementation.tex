@@ -244,7 +244,7 @@ receives metadata from the \texttt{main.py} script and sends commands and respon
 \end{figure}
 
 The Melt framework and the \texttt{main.py} script are started once for each JIT session.
-The java-based \texttt{Session} service is designed to support the machine-to-machine interaction between the browser and the Python backend. 
+The Java-based \texttt{Session} service is designed to support the machine-to-machine interaction between the browser and the Python backend. 
 The \texttt{Session} service exposes a REST API (described in Section~\ref{subsection_OverviewVideoStreamingComponents}) for initiating a JIT session. 
 %
 % Additionally, it leverages AWS, specifically utilizing the Auto Scaling Group (ASG) feature to manage a cluster of instances dynamically, ensuring scalability and efficient distribution of JIT sessions across the instances in the cluster.
@@ -330,7 +330,7 @@ The goal for this thesis project is the on-the-fly adjustment of the RGB values 
 For this purpose, various Melt filters were examined and compared to identify the most suitable ones for implementing this functionality. 
 RGB colour representation was described in Section~\ref{subsection:RGB} and the Melt framework was described in Section~\ref{subsection:melt}.
 
-In table~\ref{table:filter}, a selection of filters that influence the RGB representation of the video are listed. This includes the filter name, description and possible parameters that are listed on the Melt website.~\cite{melt_filters} Only parameters relevant to this thesis will be listed.
+In Table~\ref{table:filter}, a selection of filters that influence the RGB representation of the video are listed. This includes the filter name, description and possible parameters that are listed on the Melt website.~\cite{melt_filters} Only parameters relevant to this thesis will be listed.
 Then, those filters were applied to compare the visual results of applying them. 
 The Melt filters \texttt{avfilter.colorbalance}, \texttt{avfilter\-.colorchannelmixer} and \texttt{frei0r\-.coloradj\_RGB} are selected for further analysis. They are listed with their description and parameters in Table~\ref{table:filter}, followed by a comparison of the visual results. Other Melt filters that change the visual appearance of the video can be seen in Appendix~\ref{appendix:differentMeltFilter}.
 
