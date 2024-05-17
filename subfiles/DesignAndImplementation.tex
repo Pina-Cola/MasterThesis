@@ -25,7 +25,7 @@
 \section{Design and Implementation} \label{section:designandimplementation}
 
 In this Chapter, the system architecture and the implementation are explained. First a brief overview of the architecture is given in Section~\ref{subsection:architecturedesign} and then the frontend and backend are described in more detail (Section~\ref{subsection:accuratevideo} and Section~\ref{subsection:jit-webrtc}).
-For the application of a Melt filter, different filters were compared to select the most suitable option in Section~\ref{subsection:meltfilter}. Finally, the implementation is described with examples and code extractions in Section~\ref{subsection:implementation}.
+For the application of a Melt filter, different filters were compared to select the most suitable option in Section~\ref{subsection:meltfilter}. Finally, the implementation is described with examples and code excerpts in Section~\ref{subsection:implementation}.
 
 
 
@@ -892,7 +892,7 @@ mlt_filter filter = mlt_factory_filter(service, "avfilter.colorbalance", NULL);
 \end{lstlisting}
 
 
-In the following code extraction, a pointer \texttt{jit\_control} is declared, which casts a value into the type \texttt{JitControl}.
+In the following code excerpt, a pointer \texttt{jit\_control} is declared, which casts a value into the type \texttt{JitControl}.
 Then, a switch statement is started, based on the value of \texttt{jit\_control}.
 The \texttt{->} operator is used to access the type field of the \texttt{jit\_control} structure and depending on the value, the execution will jump to the corresponding case within the switch statement.
 
