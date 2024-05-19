@@ -22,7 +22,7 @@ In this Chapter, the structure and usage of the Melt framework is explained and 
 %---------------------------------
 \subsection{Melt} \label{subsection:melt}
 
-The Melt framework is a multimedia framework as a command-line tool that can be used for video editing and playback. It is written in C and provides a set of tools, libraries and services for handling multimedia content, including video and audio.~\cite{melt} 
+The Melt framework is a multimedia framework as a command-line tool that can be used for video editing and playback. It is written in C and provides a set of tools, libraries and services for handling multimedia content, including video and audio~\cite{melt}. 
 
 
 A variety of tasks can be performed with Melt, including video editing, rendering, the application of filters on audio or video files and converting data between different formats. 
@@ -35,7 +35,7 @@ Additionally, the Melt framework supports a wide range of media formats and code
 \subsubsection*{Structure of the Melt framework}
 
 
-In the following, the relevant components of the Melt framework's structure will be explained. This includes the documentation as well as the code of the framework.~\cite{melt, melt_code}
+In the following, the relevant components of the Melt framework's structure will be explained. This includes the documentation as well as the code of the framework~\cite{melt, melt_code}.
 %
 \textit{Producer}, \textit{Consumer} and \textit{MLT frame objects} are fundamental components in the Melt framework.
 
@@ -67,7 +67,7 @@ The \textit{Consumer} represents the endpoint of the data processing pipeline an
 \end{figure}
 
 Applying filters in the Melt framework is a technique for manipulating multimedia content, including videos. 
-Melt filters can perform a wide range of operations, including colour correction, blurring, sharpening, cropping, resizing and many others. A list of the filters can be found on the Melt website and example applications of a wide selection of visual filters can be seen in Appendix~\ref{appendix:differentMeltFilter}.~\cite{melt_filters}
+Melt filters can perform a wide range of operations, including colour correction, blurring, sharpening, cropping, resizing and many others. A list of the filters can be found on the Melt website and example applications of a wide selection of visual filters can be seen in Appendix~\ref{appendix:differentMeltFilter}~\cite{melt_filters}.
 
 To apply a filter in Melt, a filter instance has to be created and its parameters have to contain the name of the filter and, if needed, the filter parameters and values for those.
 Filters are processing units that manipulate the multimedia data as it flows through the pipeline. They are placed between the producer and consumer, allowing them to modify the data before it reaches the consumer. This can be seen in Figure~\ref{fig:producer_filter_consumer}.
@@ -94,7 +94,7 @@ Filters are processing units that manipulate the multimedia data as it flows thr
 \subsubsection*{Usage of the Melt framework}
 
 
-In this Section, the usage of the Melt framework is explained with code examples and the explanation of those. This is based on the implemented code for this project, the code of the Melt framework and the Melt documentation.~\cite{melt}
+In this Section, the usage of the Melt framework is explained with code examples and the explanation of those. This is based on the implemented code for this project, the code of the Melt framework and the Melt documentation~\cite{melt}.
 
 The below described code structure refers to the creation of the necessary melt components to apply a filter.
 
@@ -274,16 +274,16 @@ In this Section, an overview over video streaming components, that are relevant 
 
 Transcoding is the conversion of one digital data format into another.
 One form of video transcoding is the compression of videos with h.264:
-The video compression standard h.264 can be used to compress and decompress video streams in the context of real-time communication.~\cite{transcoding, h264}
+The video compression standard h.264 can be used to compress and decompress video streams in the context of real-time communication~\cite{transcoding, h264}.
 %	
 File formats such as Audio Video Interleave (AVI) often serve as input files for video transcoding processes.
 AVI can contain audio and video information to allow synchronised playback of audio and video components. 
 It is a container format, which means that it can contain multiple streams of audio and video data, along with other multimedia data such as subtitles.
-AVI files can undergo transcoding to optimise their compression, compatibility, or quality, with h.264 being a commonly used codec for such purposes.~\cite{avi, h264}
+AVI files can undergo transcoding to optimise their compression, compatibility, or quality, with h.264 being a commonly used codec for such purposes~\cite{avi, h264}.
 
 
 WebRTC, is a free, open-source project for real-time communication between web browsers and other applications, that was developed by Google in 2011. It enables direct peer-to-peer (P2P) communication without the need for intermediary servers.
-WebRTC supports various video codecs, including h.264, which is used for video conferencing, streaming and other real-time applications. This means, that the video streams exchanged between the browser and the backend are encoded and decoded using h.264.~\cite{webrtc, h264}
+WebRTC supports various video codecs, including h.264, which is used for video conferencing, streaming and other real-time applications. This means, that the video streams exchanged between the browser and the backend are encoded and decoded using h.264~\cite{webrtc, h264}.
 
 
 
@@ -304,7 +304,7 @@ WebRTC supports various video codecs, including h.264, which is used for video c
 %\subsubsection*{REST} 
 
 
-Representational State Transfer (REST) is an architecture for network applications. A REST Application Programming Interface (API) exposes a set of endpoints, which are Uniform Resource Locators (URLs) that serve as addresses for communication between different software systems over the internet using hypertext transfer protocol (HTTP) methods.~\cite{IEEE_Rest, webservice, Nodejs_Rest}
+Representational State Transfer (REST) is an architecture for network applications. A REST Application Programming Interface (API) exposes a set of endpoints, which are Uniform Resource Locators (URLs) that serve as addresses for communication between different software systems over the internet using hypertext transfer protocol (HTTP) methods~\cite{IEEE_Rest, webservice, Nodejs_Rest}.
 
 
 
@@ -313,7 +313,7 @@ JIT or Just-In-Time, in the context of video streaming, refers to a dynamic soft
 It is used for on-the-fly conversion of video files, optimising them for streaming. The process includes the transcoding of a video file, potentially one with non-web-friendly formats, into a more suitable format for the playback in web browsers.
 JIT operates by dynamically preprocessing of video content as it is requested by users, in contrast to pre-converting video files into formats that are suitable for streaming or browsers in advance. 
 This approach allows for greater flexibility and efficiency, as it minimises the need for storage space and allows real-time adjustment such as the adjustment of the RGB colours that is implemented and described in this thesis project.
-Additionally, JIT allows to adjust video resolution, bitrate and other parameters in real-time to adapt the results to the user's bandwidth.~\cite{JIT_IEEE}
+Additionally, JIT allows to adjust video resolution, bitrate and other parameters in real-time to adapt the results to the user's bandwidth~\cite{JIT_IEEE}.
 
 
 
@@ -330,24 +330,24 @@ This Section introduces additional components that are relevant for the system's
 
 
 Docker is a platform that provides an isolated environment where applications can run. It enables the usage of these isolated environments, that are called containers.
-Those Docker containers can reduce the problems that arise from environmental discrepancies. This enables testing in local environments while enhancing the reliability and comparability.~\cite{docker}
+Those Docker containers can reduce the problems that arise from environmental discrepancies. This enables testing in local environments while enhancing the reliability and comparability~\cite{docker}.
 
 
 
 Node.js is a JavaScript runtime environment that enables the execution of JavaScript code outside of a web browser.
 It enables developers to use JavaScript both on the client and server sides of web applications. 
-Node.js has an open-source community that contributes to its evolution. This community-driven development model has led to a big selection of modules and libraries.~\cite{nodejs, RM_Frontend, ap3_docs}
+Node.js has an open-source community that contributes to its evolution. This community-driven development model has led to a big selection of modules and libraries~\cite{nodejs, RM_Frontend, ap3_docs}.
 %
-To manage project dependencies and packages for Node.js, package managers such as Yarn or Node Package Manager (npm) can be used. These package managers allow developers to install, update and manage libraries and tools used in the project, by providing a centralised repository of libraries and tools.~\cite{RM_Frontend, npmyarn}
+To manage project dependencies and packages for Node.js, package managers such as Yarn or Node Package Manager (npm) can be used. These package managers allow developers to install, update and manage libraries and tools used in the project, by providing a centralised repository of libraries and tools~\cite{RM_Frontend, npmyarn}.
 
 
 
 Web services are software systems for communication between different applications over a network. 
-They allow data exchange and function calling across platforms and programming languages. 
+They allow data exchange and function execution across platforms and programming languages. 
 Java-based web services are commonly used in modern software development, due to the robustness and scalability of the Java platform for building distributed systems over the web.
-Web services enable machine-to-machine (M2M) interaction -- the communication and data exchange between devices or systems.~\cite{webservice}
+Web services enable machine-to-machine (M2M) interaction -- the communication and data exchange between devices or systems~\cite{webservice}.
 
-KDEN Live is a video editing software, that offers a wide range of features such as cutting, trimming and arranging video clips and adding effects, transitions and titles to videos. It also supports various file formats. KDEN Live is freely available, open-source and uses Melt as its backend.~\cite{kdenlive}
+KDEN Live is a video editing software, that offers a wide range of features such as cutting, trimming and arranging video clips and adding effects, transitions and titles to videos. It also supports various file formats. KDEN Live is freely available, open-source and uses Melt as its backend~\cite{kdenlive}.
 
 
 
@@ -364,7 +364,7 @@ KDEN Live is a video editing software, that offers a wide range of features such
 \label{subsection:protocolbuffer}
 
 
-Protocol buffers are a binary data format developed by Google to compress data for sending it efficiently and fast over a network. The structure of this format is defined in a \texttt{.proto} file. Those files are used to generate code for reading and writing to the protocol buffer.~\cite{protobuffer}
+Protocol buffers are a binary data format developed by Google to compress data for sending it efficiently and fast over a network. The structure of this format is defined in a \texttt{.proto} file. Those files are used to generate code for reading and writing to the protocol buffer~\cite{protobuffer}.
 
 
 
@@ -380,7 +380,7 @@ In this project, protocol buffers version 2 (proto2) were used. In the first lin
 %---------------------------------------------------------------------------------------------------------
 \item[Messages and Fields] 
 
-Data structures are defined using message declarations. Messages can contain fields for the data, each with a unique identifier and a specified data type. The data types for proto2 can be seen in Table~\ref{table:proto2_data_types}.~\cite{proto2_doc}
+Data structures are defined using message declarations. Messages can contain fields for the data, each with a unique identifier and a specified data type. The data types for proto2 can be seen in Table~\ref{table:proto2_data_types}~\cite{proto2_doc}.
 
 In the following, an example message is shown and described.
 The example message represents a person's information, including their name, age and email address. This is defined as follows:
@@ -423,7 +423,7 @@ The numbers $1$, $2$ and $3$ are the fields unique identifiers.
 		bytes & Variable-length sequence of bytes \\
 		\bottomrule
 	\end{tabular}
-	\caption[Data types for fields in protocol buffers (proto2).]{Data types for fields in protocol buffers (proto2).~\cite{proto2_doc}}
+	\caption[Data types for fields in protocol buffers (proto2).]{Data types for fields in protocol buffers (proto2)~\cite{proto2_doc}.}
 	\label{table:proto2_data_types}
 \end{table}
 
@@ -435,7 +435,7 @@ The numbers $1$, $2$ and $3$ are the fields unique identifiers.
 
 Proto2 supports the definition of enumeration types as enum.
 Enums allow for the declaration of a set of named constants, each associated with a unique integer value.
-This can be used for representing a fixed set of options or states within a message definition.~\cite{protobuffer, proto2_doc}
+This can be used for representing a fixed set of options or states within a message definition~\cite{protobuffer, proto2_doc}.
 
 In the following, an example enum is shown and described. 
 It represents the gender of a person and is defined as follows:

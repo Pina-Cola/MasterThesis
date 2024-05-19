@@ -39,7 +39,7 @@ In this Chapter, the technical requirements for the system are described. These 
 
 
 
-Regarding the hardware requirements, the system should be capable of running Node.js, which is necessary for executing the frontend development tool Yarn. Additionally, the system should be able to execute the python backend and Melt framework within a Docker container.
+Regarding the hardware requirements, the system should be capable of running Node.js, which is necessary for executing the frontend development tool Yarn. Additionally, the system should be able to execute the Python backend and Melt framework within a Docker container.
 While implementing, it was observed that the system should have a minimum of $16$ GB RAM to ensure smooth execution of the development environment and Docker containers.
 
 
@@ -85,11 +85,13 @@ The codebase for this project consists of two directories: \texttt{Accurate-play
 The files for the frontend code are in a directory that is called \texttt{accurate-player-3-core}. To execute the frontend, it needs to be navigated to the directory \texttt{demo} in \texttt{packages} and then \texttt{yarn start} needs to be executed with the parameter for the backend in the CLI:
 \begin{lstlisting}[language=bash, numbers=none, columns=fullflexible]
 	~/accurate-player-3-core/packages/demo$ JIT_BACKEND=http://localhost:8080 yarn start
+	
 \end{lstlisting}
 
 For updating dependencies during development, the following command should be executed and running in addition: 
 \begin{lstlisting}[language=bash, numbers=none, columns=fullflexible]
 	~/accurate-player-3-core/packages/jit$ yarn start
+	
 \end{lstlisting}
 
 
@@ -97,6 +99,7 @@ For updating dependencies during development, the following command should be ex
 To run the backend, the folder \texttt{jit-webrtc} needs to be accessed in the CLI to start the script \texttt{main.sh}, which starts the backend in a docker container and pulls the needed dependencies:
 \begin{lstlisting}[language=bash, numbers=none, columns=fullflexible]
 	~/jit-webrtc$ docker/main/main.sh -v --threads 16 --port 8080 https://s3.eu-central-1.amazonaws.com/accurate-player-demo-assets/timecode/sintel-2048-timecode-stereo.mp4
+	
 \end{lstlisting}
 
 The optional parameter \texttt{-v} (verbose) provides additional information or detailed output when executing the code. The threads and the port are set with the parameters \texttt{--threads} and \texttt{--port} and then the link to the test video file is added. This is the file that will then be played in the Accurate Player.

@@ -66,7 +66,7 @@ For development and testing without the session service, the backend can be star
 \subsection{Accurate Video} \label{subsection:accuratevideo}
 % Describe the frontend
 
-The following description of the system is based on the code base and the information from the \texttt{README} file.~\cite{RM_Frontend}
+The following description of the system is based on the code base and the information from the \texttt{README} file~\cite{RM_Frontend}.
 %
 The frontend is displayed in the browser and uses Node.js as its runtime environment with Yarn to manage project dependencies and packages. It is developed using HyperText Markup Language (HTML), Cascading Style Sheets (CSS) and JavaScript (JS) to create the user interface.
 
@@ -194,15 +194,15 @@ This is possible, because the Accurate Player uses JIT techniques to dynamically
 \subsection{JIT-WebRTC} \label{subsection:jit-webrtc}
 % Describe the backend
 
-The following description of the system's backend is based on the code base and the information from the \texttt{README} file.~\cite{RM_Backend}
-JIT-WebRTC is a live transcoder with a WebRTC output. As described in Section~\ref{subsection_OverviewVideoStreamingComponents}, transcoding is the conversion of one digital data format into another.~\cite{transcoding}
+The following description of the system's backend is based on the code base and the information from the \texttt{README} file~\cite{RM_Backend}.
+JIT-WebRTC is a live transcoder with a WebRTC output. As described in Section~\ref{subsection_OverviewVideoStreamingComponents}, transcoding is the conversion of one digital data format into another~\cite{transcoding}.
 The backend consists of three components: The Melt framework, \texttt{main.py} and a session service.
 
 
 The user initiates a session through the browser, which then initiates the \texttt{main.py} script. The system's frontend that is displayed in the browser was described in Section~\ref{subsection:accuratevideo}.
 Control commands are then sent from the browser to the Python backend with a WebRTC data channel.
 From the \texttt{main.py} file, the control commands get sent to Melt via \texttt{stdout} (standard output) and \texttt{stdin} (standard input). These are the default input and output channels, that allow the Python script communication with other components.
-Data written to \texttt{stdout} by the Python code can be captured or redirected and data from an external source can be read from \texttt{stdin} by the Python script.~\cite{python} The data flow of the control commands is highlighted in Figure~\ref{figure:controlcommands}.
+Data written to \texttt{stdout} by the Python code can be captured or redirected and data from an external source can be read from \texttt{stdin} by the Python script~\cite{python}. The data flow of the control commands is highlighted in Figure~\ref{figure:controlcommands}.
 
 \begin{figure}[H]
 	\centering
@@ -213,7 +213,7 @@ Data written to \texttt{stdout} by the Python code can be captured or redirected
 
 
 As a response, the Melt framework sends an AVI stream with the rendered video and audio, status messages and metadata to the Python backend. This is highlighted in Section~\ref{figure:avimetadata}.
-AVI is a file format that can contain audio and video information to allow synchronised playback of audio and video components, as described in Section~\ref{subsection_OverviewVideoStreamingComponents}.~\cite{avi} 
+AVI is a file format that can contain audio and video information to allow synchronised playback of audio and video components, as described in Section~\ref{subsection_OverviewVideoStreamingComponents}~\cite{avi}. 
 
 \begin{figure}[H]
 	\centering
@@ -330,7 +330,7 @@ The goal for this thesis project is the on-the-fly adjustment of the RGB values 
 For this purpose, various Melt filters were examined and compared to identify the most suitable ones for implementing this functionality. 
 RGB colour representation was described in Section~\ref{subsection:RGB} and the Melt framework was described in Section~\ref{subsection:melt}.
 
-In Table~\ref{table:filter}, a selection of filters that influence the RGB representation of the video are listed. This includes the filter name, description and possible parameters that are listed on the Melt website.~\cite{melt_filters} Only parameters relevant to this thesis will be listed.
+In Table~\ref{table:filter}, a selection of filters that influence the RGB representation of the video are listed. This includes the filter name, description and possible parameters that are listed on the Melt website~\cite{melt_filters}. Only parameters relevant to this thesis will be listed.
 Then, those filters were applied to compare the visual results of applying them. 
 The Melt filters \texttt{avfilter.colorbalance}, \texttt{avfilter\-.colorchannelmixer} and \texttt{frei0r\-.coloradj\_RGB} are selected for further analysis. They are listed with their description and parameters in Table~\ref{table:filter}, followed by a comparison of the visual results. Other Melt filters that change the visual appearance of the video can be seen in Appendix~\ref{appendix:differentMeltFilter}.
 

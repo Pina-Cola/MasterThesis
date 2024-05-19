@@ -304,7 +304,7 @@ For the other additional parameters (keep luma, alpha controlled and luma formul
 %-------------------------------------------------------------------------------------------------------
 \subsubsection*{Change gamma}
 
-\textit{Change gamma} refers to adjusting the luminance or brightness of an image or video by applying a gamma correction factor. This can be used to adapt the output to different devices.~\cite{gamma}
+\textit{Change gamma} refers to adjusting the luminance or brightness of an image or video by applying a gamma correction factor. This can be used to adapt the output to different devices~\cite{gamma}.
 
 In Figure~\ref{figure:gamma}, the extracted frame from KDEN Live with the application of the maximum red value with the \textit{Change gamma} action is shown. The slider for the adjustment of the colour red is set to the maximum while the other sliders remain unchanged.
 In comparison, the extracted frame from the Accurate Player with the maximum red value applied can be seen in Figure~\ref{figure:APframe1}. This result is obtained by setting the red slider in the frontend onto the maximum value and leaving the sliders for green and blue on the default value. In the backend, the filter \texttt{avfilter.colorbalance} with the parameters for red shadows, midtones and highlights to the maximum of $1$ is applied (\texttt{av.rs=1}, \texttt{av.rm=1} and \texttt{av.rh=1}).
@@ -408,7 +408,7 @@ The subtraction of those frames can be seen in Figure~\ref{figure:addconstantgim
 %-------------------------------------------------------------------------------------------------------
 \subsubsection*{Multiply}
 
-Multiplying involves changing the intensity of each colour channel (red, green, blue) by a specified factor. This adjustment allows for precise control over colour balance and saturation.~\cite{gimp}
+Multiplying involves changing the intensity of each colour channel (red, green, blue) by a specified factor. This adjustment allows for precise control over colour balance and saturation~\cite{gimp}.
 
 In Figure~\ref{figure:multiply}, the extracted frame from KDEN Live with the application of the maximum red value for the \textit{Multiply} action is displayed. 
 In comparison in Figure~\ref{figure:APframe2}, the extracted frame from the Accurate Player with the maximum red value applied can be seen. This frame was shown and explained before and is displayed here again to allow for a direct visual comparison of the frames.
