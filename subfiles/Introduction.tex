@@ -94,7 +94,7 @@
 	\subsection{Research Questions} \label{subsection:researchquestions}
 	
 	
-	This thesis revolves around the implementation of video colour grading with the adjustment of the RGB values using JIT techniques and the Melt framework. The Melt framework (MLT/Melt) is a multimedia framework as a command-line (CLI) tool that can be used for video editing and playback. It is introduced and described in Section~\ref{subsection:melt}.
+	This thesis revolves around the implementation of video colour grading with the adjustment of the RGB values using Just-In-Time (JIT) techniques and the Media Lovin' Toolkit (MLT) framework. The MLT framework is a multimedia framework tool that can be used for video editing and playback. It is introduced and described in Section~\ref{subsection:melt}.
 	JIT is used for on-the-fly conversion of video files and optimising them for streaming. 
 	%This process includes the transformation of a video file, potentially one with non-web-friendly formats, into a more suitable format for the playback in web browsers.
 	The demand for efficient and dynamic video processing tools is increasing and with this, the ability to perform on-the-fly colour correction becomes increasingly valuable. 
@@ -109,22 +109,23 @@
 	The project aims to address the feasibility and effectiveness of implementing video colour correction using JIT in the context of real-time video streaming. The following question is relevant:
 	
 	\begin{researchbox}
-		Is it possible to obtain colour-graded video results on the fly, meaning in real-time, using JIT and the Melt framework?
+		Is it possible to obtain colour-graded video results on the fly, meaning in real-time, using JIT and the MLT framework?
 	\end{researchbox}
 	
 	After answering this research question, the following question will be evaluated and answered:
 	
 	\begin{researchbox}
-		Is there variation in the outcomes of filter applications across various applications with a Melt backend and the specified system?
+		Is there variation in the outcomes of filter applications across various applications with a MLT backend and the specified system?
 	\end{researchbox}
 
 
-	The different applications for comparison, that use Melt as a backend are the Melt framework itself and the video editing software KDEN Live. 
+	The different applications for comparison, that use the MLT framework as a backend are the command line video editor Melt and the video editing software KDEN Live. 
 	
 	
-	The aim of this thesis project is the contribution of insights into the technological and scientific aspects of real-time video processing, exploring the possibilities and potential applications introduced by using JIT and Melt to implement colour grading. 
+	The aim of this thesis project is the contribution of insights into the technological and scientific aspects of real-time video processing, exploring the possibilities and potential applications introduced by using JIT and the MLT framework to implement colour grading. 
 	
 	
+
 	
 	
 	
@@ -155,7 +156,7 @@
 	
 	The topic of this thesis project spans across various fields. 
 	Due to this, the related work is dispersed among these fields, highlighting the interdisciplinarity of the topic.
-	The fields that are relevant for this project include colour representation, colour grading, multimedia processing, video streaming, the Melt framework, protocol buffers and the comparison of different colour saturations with GIMP.
+	The fields that are relevant for this project include colour representation, colour grading, multimedia processing, video streaming, the MLT framework, protocol buffers and the comparison of different colour saturations with GIMP.
 
 	
 	\begin{description}[font=\color{RedViolet!80!black}, style=nextline]
@@ -177,7 +178,7 @@
 		
 		The book \textit{The Book of GIMP: A Complete Guide to Nearly Everything} by Olivier Lecarme and Karine Delvare describes nearly every function in GNU Image Manipulation Program (GIMP)~\cite{gimp}.
 		%
-		This includes the \textit{grain extract} function, that is relevant for the Melt filter comparison between different platforms in this thesis project.
+		This includes the \textit{grain extract} function, that is relevant for the MLT filter comparison between different platforms in this thesis project.
 		%
 		Furthermore, understanding techniques for evaluating and editing media content is important within the realm of multimedia processing.
 		
@@ -215,20 +216,20 @@
 		
 		
 		%---------------------------------------------------------------------------------------------------
-		\item[Melt framework]
+		\item[MLT framework]
 		
 		
-		The Melt framework is a crucial part for this thesis project. 
+		The MLT framework is a crucial part for this thesis project. 
 		%
-		The RGB colour adjustment is implemented using Melt as a backend and the results are compared with other applications using a Melt backend.
+		The RGB colour adjustment is implemented using MLT as a backend and the results are compared with other applications using a MLT backend.
 		%
-		For this, information directly from the Melt website itself was consulted~\cite{melt} .
+		For this, information directly from the MLT website itself was consulted~\cite{melt} .
 		%
-		Especially the list of different Melt filters was considered, to compare the Melt filters and select the most suitable option for the RGB adjustment and
+		Especially the list of different MLT filters and plug-ins was considered, to compare the filters and select the most suitable option for the RGB adjustment.
 		% 
-		the code of the Melt framework was examined~\cite{melt_filters, melt_code}.
+		Additionally, the code of the MLT framework was examined~\cite{melt_filters, melt_code}.
 		%
-		The external literature on the Melt framework and its technical aspects is unfortunately limited.
+		The external literature on the MLT framework and its technical aspects is unfortunately limited.
 		%
 		
 		
@@ -239,7 +240,7 @@
 		%---------------------------------------------------------------------------------------------------
 		\item[Protocol buffer] 
 		
-		The Chapter \textit{Proto Buffer} in the book \textit{Mobile Forensics -- The File Format Handbook: Common File Formats and File Systems Used in Mobile Devices} by Chris Currier introduces and discusses the topic of protocol buffers. This is relevant for the data transfer from the frontend to the Melt framework in the implementation for this thesis project~\cite{protobuffer}.
+		The Chapter \textit{Proto Buffer} in the book \textit{Mobile Forensics -- The File Format Handbook: Common File Formats and File Systems Used in Mobile Devices} by Chris Currier introduces and discusses the topic of protocol buffers. This is relevant for the data transfer from the frontend to the MLT framework in the implementation for this thesis project~\cite{protobuffer}.
 		
 		
 		
@@ -285,13 +286,13 @@
 	%	
 	Chapter~\ref{section:theoreticalfoundationofcolour} contains the theoretical foundation of colour, including the differences between colour correction and grading and the different effects that different colours can have on a viewer. Furthermore, the representation of colours using RGB and the comparison of different colour saturations is described.
 	%
-	In Chapter~\ref{section:technicalbackground} the technical background of the project is explained, including an in depth description of the structure and usage of the Melt framework. Additionally, an overview of video streaming components and additional components is given and protocol buffers are described.
+	In Chapter~\ref{section:technicalbackground} the technical background of the project is explained, including an in depth description of the structure and usage of the MLT framework. Additionally, an overview of video streaming components and additional components is given and protocol buffers are described.
 	%	
 	Chapter~\ref{section:systemrequirementsandspecifications} outlines the system requirements and specifications for the system to be able to execute the code. Furthermore it is described how to execute the code.
 	%
-	The design and implementation of the on-the-fly RGB adjustment are described in Chapter~\ref{section:designandimplementation} . The architecture of the system is introduced, describing the frontend and backend of the system: Accurate Player and JIT-WebRTC. Additionally, different Melt filters for RGB adjustment are tested and compared. At the end of the Chapter the implementation of the RGB adjustment is described.
+	The design and implementation of the on-the-fly RGB adjustment are described in Chapter~\ref{section:designandimplementation} . The architecture of the system is introduced, describing the frontend and backend of the system: Accurate Player and JIT-WebRTC. Additionally, different MLT filters for RGB adjustment are tested and compared. At the end of the Chapter the implementation of the RGB adjustment is described.
 	%	
-	Chapter~\ref{section:experimentalevaluationanddiscussion} presents the comparison of video colour grading results with Melt filters that were applied on different platforms. The compared platforms are the Accurate Player RGB adjustment, that was implemented in this thesis project with the locally installed Melt framework and KDEN Live.
+	Chapter~\ref{section:experimentalevaluationanddiscussion} presents the comparison of video colour grading results with MLT filters that were applied on different platforms. The compared platforms are the Accurate Player RGB adjustment, that was implemented in this thesis project with the command line video editing tool Melt and the editing software KDEN Live.
 	%	
 	The conclusion in Chapter~\ref{section:conclusion} summarises the results, contributions and limitations of the thesis project and introduces future work opportunities.
 		

@@ -25,7 +25,7 @@
 \section{Design and Implementation} \label{section:designandimplementation}
 
 In this Chapter, the system architecture and the implementation are explained. First a brief overview of the architecture is given in Section~\ref{subsection:architecturedesign} and then the frontend and backend are described in more detail (Section~\ref{subsection:accuratevideo} and Section~\ref{subsection:jit-webrtc}).
-For the application of a Melt filter, different filters were compared to select the most suitable option in Section~\ref{subsection:meltfilter}. Finally, the implementation is described with examples and code excerpts in Section~\ref{subsection:implementation}.
+For the application of a MLT filter, different filters were compared to select the most suitable option in Section~\ref{subsection:meltfilter}. Finally, the implementation is described with examples and code excerpts in Section~\ref{subsection:implementation}.
 
 
 
@@ -35,13 +35,13 @@ For the application of a Melt filter, different filters were compared to select 
 \subsection{Architecture Design} \label{subsection:architecturedesign}
 
 
-The system consists of four components: The frontend that is displayed in the browser, \texttt{main.py} as the Python backend, the Melt framework and a session service. The frontend is described in Section~\ref{subsection:accuratevideo} and the backend components (\texttt{main.py}, the Melt framework and session service) will be described in more detail in Section~\ref{subsection:jit-webrtc}. The structure and usage of the Melt was introduced in Section~\ref{subsection:melt}.
+The system consists of four components: The frontend that is displayed in the browser, \texttt{main.py} as the Python backend, the MLT framework and a session service. The frontend is described in Section~\ref{subsection:accuratevideo} and the backend components (\texttt{main.py}, the MLT framework and session service) will be described in more detail in Section~\ref{subsection:jit-webrtc}. The structure and usage of MLT was introduced in Section~\ref{subsection:melt}.
 
 % In those Sections, the functionality of the system before the implementation of the colour grading is described. The implementation is described in Section~\ref{subsection:implementation}.
 
 The system architecture can be seen in Figure~\ref{figure:SA}.
 A session is initiated through the browser with the session service, which initiates the \texttt{main.py} script.
-The Python backend communicates with the Melt framework to use its video editing, processing and transcoding functionalities. The real-time communication is implemented through a WebRTC channel.
+The Python backend communicates with the MLT framework to use its video editing, processing and transcoding functionalities. The real-time communication is implemented through a WebRTC channel.
 
 
 
@@ -196,12 +196,12 @@ This is possible, because the Accurate Player uses JIT techniques to dynamically
 
 The following description of the system's backend is based on the code base and the information from the \texttt{README} file~\cite{RM_Backend}.
 JIT-WebRTC is a live transcoder with a WebRTC output. As described in Section~\ref{subsection_OverviewVideoStreamingComponents}, transcoding is the conversion of one digital data format into another~\cite{transcoding}.
-The backend consists of three components: The Melt framework, \texttt{main.py} and a session service.
+The backend consists of three components: The MLT framework, \texttt{main.py} and a session service.
 
 
 The user initiates a session through the browser, which then initiates the \texttt{main.py} script. The system's frontend that is displayed in the browser was described in Section~\ref{subsection:accuratevideo}.
 Control commands are then sent from the browser to the Python backend with a WebRTC data channel.
-From the \texttt{main.py} file, the control commands get sent to Melt via \texttt{stdout} (standard output) and \texttt{stdin} (standard input). These are the default input and output channels, that allow the Python script communication with other components.
+From the \texttt{main.py} file, the control commands get sent to MLT via \texttt{stdout} (standard output) and \texttt{stdin} (standard input). These are the default input and output channels, that allow the Python script communication with other components.
 Data written to \texttt{stdout} by the Python code can be captured or redirected and data from an external source can be read from \texttt{stdin} by the Python script~\cite{python}. The data flow of the control commands is highlighted in Figure~\ref{figure:controlcommands}.
 
 \begin{figure}[H]
@@ -212,7 +212,7 @@ Data written to \texttt{stdout} by the Python code can be captured or redirected
 \end{figure}
 
 
-As a response, the Melt framework sends an AVI stream with the rendered video and audio, status messages and metadata to the Python backend. This is highlighted in Section~\ref{figure:avimetadata}.
+As a response, the MLT framework sends an AVI stream with the rendered video and audio, status messages and metadata to the Python backend. This is highlighted in Section~\ref{figure:avimetadata}.
 AVI is a file format that can contain audio and video information to allow synchronised playback of audio and video components, as described in Section~\ref{subsection_OverviewVideoStreamingComponents}~\cite{avi}. 
 
 \begin{figure}[H]
@@ -243,7 +243,7 @@ receives metadata from the \texttt{main.py} script and sends commands and respon
 	\label{figure:videoaudio}
 \end{figure}
 
-The Melt framework and the \texttt{main.py} script are started once for each JIT session.
+The MLT framework and the \texttt{main.py} script are started once for each JIT session.
 The Java-based \texttt{Session} service is designed to support the machine-to-machine interaction between the browser and the Python backend. 
 The \texttt{Session} service exposes a REST API (described in Section~\ref{subsection_OverviewVideoStreamingComponents}) for initiating a JIT session. 
 %
@@ -322,17 +322,17 @@ For development and testing without the session service, JIT can be started in a
 
 % \newpage
 %-------------------------------------------------------------------------------------------------------
-\subsection{Melt Filter Comparison} \label{subsection:meltfilter}
+\subsection{MLT Filter Comparison} \label{subsection:meltfilter}
 
 
 
 The goal for this thesis project is the on-the-fly adjustment of the RGB values of a video with sliders in the frontend. 
-For this purpose, various Melt filters were examined and compared to identify the most suitable ones for implementing this functionality. 
-RGB colour representation was described in Section~\ref{subsection:RGB} and the Melt framework was described in Section~\ref{subsection:melt}.
+For this purpose, various MLT filters were examined and compared to identify the most suitable ones for implementing this functionality. 
+RGB colour representation was described in Section~\ref{subsection:RGB} and the MLT framework was described in Section~\ref{subsection:melt}.
 
-In Table~\ref{table:filter}, a selection of filters that influence the RGB representation of the video are listed. This includes the filter name, description and possible parameters that are listed on the Melt website~\cite{melt_filters}. Only parameters relevant to this thesis will be listed.
+In Table~\ref{table:filter}, a selection of filters that influence the RGB representation of the video are listed. This includes the filter name, description and possible parameters that are listed on the MLT website~\cite{melt_filters}. Only parameters relevant to this thesis will be listed.
 Then, those filters were applied to compare the visual results of applying them. 
-The Melt filters \texttt{avfilter.colorbalance}, \texttt{avfilter\-.colorchannelmixer} and \texttt{frei0r\-.coloradj\_RGB} are selected for further analysis. They are listed with their description and parameters in Table~\ref{table:filter}, followed by a comparison of the visual results. Other Melt filters that change the visual appearance of the video can be seen in Appendix~\ref{appendix:differentMeltFilter}.
+The MLT filters \texttt{avfilter.colorbalance}, \texttt{avfilter\-.colorchannelmixer} and \texttt{frei0r\-.coloradj\_RGB} are selected for further analysis. They are listed with their description and parameters in Table~\ref{table:filter}, followed by a comparison of the visual results. Other MLT filters that change the visual appearance of the video can be seen in Appendix~\ref{appendix:differentMeltFilter}.
 
 
 
@@ -381,7 +381,7 @@ The Melt filters \texttt{avfilter.colorbalance}, \texttt{avfilter\-.colorchannel
 		\\
 		\bottomrule
 	\end{tabular}
-	\caption[List of Melt filters that influence the colour of a video.]{List of different Melt filters that influence the colour of a video with their name, description and parameters.}
+	\caption[List of MLT filters that influence the colour of a video.]{List of different MLT filters that influence the colour of a video with their name, description and parameters.}
 	\label{table:filter}
 \end{table}
 
@@ -609,7 +609,7 @@ To assess the effects of the combined colour adjustment of multiple colours for 
 
 
 
-The Melt filters \texttt{avfilter.colorbalance}, \texttt{avfilter\-.colorchannelmixer} and \texttt{frei\-0r\-.coloradj\_RGB} are compared regarding the colour vibrance and intensity of the result. This analysis of the filters above was conducted regarding the colour red in depth and a side-by-side comparison can be seen in Figure~\ref{figure:redcomp}. The colour changes of green and blue work analogically and are displayed in Figure~\ref{figure:filtersG} and \ref{figure:filtersB}.
+The MLT filters \texttt{avfilter.colorbalance}, \texttt{avfilter\-.colorchannelmixer} and \texttt{frei\-0r\-.coloradj\_RGB} are compared regarding the colour vibrance and intensity of the result. This analysis of the filters above was conducted regarding the colour red in depth and a side-by-side comparison can be seen in Figure~\ref{figure:redcomp}. The colour changes of green and blue work analogically and are displayed in Figure~\ref{figure:filtersG} and \ref{figure:filtersB}.
 % For the comparison of the result of the single colour filter application, the following parameters per filter are chosen:
 %
 %The results of the change of a single colour (red, green and blue) for each of the filters can be seen as a side-by-side comparison:
@@ -714,7 +714,7 @@ In conclusion, the \texttt{avfilter.colorbalance} filter leads to the most vibra
 But on the downside, to tone the whole frame evenly, three instead of one parameter have to be changed and applied -- for the shadows, midtones and highlights for each colour slider.
 When applying this with and without JIT, no performance difference was noticeable but for an accurate evaluation of this, performance tests would have to be performed and the implementations of the filters would need to be examined, which exceeds the scope of this project.
 %
-A deeper examination and evaluation of the different options of other Melt filters is an interesting option for future work or for Codemill to implement. For this thesis project, the filter \texttt{avfilter.colorbalance} will be used, because its results look the most vibrant and fitting for the expected outcome of RGB colour adjustment.
+A deeper examination and evaluation of the different options of other MLT filters is an interesting option for future work or for Codemill to implement. For this thesis project, the filter \texttt{avfilter.colorbalance} will be used, because its results look the most vibrant and fitting for the expected outcome of RGB colour adjustment.
 
 In Figure~\ref{figure:septopus}, the seven basic colour combinations of the subtractive colour model can be seen with the application of the filter \texttt{avfilter.colorbalance}. For this, the RGB values were set to either $1.0$ or $0$, which are the maximum and default values of this filter. 
 
@@ -754,7 +754,7 @@ For comparison, the original frame 3447 from the test video file can be seen in 
 \subsection{Implementation} \label{subsection:implementation}
 % Discuss the technologies and tools chosen for the implementation.
 
-In this Section, the implementation is described. This is separated into three parts, that are described individually: The frontend, the protocol buffer and the application of the filter in the backend. For the implementation, the sliders for each colour (red, green and blue) are added in the frontend. The input value of those sliders are sent with a protocol buffer to the backend, where the values are used to set the parameters of the Melt filter \texttt{avfilter.colorbalance} before applying the filter. This results in the user-sided RGB adjustment of the video colouring, which is played back in the frontend.
+In this Section, the implementation is described. This is separated into three parts, that are described individually: The frontend, the protocol buffer and the application of the filter in the backend. For the implementation, the sliders for each colour (red, green and blue) are added in the frontend. The input value of those sliders are sent with a protocol buffer to the backend, where the values are used to set the parameters of the MLT filter \texttt{avfilter.colorbalance} before applying the filter. This results in the user-sided RGB adjustment of the video colouring, which is played back in the frontend.
 
 %-----------------------------------------------------------------------------------------------------------
 \subsubsection*{Frontend}
@@ -849,7 +849,7 @@ Through the sliders in the frontend, users can manipulate these values for red, 
 
 \end{minipage}
 
-and blue. The input values of those sliders are read out and assigned to the enum \texttt{JITAction} in the frontend. They are then transmitted to the backend with the proto2 data format. The application of the Melt filters with the retrieved values is described in the following part.
+and blue. The input values of those sliders are read out and assigned to the enum \texttt{JITAction} in the frontend. They are then transmitted to the backend with the proto2 data format. The application of the MLT filters with the retrieved values is described in the following part.
 
 
 
@@ -862,11 +862,11 @@ and blue. The input values of those sliders are read out and assigned to the enu
 
 
 %-----------------------------------------------------------------------------------------------------------
-\subsubsection*{Application of the Melt filter}
+\subsubsection*{Application of the MLT filter}
 
 
 \begin{minipage}{0.60\textwidth}
-	The application of the Melt filter is implemented in the \texttt{jit.c} file. To be able to apply multiple values for the three different colour channels at once, the command needs to be sent to Melt with all of the 
+	The application of the MLT filter is implemented in the \texttt{jit.c} file. To be able to apply multiple values for the three different colour channels at once, the command needs to be sent to MLT with all of the 
 \end{minipage}\begin{minipage}{0.04\textwidth}
 	\ 
 \end{minipage}\begin{minipage}{0.36\textwidth}
@@ -880,7 +880,7 @@ and blue. The input values of those sliders are read out and assigned to the enu
 
 according parameters set, else the other parameters will be overwritten with the default value $0$. This refers to the achieving of mixed colour results, including for example yellow, which can be created by adjusting the red and the green colour channel. The previous values for each colour channel need to be sent to the backend together with the changed value to prevent the overwriting of the already adjusted colours with the default value. This is implemented with initialising global variables for each of the colours that are set to the current value in each call. This can be seen in the code snippet above.
 
-The application of the Melt filter with the current input values from the sliders is implemented in the function \texttt{jit\_action()}, that has a Melt producer as a parameter. In the code below, the beginning of the function can be seen. The Melt properties, consumer and producer are retrieved and set. Then the filter \texttt{avfilter.colorbalance} is set. The comparison of the different filter options can be seen in Section~\ref{subsection:meltfilter}.
+The application of the MLT filter with the current input values from the sliders is implemented in the function \texttt{jit\_action()}, that has a MLT producer as a parameter. In the code below, the beginning of the function can be seen. The MLT properties, consumer and producer are retrieved and set. Then the filter \texttt{avfilter.colorbalance} is set. The comparison of the different filter options can be seen in Section~\ref{subsection:meltfilter}.
 
 
 \begin{lstlisting}[language=c, numbers=none, columns=fullflexible]	
@@ -955,7 +955,7 @@ In the following code snippet, the filter and the producer get connected after w
 	break;			
 \end{lstlisting}
 
-The above presented and described code is executed when the slider for the red value is changed in the frontend and the red value is applied to the video output in real time with the Melt framework.
+The above presented and described code is executed when the slider for the red value is changed in the frontend and the red value is applied to the video output in real time with the MLT framework.
 
 The implementation of the switch case for the application of the filter for the colour adjustment of green and blue can be seen in the code below:
 

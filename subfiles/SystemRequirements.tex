@@ -39,7 +39,7 @@ In this Chapter, the technical requirements for the system are described. These 
 
 
 
-Regarding the hardware requirements, the system should be capable of running Node.js, which is necessary for executing the frontend development tool Yarn. Additionally, the system should be able to execute the Python backend and Melt framework within a Docker container.
+Regarding the hardware requirements, the system should be capable of running Node.js, which is necessary for executing the frontend development tool Yarn. Additionally, the system should be able to execute the Python backend and MLT framework within a Docker container.
 While implementing, it was observed that the system should have a minimum of $16$ GB RAM to ensure smooth execution of the development environment and Docker containers.
 
 
@@ -52,8 +52,8 @@ Regarding the documentation in the README files, the Mac operating system should
 In addition to this, the system relies on several software components.
 Docker is needed to use Docker containers for encapsulating the system's backend. This allows consistent and efficient results across different devices.
 Node.js serves as the runtime environment for executing JavaScript code for web applications and Yarn is the package manager for Node.js applications, that is used in this project.
-Additionally, Git is essential for version control. While it is not strictly required for the system's execution, Git is used to pull Git repositories containing the code and necessary dependencies and frameworks, such as the Melt framework. 
-An installation of the Melt framework is not needed for the execution or development of this system, but can be useful for testing or exploring the functionalities of Melt.
+Additionally, Git is essential for version control. While it is not strictly required for the system's execution, Git is used to pull Git repositories containing the code and necessary dependencies and frameworks, such as the MLT framework. 
+An installation of Melt is not needed for the execution or development of this system, but can be useful for testing or exploring the functionalities of the MLT framework.
 %
 %Regarding the security measurements, the Docker containers use a \textit{you snooze you lose} approach, where the container terminates automatically if there are no incoming requests within a certain time frame. 
 Furthermore, the system adheres to standard security practices, including using the secure communication protocol HTTP.

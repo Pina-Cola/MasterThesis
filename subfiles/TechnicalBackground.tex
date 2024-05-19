@@ -16,28 +16,30 @@
 \section{Technical Background} \label{section:technicalbackground}
 
 
-In this Chapter, the structure and usage of the Melt framework is explained and a brief overview of video streaming components and addition components is given. In addition to this, protocol buffers are introduced and explained with examples.
+In this Chapter, the structure and usage of the MLT framework is explained and a brief overview of video streaming components and additional components is given. In addition to this, protocol buffers are introduced and explained with examples.
 
 
 %---------------------------------
-\subsection{Melt} \label{subsection:melt}
+\subsection{MLT} \label{subsection:melt}
 
-The Melt framework is a multimedia framework as a command-line tool that can be used for video editing and playback. It is written in C and provides a set of tools, libraries and services for handling multimedia content, including video and audio~\cite{melt}. 
+The MLT framework is a multimedia framework that can be used for video editing and playback. It is written in C and provides a set of tools, libraries and services for handling multimedia content, including video and audio. Melt is the name of the command line tool, which exposes some functionality of the framework and was developed for testing the MLT framework~\cite{melt}. 
 
 
-A variety of tasks can be performed with Melt, including video editing, rendering, the application of filters on audio or video files and converting data between different formats. 
+
+
+A variety of tasks can be performed with MLT, including video editing, rendering, the application of filters on audio or video files and converting data between different formats. 
 This is useful in various areas, including film production, television broadcasting and digital content creation. 
-Additionally, the Melt framework supports a wide range of media formats and codecs.
+Additionally, the MLT framework supports a wide range of media formats and codecs.
 
 
 
 
-\subsubsection*{Structure of the Melt framework}
+\subsubsection*{Structure of the MLT framework}
 
 
-In the following, the relevant components of the Melt framework's structure will be explained. This includes the documentation as well as the code of the framework~\cite{melt, melt_code}.
+In the following, the relevant components of the MLT framework's structure will be explained. This includes the documentation as well as the code of the framework~\cite{melt, melt_code}.
 %
-\textit{Producer}, \textit{Consumer} and \textit{MLT frame objects} are fundamental components in the Melt framework.
+\textit{Producer}, \textit{Consumer} and \textit{MLT frame objects} are fundamental components in the MLT framework.
 
 A \textit{MLT frame object} is a data structure that is used for representing multimedia content. 
 It is a container that holds multimedia data. Each \textit{MLT frame object} contains a single uncompressed frame image and its associated audio samples. These frame objects can be processed individually, which allows the user to manipulate and transform multimedia content efficiently.
@@ -45,7 +47,7 @@ It is a container that holds multimedia data. Each \textit{MLT frame object} con
 
 
 A \textit{Producer} generates or provides data -- it produces the \textit{MLT frame objects}. 
-It reads data from files or other data sources. The \textit{Producer} serves as the starting point of the data processing pipeline in Melt. It retrieves the raw data and passes it on to other components, for example the \textit{Consumer}. This can be seen in Figure~\ref{fig:producer_consumer}.
+It reads data from files or other data sources. The \textit{Producer} serves as the starting point of the data processing pipeline. It retrieves the raw data and passes it on to other components, for example the \textit{Consumer}. This can be seen in Figure~\ref{fig:producer_consumer}.
 
 A \textit{Consumer} requests \textit{MLT frame objects} from the producer.
 It is responsible for consuming or processing the data that was produced by the \textit{Producer} or other components that are between the \textit{Producer} and \textit{Consumer}. 
@@ -62,14 +64,14 @@ The \textit{Consumer} represents the endpoint of the data processing pipeline an
 		% Arrows
 		\draw[->,>=stealth, line width=1.2pt] (producer) -- (consumer);
 	\end{tikzpicture}
-	\caption{Producer-Consumer Relationship in the Melt framework.}
+	\caption{Producer-Consumer Relationship in the MLT framework.}
 	\label{fig:producer_consumer}
 \end{figure}
 
-Applying filters in the Melt framework is a technique for manipulating multimedia content, including videos. 
-Melt filters can perform a wide range of operations, including colour correction, blurring, sharpening, cropping, resizing and many others. A list of the filters can be found on the Melt website and example applications of a wide selection of visual filters can be seen in Appendix~\ref{appendix:differentMeltFilter}~\cite{melt_filters}.
+Applying filters in the MLT framework is a technique for manipulating multimedia content, including videos. 
+MLT filters can perform a wide range of operations, including colour correction, blurring, sharpening, cropping, resizing and many others. A list of the filters can be found on the MLT website and example applications of a wide selection of visual filters can be seen in Appendix~\ref{appendix:differentMeltFilter}~\cite{melt_filters}.
 
-To apply a filter in Melt, a filter instance has to be created and its parameters have to contain the name of the filter and, if needed, the filter parameters and values for those.
+To apply a filter in MLT, a filter instance has to be created and its parameters have to contain the name of the filter and, if needed, the filter parameters and values for those.
 Filters are processing units that manipulate the multimedia data as it flows through the pipeline. They are placed between the producer and consumer, allowing them to modify the data before it reaches the consumer. This can be seen in Figure~\ref{fig:producer_filter_consumer}.
 
 
@@ -85,18 +87,18 @@ Filters are processing units that manipulate the multimedia data as it flows thr
 		\draw[->,>=stealth, line width=1.2pt] (producer) -- (filter);
 		\draw[->,>=stealth, line width=1.2pt] (filter) -- (consumer);
 	\end{tikzpicture}
-	\caption{Producer-Filter-Consumer Relationship in the Melt framework.}
+	\caption{Producer-Filter-Consumer Relationship in the MLT framework.}
 	\label{fig:producer_filter_consumer}
 \end{figure}
 
 
 
-\subsubsection*{Usage of the Melt framework}
+\subsubsection*{Usage of the MLT framework}
 
 
-In this Section, the usage of the Melt framework is explained with code examples and the explanation of those. This is based on the implemented code for this project, the code of the Melt framework and the Melt documentation~\cite{melt}.
+In this Section, the usage of the MLT framework is explained with code examples and the explanation of those. This is based on the implemented code for this project, the code of the MLT framework and the MLT documentation~\cite{melt}.
 
-The below described code structure refers to the creation of the necessary melt components to apply a filter.
+The below described code structure refers to the creation of the necessary MLT components to apply a filter.
 
 
 \begin{description}[font=\color{RedViolet!80!black}, style=nextline]
@@ -104,7 +106,7 @@ The below described code structure refers to the creation of the necessary melt 
 	%-----------------------------------------------
 	\item[Initialise the factory] 
 	
-	This command initialises the Melt factory, to set up the environment for creating and managing multimedia objects.
+	This command initialises the MLT factory, to set up the environment for creating and managing multimedia objects.
 	
 	\begin{lstlisting}[language=C, numbers=none, columns=fullflexible, belowskip=0pt, aboveskip=9pt]
 	mlt_factory_init(const char * directory); \end{lstlisting}
@@ -236,7 +238,7 @@ The below described code structure refers to the creation of the necessary melt 
 	\begin{lstlisting}[language=C, numbers=none, columns=fullflexible, belowskip=0pt, aboveskip=9pt]
 	mlt_consumer_start(mlt_consumer self);	\end{lstlisting}
 
-	The function \texttt{mlt\_consumer\_start()} initiates the consumer in the Melt framework. It takes the consumer object as a parameter. 
+	The function \texttt{mlt\_consumer\_start()} initiates the consumer in the MLT framework. It takes the consumer object as a parameter. 
 	
 	
 	
@@ -245,7 +247,7 @@ The below described code structure refers to the creation of the necessary melt 
 	%-----------------------------------------------
 	\item[Close the components]
 	
-	The following functions are responsible for closing the associated component within the Melt framework. These functions mark the end of a Melt process by closing and cleaning up resources.
+	The following functions are responsible for closing the associated component within the MLT framework. These functions mark the end of a MLT process by closing and cleaning up resources.
 	
 	\begin{lstlisting}[language=C, numbers=none, columns=fullflexible, belowskip=0pt, aboveskip=9pt]
 	mlt_consumer_close(mlt_consumer self); 
@@ -347,7 +349,7 @@ They allow data exchange and function execution across platforms and programming
 Java-based web services are commonly used in modern software development, due to the robustness and scalability of the Java platform for building distributed systems over the web.
 Web services enable machine-to-machine (M2M) interaction -- the communication and data exchange between devices or systems~\cite{webservice}.
 
-KDEN Live is a video editing software, that offers a wide range of features such as cutting, trimming and arranging video clips and adding effects, transitions and titles to videos. It also supports various file formats. KDEN Live is freely available, open-source and uses Melt as its backend~\cite{kdenlive}.
+KDEN Live is a video editing software, that offers a wide range of features such as cutting, trimming and arranging video clips and adding effects, transitions and titles to videos. It also supports various file formats. KDEN Live is freely available, open-source and uses the MLT framework as its backend~\cite{kdenlive}.
 
 
 
