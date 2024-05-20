@@ -106,7 +106,7 @@ In the following, different colours with their psychological associations are li
 \end{minipage}\begin{minipage}{0.05\textwidth}
 	\ 
 \end{minipage}\begin{minipage}{0.45\textwidth}
-	The colour red is often associated with intense emotions such as passion, excitement and danger. Viewing it on self or others has even been shown to increase the perception of aggressiveness and dominance~\cite{red_dominance}. Wearing the colour in sport competitions and events, red has been shown to enhance performance and the perceived performance~\cite{colour, red_sport}.
+	The colour red is often associated with intense emotions such as passion, excitement and danger. Viewing it in clothing on self or others has even been shown to increase the perception of aggressiveness and dominance~\cite{red_dominance}. When wearing the colour in sport competitions and events, red has been shown to enhance performance and the perceived performance~\cite{colour, red_sport}.
 	
 	In visual media, the use of red can evoke feelings of urgency, power and love. For example a video with flashes of red light may create a feeling of tension or alarm while a female wearing red can increase the perceived attraction~\cite{colour, red_romance}.
 	
@@ -262,21 +262,21 @@ positive associations with their products, because of its cheerful and optimisti
 
 
 
-
-
 %-----------------------------------------------------------------------------------
 \subsection{RGB Colour Representation}
 \label{subsection:RGB}
 
 
-RGB colour representation is a method to display colours on screens. It stands for Red, Green and Blue. 
+RGB colour representation is a model that attempts to mathematically represent colours as perceived by human vision. It stands for Red, Green and Blue. 
 Each of those colour channels (red, green and blue) has a value ranging from 0 to 255. When all three colours are at their maximum value with \texttt{(255,255,255)}, the outcome is white. On the contrary, when all three colour channels are at their minimum value with \texttt{(0,0,0}), the result is black.
-%
-The three colours are combined in with different values to create the broad spectrum of colours. The red, green and blue values use 8 bits each. This results in $16\ 777\ 216$ possible colours~\cite{colourRGB}.
+
+The RGB colour model combines three colours (red, green and blue) with different values to create the broad spectrum of colours. In Standard Dynamic Range (SDR), each of the red, green, and blue values uses 8 bits. This results in $16\ 777\ 216$ possible colours~\cite{colourRGB}. There are commercial video formats that also support High Dynamic Range (HDR) colour spaces, which can use 10 or even 12 bits per colour channel~\cite{Dolby}.
+
+% The three colours are combined in with different values to create the broad spectrum of colours. The red, green and blue values use 8 bits each. This results in $16\ 777\ 216$ possible colours~\cite{colourRGB}.
 
 
 
-For example the colour red can be created with mixing full red (255 in the red channel), no green (0 in the green channel) and no blue (0 in the blue channel). This leads to a pure red as \texttt{(255,0,0)}.
+As an example, the colour red can be created with mixing full red (255 in the red channel), no green (0 in the green channel) and no blue (0 in the blue channel). This leads to a pure red as \texttt{(255,0,0)}.
 This red can be adjusted by varying the values in the other colour channels. By decreasing the red value, tones such as a dark maroon with \texttt{(130,0,0)} can be achieved and with a higher red and green value a vibrant crimson with \texttt{(200,50,10)} can be achieved. On the other hand, by increasing blue while maintaining a high red channel, tones including scarlet \texttt{(255,40,0)} or coral \texttt{(255,120,80)} can be created. In addition to this, introducing equal amounts of green and blue alongside the high red value can transition the colour into a softer tone, such as rose \texttt{(255,150,150)}. The described colours can be seen in Figure~\ref{figure:RGBred}.
 
 
