@@ -327,12 +327,77 @@ For development and testing without the session service, JIT can be started in a
 
 
 The goal for this thesis project is the on-the-fly adjustment of the RGB values of a video with sliders in the frontend. 
-For this purpose, various MLT filters were examined and compared to identify the most suitable ones for implementing this functionality. 
+For this purpose, various MLT filters are examined and compared to identify the most suitable ones for implementing this functionality. 
 RGB colour representation was described in Section~\ref{subsection:RGB} and the MLT framework was described in Section~\ref{subsection:melt}.
 
-In Table~\ref{table:filter}, a selection of filters that influence the RGB representation of the video are listed. This includes the filter name, description and possible parameters that are listed on the MLT website~\cite{melt_filters}. Only parameters relevant to this thesis will be listed.
+
+Preselected for further investigation are filters from the MLT web page that contain the word \textit{color} or \textit{RGB} in the filter name~\cite{melt_filters}. In Table~\ref{table:many_filters}, a selection of filters with their name, description and a first evaluation for the suitability for the RGB adjustment are listed. Filters that are not suitable for the RGB adjustment are marked with the word \textit{Rejected} and a short reasoning for the rejecting. This does only refer to the use case of RGB adjustment with individual parameters for adjusting the RGB values.
+Three of the listed filters in the table are considered suitable for further analysis and comparison.
+
+%This includes the following filters: 
+%\texttt{av\-fil\-ter.\-col\-or\-bal\-ance}, 
+%\texttt{av\-fil\-ter.\-col\-or\-chan\-nel\-mix\-er},
+%\texttt{av\-fil\-ter.\-col\-or\-con\-trast},
+%\texttt{av\-fil\-ter.\-col\-or\-cor\-rect},
+%\texttt{av\-fil\-ter.\-col\-or\-hold},
+%\texttt{av\-fil\-ter.\-col\-or\-ize},
+%\texttt{av\-fil\-ter.\-col\-or\-key},
+%\texttt{av\-fil\-ter.\-col\-or\-lev\-els},
+%\texttt{av\-fil\-ter.\-col\-or\-ma\-trix},
+%\texttt{av\-fil\-ter.\-col\-or\-space},
+%\texttt{av\-fil\-ter.\-col\-or\-tem\-per\-ature},
+%\texttt{frei\-0r.\-col\-or\-adj\-\_RGB} and
+%\texttt{frei\-0r.\-col\-or\-ize}.
+%
+%The three filters \texttt{av\-fil\-ter.\-col\-or\-bal\-ance}, \texttt{av\-fil\-ter.\-col\-or\-chan\-nel\-mix\-er} and \texttt{frei\-0r.\-col\-or\-adj\_RGB} are selected for further analysis, because their capabilities align best with the requirements for RGB colour adjustment with sliders.
+
+
+
+\begin{table}[H]
+	\footnotesize
+	\begin{tabular}{lp{4.4cm}p{4.5cm}}
+	\toprule
+	Name & Description & Suitability \\ 
+	\midrule
+	
+	\texttt{avfilter.colorbalance} & Adjust the colour balance & Suitable for further investigation \\ 
+	
+	\texttt{avfilter.colorchannelmixer} & Adjust colours by mixing colour channels & Suitable for further investigation \\ 
+	
+	\texttt{avfilter.colorcontrast} & Adjust colour contrast between RGB components & Only contrast can be adjusted, not the RGB values \\ 
+	
+	\texttt{avfilter.colorcorrect} & Adjust colour white balance selectively for blacks and whites. & Rejected: Not suitable for RGB adjustment \\ 
+	
+	\texttt{avfilter.colorhold} & Turns a certain colour range into gray & Rejected: Not suitable for RGB adjustment \\ 
+	
+	\texttt{avfilter.colorize} & Overlay a solid colour on the video stream & Rejected: Input as hue, saturation and lightness instead of RGB values \\ 
+	
+	\texttt{avfilter.colorkey} & Turns a certain colour into transparency & Rejected: Not suitable for RGB adjustment \\ 
+	
+	\texttt{avfilter.colorlevels} & Adjust the colour levels with black point and white point & Rejected: Not suitable for RGB adjustment \\ 
+	
+	\texttt{avfilter.colormatrix} & Convert colour matrix & Rejected: Not suitable for RGB adjustment \\ 
+	
+	\texttt{avfilter.colorspace} & Convert between colour spaces & Rejected: Not suitable for RGB adjustment \\ 
+	
+	\texttt{avfilter.colortemperature} & Adjust colour temperature & Rejected: Not suitable for RGB adjustment \\ s
+	
+	\texttt{frei0r.coloradj\_RGB} & Simple colour adjustment & Suitable for further investigation \\ 
+	
+	\texttt{frei0r.colorize} & Colourizes image to selected hue, saturation, and lightness & Rejected: Input as hue, saturation and lightness instead of RGB values \\ 
+	\bottomrule
+	\end{tabular}
+	\caption[List of MLT filters that influence the colour of a video.]{List of different MLT filters that influence the colour of a video with their name, description and suitability for RGB adjustment~\cite{melt_filters}.}
+	\label{table:many_filters}
+\end{table}
+
+
+
+
+In Table~\ref{table:filter}, three filters that are considered as suitable for further investigation from the table above are listed. This includes the filter name, description and possible parameters that are listed on the MLT website~\cite{melt_filters}. Only parameters relevant to this thesis will be listed.
 Then, those filters were applied to compare the visual results of applying them. 
-The MLT filters \texttt{avfilter.colorbalance}, \texttt{avfilter\-.colorchannelmixer} and \texttt{frei0r\-.coloradj\_RGB} are selected for further analysis. They are listed with their description and parameters in Table~\ref{table:filter}, followed by a comparison of the visual results. Other MLT filters that change the visual appearance of the video can be seen in Appendix~\ref{appendix:differentMeltFilter}.
+% They are listed with their description and parameters in Table~\ref{table:filter}, followed by a comparison of the visual results.
+Other MLT filters that change the visual appearance of the video can be seen in Appendix~\ref{appendix:differentMeltFilter}.
 
 
 
@@ -381,7 +446,7 @@ The MLT filters \texttt{avfilter.colorbalance}, \texttt{avfilter\-.colorchannelm
 		\\
 		\bottomrule
 	\end{tabular}
-	\caption[List of MLT filters that influence the colour of a video.]{List of different MLT filters that influence the colour of a video with their name, description and parameters.}
+	\caption[List of preselected MLT filters that influence the colour of a video.]{List of preselected MLT filters that influence the colour of a video with their name, description and parameters~\cite{melt_filters}.}
 	\label{table:filter}
 \end{table}
 
@@ -410,7 +475,7 @@ The MLT filters \texttt{avfilter.colorbalance}, \texttt{avfilter\-.colorchannelm
 %\end{center}
 
 
-To introduce the listed filters and their parameters, the maximum value to adjust the red tones of the video will be tested and described. 
+To analyse the listed filters and their parameters, the maximum value to adjust the red tones of the video will be tested and described. 
 %
 In addition to this, it needs to be tested, if multiple parameters of the same filter can be applied simultaneously. For this evaluation, the filters with their different parameters for green and red are applied to the same frame of the test video file. Regarding the RGB colour model, this should result in a yellow toned output frame. The functionality of the RGB colour model was explained in Section~\ref{subsection:RGB}. 
 %
@@ -763,7 +828,7 @@ In this Section, the implementation is described. This is separated into three p
 \begin{minipage}{0.52\textwidth}
 In the frontend, input sliders for the user-sided adjustment of the RGB values are added below the already existing slider for the quality adjustment. This is located in the overlay windows in the top left corner. The sliders are coloured according to their associated functions in red, green and blue. This can be seen in Figure~\ref{figure:sliders}.
 
-The HTML code for the red slider can be seen below. The other sliders for green and blue work analogically. The input range is set between $-100$ and $100$, to divide it later by $100$ to achieve a float value between $-1$ and 
+The HTML code for the red slider can be seen below. The other sliders for green and blue work analogically. The input range is set between $-100$ and $100$, to divide it later by $100$ to achieve a float value between $-1$
 
 
 
@@ -781,8 +846,8 @@ The HTML code for the red slider can be seen below. The other sliders for green 
 \hfill
 \end{minipage}
 
-\vspace*{-1em}
-$1$ for the filter parameter. The default value is set to $0$. The input value from the slider then gets read out in a TypeScript file. 
+\vspace*{-1.1em}
+and $1$ for the filter parameter. The default value is set to $0$. The input value from the slider then gets read out in a TypeScript file. 
 
 
 \begin{lstlisting}[language=html, numbers=none]
