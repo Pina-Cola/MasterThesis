@@ -931,7 +931,7 @@ and blue. The input values of those sliders are read out and assigned to the enu
 
 
 \begin{minipage}{0.60\textwidth}
-	The application of the MLT filter is implemented in the \texttt{jit.c} file. To be able to apply multiple values for the three different colour channels at once, the command needs to be sent to MLT with all of the 
+	The application of the MLT filter is implemented in the \texttt{jit.c} file. One characteristic in the application of the MLT filter \texttt{avfilter.colorbalance} is the overwriting of not specifically applied parameters
 \end{minipage}\begin{minipage}{0.04\textwidth}
 	\ 
 \end{minipage}\begin{minipage}{0.36\textwidth}
@@ -941,9 +941,16 @@ and blue. The input values of those sliders are read out and assigned to the enu
 		float blue_value; \end{lstlisting}}
 	\vfill
 \end{minipage}
-\vspace*{0.1em}
+\vspace*{0.0em}
 
-according parameters set, else the other parameters will be overwritten with the default value $0$. This refers to the achieving of mixed colour results, including for example yellow, which can be created by adjusting the red and the green colour channel. The previous values for each colour channel need to be sent to the backend together with the changed value to prevent the overwriting of the already adjusted colours with the default value. This is implemented with initialising global variables for each of the colours that are set to the current value in each call. This can be seen in the code snippet above.
+with the default value of zero. The overwriting has to be considered when applying colours that have a non-zero RGB value for more than one colour channel. This refers to the achieving of mixed colour results, for example yellow, which can be created by adjusting the red and the green colour channel.
+%
+%To be able to apply multiple non-zero values for the three different colour channels at once, the command needs to be sent to MLT with all of the appropriate parameters set. 
+%Otherwise the other parameters will be overwritten with the default value $0$. 
+%This refers to the achieving of mixed colour results, including for example yellow, which can be created by adjusting the red and the green colour channel, meaning colours that have a non-zero RGB value for more than one of the three colour channels. 
+%If the filter is applied with a change in one of the RGB colour channels, the other two channels get overwritten by the default value of zero. 
+To avoid the overwriting and being able to apply a colour that consist of two or more non-zero values in the RGB channels, the previous values for each colour channel need to be saved in the backend. Then they can be applied together with the recently changed value to prevent the overwriting of the already adjusted colours with the default value. 
+For the implementation, global variables are initialized for each of the colours that are set to the current value in each call. This can be seen in the code snippet above and prevents the overwriting of the previously adjusted values with the default value of zero.
 
 The application of the MLT filter with the current input values from the sliders is implemented in the function \texttt{jit\_action()}, that has a MLT producer as a parameter. In the code below, the beginning of the function can be seen. The MLT properties, consumer and producer are retrieved and set. Then the filter \texttt{avfilter.colorbalance} is set. The comparison of the different filter options can be seen in Section~\ref{subsection:meltfilter}.
 

@@ -82,16 +82,15 @@ In this Section, the execution of the code is described and information regardin
 
 The codebase for this project consists of two directories: \texttt{Accurate-player-3-core} and \texttt{jit-webrtc}. The system's architecture is described in Section~\ref{section:designandimplementation}. Additionally, the READMEs of the two main components of the system can be seen in Appendix~\ref{appendix:readme}.
 %
-The files for the frontend code are in a directory that is called \texttt{accurate-player-3-core}. To execute the frontend, it needs to be navigated to the directory \texttt{demo} in \texttt{packages} and then \texttt{yarn start} needs to be executed with the parameter for the backend in the CLI:
+The files for the frontend code are in a directory that is called \texttt{accurate-player-3-core}. 
+For the execution of the frontend, it is necessary to navigate to the directory \texttt{demo} within the \texttt{packages} folder, followed by executing the \texttt{yarn start} command with the backend parameter in the command line interface (CLI):
 \begin{lstlisting}[language=bash, numbers=none, columns=fullflexible]
 	~/accurate-player-3-core/packages/demo$ JIT_BACKEND=http://localhost:8080 yarn start
-	
 \end{lstlisting}
 
 For updating dependencies during development, the following command should be executed and running in addition: 
 \begin{lstlisting}[language=bash, numbers=none, columns=fullflexible]
 	~/accurate-player-3-core/packages/jit$ yarn start
-	
 \end{lstlisting}
 
 
@@ -99,7 +98,6 @@ For updating dependencies during development, the following command should be ex
 To run the backend, the folder \texttt{jit-webrtc} needs to be accessed in the CLI to start the script \texttt{main.sh}, which starts the backend in a docker container and pulls the needed dependencies:
 \begin{lstlisting}[language=bash, numbers=none, columns=fullflexible]
 	~/jit-webrtc$ docker/main/main.sh -v --threads 16 --port 8080 https://s3.eu-central-1.amazonaws.com/accurate-player-demo-assets/timecode/sintel-2048-timecode-stereo.mp4
-	
 \end{lstlisting}
 
 The optional parameter \texttt{-v} (verbose) provides additional information or detailed output when executing the code. The threads and the port are set with the parameters \texttt{--threads} and \texttt{--port} and then the link to the test video file is added. This is the file that will then be played in the Accurate Player.
