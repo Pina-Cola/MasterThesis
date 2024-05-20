@@ -46,7 +46,7 @@
 	\subsection{Motivation} \label{subsection:motivation}
 	
 	
-	The colouring of a video can evoke different emotions and set an overall tone for the perception of the content. For instance, cool colours such as blue can convey cold weather, while warm colours such as yellow can create a feeling of warmth and sunlight. This can be seen in Figure~\ref{figure:coloursblueandyellow}.
+	The colouring of a video can evoke different emotions and set an overall tone for the perception of the content. For instance, cool colours such as blue can convey cold weather, while warm colours such as yellow can create a feeling of warmth and sunlight. A comparison of the same photo in different tones can be seen in Figure~\ref{figure:coloursblueandyellow}.
 	The colouring of a video is a powerful tool that can significantly impact the conveyed mood and atmosphere~\cite{colorgrading1, colorgrading2}.
 	
 	% TODO: Only use colograding2 and not 1?
@@ -68,13 +68,14 @@
 	%
 	The use-cases for on-the-fly adjustments of the video colour arise from different motivations. 
 	One of them is that each screen, ranging from computer monitors, TVs, smartphones and tablets to beamers, has unique characteristics that can influence the perceived colour palette. 
-	In addition to this, the light conditions can influence the appearance of the colours.
+	In addition, the light conditions can influence the appearance of the colours.
 	With real-time colour corrections, the user can adjust the colour and cancel out variations that are caused by the device or environment to have a consistent experience~\cite{screentype}.
 	
 	% Real-time colour grading is a solution that not only addresses the variability in device displays but also enables users to adjust the image according to their preferences.
 	%
 	Additionally, users with visual problems or specific colour perception might benefit from real-time colour grading to enhance the visibility and distinction of the on-screen elements. 
-	The increased accessibility can contribute to enhanced inclusivity and enable a diverse range of users to engage with the content~\cite{accessibility}.
+	% The increased accessibility can contribute to enhanced inclusivity and enable a diverse range of users to engage with the content~\cite{accessibility}.
+	The increased accessibility can improve inclusivity and enable a more diverse range of users to engage with the content~\cite{accessibility}.
 	
 	
 	
@@ -98,10 +99,11 @@
 	JIT is used for on-the-fly conversion of video files and optimising them for streaming. 
 	%This process includes the transformation of a video file, potentially one with non-web-friendly formats, into a more suitable format for the playback in web browsers.
 	The demand for efficient and dynamic video processing tools is increasing and with this, the ability to perform on-the-fly colour correction becomes increasingly valuable. 
-	
-	
-	The goal of this thesis is to explore the feasibility of implementing the video grading process with JIT, with the focus on real-time colour grading and to implement such a solution, if possible. This solution should contain three sliders in the frontend to adjust the individual RGB values: Red, green and blue. The colour adjustment should then be applied to the video output in real-time, while streaming the video.
 	This project lies in the area of multimedia processing, video editing and real-time computing and is done in cooperation with the company Codemill, which is introduced in Section~\ref{subsection:codemill}.
+	
+	
+	The aim of this thesis is to explore the feasibility of implementing the video grading process with JIT, with the focus on real-time colour grading and to implement such a solution, if possible. This solution should contain three sliders in the frontend to adjust the individual RGB values: Red, green and blue. The colour adjustment should then be applied to the video output in real-time, while streaming the video.
+
 	
 	
 	%The infrastructure of the system is visualized and explained in Chapter~\ref{section:designandimplementation}.
@@ -112,7 +114,7 @@
 		Is it possible to obtain colour-graded video results on the fly, meaning in real-time, using JIT and the MLT framework?
 	\end{researchbox}
 	
-	After answering this research question, the following question will be evaluated and answered:
+	If such an implementation is successful, the effectiveness of the grading process will be evaluated. A second research question is therefore: 
 	
 	\begin{researchbox}
 		Is there variation in the outcomes of filter applications across various applications with a MLT backend and the specified system?
@@ -122,7 +124,7 @@
 	The different applications for comparison, that use the MLT framework as a backend are the command line interface (CLI) video editor Melt and the video editing software KDEN Live. 
 	
 	
-	The aim of this thesis project is the contribution of insights into the technological and scientific aspects of real-time video processing, exploring the possibilities and potential applications introduced by using JIT and the MLT framework to implement colour grading. 
+	By answering the research questions above, this project aims to provide insights into the technological and scientific aspects of real-time video processing, exploring the possibilities and potential applications introduced by using JIT and the MLT framework to implement colour grading. 
 	
 	
 
