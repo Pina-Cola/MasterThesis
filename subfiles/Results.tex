@@ -224,14 +224,13 @@ One possible explanation for these differences in the extracted frames could be 
 
 
 % \vspace*{-1em}
-\begin{minipage}{0.58\textwidth}
+\begin{minipage}{0.54\textwidth}
 	
-	In this Section, the results of video colour grading using KDEN Live and the in Section~\ref{subsection:implementation} described implementation with JIT are compared. In Figure~\ref{figure:kdenlive_effects}, the list of categories for the available effects in KDEN Live can be seen. This includes the \textit{Color and Image correction} option, which will be examined in the following. The options for the RGB colour adjustment in KDEN Live are examined and the results are compared to the frames of the Accurate Player. With those results it can be seen, if KDEN Live uses the \texttt{avfilter.colorbalance} filter or a different 
-	
+	In this Section, the results of video colour grading using KDEN Live and the in Section~\ref{subsection:implementation} described implementation of the Accurate Player are compared. In Figure~\ref{figure:kdenlive_effects}, the list of categories for the available effects in KDEN Live can be seen. This includes the \textit{Color and Image correction} option, which will be examined in the following. The options for the RGB colour adjustment in KDEN Live are examined and the results are compared to the frames of the Accurate Player. With those results it can be seen, if KDEN Live uses the
 	
 \end{minipage}\begin{minipage}{0.04\textwidth}
 	\ 
-\end{minipage}\begin{minipage}{0.38\textwidth}
+\end{minipage}\begin{minipage}{0.42\textwidth}
 	\begin{figure}[H]
 		\begin{center}
 			\cutpic{0.3cm}{0.9\textwidth}{kdenlive_effects.png}
@@ -242,13 +241,11 @@ One possible explanation for these differences in the extracted frames could be 
 	\vfill
 \end{minipage}
 
-\vspace*{0.2em}
+% \vspace*{0.2em}
 
-filter for the adjustment of the RGB values. 
-The comparison of different filters is a difficult task, because it cannot be evaluated, which aspects of the results differ due to the different filters and which aspects are influenced by other aspects.
+\texttt{avfilter.colorbalance} filter that is being used in the Accurate Player or a different filter for the adjustment of the RGB values.
+The comparison of the results of platforms that use different filters and techniques for the achievment of RGB adjustment is a difficult task, because it cannot be evaluated which aspects of the results differ due to the differences in the filters and which aspects are influenced by other aspects.
 
-
-In the effect category \textit{Color and Image correction} in KDEN Live, different effects for colours can be found. The list of effects in this category can be seen in Figure~\ref{figure:kdenlive_effekte}. 
 
 
 % \vspace*{-0.3em}
@@ -269,12 +266,16 @@ In the effect category \textit{Color and Image correction} in KDEN Live, differe
 \end{minipage}\begin{minipage}{0.48\textwidth}
 %
 %
-Those effect options were examined and \textit{RGB adjustment} is the only effect, that is adjusting the colour of the produced video with RGB values. This adjustment is implemented with sliders for red, green and blue, similar to the user-sided RGB adjustment in the Accurate Player using JIT. The other effects in the list, that can be seen in Figure~\ref{figure:kdenlive_effekte}, are not adjusting the RGB colouring of the video.
-For example the effect \textit{3 point balance} might sound promising as well but refers to the adjustment of the values for black, gray and white.
+In the effect category \textit{Color and Image correction} in KDEN Live, different effects for colours can be found. The list of effects in this category can be seen in Figure~\ref{figure:kdenlive_effekte}. 
+Those effect options were examined and \textit{RGB adjustment} is the only effect, that is adjusting the colour of the produced video with RGB values. This adjustment is implemented with sliders for red, green and blue, similar to the user-sided RGB adjustment in the Accurate Player using JIT. The other effects
 
 \end{minipage}
 
-\vspace*{0.6em}
+%\vspace*{0.6em}
+
+in the list, that can be seen in Figure~\ref{figure:kdenlive_effekte}, are not adjusting the RGB colouring of the video.
+For example the effect \textit{3 point balance} might sound promising as well but refers to the adjustment of the values for black, gray and white.
+
 
 In Figure~\ref{figure:kdenlive_rgb}, the RGB colour sliders of the effect \textit{RGB adjustment} can be seen. As an additional parameter, the following different actions can be chosen: Change gamma, add constant and multiply. For each of those actions a comparison through colour subtraction with the \textit{grain extract} function in GIMP is performed. Those frames from KDEN Live are compared with the extracted frames from the Accurate Player, with the application of the filter \texttt{avfilter.colorbalance} in the backend.
 The frames were extracted from the Accurate Player through taking screenshots of the output and in KDEN Live the \textit{extract frame} function was used.
