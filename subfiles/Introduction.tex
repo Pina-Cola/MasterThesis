@@ -140,7 +140,7 @@
 	Codemill was founded in 2008 in Ume\aa \ (Sweden)~\cite{codemill_now, codemill_old}.
 	As of February 2024, they employ over 60 employees~\cite{codemill}. 
 	Codemill is an IT-Consulting company that focusses on the distribution of broadcast media. Their Accurate Video Player that is described in Section~\ref{subsection:accuratevideo}, is part of this thesis and a cloud native software that is being used by the world's leading studios, broadcasters and media service providers~\cite{codemill_linkedin, codemill_avp}.
-	The infrastructure of the system that this thesis evolves around is visualised and explained in Chapter~\ref{section:designandimplementation}.
+	The infrastructure of the Accurate Player, which is basis of this thesis, is visualised and explained in Chapter~\ref{section:designandimplementation}.
 	
 	
 	
@@ -212,7 +212,9 @@
 		%		
 		Furthermore, in \textit{Effects of color on emotions} from Patricia Valdez and Albert Mehrabian, emotional reactions to colours were investigated and attributes were assigned to specific colours that they are associated with~\cite{colour2}.
 		%
-		Understanding the effects of different colours is important for understanding the importance and effects of RGB adjustment and meeting the users needs and requirements, which is relevant for the implementation in this thesis project.
+		Understanding the effects of different colours is important for the motivation of this thesis and for meeting the users needs and requirements, which is relevant for the implementation in this thesis project.
+		
+
 		
 	
 		
@@ -252,7 +254,7 @@
 		%---------------------------------------------------------------------------------------------------
 		\item[Multimedia processing] 
 		
-		The topic of multimedia processing is widely spread and has many different areas. This resulted in many papers, standards and documentations being used as sources to be combined into the overall context of this thesis project. Individual references have been consulted for various components including WebRTC, JIT, video transcoding and other components, which are relevant for this thesis project.
+		The topic of multimedia processing is widely spread and has many different areas. This resulted in many papers, standards and documentations being used as sources to be combined into the overall context of this thesis project. Individual references have been consulted for various components including WebRTC, JIT and video transcoding, which are relevant for this thesis project.
 		
 		% This includes for example the IEEE standards and publications \textit{IEEE Transactions on Multimedia}, \textit{IEEE Standard for Learning Technology -- JavaScript Object Notation (JSON) Data Model Format and Representational State Transfer (RESTful) Web Service for Learner Experience Data Tracking and Access}, \textit{WebRTC technology overview and signaling solution design and implementation}, \textit{Overview of the H.264/AVC video coding standard} and \textit{Guided just-in-time transcoding for cloud-based video platforms}.~\cite{transcoding, IEEE_Rest, webrtc, h264, JIT_IEEE}
 		
@@ -286,13 +288,13 @@
 	%
 	The introduction (Chapter~\ref{section:introduction}) provides an overview of the thesis, including its motivation, research questions, related work and the structure.
 	%	
-	Chapter~\ref{section:theoreticalfoundationofcolour} contains the theoretical foundation of colour, including the differences between colour correction and grading and the different effects that different colours can have on a viewer. Furthermore, the representation of colours using RGB and the comparison of different colour saturations is described.
+	Chapter~\ref{section:theoreticalfoundationofcolour} contains the theoretical foundation of colour, including the differences between colour correction and grading and the effects that distinct colours can have on a viewer. Furthermore, the representation of colours using RGB and the comparison of different colour saturations is described.
 	%
-	In Chapter~\ref{section:technicalbackground} the technical background of the project is explained, including an in depth description of the structure and usage of the MLT framework. Additionally, an overview of video streaming components and additional components is given and protocol buffers are described.
+	In Chapter~\ref{section:technicalbackground} the technical background of the project is explained, including an in depth description of the structure and usage of the MLT framework. Additionally, an overview of video streaming components and additional components such as protocol buffers is given.
 	%	
 	Chapter~\ref{section:systemrequirementsandspecifications} outlines the system requirements and specifications for the system to be able to execute the code. Furthermore it is described how to execute the code.
 	%
-	The design and implementation of the on-the-fly RGB adjustment are described in Chapter~\ref{section:designandimplementation} . The architecture of the system is introduced, describing the frontend and backend of the system: Accurate Player and JIT-WebRTC. Additionally, different MLT filters for RGB adjustment are tested and compared. At the end of the Chapter the implementation of the RGB adjustment is described.
+	The design and implementation of the on-the-fly RGB adjustment are described in Chapter~\ref{section:designandimplementation}. The architecture of the system is introduced, describing the frontend and backend of the system: Accurate Player and JIT-WebRTC. Additionally, different MLT filters for RGB adjustment are tested and compared. At the end of the Chapter the implementation of the RGB adjustment is described.
 	%	
 	Chapter~\ref{section:experimentalevaluationanddiscussion} presents the comparison of video colour grading results with MLT filters that were applied on different platforms. The compared platforms are the Accurate Player RGB adjustment, that was implemented in this thesis project with the command line video editing tool Melt and the editing software KDEN Live.
 	%	

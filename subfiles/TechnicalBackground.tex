@@ -16,7 +16,7 @@
 \section{Technical Background} \label{section:technicalbackground}
 
 
-In this Chapter, the structure and usage of the MLT framework is explained and a brief overview of video streaming components and additional components is given. In addition to this, protocol buffers are introduced and explained with examples.
+In this Chapter, the structure and usage of the MLT framework is explained and a brief overview of video streaming components and additional components is given. Furthermore, protocol buffers are introduced and explained with examples.
 
 
 %---------------------------------
@@ -27,8 +27,8 @@ The MLT framework is a multimedia framework that can be used for video editing a
 
 
 
-A variety of tasks can be performed with MLT, including video editing, rendering, the application of filters on audio or video files and converting data between different formats. 
-This is useful in various areas, including film production, television broadcasting and digital content creation. 
+A variety of multimedia tasks can be performed with MLT, including video editing, rendering, the application of filters on audio or video files and converting data between different formats.
+The areas of applications include film production, television broadcasting and digital content creation. 
 Additionally, the MLT framework supports a wide range of media formats and codecs.
 
 
@@ -49,7 +49,7 @@ It is a container that holds multimedia data. Each \textit{MLT frame object} con
 A \textit{Producer} generates or provides data -- it produces the \textit{MLT frame objects}. 
 It reads data from files or other data sources. The \textit{Producer} serves as the starting point of the data processing pipeline. It retrieves the raw data and passes it on to other components, for example the \textit{Consumer}. This can be seen in Figure~\ref{fig:producer_consumer}.
 
-A \textit{Consumer} requests \textit{MLT frame objects} from the producer.
+A \textit{Consumer} requests \textit{MLT frame objects} from the \textit{Producer}.
 It is responsible for consuming or processing the data that was produced by the \textit{Producer} or other components that are between the \textit{Producer} and \textit{Consumer}. 
 The \textit{Consumer} represents the endpoint of the data processing pipeline and produces the final output or results.
 
@@ -69,10 +69,11 @@ The \textit{Consumer} represents the endpoint of the data processing pipeline an
 \end{figure}
 
 Applying filters in the MLT framework is a technique for manipulating multimedia content, including videos. 
-MLT filters can perform a wide range of operations, including colour correction, blurring, sharpening, cropping, resizing and many others. A list of the filters can be found on the MLT website and example applications of a wide selection of visual filters can be seen in Appendix~\ref{appendix:differentMeltFilter}~\cite{melt_filters}.
+MLT filters can perform a wide range of visual and audio operations, including colour correction, blurring, sharpening, cropping and resizing. A list of the filters can be found on the MLT website and example applications of a wide selection of visual filters can be seen in Appendix~\ref{appendix:differentMeltFilter}~\cite{melt_filters}.
 
-To apply a filter in MLT, a filter instance has to be created and its parameters have to contain the name of the filter and, if needed, the filter parameters and values for those.
-Filters are processing units that manipulate the multimedia data as it flows through the pipeline. They are placed between the producer and consumer, allowing them to modify the data before it reaches the consumer. This can be seen in Figure~\ref{fig:producer_filter_consumer}.
+
+To apply a filter in Melt, a filter instance has to be created. The filter instance has to contain the name of the filter and, if applicable, the filter parameters with corresponding values.
+Filters are processing units that manipulate the multimedia data as it flows through the data processing pipeline. They are placed between the producer and consumer, allowing them to modify the data before it reaches the consumer. A MLT data processing pipeline containing a filter is shown in Figure~\ref{fig:producer_filter_consumer}.
 
 
 
@@ -95,8 +96,8 @@ Filters are processing units that manipulate the multimedia data as it flows thr
 
 \subsubsection*{Usage of the MLT framework}
 
-
-In this Section, the usage of the MLT framework is explained with code examples. This is based on the implemented code for this project, the code of the MLT framework and the MLT documentation~\cite{melt}.
+In this Section, the usage of the Melt framework is explained with code examples. The function of each code segment is explained.
+This is based on the implemented code for this project, the code of the MLT framework and the MLT documentation~\cite{melt}.
 
 The code structure described below refers to the creation of the necessary MLT components to apply a filter.
 
@@ -151,7 +152,7 @@ The code structure described below refers to the creation of the necessary MLT c
 	\begin{lstlisting}[language=C, numbers=none, columns=fullflexible, belowskip=0pt, aboveskip=9pt]
 	mlt_properties properties = MLT_PRODUCER_PROPERTIES(producer); \end{lstlisting}
 	
-	The macro \texttt{MLT\_PRODUCER\_SERVICE} internally accesses the properties of the producer.
+	The macro \texttt{MLT\_PRODUCER\_PROPERTIES} internally accesses the properties of the producer.
 	
 	
 	
@@ -175,7 +176,7 @@ The code structure described below refers to the creation of the necessary MLT c
 	%-----------------------------------------------
 	\item[Create a filter] 
 	
-	In this command, a filter is created. The name of the filter is given as an argument in form of a String.
+	In this command, a filter is created. The name of the filter is given as an argument in form of a string.
 	
 	\begin{lstlisting}[language=C, numbers=none, columns=fullflexible, belowskip=0pt, aboveskip=9pt]
 	mlt_filter filter = mlt_factory_filter(mlt_profile profile, 
@@ -366,11 +367,11 @@ KDEN Live is a video editing software, that offers a wide range of features such
 \label{subsection:protocolbuffer}
 
 
-Protocol buffers are a binary data format developed by Google to compress data for sending it efficiently and fast over a network. The structure of this format is defined in a \texttt{.proto} file. Those files are used to generate code for reading and writing to the protocol buffer~\cite{protobuffer}.
+Protocol buffers are a binary data format developed by Google to compress data for sending it efficiently and fast over a network. The structure of this format is defined in a \texttt{.proto} file. The files are used to generate code for reading and writing to the protocol buffer~\cite{protobuffer}.
 
 
 
-In this project, protocol buffers version 2 (proto2) were used. In the first line of the \texttt{.proto} file, the syntax is defined with the proto version that is being used. This can be seen for proto2 in the following:
+In this project, protocol buffers version 2 (proto2) were used. In the first line of the \texttt{.proto} file, the syntax is defined with the proto version that is being used. As an example, the definition for proto2 is shown below.
 
 \begin{lstlisting}[style=protobufStyle, numbers=none]
 	syntax = "proto2";
@@ -382,7 +383,7 @@ In this project, protocol buffers version 2 (proto2) were used. In the first lin
 %---------------------------------------------------------------------------------------------------------
 \item[Messages and Fields] 
 
-Data structures are defined using message declarations. Messages can contain fields for the data, each with a unique identifier and a specified data type. The data types for proto2 can be seen in Table~\ref{table:proto2_data_types}~\cite{proto2_doc}.
+Data structures are defined using message declarations. Messages can contain fields for the data, each with a unique identifier and a specified data type. The data types for proto2 are listed in Table~\ref{table:proto2_data_types}~\cite{proto2_doc}.
 
 In the following, an example message is shown and described.
 The example message represents a person's information, including their name, age and email address. This is defined as follows:
