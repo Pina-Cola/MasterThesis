@@ -76,7 +76,7 @@ In this Section, the results of video colour grading using the CLI tool Melt and
 
 
 For the evaluation, a comparison between the results of Melt with the \texttt{avfilter.colorbalance} filter applied and the RGB adjustment in the Accurate Player with the sliders is made.
-For the tests, the red value is set to the maximum with the respective method and the results will be compared and analysed below. The results and comparisons of the colours green and blue perform analogical, which can be seen in Appendix~\ref{appendix:comparisonRGB}.
+For the tests, the red value is set to the maximum with the respective method and the results will be compared and analysed below. The results and comparisons of the colours green and blue perform analogical, which can be seen in Appendix~\ref{appendix:comparisonMelt}.
 %, assuming that the results of the green and blue value work analogical.
 The filter is applied and frame 343 of the short film \textit{Sintel} is extracted from both components. The results of Melt can be seen in Figure~\ref{figure:redMelt}, with the \texttt{avfilter.colorbalance} filter applied and the parameters for shadows, midtones and highlights set to the maximum of $1$ (\texttt{av.rs=1}, \texttt{av.rm=1} and \texttt{av.rh=1}).
 In comparison, the extracted frame from the Accurate Player frontend can be seen in Figure~\ref{figure:redAP}. This result is obtained by setting the red slider in the frontend onto the maximum value and leaving the sliders for green and blue on the default value, which corresponds to $0$ in the filter application in the backend. The maximum value of the red slider gets sent to the backend and is being applied for the parameters of the filter \texttt{avfilter.colorbalance}, setting the parameters for shadows, midtones and highlights to the maximum of $1$ (\texttt{av.rs=1}, \texttt{av.rm=1} and \texttt{av.rh=1}) as well.
@@ -289,7 +289,7 @@ The frames were extracted from the Accurate Player through taking screenshots of
 	\end{center}
 \end{figure}
 
-For the other additional parameters (\textit{keep luma}, \textit{alpha controlled} and \textit{luma formula}), the default values were used for this comparison. In the following, the RGB adjustment with the different actions are shown and analysed on the example of the colour red. The colours green and blue work analogical and can be found in Appendix~\ref{appendix:comparisonRGB}.
+For the other additional parameters (\textit{keep luma}, \textit{alpha controlled} and \textit{luma formula}), the default values were used for this comparison. In the following, the RGB adjustment with the different actions are shown and analysed on the example of the colour red. The colours green and blue work analogical and can be found in Appendix~\ref{appendix:comparisonKDENLive}.
 
 
 
