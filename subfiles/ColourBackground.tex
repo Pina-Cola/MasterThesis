@@ -36,7 +36,7 @@ In this Chapter, the terms colour correction and colour grading are introduced a
 
 
 Colour correction and colour grading are both processes used in film making, photography and digital art to adjust and enhance the colour of images or videos. 
-While they are related, they serve different purposes and are typically performed at different stages of production.
+While those two processes are related, they serve different purposes and are typically performed at different stages of production.
 %
 Colour correction aims to correct technical imperfections and achieve a natural-looking image, while colour grading focuses on enhancing the visual aesthetics and storytelling aspects~\cite{cc_cg_1, cc_cg_2}.
 
@@ -49,7 +49,7 @@ Colour grading, on the other hand, is the creative process of altering the colou
 Colour grading involves making stylistic choices to enhance the visual storytelling or the overall cinematic look or perception of the footage. It can involve manipulating individual colours, adjusting contrast, saturation and various other image manipulation techniques. Colour grading is often performed after colour correction and is considered a more artistic and subjective process. It allows film makers and photographers to establish a unique visual style and enhance the narrative impact of their work~\cite{cc_cg_1, cc_cg_2}.
 
 
-In summary, colour correction and colour grading serve different purposes and are performed at different stages of post-production. Colour correction ensures technical accuracy and consistency, while colour grading adds artistic components and enhances the visual storytelling and perception of the footage~\cite{cc1, cc_cg_1, cc_cg_2}.
+In summary, colour correction and colour grading serve different purposes and are performed at different stages of post-production. Colour correction ensures technical accuracy and consistency, while colour grading adds artistic components and enhances the visual storytelling and perception of the footage. Regarding the definition of these two processes, the RGB adjustment in this thesis project is classified as colour grading~\cite{cc1, cc_cg_1, cc_cg_2}.
 
 
 
@@ -98,7 +98,7 @@ In the following, different colours with their psychological associations are li
 	\begin{figure}[H]
 		\begin{center}
 			\cutpic{0.3cm}{\textwidth}{fliegenpilz.jpg}
-			\caption[Picture of an Amanita muscaria in Sweden with alarming red colour.]{Picture of a Amanita muscaria in Sweden with alarming red colour.}
+			\caption[Picture of an Amanita muscaria in Sweden with alarming red colour.]{Picture of a Amanita muscaria with alarming red colour.}
 			\label{figure:red}
 		\end{center}
 	\end{figure}
@@ -117,7 +117,7 @@ In the following, different colours with their psychological associations are li
 %\vspace*{-0.2em}
 \vspace*{-0.9em}
 in nature. One example of this is the toxic fly agaric mushroom (Amanita muscaria), which can be seen in Figure~\ref{figure:red}.
-The instinctual reaction to red is used in various contexts, including traffic signals and emergency exits, where the colour serves as a clear and universally understood signal.
+The instinctual reaction to red is used in various contexts, including traffic signals and emergency alarms, where the colour serves as a clear and universally understood signal~\cite{colour}.
 
 
 
@@ -146,7 +146,7 @@ The instinctual reaction to red is used in various contexts, including traffic s
 	\begin{figure}[H]
 		\begin{center}
 			\cutpic{0.3cm}{\textwidth}{lake.jpg}
-			\caption[Picture of a lake in Sweden with mainly blue tones.]{Picture of a lake in Sweden with mainly blue tones.}
+			\caption[Picture of a lake in Sweden with mainly blue tones.]{Picture of a lake with mainly blue tones.}
 			\label{figure:blue}
 		\end{center}
 	\end{figure}\hfill
@@ -168,7 +168,7 @@ evoke feelings of calmness or trustworthiness in certain contexts, it can also r
 	\begin{figure}[H]
 		\begin{center}
 			\cutpic{0.3cm}{\textwidth}{forest.jpg}
-			\caption[Picture of a forest in Sweden with mainly green tones.]{Picture of a forest in Sweden with mainly green tones.}
+			\caption[Picture of a forest in Sweden with mainly green tones.]{Picture of a forest with mainly green tones.}
 			\label{figure:green}
 		\end{center}
 	\end{figure}\hfill
@@ -218,7 +218,7 @@ evoke feelings of calmness or trustworthiness in certain contexts, it can also r
 	\begin{figure}[H]
 		\begin{center}
 			\cutpic{0.3cm}{\textwidth}{sunset.jpg}
-			\caption[Picture of a sunrise in Sweden with mainly yellow tones.]{Picture of a sunrise in Sweden with mainly yellow tones.}
+			\caption[Picture of a sunrise in Sweden with mainly yellow tones.]{Picture of a sunrise with mainly yellow tones.}
 			\label{figure:yellow}
 		\end{center}
 	\end{figure}\hfill
@@ -267,7 +267,7 @@ positive associations with their products, because of its cheerful and optimisti
 \label{subsection:RGB}
 
 
-RGB colour representation is a model that attempts to mathematically represent colours as perceived by human vision. It stands for Red, Green and Blue. 
+RGB colour representation is a model that attempts to mathematically represent colours as perceived by human vision. RGB stands for Red, Green and Blue. 
 Each of those colour channels (red, green and blue) has a value ranging from 0 to 255. When all three colours are at their maximum value with \texttt{(255,255,255)}, the outcome is white. On the contrary, when all three colour channels are at their minimum value with \texttt{(0,0,0}), the result is black.
 
 The RGB colour model combines three colours (red, green and blue) with different values to create the broad spectrum of colours. In Standard Dynamic Range (SDR), each of the red, green, and blue values uses 8 bits. This results in $16\ 777\ 216$ possible colours~\cite{colourRGB}. There are commercial video formats that also support High Dynamic Range (HDR) colour spaces, which can use 10 or even 12 bits per colour channel~\cite{Dolby}.
@@ -315,7 +315,7 @@ This red can be adjusted by varying the values in the other colour channels. By 
 
 
 
-Each pixel on a standard LCD display consists of three sub-pixels that each display one of the colours red, green or blue. By adjusting the intensity of each sub-pixel, a wide range of colours can be achieved. 
+Each pixel on a standard LCD display consists of three sub-pixels that each displays one of the colours red, green or blue. By adjusting the intensity of each sub-pixel, a wide range of colours can be achieved. 
 The RGB value of a pixel indicates the amount of each colour. This means if for example the red value is set to 0, the red sub-pixel is turned off. When the red value is set to 255, the red sub-pixel is turned fully on~\cite{colourRGB, lcd}.
 
 The RGB colour model is an additive colour model, which is the opposite to subtractive colour models that apply to paints and other substances where the colour reflects certain components of the light. 
@@ -371,7 +371,7 @@ In this Section, a method for analysing the differences between two images is ex
 This method in GIMP is called \textit{grain extract} and it subtracts the colour values of corresponding pixels from two images to show any differences. It is a visual representation of the colour subtraction process, where subtracting identical pixels from each other results in a grey image, indicating no differences~\cite{gimp}.
 
 
-When subtracting one image from another, the pixel values from one image are subtracted from the corresponding pixel values in the other image and an offset is added. 
+When subtracting one image from another, the RGB pixel values from one image are subtracted from the corresponding pixel values in the other image and an offset is added. 
 The result reflects the relative differences in the colour values between the two subtracted images. For example with the subtraction of two red toned images, areas where the subtracted image has a less intense red tone will result into red pixels after the subtraction and analogically, areas where the subtracted image has a more intense red tone will result into green or blue pixels in the result of the subtraction. The result of the subtracted pixels depends on the difference between the two colour values.
 
 
@@ -400,7 +400,7 @@ Two examples of the colour subtraction with different red values can be seen in 
 \end{figure}
 
 The calculation to retrieve the new RGB values is defined and explained in the following.
-Let $g$ be the \textit{grain extract} function in GIMP that adds 128 to two subtracted RGB values. The function is defined as follows:
+Let $g$ be the \textit{grain extract} function in GIMP that adds 128 to two subtracted RGB values. The input values as well as the result are ranging from $0$ and $255$. The function is defined as follows:
 %
 \begin{align*}
 	& g: [0, 255] \times [0, 255] \to [0, 255] \\

@@ -39,10 +39,10 @@ The topic of this thesis project is on multimedia processing in real-time, regar
 
 In this thesis, background knowledge on colour theory and representation (Chapter~\ref{section:theoreticalfoundationofcolour}) and the technical background, especially the structure and usage of the MLT framework were given. Additionally protocol buffers and other streaming components were introduced in Chapter~\ref{section:technicalbackground}.
 
-This thesis project explored two research questions. The first question aimed to evaluate the feasibility of the real-time colour grading with JIT and the MLT framework. The implementation as described in Chapter~\ref{section:designandimplementation} confirms that it was achievable. To select the most suitable MLT filter for the RGB adjustment, a comparison of different MLT filters was conducted. The selected filter is the \texttt{avfilter.colorbalance} filter, which can be used to adjust the RGB values of the highlights, midtones and shadows of a video individually.
+This thesis project explored two research questions. The first question aimed to evaluate the feasibility of the real-time colour grading with JIT and the MLT framework. The implementation as described in Chapter~\ref{section:designandimplementation} confirms that it was achievable. To select the most suitable MLT filter for the RGB adjustment, a comparison of different MLT filters was conducted. The selected filter is the \texttt{avfilter.colorbalance} filter, which can be used to adjust the RGB values of the highlights, midtones and shadows of a video individually and achieves the most vibrant and saturated results.
 
 
-The second research question considers the comparison of video colour grading results with MLT filters that were applied on different platforms. The compared platforms are the Accurate Player RGB adjustment, that was implemented in this thesis project with the Melt CLI tool and KDEN Live (Chapter~\ref{section:experimentalevaluationanddiscussion}).
+The second research question considers the comparison of video colour grading results with MLT filters that were applied on different platforms. The compared platforms are the Accurate Player that was implemented in this thesis project, the Melt CLI tool and KDEN Live (Chapter~\ref{section:experimentalevaluationanddiscussion}).
 %
 %
 %To evaluate the differences, frames of the different platforms were extracted and compared. 
@@ -155,7 +155,7 @@ With the implementation of options for advanced video processing tools, other op
 \subsubsection*{Improvements of the User Interface}
 
 
-Improvements of the user interface can be implemented to make the adjustment of the RGB colours more intuitive. This could involve a preview of the colour that is being created by adjusting the RGB sliders and then applied to the video. An example for this preview can be seen in Figure~\ref{figure:UI}.
+Improvements of the user interface can be implemented to make the adjustment of the RGB colours more intuitive. This could involve a preview of the colour that is being created by adjusting the RGB sliders and that is then applied to the video. An example for this preview can be seen in Figure~\ref{figure:UI}.
 To decide which changes in the user interface enhance the usability of the colour adjustment and feel intuitive for the user, extensive testing and user studies could be conducted.
 
 \begin{figure}[H]
@@ -188,7 +188,7 @@ In addition to this, the above described future work opportunities of implementi
 In this thesis project, the results of different methods of applying MLT filters were visually compared. Another interesting aspect is the comparison of the performance of those different methods. For this, the runtime as well as the memory usage could be interesting parameters to observe. 
 To ensure accuracy, a separate system or server would be needed, which should be isolated from other processes to prevent interference. Monitoring tools can be used to track the resource usage. 
 Those tests can be run on test cases that were developed to represent typical scenarios or more specialised test cases for information with specific restrictions and conditions.
-It would be interesting to vary parameters such as the video file simidtones or the amount of applied filters.
+It would be interesting to vary parameters such as the video file size or the amount of applied filters.
 This data can then be statistically analysed.
 
 
@@ -206,7 +206,7 @@ This data can then be statistically analysed.
 \subsubsection*{Audio Filter}
 
 This thesis project focuses on the application of visual filters to a video, especially the adjustment of the RGB values. Aside from this, audio processing plays a role in the processing of videos, too. Similar to the visual content, the audio can enhance the experience and evoke emotions in the viewer. Audio filters can also be used to improve the quality of the recorded audio for example by applying noise suppression or to add context to a scene by adding fitting surrounding noises. In addition to this, simple aspects including the volume or tone can be modified.
-The list of filters on the MLT website contains the available audio filters, too~\cite{melt}.
+The list of filters on the MLT website contains the available audio filters~\cite{melt}.
 The implementation of the audio filter integration is an interesting option for future work. To compare different audio filters, the according sound waves of a track could be read out and compared.
 
 

@@ -22,7 +22,7 @@ In this Chapter, the structure and usage of the MLT framework is explained and a
 %---------------------------------
 \subsection{MLT} \label{subsection:melt}
 
-The MLT framework is a multimedia framework that can be used for video editing and playback. It is written in C and provides a set of tools, libraries and services for handling multimedia content, including video and audio. Melt is the name of the command line tool, which exposes some functionality of the framework and was developed for testing the MLT framework~\cite{melt}. 
+The MLT framework is a multimedia framework that can be used for video editing and playback. It is written in C and provides a set of tools, libraries and services for handling multimedia content, including video and audio. Melt is the name of the command line tool, which exposes various functionality of the framework and was developed for testing the MLT framework~\cite{melt}. 
 
 
 
@@ -37,13 +37,13 @@ Additionally, the MLT framework supports a wide range of media formats and codec
 \subsubsection*{Structure of the MLT framework}
 
 
-In the following, the relevant components of the MLT framework's structure will be explained. This includes the documentation as well as the code of the framework~\cite{melt, melt_code}.
+In the following, the relevant components of the MLT framework's structure will be explained. This is based on the documentation as well as the code of the framework~\cite{melt, melt_code}.
 %
 \textit{Producer}, \textit{Consumer} and \textit{MLT frame objects} are fundamental components in the MLT framework.
 
 A \textit{MLT frame object} is a data structure that is used for representing multimedia content. 
 It is a container that holds multimedia data. Each \textit{MLT frame object} contains a single uncompressed frame image and its associated audio samples. These frame objects can be processed individually, which allows the user to manipulate and transform multimedia content efficiently.
-\textit{MLT frame objects} can store the multimedia data in various formats and they support metadata annotations, which allows to attach additional information or properties to the multimedia content. This includes filters, which are discussed in Section~\ref{subsection:meltfilter}.
+\textit{MLT frame objects} can store the multimedia data in various formats and they support metadata annotations, which allows to attach additional information or properties to the multimedia content. This includes filters for manipulating the content, which are discussed in Section~\ref{subsection:meltfilter}.
 
 
 A \textit{Producer} generates or provides data -- it produces the \textit{MLT frame objects}. 
@@ -97,7 +97,7 @@ Filters are processing units that manipulate the multimedia data as it flows thr
 \subsubsection*{Usage of the MLT framework}
 
 In this Section, the usage of the Melt framework is explained with code examples. The function of each code segment is explained.
-This is based on the implemented code for this project, the code of the MLT framework and the MLT documentation~\cite{melt}.
+This is based on the implemented code for this project, the code of the MLT framework and the MLT documentation~\cite{melt_code, melt}.
 
 The code structure described below refers to the creation of the necessary MLT components to apply a filter.
 
@@ -159,14 +159,14 @@ The code structure described below refers to the creation of the necessary MLT c
 	%-----------------------------------------------	
 	\item[Create a consumer] 
 	
-	This line creates a consumer object, that processes the data.
+	This line creates a consumer object that processes the data.
 	
 	\begin{lstlisting}[language=C, numbers=none, columns=fullflexible, belowskip=0pt, aboveskip=9pt]
 	mlt_consumer consumer = mlt_factory_consumer(mlt_profile profile, 
 																							const char* service, 
 																							const void* input); \end{lstlisting}
 																
-	The function \texttt{mlt\_factory\_consumer()} creates a consumer object, based on the provided parameter profile, service and optional input. If the service object is not specified, it defaults to \texttt{MLT\_CONSUMER}.
+	The function \texttt{mlt\_factory\_consumer()} creates a consumer object based on the provided parameter profile, service and optional input. If the service object is not specified, it defaults to \texttt{MLT\_CONSUMER}.
 											
 																
 	% TODO: seems to take properties as first parameter in codemill code? Is property and prfile the same?
@@ -176,7 +176,7 @@ The code structure described below refers to the creation of the necessary MLT c
 	%-----------------------------------------------
 	\item[Create a filter] 
 	
-	In this command, a filter is created. The name of the filter is given as an argument in form of a string.
+	In this command a filter is created. The name of the filter is given as an argument in form of a string.
 	
 	\begin{lstlisting}[language=C, numbers=none, columns=fullflexible, belowskip=0pt, aboveskip=9pt]
 	mlt_filter filter = mlt_factory_filter(mlt_profile profile, 
@@ -210,7 +210,7 @@ The code structure described below refers to the creation of the necessary MLT c
 	%-----------------------------------------------
 	\item[Connect elements] 
 	
-	Connect the filter to the producer and consumer to filter, if a filter is applied.
+	The filter is connected to the producer and the consumer to the filter, if a filter is applied.
 	
 	\begin{lstlisting}[language=C, numbers=none, columns=fullflexible, belowskip=0pt, aboveskip=9pt]
 	mlt_filter_connect(mlt_filter self, mlt_service producer, int index); \end{lstlisting}
@@ -273,7 +273,7 @@ The code structure described below refers to the creation of the necessary MLT c
 \subsection{Overview of Video Streaming Components}
 \label{subsection_OverviewVideoStreamingComponents}
 
-In this Section, an overview over video streaming components, that are relevant for this thesis project, is given.
+In this Section, an overview of video streaming components that are relevant for this thesis project is given.
 
 Transcoding is the conversion of one digital data format into another.
 One form of video transcoding is the compression of videos with h.264:
@@ -282,10 +282,10 @@ The video compression standard h.264 can be used to compress and decompress vide
 File formats such as Audio Video Interleave (AVI) often serve as input files for video transcoding processes.
 AVI can contain audio and video information to allow synchronised playback of audio and video components. 
 It is a container format, which means that it can contain multiple streams of audio and video data, along with other multimedia data such as subtitles.
-AVI files can undergo transcoding to optimise their compression, compatibility, or quality, with h.264 being a commonly used codec for such purposes~\cite{avi, h264}.
+AVI files can undergo transcoding to optimise their compression, compatibility or quality, with h.264 being a commonly used codec for such purposes~\cite{avi, h264}.
 
 
-WebRTC, is a free, open-source project for real-time communication between web browsers and other applications, that was developed by Google in 2011. It enables direct peer-to-peer (P2P) communication without the need for intermediary servers.
+WebRTC, is a free, open-source project for real-time communication between web browsers and other applications that was developed by Google in 2011. It enables direct peer-to-peer (P2P) communication without the need for intermediary servers.
 WebRTC supports various video codecs, including h.264, which is used for video conferencing, streaming and other real-time applications. This means, that the video streams exchanged between the browser and the backend are encoded and decoded using h.264~\cite{webrtc, h264}.
 
 
@@ -312,9 +312,9 @@ Representational State Transfer (REST) is an architecture for network applicatio
 
 
 	
-JIT or Just-In-Time, in the context of video streaming, refers to a dynamic software solution employed for real-time video transformation. 
+JIT or Just-In-Time in the context of video streaming refers to a dynamic software solution employed for real-time video transformation. 
 It is used for on-the-fly conversion of video files, optimising them for streaming. The process includes the transcoding of a video file, potentially one with non-web-friendly formats, into a more suitable format for the playback in web browsers.
-JIT operates by dynamically preprocessing of video content as it is requested by users, in contrast to pre-converting video files into formats that are suitable for streaming or browsers in advance. 
+JIT operates by dynamically preprocessing video content as it is requested by users. This is in contrast to the common technique of pre-converting video files into formats that are suitable for streaming or browsers in advance. 
 This approach allows for greater flexibility and efficiency, as it minimises the need for storage space and allows real-time adjustment such as the adjustment of the RGB colours that is implemented and described in this thesis project.
 Additionally, JIT allows to adjust video resolution, bitrate and other parameters in real-time to adapt the results to the user's bandwidth~\cite{JIT_IEEE}.
 
@@ -329,19 +329,19 @@ Additionally, JIT allows to adjust video resolution, bitrate and other parameter
 \label{subsection:overview_additional_components}
 
 
-This Section introduces additional components that are relevant for the system's functionality.
+This Section introduces additional components that are relevant for this thesis project.
 
 
 Docker is a platform that provides an isolated environment where applications can run. It enables the usage of these isolated environments, that are called containers.
-Those Docker containers can reduce the problems that arise from environmental discrepancies. This enables testing in local environments while enhancing the reliability and comparability~\cite{docker}.
+Those Docker containers can reduce the problems that arise from environmental discrepancies. Docker enables testing in local environments while enhancing the reliability and comparability~\cite{docker}.
 
 
 
-Node.js is a JavaScript runtime environment that enables the execution of JavaScript code outside of a web browser.
+Node.js is a JavaScript (JS) runtime environment that enables the execution of JavaScript code outside of a web browser.
 It enables developers to use JavaScript both on the client and server sides of web applications. 
 Node.js has an open-source community that contributes to its evolution. This community-driven development model has led to a big selection of modules and libraries~\cite{nodejs, RM_Frontend, ap3_docs}.
 %
-To manage project dependencies and packages for Node.js, package managers such as Yarn or Node Package Manager (npm) can be used. These package managers allow developers to install, update and manage libraries and tools used in the project, by providing a centralised repository of libraries and tools~\cite{RM_Frontend, npmyarn}.
+To manage project dependencies and packages for Node.js, package managers such as Yarn or Node Package Manager (npm) can be used. These package managers allow developers to install, update and manage libraries and tools used in projects by providing a centralised repository of libraries and tools~\cite{RM_Frontend, npmyarn}.
 
 
 
@@ -367,11 +367,11 @@ KDEN Live is a video editing software, that offers a wide range of features such
 \label{subsection:protocolbuffer}
 
 
-Protocol buffers are a binary data format developed by Google to compress data for sending it efficiently and fast over a network. The structure of this format is defined in a \texttt{.proto} file. The files are used to generate code for reading and writing to the protocol buffer~\cite{protobuffer}.
+Protocol buffers are a binary data format developed by Google to compress data for sending it efficiently over a network. The structure of this format is defined in a \texttt{.proto} file. The \texttt{.proto} files are used to generate code for reading and writing to the protocol buffer~\cite{protobuffer}.
 
 
 
-In this project, protocol buffers version 2 (proto2) were used. In the first line of the \texttt{.proto} file, the syntax is defined with the proto version that is being used. As an example, the definition for proto2 is shown below.
+In this project, protocol buffers version 2 (proto2) were used. In the first line of the \texttt{.proto} file, the syntax is defined with the proto version that is being used. As an example, the syntax for proto2 is shown below.
 
 \begin{lstlisting}[style=protobufStyle, numbers=none]
 	syntax = "proto2";
@@ -398,7 +398,7 @@ The example message represents a person's information, including their name, age
 
 Person is the label of the message and name, age and email are the fields of the message with the data types \texttt{string} and \texttt{int32}.
 The keywords \texttt{required} and \texttt{optional} define whether the field is mandatory or optional.
-The numbers $1$, $2$ and $3$ are the fields unique identifiers.
+The numbers $1$, $2$ and $3$ are the fields' unique identifiers.
 
 
 \begin{table}[H]

@@ -102,13 +102,14 @@
 	This project lies in the area of multimedia processing, video editing and real-time computing and is done in cooperation with the company Codemill, which is introduced in Section~\ref{subsection:codemill}.
 	
 	
-	The aim of this thesis is to explore the feasibility of implementing the video grading process with JIT, with the focus on real-time colour grading and to implement such a solution, if possible. This solution should contain three sliders in the frontend to adjust the individual RGB values: Red, green and blue. The colour adjustment should then be applied to the video output in real-time, while streaming the video.
-
-	
-	
+	The aim of this thesis is to explore the feasibility of implementing the video colour grading process with JIT, with the focus on real-time colour grading and to implement such a solution, if possible. This solution should contain three sliders in the frontend to adjust the individual RGB values: Red, green and blue. The colour adjustment should then be applied to the video output in real-time, while streaming the video.
+	%
+	%
+	%
 	%The infrastructure of the system is visualized and explained in Chapter~\ref{section:designandimplementation}.
-	
-	The project aims to address the feasibility and effectiveness of implementing video colour correction using JIT in the context of real-time video streaming. The following question is relevant:
+	%
+	%The project aims to address the feasibility and effectiveness of implementing video colour correction using JIT in the context of real-time video streaming. 
+	The following question is relevant:
 	
 	\begin{researchbox}
 		Is it possible to obtain colour-graded video results on the fly, meaning in real-time, using JIT and the MLT framework?
@@ -121,7 +122,7 @@
 	\end{researchbox}
 
 
-	The different applications for comparison, that use the MLT framework as a backend are the command line interface (CLI) video editor Melt and the video editing software KDEN Live. 
+	The different applications for the comparison that use the MLT framework as a backend are the command line interface (CLI) video editor Melt and the video editing software KDEN Live. 
 	
 	
 	By answering the research questions above, this project aims to provide insights into the technological and scientific aspects of real-time video processing, exploring the possibilities and potential applications introduced by using JIT and the MLT framework to implement colour grading. 
@@ -139,8 +140,8 @@
 	
 	Codemill was founded in 2008 in Ume\aa \ (Sweden)~\cite{codemill_now, codemill_old}.
 	As of February 2024, they employ over 60 employees~\cite{codemill}. 
-	Codemill is an IT-Consulting company that focusses on the distribution of broadcast media. Their Accurate Video Player that is described in Section~\ref{subsection:accuratevideo}, is part of this thesis and a cloud native software that is being used by the world's leading studios, broadcasters and media service providers~\cite{codemill_linkedin, codemill_avp}.
-	The infrastructure of the Accurate Player, which is basis of this thesis, is visualised and explained in Chapter~\ref{section:designandimplementation}.
+	Codemill is an IT-Consulting company that focusses on the distribution of broadcast media. Their Accurate Video Player that is described in Section~\ref{subsection:accuratevideo}, is part of this thesis and it is a cloud native software that is being used by the world's leading studios, broadcasters and media service providers~\cite{codemill_linkedin, codemill_avp}.
+	The infrastructure of the Accurate Player and its backend components, which are basis of this thesis, are visualised and explained in Chapter~\ref{section:designandimplementation}.
 	
 	
 	
@@ -158,7 +159,7 @@
 	
 	The topic of this thesis project spans across various fields. 
 	Due to this, the related work is dispersed among these fields, highlighting the interdisciplinarity of the topic.
-	The fields that are relevant for this project include colour representation, colour grading, multimedia processing, video streaming, the MLT framework, protocol buffers and the comparison of different colour saturations with GIMP.
+	The areas that are relevant for this project include colour representation, colour grading, multimedia processing, video streaming, the MLT framework, protocol buffers and the comparison of different colour saturations with GIMP.
 
 	
 	\begin{description}[font=\color{RedViolet!80!black}, style=nextline]
@@ -180,7 +181,7 @@
 		
 		The book \textit{The Book of GIMP: A Complete Guide to Nearly Everything} by Olivier Lecarme and Karine Delvare describes nearly every function in GNU Image Manipulation Program (GIMP)~\cite{gimp}.
 		%
-		This includes the \textit{grain extract} function, that is relevant for the MLT filter comparison between different platforms in this thesis project.
+		This includes the \textit{grain extract} function that is relevant for the MLT filter comparison between different platforms in this thesis project.
 		%
 		Furthermore, understanding techniques for evaluating and editing media content is important within the realm of multimedia processing.
 		
@@ -208,9 +209,9 @@
 		\item[Effects of different colour]
 		
 		
-		The paper \textit{Color and psychological functioning: a review of theoretical and empirical work} from Andrew J. Elliot discussed theoretical insights and empirical findings on the psychological effect of colours~\cite{colour}.
+		The paper \textit{Color and psychological functioning: a review of theoretical and empirical work} from Andrew J. Elliot discusses theoretical insights and empirical findings on the psychological effect of colours~\cite{colour}.
 		%		
-		Furthermore, in \textit{Effects of color on emotions} from Patricia Valdez and Albert Mehrabian, emotional reactions to colours were investigated and attributes were assigned to specific colours that they are associated with~\cite{colour2}.
+		Furthermore, in \textit{Effects of color on emotions} from Patricia Valdez and Albert Mehrabian, emotional reactions to colours are investigated and attributes are assigned to specific colours that they are associated with~\cite{colour2}.
 		%
 		Understanding the effects of different colours is important for the motivation of this thesis and for meeting the users needs and requirements, which is relevant for the implementation in this thesis project.
 		
@@ -244,7 +245,7 @@
 		%---------------------------------------------------------------------------------------------------
 		\item[Protocol buffer] 
 		
-		The Chapter \textit{Proto Buffer} in the book \textit{Mobile Forensics -- The File Format Handbook: Common File Formats and File Systems Used in Mobile Devices} by Chris Currier introduces and discusses the topic of protocol buffers. This is relevant for the data transfer from the frontend to the MLT framework in the implementation for this thesis project~\cite{protobuffer}.
+		The Chapter \textit{Proto Buffer} in the book \textit{Mobile Forensics -- The File Format Handbook: Common File Formats and File Systems Used in Mobile Devices} by Chris Currier introduces and discusses the topic of protocol buffers~\cite{protobuffer}. This is relevant for the data transfer from the frontend to the MLT framework in the implementation for this thesis project.
 		
 		
 		
@@ -288,15 +289,15 @@
 	%
 	The introduction (Chapter~\ref{section:introduction}) provides an overview of the thesis, including its motivation, research questions, related work and the structure.
 	%	
-	Chapter~\ref{section:theoreticalfoundationofcolour} contains the theoretical foundation of colour, including the differences between colour correction and grading and the effects that distinct colours can have on a viewer. Furthermore, the representation of colours using RGB and the comparison of different colour saturations is described.
+	Chapter~\ref{section:theoreticalfoundationofcolour} contains the theoretical foundation of colour, including the differences between colour correction and colour grading and the effects that distinct colours can have on the viewer. Furthermore, the representation of colours using RGB and the comparison of different colour saturations is described.
 	%
 	In Chapter~\ref{section:technicalbackground} the technical background of the project is explained, including an in depth description of the structure and usage of the MLT framework. Additionally, an overview of video streaming components and additional components such as protocol buffers is given.
 	%	
-	Chapter~\ref{section:systemrequirementsandspecifications} outlines the system requirements and specifications for the system to be able to execute the code. Furthermore it is described how to execute the code.
+	Chapter~\ref{section:systemrequirementsandspecifications} outlines the requirements and specifications for the system to be able to execute the code. Furthermore it is described how to execute the code.
 	%
 	The design and implementation of the on-the-fly RGB adjustment are described in Chapter~\ref{section:designandimplementation}. The architecture of the system is introduced, describing the frontend and backend of the system: Accurate Player and JIT-WebRTC. Additionally, different MLT filters for RGB adjustment are tested and compared. At the end of the Chapter the implementation of the RGB adjustment is described.
 	%	
-	Chapter~\ref{section:experimentalevaluationanddiscussion} presents the comparison of video colour grading results with MLT filters that were applied on different platforms. The compared platforms are the Accurate Player RGB adjustment, that was implemented in this thesis project with the command line video editing tool Melt and the editing software KDEN Live.
+	Chapter~\ref{section:experimentalevaluationanddiscussion} presents the comparison of video colour grading results with MLT filters that were applied on different platforms. The comparison is between the Accurate Player RGB adjustment, that was implemented in this thesis project, the command line video editing tool Melt and the editing software KDEN Live.
 	%	
 	The conclusion in Chapter~\ref{section:conclusion} summarises the results, contributions and limitations of the thesis project and introduces future work opportunities.
 		

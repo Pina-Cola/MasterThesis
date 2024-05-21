@@ -54,7 +54,7 @@ The Python backend communicates with the MLT framework to use its video editing,
 \end{figure}
 
 
-For development and testing without the session service, the backend can be started in a Docker container. This has been done for the implementation for this thesis project.
+For development and testing without the session service, the backend can be started in a Docker container. This has been done for the implementation of this thesis project.
 
 
 
@@ -68,7 +68,7 @@ For development and testing without the session service, the backend can be star
 
 The following description of the system is based on the code base and the information from the \texttt{README} file~\cite{RM_Frontend}.
 %
-The frontend is displayed in the browser and uses Node.js as its runtime environment with Yarn to manage project dependencies and packages. It is developed using HyperText Markup Language (HTML), Cascading Style Sheets (CSS) and JavaScript (JS) to create the user interface.
+The frontend is displayed in the browser and uses Node.js as its runtime environment with Yarn to manage project dependencies and packages. It is developed using HyperText Markup Language (HTML), Cascading Style Sheets (CSS) and JavaScript to create the user interface (UI).
 
 
 \begin{figure}[H]
@@ -212,7 +212,7 @@ Data written to \texttt{stdout} by the Python code can be captured or redirected
 \end{figure}
 
 
-As a response, the MLT framework sends an AVI stream with the rendered video and audio, status messages and metadata to the Python backend. This is highlighted in Section~\ref{figure:avimetadata}.
+As a response, the MLT framework sends an AVI stream with the rendered video and audio, status messages and metadata to the Python backend. This is highlighted in Figure~\ref{figure:avimetadata}.
 AVI is a file format that can contain audio and video information to allow synchronised playback of audio and video components, as described in Section~\ref{subsection_OverviewVideoStreamingComponents}~\cite{avi}. 
 
 \begin{figure}[H]
@@ -233,7 +233,7 @@ The audio and video from the incoming AVI stream is extracted by the \texttt{mai
 
 
 The JavaScript client of the browser receives the video and audio to play it in the Accurate Player, which was described in Section~\ref{subsection:accuratevideo}. In addition to this, the browser
-receives metadata from the \texttt{main.py} script and sends commands and responses over the control channel. This connection can be seen in Figure~\ref{figure:videoaudio}.
+receives metadata from the \texttt{main.py} script and sends commands and responses over the control channel. This connection is highlighted in Figure~\ref{figure:videoaudio}.
 
 
 \begin{figure}[H]
@@ -326,12 +326,12 @@ For development and testing without the session service, JIT can be started in a
 
 
 
-The goal for this thesis project is the on-the-fly adjustment of the RGB values of a video with sliders in the frontend. 
-For this purpose, various MLT filters are examined and compared to identify the most suitable ones for implementing this functionality. 
+The goal for this thesis project is the on-the-fly adjustment of the RGB values of videos with sliders in the frontend. 
+For this purpose, various MLT filters are examined and compared to identify the most suitable one for implementing this functionality. 
 RGB colour representation was described in Section~\ref{subsection:RGB} and the MLT framework was described in Section~\ref{subsection:melt}.
 
 
-Preselected for further investigation are filters from the MLT web page that contain the word \textit{color} or \textit{RGB} in the filter name~\cite{melt_filters}. In Table~\ref{table:many_filters}, a selection of filters with their name, description and a first evaluation for the suitability for the RGB adjustment are listed. Filters that are not suitable for the RGB adjustment are marked with the word \textit{Rejected} and a short reasoning for the rejecting. This does only refer to the use case of RGB adjustment with individual parameters for adjusting the RGB values.
+Preselected for further investigation are filters from the MLT web page that contain the word \textit{color} or \textit{RGB} in the filter name~\cite{melt_filters}. In Table~\ref{table:many_filters}, a selection of filters with their name, description and a first evaluation for the suitability for the RGB adjustment are listed. Filters that are not suitable for the RGB adjustment are marked with the word \textit{Rejected} and a short reasoning for the rejection. This does only refer to the use case of RGB adjustment with individual parameters for adjusting the RGB values.
 Three of the listed filters in the table are considered suitable for further analysis and comparison.
 
 %This includes the following filters: 
@@ -364,7 +364,7 @@ Three of the listed filters in the table are considered suitable for further ana
 	
 	\texttt{avfilter.colorchannelmixer} & Adjust colours by mixing colour channels & Suitable for further investigation \\ 
 	
-	\texttt{avfilter.colorcontrast} & Adjust colour contrast between RGB components & Only contrast can be adjusted, not the RGB values \\ 
+	\texttt{avfilter.colorcontrast} & Adjust colour contrast between RGB components & Only contrast can be adjusted, not the RGB values individually \\ 
 	
 	\texttt{avfilter.colorcorrect} & Adjust colour white balance selectively for blacks and whites. & Rejected: Not suitable for RGB adjustment \\ 
 	
@@ -380,7 +380,7 @@ Three of the listed filters in the table are considered suitable for further ana
 	
 	\texttt{avfilter.colorspace} & Convert between colour spaces & Rejected: Not suitable for RGB adjustment \\ 
 	
-	\texttt{avfilter.colortemperature} & Adjust colour temperature & Rejected: Not suitable for RGB adjustment \\ s
+	\texttt{avfilter.colortemperature} & Adjust colour temperature & Rejected: Not suitable for RGB adjustment \\
 	
 	\texttt{frei0r.coloradj\_RGB} & Simple colour adjustment & Suitable for further investigation \\ 
 	
@@ -479,7 +479,7 @@ To analyse the listed filters and their parameters, the maximum value to adjust 
 %
 In addition to this, it needs to be tested, if multiple parameters of the same filter can be applied simultaneously. For this evaluation, the filters with their different parameters for green and red are applied to the same frame of the test video file. Regarding the RGB colour model, this should result in a yellow toned output frame. The functionality of the RGB colour model was explained in Section~\ref{subsection:RGB}. 
 %
-In the following comparison, the adjustment of all three colour channels (red, green and blue) will be presented.
+In the evaluation of the comparison, the adjustment of all three colour channels (red, green and blue) will be presented for completeness.
 
 For the purpose of evaluating and comparing, two frames were selected from the example video file of the short film \textit{Sintel}. Each of those frames has a distinct colour scheme. One frame shows a snow landscape and the \textit{Blender Institute Production} text, while the other frame shows an elderly man in a warm lighted indoor setting. The original frames $343$ and $3377$ can be seen in Figure~\ref{figure:nofilter} for reference.
 
@@ -501,7 +501,7 @@ For the purpose of evaluating and comparing, two frames were selected from the e
 %\end{lstlisting}
 
 
-In the following, the filter application and parameters of each filter are introduced and described with the example of the adjustment of the colour red.
+In the following, the filter application and parameters of each filter are introduced and described with the example of the adjustment of the colours red and yellow.
 
 
 
@@ -519,7 +519,7 @@ In the following, the filter application and parameters of each filter are intro
 %--------------------------------------------------------------------------------------
 \subsubsection*{Filter \texttt{avfilter.colorbalance}}
 
-The parameters of the filter \texttt{avfilter.colorbalance} take input values as a floats between $-1$ and $1$. The filter has individual parameters to set the shadows, midtones and highlights per colour (red, green and blue). The results of the different parameters set on the maximum value of $1$ for adjusting the red shadows with \texttt{av.rs=1}, the red midtones with \texttt{av.rm=1} and the red highlights with \texttt{av.rg=1} can be seen in Figure~\ref{figure:rs1rm1rh1}.
+The parameters of the filter \texttt{avfilter.colorbalance} take input values as a float between $-1$ and $1$. The filter has individual parameters to set the shadows, midtones and highlights per colour (red, green and blue). The results of the different parameters set on the maximum value of $1$ for adjusting the red shadows with \texttt{av.rs=1}, the red midtones with \texttt{av.rm=1} and the red highlights with \texttt{av.rg=1} can be seen in Figure~\ref{figure:rs1rm1rh1}.
 
 \begin{figure}[H]
 	\begin{center}
@@ -542,7 +542,7 @@ The parameters of the filter \texttt{avfilter.colorbalance} take input values as
 	\end{center}
 \end{figure}
 
-To achieve an even colouring result of the frame, which would be applicable for a colour change with one slider per colour, the parameters for the shadows, midtones and highlights can be adjusted simultaneously when adjusting one colour. In Figure~\ref{figure:rsrmrh1}, the shadows, midtones and highlights for the red value are set to $1$. 
+To achieve an even colouring result of the frames, which would be applicable for a colour change with one slider per colour, the parameters for the shadows, midtones and highlights can be adjusted simultaneously when adjusting one colour. In Figure~\ref{figure:rsrmrh1}, the shadows, midtones and highlights for the red value are set to $1$. 
 
 \begin{figure}[H]
 	\begin{center}
@@ -554,7 +554,7 @@ To achieve an even colouring result of the frame, which would be applicable for 
 \end{figure}
 
 To assess the effects of the combined colour adjustment of multiple colours, the values for green and red (shadows, midtones and highlights) are set to the maximum of $1$ and applied simultaneously. The parameters that are applied for this evaluation are \texttt{av.rs=1}, \texttt{av.rm=1}, \texttt{av.rh=1}, \texttt{av.gs=1}, \texttt{av.gm=1} and \texttt{av.gh=1}.
-This results in yellow toned pictures, that can be seen in Figure~\ref{figure:cb_yellow}.
+This results in yellow toned pictures, that can be seen in Figure~\ref{figure:cb_yellow}, which shows that the combination of different RGB values into mixed colours is possible with the filter \texttt{avfilter.colorbalance}.
 
 
 \begin{figure}[H]
@@ -583,6 +583,8 @@ This results in yellow toned pictures, that can be seen in Figure~\ref{figure:cb
 \subsubsection*{Filter \texttt{avfilter.colorchannelmixer}}
 
 The parameters of the filter \texttt{avfilter.colorchannelmixer} take input values as floats between $-2$ and $2$. The filter has individual parameters to set the red, green, blue or alpha gain for the red, green, blue or alpha channel. The application of the maximum value of 2 for the red gain on the red channel, alpha gain on the red channel and red gain on the alpha channel can be seen in Figure~\ref{figure:rrraar}.
+%
+Only the left frames with the parameter \texttt{av.rr=2} for the maximum red gain on the red channel show a relevant result for the RGB adjustment, because the other frames do not show a visible increase in red tones or a red tint.
 
 \begin{figure}[H]
 	\begin{center}
@@ -606,7 +608,7 @@ The parameters of the filter \texttt{avfilter.colorchannelmixer} take input valu
 \end{figure}
 
 
-Additionally, in Figure~\ref{figure:rrbrgr}, the red gain on the red, blue and green channel is applied simultaneously. The parameter settings for this are \texttt{av.rr=2}, \texttt{av.gr=2} and \texttt{av.br=2}.
+For further investigation of the filter \texttt{avfilter.colorchannelmixer}, in Figure~\ref{figure:rrbrgr} the red gain on the red, blue and green channel is applied simultaneously. The parameter settings for this are \texttt{av.rr=2}, \texttt{av.gr=2} and \texttt{av.br=2}. This is not suitable for the RGB adjustment, because the red tones in those frames are not increased.
 
 
 \begin{figure}[H]
@@ -641,7 +643,7 @@ This results in yellow toned pictures, that can be seen in Figure~\ref{figure:rr
 %--------------------------------------------------------------------------------------
 \subsubsection*{Filter \texttt{frei0r.coloradj\_RGB}}
 
-The parameters of the filter \texttt{frei0r.coloradj\_RGB} take input values as floats between $0$ and $1$. The filter has individual parameters to set the red, green, blue value for RGB adjustment. The application of the red parameter with the maximum value of $1$ can be seen in Figure~\ref{figure:r}.
+The parameters of the filter \texttt{frei0r.coloradj\_RGB} take input values as floats between $0$ and $1$. The filter has individual parameters to set the red, green and blue value for RGB adjustment. The application of the red parameter with the maximum value of $1$ can be seen in Figure~\ref{figure:r}.
 
 
 \begin{figure}[H]
@@ -950,7 +952,7 @@ with the default value of zero. The overwriting has to be considered when applyi
 %This refers to the achieving of mixed colour results, including for example yellow, which can be created by adjusting the red and the green colour channel, meaning colours that have a non-zero RGB value for more than one of the three colour channels. 
 %If the filter is applied with a change in one of the RGB colour channels, the other two channels get overwritten by the default value of zero. 
 To avoid the overwriting and being able to apply a colour that consist of two or more non-zero values in the RGB channels, the previous values for each colour channel need to be saved in the backend. Then they can be applied together with the recently changed value to prevent the overwriting of the already adjusted colours with the default value. 
-For the implementation, global variables are initialized for each of the colours that are set to the current value in each call. This can be seen in the code snippet above and prevents the overwriting of the previously adjusted values with the default value of zero.
+For the implementation, global variables are initialized for each of the colours and one of them are set to the current value in each call, while the other two store the previous values for the other colours. This can be seen in the code snippet above and prevents the overwriting of the previously adjusted values with the default value of zero.
 
 The application of the MLT filter with the current input values from the sliders is implemented in the function \texttt{jit\_action()}, that has a MLT producer as a parameter. In the code below, the beginning of the function can be seen. The MLT properties, consumer and producer are retrieved and set. Then the filter \texttt{avfilter.colorbalance} is set. The comparison of the different filter options can be seen in Section~\ref{subsection:meltfilter}.
 
