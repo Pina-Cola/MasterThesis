@@ -449,12 +449,38 @@ In Figure~\ref{figure:multiplygimp}, the subtraction of the Accurate Player fram
 
 
 
+%-------------------------------------------------------------------------------------------------------
+\subsubsection*{Evaluation KDEN Live}
 
-\begin{itemize}
-	\item Same frames as original video
-	\item Looks similar to filter \texttt{frei0r.coloradj\_RGB}
-	\item KDEN Live Code
-\end{itemize}
+
+
+%\begin{itemize}
+%	\item Same frames as original video
+%	\item Looks similar to filter \texttt{frei0r.coloradj\_RGB}
+%	\item KDEN Live Code
+%\end{itemize}
+
+
+
+When observing the results of the KDEN Live RGB adjustment, visual similarities to the results of the \texttt{frei0r.coloradj\_RGB} filter are noticeable. 
+%
+A further inspection of the filter parameters on the MLT website reveals that the RGB adjustment parameters in KDEN Live are the same as those of the \texttt{frei0r.coloradj\_RGB} filter. Both RGB adjustment processes have the adjustable input parameters R, G, B, Action, Keep luma, Alpha controlled and Luma formula~\cite{melt_filters}.
+
+To confirm the usage of the filter \texttt{frei0r.coloradj\_RGB} in KDEN Live's RGB adjustment, the code base of KDEN Live is consulted. This is possible, because KDEN Live is FOSS and the code is oublicly available.
+%
+The following code excerpt shows parts of the XML file of the \texttt{frei0r.coloradj\_RGB} in the KDEN Live code base~\cite{kdenlive_code}.
+
+
+\begin{lstlisting}[language=c, numbers=none, columns=fullflexible]	
+	<?xml version="1.0"?>
+	<!DOCTYPE kpartgui>
+		<effect LC_NUMERIC="C" tag="frei0r.coloradj_RGB" id="frei0r.coloradj_RGB">
+			<name>RGB adjustment</name>
+	...
+\end{lstlisting}
+
+This confirms the usage of the \texttt{frei0r.coloradj\_RGB} filter in the KDEN Live RGB adjustment. 
+
 
 
 
@@ -480,10 +506,9 @@ One possible explanation for these differences in the extracted frames could be 
 
 
 
-Additionally, the comparison with KDEN Live did not show the same results as the filter application in the Accurate Player either. The results of the visual comparisons, functionalities and colour subtractions lead to the assumption that the KDEN Live effect \textit{RGB adjustment} is not using the MLT filter \texttt{avfilter.colorbalance} to adjust the RGB values but a different filter.
+Additionally, the comparison with KDEN Live did not show the same results as the filter application in the Accurate Player either. The results of the visual comparisons, functionalities and colour subtractions lead to the assumption that the KDEN Live effect \textit{RGB adjustment} is not using the MLT filter \texttt{avfilter.colorbalance} that is being used in this thesis project to adjust the RGB values but the \texttt{frei0r.coloradj\_RGB} filter. This information gives insight of the implementation and backend of KDEN Live.
 The comparison revealed the different options and functionalities that arise with the use of different MLT filters and techniques, but those techniques make KDEN Live unsuitable for further comparisons with the implementation of this thesis project.
 
-TODO \texttt{frei0r}
 
 
 Those significant differences in the compared frames show the complexity of the topic of colour adjustment and representation. 
