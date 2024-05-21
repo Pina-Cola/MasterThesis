@@ -41,17 +41,17 @@ In the following, the relevant components of the MLT framework's structure will 
 %
 \textit{Producer}, \textit{Consumer} and \textit{MLT frame objects} are fundamental components in the MLT framework.
 
-A \textit{MLT frame object} is a data structure that is used for representing multimedia content. 
-It is a container that holds multimedia data. Each \textit{MLT frame object} contains a single uncompressed frame image and its associated audio samples. These frame objects can be processed individually, which allows the user to manipulate and transform multimedia content efficiently.
-\textit{MLT frame objects} can store the multimedia data in various formats and they support metadata annotations, which allows to attach additional information or properties to the multimedia content. This includes filters for manipulating the content, which are discussed in Section~\ref{subsection:meltfilter}.
+A MLT frame object is a data structure that is used for representing multimedia content. 
+It is a container that holds multimedia data. Each MLT frame object contains a single uncompressed frame image and its associated audio samples. These frame objects can be processed individually, which allows the user to manipulate and transform multimedia content efficiently.
+MLT frame objects can store the multimedia data in various formats and they support metadata annotations, which allows to attach additional information or properties to the multimedia content. This includes filters for manipulating the content, which are discussed in Section~\ref{subsection:meltfilter}.
 
 
-A \textit{Producer} generates or provides data -- it produces the \textit{MLT frame objects}. 
-It reads data from files or other data sources. The \textit{Producer} serves as the starting point of the data processing pipeline. It retrieves the raw data and passes it on to other components, for example the \textit{Consumer}. This can be seen in Figure~\ref{fig:producer_consumer}.
+A producer generates or provides data -- it produces the MLT frame objects. 
+It reads data from files or other data sources. The producer serves as the starting point of the data processing pipeline. It retrieves the raw data and passes it on to other components, for example the consumer. This can be seen in Figure~\ref{fig:producer_consumer}.
 
-A \textit{Consumer} requests \textit{MLT frame objects} from the \textit{Producer}.
-It is responsible for consuming or processing the data that was produced by the \textit{Producer} or other components that are between the \textit{Producer} and \textit{Consumer}. 
-The \textit{Consumer} represents the endpoint of the data processing pipeline and produces the final output or results.
+A consumer requests MLT frame objects from the producer.
+It is responsible for consuming or processing the data that was produced by the producer or other components that are between the producer and consumer. 
+The consumer represents the endpoint of the data processing pipeline and produces the final output or results.
 
 
 
