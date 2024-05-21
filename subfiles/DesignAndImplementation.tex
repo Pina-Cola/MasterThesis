@@ -201,7 +201,7 @@ The backend consists of three components: The MLT framework, \texttt{main.py} an
 
 The user initiates a session through the browser, which then initiates the \texttt{main.py} script. The system's frontend that is displayed in the browser was described in Section~\ref{subsection:accuratevideo}.
 Control commands are then sent from the browser to the Python backend with a WebRTC data channel.
-From the \texttt{main.py} file, the control commands get sent to MLT via \texttt{stdout} (standard output) and \texttt{stdin} (standard input). These are the default output and input channels, that allow the Python script communication with other components.
+From the \texttt{main.py} file, the control commands get sent to MLT via \texttt{stdout} (standard output) and \texttt{stdin} (standard input). These are the default output and input channels that allow the Python script communication with other components.
 Data written to \texttt{stdout} by the Python code can be captured or redirected and data from an external source can be read from \texttt{stdin} by the Python script~\cite{python}. The data flow of the control commands is highlighted in Figure~\ref{figure:controlcommands}.
 
 \begin{figure}[H]
@@ -555,7 +555,7 @@ To achieve an even colouring result of the frames, which would be applicable for
 \end{figure}
 
 To assess the effects of the combined colour adjustment of multiple colours, the values for green and red (shadows, midtones and highlights) are set to the maximum of $1$ and applied simultaneously. The parameters that are applied for this evaluation are \texttt{av.rs=1}, \texttt{av.rm=1}, \texttt{av.rh=1}, \texttt{av.gs=1}, \texttt{av.gm=1} and \texttt{av.gh=1}.
-This results in yellow toned pictures, that can be seen in Figure~\ref{figure:cb_yellow}, which shows that the combination of different RGB values into mixed colours is possible with the filter \texttt{avfilter.colorbalance}.
+This results in yellow toned pictures that can be seen in Figure~\ref{figure:cb_yellow}, which shows that the combination of different RGB values into mixed colours is possible with the filter \texttt{avfilter.colorbalance}.
 
 
 \begin{figure}[H]
@@ -623,7 +623,7 @@ For further investigation of the filter \texttt{avfilter.colorchannelmixer}, in 
 
 To assess the effects of the combined colour adjustment of multiple colours for the \texttt{avfilter.colorchannelmixer} filter, the values for the green gain on the green channel and the red gain on the red channel are set to the maximum of $2$ and applied simultaneously. 
 The parameters that are applied are \texttt{av.rr=2} and \texttt{av.gg=2}.
-This results in yellow toned pictures, that can be seen in Figure~\ref{figure:rrgg}.
+This results in yellow toned pictures that can be seen in Figure~\ref{figure:rrgg}.
 
 
 \begin{figure}[H]
@@ -677,10 +677,11 @@ To assess the effects of the combined colour adjustment of multiple colours for 
 
 
 
-The MLT filters \texttt{avfilter.colorbalance}, \texttt{avfilter\-.colorchannelmixer} and \texttt{frei\-0r\-.coloradj\_RGB} are compared regarding the colour vibrance and intensity of the result. This analysis of the filters above was conducted regarding the colour red in depth and a side-by-side comparison can be seen in Figure~\ref{figure:redcomp}. The colour changes of green and blue work analogically and are displayed in Figure~\ref{figure:filtersG} and \ref{figure:filtersB}.
+The MLT filters \texttt{avfilter.colorbalance}, \texttt{avfilter\-.colorchannelmixer} and \texttt{frei\-0r\-.coloradj\_RGB} are compared regarding the colour vibrance and intensity of the result. This analysis of the filters above was conducted regarding the colours red and yellow in depth and a side-by-side comparison can be seen in Figure~\ref{figure:redcomp} and~\ref{figure:yellowcomp}. The colour changes of the other two colour channels green and blue work analogically and are displayed in Figure~\ref{figure:filtersG} and \ref{figure:filtersB}.
 % For the comparison of the result of the single colour filter application, the following parameters per filter are chosen:
 %
 %The results of the change of a single colour (red, green and blue) for each of the filters can be seen as a side-by-side comparison:
+\vspace*{1em}
 
 \begin{figure}[H]
 	\centering
@@ -702,6 +703,7 @@ The MLT filters \texttt{avfilter.colorbalance}, \texttt{avfilter\-.colorchannelm
 \end{figure}
 
 
+
 \begin{figure}[H]
 	\centering
 	\begin{tabular}{c|c|c}
@@ -720,6 +722,7 @@ The MLT filters \texttt{avfilter.colorbalance}, \texttt{avfilter\-.colorchannelm
 	\label{figure:filtersG}
 	
 \end{figure}
+
 
 
 \begin{figure}[H]
@@ -770,12 +773,12 @@ In Figure~\ref{figure:yellowcomp}, the results of the application of two mixed c
 	
 \end{figure}
 
-It can be seen, that the colour of the \texttt{avfilter.colorbalance} is the most intense and vibrant again, which confirms the results of the previous comparison regarding the single colour adjustment of red, green and blue. This makes the filter \texttt{avfilter.colorbalance} a suitable choice for the implementation of the RGB colour adjustment with sliders in the frontend, because it leads to a broader colour range and more options for personalisation. The filter \texttt{avfilter.colorbalance} shows the most intense colour results for single colour adjustments as well as for mixed colours.
+It can be seen that the colour of the \texttt{avfilter.colorbalance} is the most intense and vibrant again, which confirms the results of the previous comparison regarding the single colour adjustment of red, green and blue. This makes the filter \texttt{avfilter.colorbalance} a suitable choice for the implementation of the RGB colour adjustment with sliders in the frontend, because it leads to a broader colour range and more options for personalisation. The filter \texttt{avfilter.colorbalance} shows the most intense colour results for single colour adjustments as well as for mixed colours.
 
-In the above presented tests, which are visualised in the middle in Figure~\ref{figure:redcomp}, \ref{figure:filtersG}, \ref{figure:filtersB} and \ref{figure:yellowcomp}, the results of the \texttt{avfilter.colorchannelmixer} filter appear to have more depth and look more dynamic, because the colour gain was only executed on the respective colour channels. This can be an aspect, that lets the user achieve more aesthetically pleasing results but the overall intensity of the colours is lower. In addition to this, the expected behaviour of sliders for RGB colour adjustment might not be to only change the colour intensity on one of the respective colour channel. Based on this, the filter \texttt{avfilter.colorbalance} seems to deliver the most fitting results in those criteria.
+In the above presented tests, which are visualised in the middle in Figure~\ref{figure:redcomp}, \ref{figure:filtersG}, \ref{figure:filtersB} and \ref{figure:yellowcomp}, the results of the \texttt{avfilter.colorchannelmixer} filter appear to have more depth and look more dynamic, because the colour gain was only executed on the respective colour channels. This can be an aspect that lets the user achieve more aesthetically pleasing results but the overall intensity of the colours is lower. In addition to this, the expected behaviour of sliders for RGB colour adjustment might not be to only change the colour intensity on one of the respective colour channel. Based on this, the filter \texttt{avfilter.colorbalance} seems to deliver the most fitting results in those criteria.
 
 
-The results of the filter \texttt{frei0r.coloradj\_RGB}, that can be seen on the right in Figure~\ref{figure:redcomp}, \ref{figure:filtersG}, \ref{figure:filtersB} and \ref{figure:yellowcomp} seem to have darker and less vibrant results, that do not present the expected colours as accurately as the other two filters. These filters were therefore excluded from further consideration.
+The results of the filter \texttt{frei0r.coloradj\_RGB} that can be seen on the right in Figure~\ref{figure:redcomp}, \ref{figure:filtersG}, \ref{figure:filtersB} and \ref{figure:yellowcomp} seem to have darker and less vibrant results that do not present the expected colours as accurately as the other two filters. These filters were therefore excluded from further consideration.
 
 
 In conclusion, the \texttt{avfilter.colorbalance} filter leads to the most vibrant and intense results of the above listed selection of filters. Additionally it has the option to adapt the shadows, midtones and highlights individually, which creates the option for more pre-adjustments of the results in the backend or for introducing more sliders or options for the user-sided adjustment as future work.
@@ -955,7 +958,7 @@ with the default value of zero. The overwriting has to be considered when applyi
 To avoid the overwriting and being able to apply a colour that consist of two or more non-zero values in the RGB channels, the previous values for each colour channel need to be saved in the backend. Then they can be applied together with the recently changed value to prevent the overwriting of the already adjusted colours with the default value. 
 For the implementation, global variables are initialized for each of the colours and one of them are set to the current value in each call, while the other two store the previous values for the other colours. This can be seen in the code snippet above and prevents the overwriting of the previously adjusted values with the default value of zero.
 
-The application of the MLT filter with the current input values from the sliders is implemented in the function \texttt{jit\_action()}, that has a MLT producer as a parameter. In the code below, the beginning of the function can be seen. The MLT properties, consumer and producer are retrieved and set. Then the filter \texttt{avfilter.colorbalance} is set. The comparison of the different filter options can be seen in Section~\ref{subsection:meltfilter}.
+The application of the MLT filter with the current input values from the sliders is implemented in the function \texttt{jit\_action()} that has a MLT producer as a parameter. In the code below, the beginning of the function can be seen. The MLT properties, consumer and producer are retrieved and set. Then the filter \texttt{avfilter.colorbalance} is set. The comparison of the different filter options can be seen in Section~\ref{subsection:meltfilter}.
 
 
 \begin{lstlisting}[language=c, numbers=none, columns=fullflexible]	
