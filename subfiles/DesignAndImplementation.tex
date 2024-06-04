@@ -180,7 +180,7 @@ user to adapt the Accurate Player to their preferences and expectations.
 
 
 With JIT techniques in the Accurate Player it is possible to play different formats in the browser without the transcoding into a browser friendly format.
-This is possible, because the Accurate Player uses JIT techniques to dynamically handle the playback of different video formats on-the-fly, instead of relying on pre-transcoded video files. The video data is being processed in real-time, allowing for on-the-fly adjustment of options such as the quality slider or the RGB colour adjustment that is being implemented for this thesis project.
+This is possible, because the Accurate Player uses JIT to dynamically handle the playback of different video formats on-the-fly, instead of relying on pre-transcoded video files. The video data is being processed in real-time, allowing for on-the-fly adjustment of options such as the quality slider or the RGB colour adjustment that is being implemented for this thesis project.
 
 
 
@@ -990,7 +990,7 @@ case CONTROL_TYPE__RED_VALUE:
 		mlt_properties filter_props_red = mlt_filter_properties(filter);
 \end{lstlisting}
 
-In the first if statement of this case, the red value is added to the filter properties. For this, the value needs to be in the input range of the filter parameter, which has to be a float between $-1$ and $1$. Then, a string containing the value is created, because the function \texttt{mlt\_properties\_set} requires the value for the filter parameter in String format. After this, the filter properties are set to this value. Three parameters per colour have to be set, because the chosen filter has the possibility of adjusting the shadows, midtones and highlights individually. 
+In the first if-statement of this case, the red value is added to the filter properties. For this, the value needs to be in the input range of the filter parameter, which has to be a float between $-1$ and $1$. Then, a string containing the value is created, because the function \texttt{mlt\_properties\_set} requires the value for the filter parameter in String format. After this, the filter properties are set to this value. Three parameters per colour have to be set, because the chosen filter has the possibility of adjusting the shadows, midtones and highlights individually. 
 The comparison of the different filters is explained in Section~\ref{subsection:meltfilter} and the described code is shown below.
 
 

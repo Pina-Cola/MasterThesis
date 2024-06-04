@@ -22,7 +22,7 @@ In this Chapter, the structure and usage of the MLT framework is explained and a
 %---------------------------------
 \subsection{MLT} \label{subsection:melt}
 
-The MLT framework is a multimedia framework that can be used for video editing and playback. It is written in C and provides a set of tools, libraries and services for handling multimedia content, including video and audio. Melt is the name of the command line tool, which exposes various functionality of the framework and was developed for testing the MLT framework~\cite{melt}. 
+The MLT framework is a multimedia framework that can be used for video editing and playback. It is written in C and provides a set of tools, libraries and services for handling multimedia content, including video and audio. Melt is the name of the command line tool, which exposes various functionalities of the framework and was developed for testing the MLT framework~\cite{melt}. 
 
 
 
@@ -39,11 +39,11 @@ Additionally, the MLT framework supports a wide range of media formats and codec
 
 In the following, the relevant components of the MLT framework's structure will be explained. This is based on the documentation as well as the code of the framework~\cite{melt, melt_code}.
 %
-\textit{Producer}, \textit{Consumer} and \textit{MLT frame objects} are fundamental components in the MLT framework.
+Producer, consumer and MLT frame objects are fundamental components in the MLT framework.
 
 A MLT frame object is a data structure that is used for representing multimedia content. 
 It is a container that holds multimedia data. Each MLT frame object contains a single uncompressed frame image and its associated audio samples. These frame objects can be processed individually, which allows the user to manipulate and transform multimedia content efficiently.
-MLT frame objects can store the multimedia data in various formats and they support metadata annotations, which allows to attach additional information or properties to the multimedia content. This includes filters for manipulating the content, which are discussed in Section~\ref{subsection:meltfilter}.
+MLT frame objects can store the multimedia data in various formats and they support metadata annotations, allowing to attach additional information or properties to the multimedia content. This includes filters for manipulating the content, which are discussed in Section~\ref{subsection:meltfilter}.
 
 
 A producer generates or provides data -- it produces the MLT frame objects. 
@@ -312,7 +312,7 @@ Representational State Transfer (REST) is an architecture for network applicatio
 
 
 	
-JIT or Just-In-Time in the context of video streaming refers to a dynamic software solution employed for real-time video transformation. 
+JIT or Just-In-Time refers to a dynamic software solution employed for real-time video transformation. 
 It is used for on-the-fly conversion of video files, optimising them for streaming. The process includes the transcoding of a video file, potentially one with non-web-friendly formats, into a more suitable format for the playback in web browsers.
 JIT operates by dynamically preprocessing video content as it is requested by users. This is in contrast to the common technique of pre-converting video files into formats that are suitable for streaming or browsers in advance. 
 This approach allows for greater flexibility and efficiency, as it minimises the need for storage space and allows real-time adjustment such as the adjustment of the RGB colours that is implemented and described in this thesis project.
@@ -367,7 +367,7 @@ KDEN Live is a video editing software that offers a wide range of features such 
 \label{subsection:protocolbuffer}
 
 
-Protocol buffers are a binary data format developed by Google to compress data for sending it efficiently over a network. The structure of this format is defined in a \texttt{.proto} file. The \texttt{.proto} files are used to generate code for reading and writing to the protocol buffer~\cite{protobuffer}.
+Protocol buffers are a binary data format developed by Google to compress data to send it efficiently over a network. The structure of this format is defined in a \texttt{.proto} file. The \texttt{.proto} files are used to generate code for reading and writing to the protocol buffer~\cite{protobuffer}.
 
 
 
@@ -441,19 +441,18 @@ Enums allow for the declaration of a set of named constants, each associated wit
 This can be used for representing a fixed set of options or states within a message definition~\cite{protobuffer, proto2_doc}.
 
 In the following, an example enum is shown and described. 
-It represents the gender of a person and is defined as follows:
+It represents the membership status of a person and is defined as follows:
 
 \begin{lstlisting}[style=protobufStyle, numbers=none]
-	enum Gender {
+	enum Status {
 		UNKNOWN = 0;
-		MALE = 1;
-		FEMALE = 2;
-		DIVERSE = 3;
+		MEMBER = 1;
+		NON_MEMBER = 2;
 	}
 \end{lstlisting}
 
-Gender is the name of the enum and \texttt{UNKNOWN}, \texttt{MALE}, \texttt{FEMALE} and \texttt{DIVERSE} are the enum constants with the associated integer values $0$, $1$, $2$ and $3$.
-It allows to represent the gender options unknown, male, female or diverse, providing a way to represent a fixed set of options or states.
+Status is the name of the enum and \texttt{UNKNOWN}, \texttt{MEMBER} and \texttt{NON\_MEMBER} are the enum constants with the associated integer values $0$, $1$ and $2$.
+It allows to represent the membership status options unknown, member or not a member, providing a way to represent a fixed set of options or states.
 
 
 
