@@ -6,23 +6,23 @@ The thesis explores multimedia processing with a focus on real-time, user-side R
 
 
 ## Tools & Technologies
-- **MLT Framework** (`melt`, filters, custom integration)
-- **WebRTC** for real-time communication
-- **Codemill Accurate Player**
-- **JavaScript & HTML (frontend integration)**
-- **Python & Bash scripts** for video analysis
+- MLT Framework (melt filters)
+- WebRTC for real-time communication
+- Codemill Accurate Player
+- JavaScript & HTML (frontend)
 
 
 ## Keywords
 `Multimedia processing`, `RGB adjustment`, `MLT`, `colour grading`, `real-time`, `WebRTC`, `Accurate Player`, `Codemill`, `JIT`
 
 ## Year & Institution
-**2024** 
-**Umeå University – Department of Computing Science**
+2024
+Umeå University – Department of Computing Science
 
 ## Reference
 Official DiVA publication: 
-[Link to Diva portal](www.diva-portal.org/smash/record.jsf?pid=diva2%3A1870057&dswid=-6973)
+[urn:nbn:se:umu:diva-226212](http://urn.kb.se/resolve?urn=urn:nbn:se:umu:diva-226212)
+
 
 ## Abstract
 The topic of this thesis project is multimedia processing, focusing on the user-sided adjustment of RGB values in video streaming using Just-In-Time (JIT) techniques and the Media Lovin’ Toolkit (MLT) framework. This is implemented in Codemill’s Accurate Player and using Web Real-Time Communication (WebRTC) as a data channel. Colour theory and RGB colour representation are discussed and technical details on the structure and usage of the MLT framework are provided.
